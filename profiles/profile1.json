@@ -1,0 +1,75 @@
+{
+    "name":"prof1",
+    "AUI:desc":"Ori- first simple demo profile",
+    "@AUI-action":{
+        "compose":{
+            "offName": "compose",
+            "type": [
+                "button"
+            ],
+            "name": "compose button",
+            "inherits": "false",
+            "settings": {
+                "shortcut": "SHIFT + C",
+                "longdesc": "this button writes or creates your new work.",
+                "tooltip": "compose",
+                "text": "compose now",
+                "Symbol": {
+                    "url": "http://cdn4.iconfinder.com/data/icons/miu/22/common_new_edit_compose_-128.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "settings": {
+                        "width": "",
+                        "height": "",
+                        "margin": "",
+                        "padding": ""
+                    }
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        "delete":{
+            "offName": "delete",
+            "type": [
+                "button"
+            ],
+            "name": "delete button",
+            "inherits": "false",
+            "settings": {
+                "shortcut": "SHIFT + D",
+                "longdesc": "this button delete your work.",
+                "tooltip": "delete",
+                "text": "delete",
+                "Symbol": {
+                    "url": "http://cdn4.iconfinder.com/data/icons/miu/23/editor_trash_delete_recycle_bin-64.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "settings": {
+                        "width": "",
+                        "height": "",
+                        "margin": "",
+                        "padding": ""
+                    }
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            }
+        }
+    }
+
+}

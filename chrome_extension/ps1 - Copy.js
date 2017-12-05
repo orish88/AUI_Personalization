@@ -11,6 +11,8 @@ console.log(document)
 
 getPersonalisation('https://rawgit.com/orish88/AUI_Personalization/master/profiles/json_skin.json');
 
+
+
 alert("ps1 runs 5");
 // getPersonalisation('https://rawgit.com/ayelet-seeman/coga.personalisation/JSON-Script/json_skin.json');
 /* name: personalisation1.0.js
@@ -47,7 +49,10 @@ function personalisePage(profile) {
 //personalise element according to the settings in the JSON object recieved
 function personalise_element(element, profile) {
 
-	personalise_element_attribute(element, profile['@AUI-action'], "AUI-action");
+	personalise_element_attribute(element, profile['@tagName'], "tagName");
+	personalise_element_attribute(element, profile['@role'], "role");
+	personalise_element_attribute(element, profile['@aria-function'], "aria-function");
+	personalise_element_importance(element, profile['@aria-importance'])
 
 
 }
@@ -62,75 +67,77 @@ function personalise_element_attribute(element, profileAttribute, AttributeName)
 	//check they are defined
 	if (isDefined(profileAttribute))
 		if (isDefined(attribute)) {
+			var numFunc = profileAttribute.length;
 
-			var attributeInfo = profileAttribute[attribute];
-
-			//replace code with direct access			
-		
 			//get settings for that element
+			for (var j = 0; j < numFunc; j++) {
+				if (isDefined(profileAttribute[j].offName))
+					if (attribute == profileAttribute[j].offName) {
+
+						//check if element needs to be personalised differently
+						if (element.tagName == "INPUT") {
+							style_form_element(element, profileAttribute[j]);
+						}
+
+						//change descendents
+						if (isDefined(profileAttribute[j].descendents)) {
+							setCSS_des(element, profileAttribute[j].descendents);
+
+						}
 
 
-			//check if element needs to be personalised differently
-			if (element.tagName == "INPUT") {
-				style_form_element(element, attributeInfo);
+						//check icon exists
+
+						if (isDefined(profileAttribute[j].settings)) {
+
+							if (isDefined(profileAttribute[j].settings.Symbol.url)) {
+
+								//set width and height
+								var height = "30";
+								var width = "30";
+								if (isDefined(profileAttribute[j].settings.Symbol.settings.height))
+									var height = profileAttribute[j].settings.Symbol.settings.height;
+
+								if (isDefined(profileAttribute[j].settings.Symbol.settings.width))
+									var width = profileAttribute[j].settings.Symbol.settings.width;
+
+
+								//add icon when text is defined
+								if (isDefined(profileAttribute[j].settings.text))
+									element.innerHTML = "\<img src\=\"" + profileAttribute[j].settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + profileAttribute[j].settings.text;
+
+								//add icon when text isn't defined
+								else element.innerHTML = "\<img src\=\"" + profileAttribute[j].settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
+							}
+
+							else {
+								//change text only
+								if (isDefined(profileAttribute[j].settings.text))
+									element.innerHTML = profileAttribute[j].settings.text;
+							}
+
+							//change width to fit text
+							element.style.width = "auto";
+							element.style.paddingRight = "0.5em";
+							element.style.paddingLeft = "0.5em"
+
+							//change style
+							var styleSettings = profileAttribute[j].settings.css;
+							setCSS(element, styleSettings);
+
+							// add/change tooltip
+							if (isDefined(profileAttribute[j].settings.tooltip))
+								element.title = profileAttribute[j].settings.tooltip;
+
+							// add/change shortcut (accesskey)
+							if (isDefined(profileAttribute[j].settings.shortcut))
+								element.accessKey = profileAttribute[j].settings.shortcut;
+
+
+						}
+					}
+
 			}
-
-			//change descendents
-			if (isDefined(attributeInfo.descendents)) {
-				setCSS_des(element, attributeInfo.descendents);
-
-			}
-
-			//check icon exists
-
-			if (isDefined(attributeInfo.settings)) {
-
-				if (isDefined(attributeInfo.settings.Symbol.url)) {
-
-					//set width and height
-					var height = "30";
-					var width = "30";
-					if (isDefined(attributeInfo.settings.Symbol.settings.height))
-						var height = attributeInfo.settings.Symbol.settings.height;
-
-					if (isDefined(attributeInfo.settings.Symbol.settings.width))
-						var width = attributeInfo.settings.Symbol.settings.width;
-
-
-					//add icon when text is defined
-					if (isDefined(attributeInfo.settings.text))
-						element.innerHTML = "\<img src\=\"" + attributeInfo.settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + profileAttribute[j].settings.text;
-
-					//add icon when text isn't defined
-					else element.innerHTML = "\<img src\=\"" + attributeInfo.settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
-				}
-
-				else {
-					//change text only
-					if (isDefined(attributeInfo.settings.text))
-						element.innerHTML = attributeInfo.settings.text;
-				}
-
-				//change width to fit text
-				element.style.width = "auto";
-				element.style.paddingRight = "0.5em";
-				element.style.paddingLeft = "0.5em"
-
-				//change style
-				var styleSettings = attributeInfo.settings.css;
-				setCSS(element, styleSettings);
-
-				// add/change tooltip
-				if (isDefined(attributeInfo.settings.tooltip))
-					element.title = attributeInfo.settings.tooltip;
-
-				// add/change shortcut (accesskey)
-				if (isDefined(attributeInfo.settings.shortcut))
-					element.accessKey = attributeInfo.settings.shortcut;
-
-
-			}
-
 
 
 		}
@@ -242,8 +249,8 @@ function makeCorsRequest(url) {
 		var jsonSkin = JSON.parse(text);
 		//make global variable
 
-		console.log(jsonSkin["name"]);
-		var cogadesc = "AUI:desc";
+		console.log(jsonSkin["hello"]);
+		var cogadesc = "coga:desc";
 		console.log(jsonSkin[cogadesc]);
 		window.profile = jsonSkin;
 
@@ -270,7 +277,9 @@ function setCSS(element, settings) {
 					$(element).css(propertyName, value);
 				}
 			}
+
 		}
+
 }
 
 

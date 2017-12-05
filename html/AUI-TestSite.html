@@ -16,169 +16,18 @@
 		<div id="nav" role="navigation">
 			<ul class="nav">
 				<li class="nav">
-					<a aria-importance="critical" aria-function="home" href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html"
+					<a aria-function="home" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html"
 					 class="navBar">Main</a>
 				</li>
 				<li class="nav">
-					<a aria-function="about us" aria-importance="low" href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html"
-					 class="navBar">About</a>
+					<a AUI-action="compose" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html"
+					 class="navBar">Compose</a>
 				</li>
 				<li class="nav">
-					<a aria-importance="low" href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html" class="navBar">Investors</a>
-				</li>
-				<li class="nav">
-					<a aria-importance="low" href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html" class="navBar">Partners</a>
-				</li>
-				<li class="nav">
-					<a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html" aria-importance="med" aria-function="services"
-					 class="navBar">Services</a>
-				</li>
-				<li class="nav">
-					<a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html" class="navBar" aria-importance="critical">Men</a>
-				</li>
-				<li class="nav">
-					<a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html" class="navBar" aria-importance="critical">Women</a>
-				</li>
-				<li class="nav">
-					<a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html" class="navBar" aria-importance="critical">Children</a>
-				</li>
-				<li class="nav">
-					<a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html" class="navBar" aria-importance="high">Shoes</a>
-				</li>
-				<li class="nav">
-					<a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html" class="navBar" aria-importance="high">Sports</a>
-				</li>
-				<li class="nav">
-					<a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html" class="navBar" aria-importance="high">Sales</a>
-				</li>
-				<li class="nav">
-					<a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html" class="navBar" aria-importance="low"
-					 aria-function="contact us" aria-hidden="true">Contact Us</a>
-				</li>
-				<li class="nav">
-					<a href="https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html" class="navBar" aria-importance="high"
-					 aria-function="site map">Site Map</a>
+					<a aria-importance="low" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Delete</a>
 				</li>
 			</ul>
 		</div>
-		<div id="main_content" role="main">
-			<h1 aria-importance="critical">Online Clothes</h1>
-
-			<div aria-importance="critical" class="contactForm" role="form">
-
-				<h2> Contact Us</h2>
-				<form action="mailto:ayelet.projects1@gmail.com" method="post" enctype="text/plain">
-					<table>
-						<tbody>
-							<tr>
-								<td>
-									<label aria-importance="high" aria-function="name" for="name"> Name: </label>
-								</td>
-								<td>
-									<input aria-importance="high" type="text" name="name" id="name" value="your name">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label aria-importance="critical" aria-function="mail" for="mail">E-mail: </label>
-								</td>
-								<td>
-									<input aria-importance="critical" type="text" name="mail" id="mail" value="your email">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label aria-importance="low" for="phone">Phone: </label>
-								</td>
-								<td>
-									<input type="text" aria-importance="low" name="phone" id="phone" value="your phone number">
-								</td>
-							</tr>
-							<tr>
-								<td>
-
-									<label aria-importance="high" for="subject"> Subject: </label>
-								</td>
-								<td>
-									<input aria-importance="high" type="text" name="subject" id="subject" value="your subject">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label aria-importance="critical" for="message">Message: </label>
-									<span aria-importance="critical"></span>
-								</td>
-								<td>
-									<textarea aria-importance="critical" type="text" name="message" id="message" rows="10" cols="35">Write your message here</textarea>
-								</td>
-								<td>
-								</td>
-							</tr>
-							<tr>
-								<td> </td>
-								<td>
-									<input aria-importance="critical" aria-function="submit" type="submit" value="Submit">
-									<input type="reset" aria-importance="med" aria-function="reset" value="Reset">
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</form>
-			</div>
-
-
-			<div class="note">
-				<div id="personalisation">
-
-					<button id="personalise_page" onclick="getPersonalisation(&#39;https://rawgit.com/ayelet-seeman/coga.personalisation/demo/skin1.json&#39;)"
-					 class="optionButtons">Personalise (read JSON)</button>
-					<br style="clear:both">
-					<button id="more_options" aria-hidden="true" onclick="moreOptions(window.profile)" aria-importance="critical" class="optionButtons">
-					&gt;&gt; More Options</button>
-					<br style="clear:both">
-					<button id="less_options" aria-hidden="true" onclick="lessOptions(window.profile)" aria-importance="high" class="optionButtons">
-					&lt;&lt; Less Options</button>
-				</div>
-				<div aria-importance="med">
-
-					The JavaScript file personalises the web page according to user settings specified in a JSON file, which trigger by the tag
-					name, role, aria-importance attribute and aria-function attribute.
-					<br> It makes the following changes:
-					<ul>
-						<li>hides and displays elements that are less important
-							<br>
-						</li>
-						<li>adds/changes icon
-							<br>
-						</li>
-						<li>changes text
-							<br>
-						</li>
-						<li>changes style
-							<br>
-						</li>
-						<li>adds/changes tooltip
-							<br>
-						</li>
-						<li>adds/changes access key
-							<br>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<br>
-			<br>
-		</div>
-		<footer aria-importance="med">
-			<p> This is part of a project to help personlisation for any use - including people with learning and memory issues. For more
-				information see
-				<a href="https://github.com/ayelet-seeman/coga.personalisation" alt="">the github repository</a> as well as
-				<a href="https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Easy_Personalization"
-				 alt="">the issue paper on easy personalisation</a>. </p>
-		</footer>
-	</div>
-
 </body>
 
 </html>
