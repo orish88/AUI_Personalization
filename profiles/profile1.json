@@ -1,11 +1,11 @@
 {
     "name":"prof1",
-    "AUI:desc":"Ori- first simple demo profile",
+    "AUI:desc":"Orish- first simple demo profile",
     "@AUI-action":
     [
         {
             "offName": "compose",
-            "type": 
+            "type":[ 
                 "button"
             ],
             "name": "compose button",
