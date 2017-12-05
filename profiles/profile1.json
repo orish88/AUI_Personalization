@@ -1,26 +1,31 @@
 {
     "name":"prof1",
     "AUI:desc":"Ori- first simple demo profile",
-    "@AUI-action":{
-        "compose":{
+    "@AUI-action":
+    [
+        {
             "offName": "compose",
-            "type": [
+            "type": 
                 "button"
             ],
             "name": "compose button",
             "inherits": "false",
-            "settings": {
+            "settings": 
+            {
                 "shortcut": "SHIFT + C",
                 "longdesc": "this button writes or creates your new work.",
                 "tooltip": "compose",
                 "text": "compose now",
-                "Symbol": {
+                "Symbol": 
+                {
                     "url": "http://cdn4.iconfinder.com/data/icons/miu/22/common_new_edit_compose_-128.png",
-                    "creator": {
+                    "creator": 
+                    {
                         "name": "",
                         "url": ""
                     },
-                    "settings": {
+                    "settings": 
+                    {
                         "width": "",
                         "height": "",
                         "margin": "",
@@ -36,20 +41,97 @@
                 ]
             }
         },
-        "delete":{
+        {
             "offName": "delete",
             "type": [
                 "button"
             ],
             "name": "delete button",
             "inherits": "false",
-            "settings": {
+            "settings": 
+            {
                 "shortcut": "SHIFT + D",
                 "longdesc": "this button delete your work.",
                 "tooltip": "delete",
                 "text": "delete",
-                "Symbol": {
+                "Symbol": 
+                {
                     "url": "http://cdn4.iconfinder.com/data/icons/miu/23/editor_trash_delete_recycle_bin-64.png",
+                    "creator": 
+                    {
+                        "name": "",
+                        "url": ""
+                    },
+                    "settings": 
+                    {
+                        "width": "",
+                        "height": "",
+                        "margin": "",
+                        "padding": ""
+                    }
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            }
+        }
+    ],
+    "@AUI-destination":
+    [
+        
+        {
+            "offName": "home",
+            "type": [
+                "link"
+            ],
+            "name": "home link",
+            "inherits": "false",
+            "settings": {
+                "shortcut": "SHIFT+H",
+                "longdesc": "this links to the home page.",
+                "tooltip": "home",
+                "text": "home",
+                "Symbol": {
+                    "url": "https://cloud.githubusercontent.com/assets/10908915/9038627/6c2fda60-39fe-11e5-8f07-8fd95e1abb41.png",
+                    "creator": {
+                        "name": "Jardson Almeida, The Noun Project",
+                        "url": ""
+                    },
+                    "settings": {
+                        "width": "43",
+                        "height": "43",
+                        "margin": "",
+                        "padding": ""
+                    }
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        {
+            "offName": "email",
+            "type": [
+                "link",
+                "text"
+            ],
+            "name": "our email link",
+            "inherits": "false",
+            "settings": {
+                "shortcut": "",
+                "longdesc": "this links to the our email page.",
+                "tooltip": "our email",
+                "text": "our email",
+                "Symbol": {
+                    "url": "",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -70,6 +152,6 @@
                 ]
             }
         }
-    }
 
+    ]
 }
