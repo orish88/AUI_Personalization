@@ -11,7 +11,7 @@ console.log(document)
 
 getPersonalisation('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
 
-alert("ps1 runs 6");
+alert("ps1 runs 5");
 // getPersonalisation('https://rawgit.com/ayelet-seeman/coga.personalisation/JSON-Script/json_skin.json');
 /* name: personalisation1.0.js
 
@@ -32,22 +32,20 @@ function getPersonalisation(url) {
 
 //personalise page based on the settings in the JSON object recieved
 function personalisePage(profile) {
-
-	console.log("peof length: "+profile.length);
-	for(var i =0; i < profile.length; i++)
-	{	
 	
-
-		var atttibute = profile["attributes"][i];
-		console.log("attr: "+atttibute);
-		console.log("access key: " +atttibute.accessKey);
-		console.log("attr[0]: " +atttibute[0]);
-		// personalizeAttribute(attribute);
+	
+	
+	for(var i =0; i < profile.length; i++)
+	{
+		var atttibute = profile[i];
+		personalizeAttribute(attribute);
 	}
 	
-
+	
 	//select all elements in document
+
 	var x = document.querySelectorAll('body *');
+
 
 	for (var i = 0; i < x.length; i++) {
 		//run personalisation
@@ -58,12 +56,12 @@ function personalisePage(profile) {
 	// document.getElementById("personalise_page").setAttribute("aria-hidden", "true");
 
 }
+
 function personalizeAttribute(attribute)
 {
 	var elementsWithAttr = document.querySelectorAll(attribute);
-	console.log("elemets with attr: "+elementsWithAttr);
+	Log.console("elemets with attr: "+elementsWithAttr);
 }
-
 
 //personalise element according to the settings in the JSON object recieved
 function personalise_element(element, profile) {
@@ -99,9 +97,7 @@ function personalise_element_attribute(element, profileAttribute, AttributeName)
 						//change descendents
 						if (isDefined(profileAttribute[j].descendents)) {
 							setCSS_des(element, profileAttribute[j].descendents);
-
 						}
-
 
 						//check icon exists
 
@@ -118,12 +114,11 @@ function personalise_element_attribute(element, profileAttribute, AttributeName)
 								if (isDefined(profileAttribute[j].settings.Symbol.settings.width))
 									var width = profileAttribute[j].settings.Symbol.settings.width;
 
-
 								//add icon when text is defined
 								if (isDefined(profileAttribute[j].settings.text))
 									element.innerHTML = "\<img src\=\"" + profileAttribute[j].settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + profileAttribute[j].settings.text;
-
-								//add icon when text isn't defined
+								
+									//add icon when text isn't defined
 								else element.innerHTML = "\<img src\=\"" + profileAttribute[j].settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
 							}
 
@@ -195,8 +190,6 @@ function moreOptions(profile) {
 	personalise_page_importance(profile);
 	// hide the more options button if all elements are displayed
 	if (temp == 1) document.getElementById("more_options").setAttribute("aria-hidden", "true");
-
-
 }
 
 //hide elements with an aria-importance attribute one level higher than currently hidden
