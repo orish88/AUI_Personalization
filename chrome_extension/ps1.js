@@ -9,7 +9,7 @@ see more at: https://github.com/ayelet-seeman/coga.personalisation/
 console.log(document)
 
 
-getPersonalisation('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
+getPersonalisation('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile_v2.json');
 
 alert("ps1 runs 6");
 // getPersonalisation('https://rawgit.com/ayelet-seeman/coga.personalisation/JSON-Script/json_skin.json');
@@ -33,7 +33,7 @@ function getPersonalisation(url) {
 //personalise page based on the settings in the JSON object recieved
 function personalisePage(profile) {
 
-	console.log("peof length: "+profile.length);
+	console.log("prof length: "+profile.attributes.length);
 	for(var i =0; i < profile.length; i++)
 	{	
 	
@@ -42,18 +42,21 @@ function personalisePage(profile) {
 		console.log("attr: "+atttibute);
 		console.log("access key: " +atttibute.accessKey);
 		console.log("attr[0]: " +atttibute[0]);
-		console.log("something");
+		console.log("something: "+profile.attributes);
 		// personalizeAttribute(attribute);
 	}
 	
 
-	//select all elements in document
-	var x = document.querySelectorAll('body *');
 
-	for (var i = 0; i < x.length; i++) {
-		//run personalisation
-		personalise_element(x[i], profile);
-	}
+	//select all elements in document
+
+	// var x = document.querySelectorAll('body *');
+
+	// for (var i = 0; i < x.length; i++) {
+	// 	//run personalisation
+	// 	personalise_element(x[i], profile);
+	// }
+
 	//hide button for loading JSON skin. Line will be removed in later versions.
 
 	// document.getElementById("personalise_page").setAttribute("aria-hidden", "true");
