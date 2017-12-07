@@ -42,6 +42,7 @@ function personalisePage(profile) {
 		console.log("attr: "+atttibute);
 		console.log("access key: " +atttibute.accessKey);
 		console.log("attr[0]: " +atttibute[0]);
+		console.log("something");
 		// personalizeAttribute(attribute);
 	}
 	
