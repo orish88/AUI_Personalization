@@ -33,12 +33,12 @@ function getPersonalisation(url) {
 //personalise page based on the settings in the JSON object recieved
 function personalisePage(profile) {
 
-	console.log("prof length: "+profile.attributes.length);
-	for(var i =0; i < profile.length; i++)
+	console.log("prof (2) length: "+profile.attributes.length);
+	for(var i =0; i < profile.attributes.length; i++)
 	{	
 	
 
-		var atttibute = profile["attributes"][i];
+		var atttibute = profile.attributes[i];
 		console.log("attr: "+atttibute);
 		console.log("access key: " +atttibute.accessKey);
 		console.log("attr[0]: " +atttibute[0]);

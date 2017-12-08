@@ -4,7 +4,8 @@
     "attributes":
     [
         {
-            "@AUI-action": [
+            "name":"AUI-action",
+            "details": [
                 {
                     "offName": "compose",
                     "type": [
@@ -76,7 +77,8 @@
             ]
         },
         {
-            "@AUI-destination": [
+            "name":"AUI-destination",
+            "details": [
                 {
                     "offName": "home",
                     "type": [
