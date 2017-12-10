@@ -59,7 +59,7 @@ function personalisePage(profile) {
 
 function personalizeAttribute(attribute)
 {
-	var elementsWithAttr = document.querySelectorAll(attribute);
+	var elementsWithAttr = document.querySelectorAll(attribute.name);
 	Log.console("elemets with attr: "+elementsWithAttr);
 }
 

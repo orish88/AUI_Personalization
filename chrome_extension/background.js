@@ -2,7 +2,6 @@ alert("background js called");
 chrome.browserAction.onClicked.addListener(function(tab) {
 	alert("func in background js called");
 
-
 	chrome.tabs.executeScript(tab.id, {
         file: "jquery.js"
     }, function() {
@@ -18,3 +17,4 @@ chrome.browserAction.onClicked.addListener(function(tab) {
         }
     });
 });
+

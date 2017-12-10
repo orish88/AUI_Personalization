@@ -11,7 +11,7 @@ console.log(document)
 
 getPersonalisation('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile_v2.json');
 
-alert("ps1 runs 6");
+alert("ps1 runs 7");
 // getPersonalisation('https://rawgit.com/ayelet-seeman/coga.personalisation/JSON-Script/json_skin.json');
 /* name: personalisation1.0.js
 
@@ -33,17 +33,19 @@ function getPersonalisation(url) {
 //personalise page based on the settings in the JSON object recieved
 function personalisePage(profile) {
 
-	console.log("prof (2) length: "+profile.attributes.length);
+	//personalize css:
+	var cssArray = profile.css;
+	for(var j=0; j < cssArray.length ; j++){
+		console.log("set css called on: "+ cssArray[j].propertyName);
+		setCSS(document.body.style,cssArray[j]);
+	}
+	console.log("prof (3) length: "+profile.attributes.length);
 	for(var i =0; i < profile.attributes.length; i++)
-	{	
-	
-
-		var atttibute = profile.attributes[i];
-		console.log("attr: "+atttibute);
-		console.log("access key: " +atttibute.accessKey);
-		console.log("attr[0]: " +atttibute[0]);
-		console.log("something: "+profile.attributes);
-		// personalizeAttribute(attribute);
+	{		
+		var attribute = profile.attributes[i];
+		console.log("attr: "+attribute);
+		console.log("attr name: "+attribute.name);
+		personalizeAttribute(attribute);
 	}
 	
 
@@ -64,18 +66,15 @@ function personalisePage(profile) {
 }
 function personalizeAttribute(attribute)
 {
-	var elementsWithAttr = document.querySelectorAll(attribute);
-	console.log("elemets with attr: "+elementsWithAttr);
+	var elementsWithAttr = document.querySelectorAll('['+attribute.name+']');
+	// var elementsWithAttr = document.querySelectorAll("href");
+	console.log("query result length: "+elementsWithAttr.length);
+	for(var i=0; i< elementsWithAttr.length;i++){
+		console.log("elemets with attr: "+elementsWithAttr[i]);
+		personalise_element_attribute(elementsWithAttr[i],attribute.details,attribute.name);
+	}
 }
 
-
-//personalise element according to the settings in the JSON object recieved
-function personalise_element(element, profile) {
-
-	personalise_element_attribute(element, profile['@AUI-action'], "AUI-action");
-	personalise_element_attribute(element, profile['@AUI-destination'], "AUI-destination");
-
-}
 
 //personalise element by attributeName according to the settings in the JSON object recieved
 //works also with tag name
