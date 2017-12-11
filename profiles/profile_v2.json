@@ -1,7 +1,10 @@
 {
     "name": "prof1",
     "AUI:desc": "Orish- first simple demo profile",
-    "cssFile": "https://rawgit.com/orish88/AUI_Personalization/master/profiles/accessibilityNew.css",
+    "cssFile": {
+        "cssFileLink":"https://rawgit.com/orish88/AUI_Personalization/master/profiles/accessibilityNew.css",
+        "linkIndex":"0"
+    },
     "css": [
         {
             "propertyName": "backgroundColor",

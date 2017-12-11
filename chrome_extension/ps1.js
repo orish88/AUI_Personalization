@@ -36,8 +36,13 @@ function getPersonalisation(url) {
 function personalisePage(profile) {
 
 	//personalize css:
+	var cssFile = profile.cssFile.cssFileName;
 	var cssArray = profile.css;
 	// console.log("set body css called on: "+ cssArray);
+	if(isDefined(cssFile)) {
+		changeCSS(cssFile, parseInt(profile.cssFile.linkIndex) );
+	}
+	else
 	if(isDefined(cssArray)){
 		console.log("set body css called on "+ cssArray);
 		setBodyCSS(cssArray);
