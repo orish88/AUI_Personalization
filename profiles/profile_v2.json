@@ -7,12 +7,12 @@
             "value": "Yellow"
         },
         {
-            "propertyName": "",
-            "value": ""
+            "propertyName": "color",
+            "value": "Orange"
         },
         {
-            "propertyName": "",
-            "value": ""
+            "propertyName": "font-size",
+            "value": "200%"
         }
     ]
     ,

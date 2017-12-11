@@ -11,6 +11,8 @@ console.log(document)
 
 getPersonalisation('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile_v2.json');
 
+
+
 alert("ps1 runs 7");
 // getPersonalisation('https://rawgit.com/ayelet-seeman/coga.personalisation/JSON-Script/json_skin.json');
 /* name: personalisation1.0.js
@@ -35,11 +37,12 @@ function personalisePage(profile) {
 
 	//personalize css:
 	var cssArray = profile.css;
-	for(var j=0; j < cssArray.length ; j++){
-		console.log("set css called on: "+ cssArray[j].propertyName);
-		setCSS(document.body.style,cssArray[j]);
+	// console.log("set body css called on: "+ cssArray);
+	if(isDefined(cssArray)){
+		console.log("set body css called on "+ cssArray);
+		setBodyCSS(cssArray);
 	}
-	console.log("prof (3) length: "+profile.attributes.length);
+	console.log("prof (4) length: "+profile.attributes.length);
 	for(var i =0; i < profile.attributes.length; i++)
 	{		
 		var attribute = profile.attributes[i];
@@ -294,6 +297,23 @@ function setCSS(element, settings) {
 				if (isDefined(settings[i].value)) {
 					var value = settings[i].value;
 					$(element).css(propertyName, value);
+				}
+			}
+		}
+}
+function setBodyCSS(settings) {
+	// var backgroundColorStr = 'backgroundColor';
+	// var color = 'Green';
+	// document.body.style[backgroundColorSt]= 'Green';
+	if (isDefined(settings))
+		for (var i = 0; i < settings.length; i++) {
+			if (isDefined(settings[i].propertyName)) {
+				var propertyName = settings[i].propertyName;
+				if (isDefined(settings[i].value)) {
+					var value = settings[i].value;
+					$(document.body.style).css(propertyName, value);
+					document.body.style[propertyName]= value;
+					console.log("bodyCss - set this "+propertyName+" to '"+value+"'");
 				}
 			}
 		}
