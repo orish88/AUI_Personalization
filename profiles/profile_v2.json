@@ -1,6 +1,7 @@
 {
     "name": "prof1",
     "AUI:desc": "Orish- first simple demo profile",
+    "cssFile": "",
     "css": [
         {
             "propertyName": "backgroundColor",

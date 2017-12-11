@@ -288,6 +288,20 @@ function makeCorsRequest(url) {
 	xhr.send();
 }
 
+
+
+//change css file
+function changeCSS(cssFile, cssLinkIndex) {
+	
+		var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+	
+		var newlink = document.createElement("link");
+		newlink.setAttribute("rel", "stylesheet");
+		newlink.setAttribute("type", "text/css");
+		newlink.setAttribute("href", cssFile);
+	
+		document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+	}
 //set elements' CSS according to the settings in the JSON object recieved
 function setCSS(element, settings) {
 	if (isDefined(settings))
