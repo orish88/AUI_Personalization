@@ -40,36 +40,34 @@ function personalisePage(profile) {
 	var cssArray = profile.css;
 
 	// console.log("set body css called on: "+ cssArray);
-	if(isDefined(cssFile)) {
+	if (isDefined(cssFile)) {
 		var linkIndex = profile.cssFile.linkIndex;
-		changeCSS(cssFile, parseInt(linkIndex) );
-		console.log("new css: "+document.getElementsByTagName("link").item(linkIndex));
+		changeCSS(cssFile, parseInt(linkIndex));
+		console.log("new css: " + document.getElementsByTagName("link").item(linkIndex));
 	}
 	else
-	if(isDefined(cssArray)){
-		console.log("set body css called on "+ cssArray);
-		setBodyCSS(cssArray);
-	}
+		if (isDefined(cssArray)) {
+			console.log("set body css called on " + cssArray);
+			setBodyCSS(cssArray);
+		}
 
 	//personalize tagnames:
-	if(isDefined(profile.tagNames))
-	{
-		for( var k = 0; k < profile.tagName.length; k++ )
-		{
-			personalizeTagName(profile.tagName[k]);
+	if (isDefined(profile.tagNames)) {
+		console.log("in tagnames loop");
+		for (var k = 0; k < profile.tagNames.length; k++) {
+			personalizeTagName(profile.tagNames[k]);
 		}
 	}
 
 	//personalize attributes:	
-	console.log("prof (4) length: "+profile.attributes.length);
-	for(var i =0; i < profile.attributes.length; i++)
-	{		
+	console.log("prof (4) length: " + profile.attributes.length);
+	for (var i = 0; i < profile.attributes.length; i++) {
 		var attribute = profile.attributes[i];
-		console.log("attr: "+attribute);
-		console.log("attr name: "+attribute.name);
+		console.log("attr: " + attribute);
+		console.log("attr name: " + attribute.name);
 		personalizeAttribute(attribute);
 	}
-	
+
 
 
 	//select all elements in document
@@ -86,105 +84,102 @@ function personalisePage(profile) {
 	// document.getElementById("personalise_page").setAttribute("aria-hidden", "true");
 
 }
-function personalizeTagName(tagnameInfo)
-{
+function personalizeTagName(tagnameInfo) {
+	console.log("personalize tagname called");
 	var elementsWithTagName = document.getElementsByTagName(tagnameInfo.offName);
-	for(var i=0; i< elementsWithTagName.length;i++){
-		console.log("elemets with tagname: "+elementsWithTagName[i]);
-		personalise_element_tagname(elementsWithTagName[i],tagnameInfo);
+	for (var i = 0; i < elementsWithTagName.length; i++) {
+		console.log("elemets with tagname: " + elementsWithTagName[i]);
+		personalise_element_tagname(elementsWithTagName[i], tagnameInfo);
 	}
 
 }
-function personalizeAttribute(attribute)
-{
-	var elementsWithAttr = document.querySelectorAll('['+attribute.name+']');
+function personalizeAttribute(attribute) {
+	var elementsWithAttr = document.querySelectorAll('[' + attribute.name + ']');
 	// var elementsWithAttr = document.querySelectorAll("href");
-	console.log("query result length: "+elementsWithAttr.length);
-	for(var i=0; i< elementsWithAttr.length;i++)
-	{
-		console.log("elemets with attr: "+elementsWithAttr[i]);
-		personalise_element_attribute(elementsWithAttr[i],attribute.details,attribute.name);
+	console.log("query result length: " + elementsWithAttr.length);
+	for (var i = 0; i < elementsWithAttr.length; i++) {
+		console.log("elemets with attr: " + elementsWithAttr[i]);
+		personalise_element_attribute(elementsWithAttr[i], attribute.details, attribute.name);
 	}
 }
 
-function personalise_element_tagname(element, profileAttribute)
-{
+function personalise_element_tagname(element, profileAttribute) {
 	if (isDefined(profileAttribute))
-	if (isDefined(attribute)) {
+
 
 		var numFunc = profileAttribute.length;
 
-		//get settings for that element
-		for (var j = 0; j < numFunc; j++) {
-			if (isDefined(profileAttribute[j].offName))
-				if (attribute == profileAttribute[j].offName) {
+	//get settings for that element
+	for (var j = 0; j < numFunc; j++) {
+		if (isDefined(profileAttribute[j].offName))
+			if (attribute == profileAttribute[j].offName) {
 
-					//check if element needs to be personalised differently
-					if (element.tagName == "INPUT") {
-						style_form_element(element, profileAttribute[j]);
-					}
-
-					//change descendents
-					if (isDefined(profileAttribute[j].descendents)) {
-						setCSS_des(element, profileAttribute[j].descendents);
-
-					}
-
-
-					//check icon exists
-
-					if (isDefined(profileAttribute[j].settings)) {
-
-						if (isDefined(profileAttribute[j].settings.Symbol.url)) {
-
-							//set width and height
-							var height = "30";
-							var width = "30";
-							if (isDefined(profileAttribute[j].settings.Symbol.settings.height))
-								var height = profileAttribute[j].settings.Symbol.settings.height;
-
-							if (isDefined(profileAttribute[j].settings.Symbol.settings.width))
-								var width = profileAttribute[j].settings.Symbol.settings.width;
-
-
-							//add icon when text is defined
-							if (isDefined(profileAttribute[j].settings.text))
-								element.innerHTML = "\<img src\=\"" + profileAttribute[j].settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + profileAttribute[j].settings.text;
-
-							//add icon when text isn't defined
-							else element.innerHTML = "\<img src\=\"" + profileAttribute[j].settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
-						}
-
-						else {
-							//change text only
-							if (isDefined(profileAttribute[j].settings.text))
-								element.innerHTML = profileAttribute[j].settings.text;
-						}
-
-						//change width to fit text
-						element.style.width = "auto";
-						element.style.paddingRight = "0.5em";
-						element.style.paddingLeft = "0.5em"
-
-						//change style
-						var styleSettings = profileAttribute[j].settings.css;
-						setCSS(element, styleSettings);
-
-						// add/change tooltip
-						if (isDefined(profileAttribute[j].settings.tooltip))
-							element.title = profileAttribute[j].settings.tooltip;
-
-						// add/change shortcut (accesskey)
-						if (isDefined(profileAttribute[j].settings.shortcut))
-							element.accessKey = profileAttribute[j].settings.shortcut;
-
-
-					}
+				//check if element needs to be personalised differently
+				if (element.tagName == "INPUT") {
+					style_form_element(element, profileAttribute[j]);
 				}
 
-		}
+				//change descendents
+				if (isDefined(profileAttribute[j].descendents)) {
+					setCSS_des(element, profileAttribute[j].descendents);
+
+				}
+
+
+				//check icon exists
+
+				if (isDefined(profileAttribute[j].settings)) {
+
+					if (isDefined(profileAttribute[j].settings.Symbol.url)) {
+
+						//set width and height
+						var height = "30";
+						var width = "30";
+						if (isDefined(profileAttribute[j].settings.Symbol.settings.height))
+							var height = profileAttribute[j].settings.Symbol.settings.height;
+
+						if (isDefined(profileAttribute[j].settings.Symbol.settings.width))
+							var width = profileAttribute[j].settings.Symbol.settings.width;
+
+
+						//add icon when text is defined
+						if (isDefined(profileAttribute[j].settings.text))
+							element.innerHTML = "\<img src\=\"" + profileAttribute[j].settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + profileAttribute[j].settings.text;
+
+						//add icon when text isn't defined
+						else element.innerHTML = "\<img src\=\"" + profileAttribute[j].settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
+					}
+
+					else {
+						//change text only
+						if (isDefined(profileAttribute[j].settings.text))
+							element.innerHTML = profileAttribute[j].settings.text;
+					}
+
+					//change width to fit text
+					element.style.width = "auto";
+					element.style.paddingRight = "0.5em";
+					element.style.paddingLeft = "0.5em"
+
+					//change style
+					var styleSettings = profileAttribute[j].settings.css;
+					setCSS(element, styleSettings);
+
+					// add/change tooltip
+					if (isDefined(profileAttribute[j].settings.tooltip))
+						element.title = profileAttribute[j].settings.tooltip;
+
+					// add/change shortcut (accesskey)
+					if (isDefined(profileAttribute[j].settings.shortcut))
+						element.accessKey = profileAttribute[j].settings.shortcut;
+
+
+				}
+			}
 
 	}
+
+
 
 }
 
@@ -220,15 +215,12 @@ function personalise_element_attribute(element, profileAttribute, AttributeName)
 								if (isDefined(profileAttribute[j].settings.Symbol.settings.width))
 									var width = profileAttribute[j].settings.Symbol.settings.width;
 
-
 								//add icon when text is defined
 								if (isDefined(profileAttribute[j].settings.text))
 									element.innerHTML = "\<img src\=\"" + profileAttribute[j].settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + profileAttribute[j].settings.text;
-
 								//add icon when text isn't defined
 								else element.innerHTML = "\<img src\=\"" + profileAttribute[j].settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
 							}
-
 							else {
 								//change text only
 								if (isDefined(profileAttribute[j].settings.text))
@@ -251,8 +243,6 @@ function personalise_element_attribute(element, profileAttribute, AttributeName)
 							// add/change shortcut (accesskey)
 							if (isDefined(profileAttribute[j].settings.shortcut))
 								element.accessKey = profileAttribute[j].settings.shortcut;
-
-
 						}
 					}
 			}
@@ -260,8 +250,7 @@ function personalise_element_attribute(element, profileAttribute, AttributeName)
 }
 
 //hide or display element by it's aria-importance according to the settings in the JSON object recieved
-function personalise_element_importance(element, imp_settings) 
-{
+function personalise_element_importance(element, imp_settings) {
 	arImp = element.getAttribute("aria-importance");
 
 	if (isDefined(arImp) && isDefined(imp_settings[arImp].settings['@aria-hidden'])) {
@@ -383,16 +372,16 @@ function makeCorsRequest(url) {
 
 //change css file
 function changeCSS(cssFile, cssLinkIndex) {
-	
-		var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-	
-		var newlink = document.createElement("link");
-		newlink.setAttribute("rel", "stylesheet");
-		newlink.setAttribute("type", "text/css");
-		newlink.setAttribute("href", cssFile);
-	
-		document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
-	}
+
+	var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+
+	var newlink = document.createElement("link");
+	newlink.setAttribute("rel", "stylesheet");
+	newlink.setAttribute("type", "text/css");
+	newlink.setAttribute("href", cssFile);
+
+	document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+}
 //set elements' CSS according to the settings in the JSON object recieved
 function setCSS(element, settings) {
 	if (isDefined(settings))
@@ -417,8 +406,8 @@ function setBodyCSS(settings) {
 				if (isDefined(settings[i].value)) {
 					var value = settings[i].value;
 					$(document.body.style).css(propertyName, value);
-					document.body.style[propertyName]= value;
-					console.log("bodyCss - set this "+propertyName+" to '"+value+"'");
+					document.body.style[propertyName] = value;
+					console.log("bodyCss - set this " + propertyName + " to '" + value + "'");
 				}
 			}
 		}
