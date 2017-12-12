@@ -2,8 +2,8 @@
     "name": "prof1",
     "AUI:desc": "Orish- first simple demo profile",
     "cssFile": {
-        "cssFileLink":"https://rawgit.com/orish88/AUI_Personalization/master/profiles/accessibilityNew.css",
-        "linkIndex":"0"
+        "cssFileLink": "https://rawgit.com/orish88/AUI_Personalization/master/profiles/accessibilityNew.css",
+        "linkIndex": "0"
     },
     "css": [
         {
@@ -18,14 +18,54 @@
             "propertyName": "font-size",
             "value": "200%"
         }
-    ]
-    ,
-    "attributes":
+    ],
+    "tagNames": 
     [
         {
-            "name":"AUI-action",
-            "details": 
-            [
+            "offName": "a",
+            "settings": 
+            {
+                "css": [
+                    {
+                        "propertyName": "font-size",
+                        "value": "1.7em"
+                    },
+                    {
+                        "propertyName": "border-color",
+                        "value": "black"
+                    },
+                    {
+                        "propertyName": "color",
+                        "value": "black"
+                    },
+                    {
+                        "propertyName": "border-style",
+                        "value": "solid"
+                    },
+                    {
+                        "propertyName": "font-family",
+                        "value": "Gotham, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+                    },
+                    {
+                        "propertyName": "text-transform",
+                        "value": "none"
+                    },
+                    {
+                        "propertyName": "width",
+                        "value": "auto"
+                    },
+                    {
+                        "propertyName": "background-color",
+                        "value": " #dfe9e9"
+                    }
+                ]
+            }
+        }
+    ],
+    "attributes": [
+        {
+            "name": "AUI-action",
+            "details": [
                 {
                     "offName": "compose",
                     "type": [
@@ -33,21 +73,18 @@
                     ],
                     "name": "compose button",
                     "inherits": "false",
-                    "settings": 
-                    {
+                    "settings": {
                         "shortcut": "SHIFT + C",
                         "longdesc": "this button writes or creates your new work.",
                         "tooltip": "compose",
                         "text": "compose now",
                         "Symbol": {
                             "url": "http://cdn4.iconfinder.com/data/icons/miu/22/common_new_edit_compose_-128.png",
-                            "creator": 
-                            {
+                            "creator": {
                                 "name": "",
                                 "url": ""
                             },
-                            "settings": 
-                            {
+                            "settings": {
                                 "width": "",
                                 "height": "",
                                 "margin": "",
@@ -55,8 +92,7 @@
                             }
                         },
                         "@aria-hidden": "false",
-                        "css": 
-                        [
+                        "css": [
                             {
                                 "propertyName": "",
                                 "value": ""
@@ -71,22 +107,18 @@
                     ],
                     "name": "delete button",
                     "inherits": "false",
-                    "settings": 
-                    {
+                    "settings": {
                         "shortcut": "SHIFT + D",
                         "longdesc": "this button delete your work.",
                         "tooltip": "delete",
                         "text": "delete",
-                        "Symbol": 
-                        {
+                        "Symbol": {
                             "url": "http://cdn4.iconfinder.com/data/icons/miu/23/editor_trash_delete_recycle_bin-64.png",
-                            "creator": 
-                            {
+                            "creator": {
                                 "name": "",
                                 "url": ""
                             },
-                            "settings": 
-                            {
+                            "settings": {
                                 "width": "",
                                 "height": "",
                                 "margin": "",
@@ -94,8 +126,7 @@
                             }
                         },
                         "@aria-hidden": "false",
-                        "css": 
-                        [
+                        "css": [
                             {
                                 "propertyName": "",
                                 "value": ""
@@ -106,33 +137,27 @@
             ]
         },
         {
-            "name":"AUI-destination",
-            "details": 
-            [
+            "name": "AUI-destination",
+            "details": [
                 {
                     "offName": "home",
-                    "type": 
-                    [
+                    "type": [
                         "link"
                     ],
                     "name": "home link",
                     "inherits": "false",
-                    "settings": 
-                    {
+                    "settings": {
                         "shortcut": "SHIFT+H",
                         "longdesc": "this links to the home page.",
                         "tooltip": "home",
                         "text": "home button",
-                        "Symbol": 
-                        {
+                        "Symbol": {
                             "url": "https://cloud.githubusercontent.com/assets/10908915/9038627/6c2fda60-39fe-11e5-8f07-8fd95e1abb41.png",
-                            "creator": 
-                            {
+                            "creator": {
                                 "name": "Jardson Almeida, The Noun Project",
                                 "url": ""
                             },
-                            "settings": 
-                            {
+                            "settings": {
                                 "width": "43",
                                 "height": "43",
                                 "margin": "",
