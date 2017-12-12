@@ -103,81 +103,78 @@ function personalizeAttribute(attribute) {
 	}
 }
 
-function personalise_element_tagname(element, profileAttribute) {
-	if (isDefined(profileAttribute))
-
-
-		var numFunc = profileAttribute.length;
-
-	//get settings for that element
-	for (var j = 0; j < numFunc; j++) {
-		if (isDefined(profileAttribute[j].offName))
-			if (attribute == profileAttribute[j].offName) {
-
-				//check if element needs to be personalised differently
-				if (element.tagName == "INPUT") {
-					style_form_element(element, profileAttribute[j]);
-				}
-
-				//change descendents
-				if (isDefined(profileAttribute[j].descendents)) {
-					setCSS_des(element, profileAttribute[j].descendents);
-
-				}
-
-
-				//check icon exists
-
-				if (isDefined(profileAttribute[j].settings)) {
-
-					if (isDefined(profileAttribute[j].settings.Symbol.url)) {
-
-						//set width and height
-						var height = "30";
-						var width = "30";
-						if (isDefined(profileAttribute[j].settings.Symbol.settings.height))
-							var height = profileAttribute[j].settings.Symbol.settings.height;
-
-						if (isDefined(profileAttribute[j].settings.Symbol.settings.width))
-							var width = profileAttribute[j].settings.Symbol.settings.width;
-
-
-						//add icon when text is defined
-						if (isDefined(profileAttribute[j].settings.text))
-							element.innerHTML = "\<img src\=\"" + profileAttribute[j].settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + profileAttribute[j].settings.text;
-
-						//add icon when text isn't defined
-						else element.innerHTML = "\<img src\=\"" + profileAttribute[j].settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
-					}
-
-					else {
-						//change text only
-						if (isDefined(profileAttribute[j].settings.text))
-							element.innerHTML = profileAttribute[j].settings.text;
-					}
-
-					//change width to fit text
-					element.style.width = "auto";
-					element.style.paddingRight = "0.5em";
-					element.style.paddingLeft = "0.5em"
-
-					//change style
-					var styleSettings = profileAttribute[j].settings.css;
-					setCSS(element, styleSettings);
-
-					// add/change tooltip
-					if (isDefined(profileAttribute[j].settings.tooltip))
-						element.title = profileAttribute[j].settings.tooltip;
-
-					// add/change shortcut (accesskey)
-					if (isDefined(profileAttribute[j].settings.shortcut))
-						element.accessKey = profileAttribute[j].settings.shortcut;
-
-
-				}
+function personalise_element_tagname(element, tagNameInfo) {
+	if (isDefined(tagNameInfo)){
+		if (isDefined(tagNameInfo.offName)){
+			//check if element needs to be personalised differently
+			if (element.tagName == "INPUT") {
+				style_form_element(element, tagNameInfo);
 			}
+		}else{
+			return;
+		}
+	}else{
+		return;
+	}
+	console.log("in personalise_element_tagname- defined: "+tagNameInfo.offName);
+
+	//change descendents
+	if (isDefined(tagNameInfo.descendents)) {
+		setCSS_des(element, tagNameInfo.descendents);
 
 	}
+
+	//check icon exists
+
+	if (isDefined(tagNameInfo.settings)) {
+
+		if (isDefined(tagNameInfo.settings.Symbol) && isDefined(tagNameInfo.settings.Symbol.url)  ) {
+
+			//set width and height
+			var height = "30";
+			var width = "30";
+			if (isDefined(tagNameInfo.settings.Symbol.settings.height))
+				var height = tagNameInfo.settings.Symbol.settings.height;
+
+			if (isDefined(tagNameInfo.settings.Symbol.settings.width))
+				var width = tagNameInfo.settings.Symbol.settings.width;
+
+
+			//add icon when text is defined
+			if (isDefined(tagNameInfo.settings.text))
+				element.innerHTML = "\<img src\=\"" + tagNameInfo.settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + tagNameInfo.settings.text;
+
+			//add icon when text isn't defined
+			else element.innerHTML = "\<img src\=\"" + tagNameInfo.settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
+		}
+
+		else {
+			//change text only
+			if (isDefined(tagNameInfo.settings.text))
+				element.innerHTML = tagNameInfo.settings.text;
+		}
+
+		//change width to fit text
+		element.style.width = "auto";
+		element.style.paddingRight = "0.5em";
+		element.style.paddingLeft = "0.5em"
+
+		//change style
+		var styleSettings = tagNameInfo.settings.css;
+		setCSS(element, styleSettings);
+
+		// add/change tooltip
+		if (isDefined(tagNameInfo.settings.tooltip))
+			element.title = tagNameInfo.settings.tooltip;
+
+		// add/change shortcut (accesskey)
+		if (isDefined(tagNameInfo.settings.shortcut))
+			element.accessKey = tagNameInfo.settings.shortcut;
+
+
+	}
+
+
 
 
 
