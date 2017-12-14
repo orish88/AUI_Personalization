@@ -60,7 +60,7 @@ function personalizePage(profile) {
 	console.log("personalize page called for profile: " + profile.name);
 
 	if (isDefined(profile.css)) {
-		// personalizeCss(profile.css);
+		personalizeCSS(profile.css);
 	}
 	if (isDefined(profile.tagnames)) {
 		// personalizeTagnames(profile.tagnames);
@@ -70,6 +70,39 @@ function personalizePage(profile) {
 	}
 
 }
+/**
+ * apply page css settings
+ * @param {*} cssSettings 
+ */
+function personalizeCSS(cssSettings) {
+	//personalize css:
+	var cssFile = profile.css.cssFileLink;
+	if (isDefined(cssFile)) {
+		var linkIndex = profile.cssFile.linkIndex;
+		changeCSSFile(cssFile, parseInt(linkIndex));
+		console.log("new css: " + document.getElementsByTagName("link").item(linkIndex));
+	} else {
+		var cssBodySettings = profile.css.cssSettings;
+		if (isDefined(cssBodySettings)) {
+			console.log("set body css called on " + cssBodySettings);
+			setCSS(document.body.style, cssBodySettings);
+		}
+	}
+}
+
+
+//change css file
+function changeCSSFile(cssFile, cssLinkIndex) {
+	var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+	var newlink = document.createElement("link");
+	newlink.setAttribute("rel", "stylesheet");
+	newlink.setAttribute("type", "text/css");
+	newlink.setAttribute("href", cssFile);
+	document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+}
+
+
+
 /**
  * iterate over the attributes in the profile and change the relevant elements in the DOM 
  * according to the value and settings.
@@ -97,7 +130,7 @@ function personalizeAttribute(attribute) {
 	var elementsWithAttr = document.querySelectorAll('[' + attribute.name + ']');
 	elementsWithAttr.forEach(element => {
 		var attrValName = element.getAttribute(attribute.name);
-		console.log("attr: "+attribute.name+ "= attrValName: "+attrValName);
+		console.log("attr: " + attribute.name + "= attrValName: " + attrValName);
 		var attrVal = attribute.details[attrValName];
 		personalizeAttributeValue(element, attrVal);
 
@@ -106,7 +139,7 @@ function personalizeAttribute(attribute) {
 
 function personalizeAttributeValue(element, attrVal) {
 	if (!isDefined(attrVal)) {
-		console.log("illegal attribute value "+attrVal+" in " + element);
+		console.log("illegal attribute value " + attrVal + " in " + element);
 		return;
 	}
 	if (!isDefined(attrVal.settings)) {
@@ -152,11 +185,11 @@ function applySettingsOnElement(element, settings) {
 	element.style.paddingRight = "0.5em";
 	element.style.paddingLeft = "0.5em"
 	// add/change tooltip
-	if (isDefined(settings.tooltip)){
+	if (isDefined(settings.tooltip)) {
 		element.title = settings.tooltip;
 	}
 	// add/change shortcut (accesskey)
-	if (isDefined(settings.shortcut)){
+	if (isDefined(settings.shortcut)) {
 		element.accessKey = settings.shortcut;
 	}
 }
@@ -178,7 +211,6 @@ function setCSS(element, settings) {
 			}
 		}
 	});
-
 }
 
 

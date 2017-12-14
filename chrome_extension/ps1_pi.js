@@ -239,8 +239,8 @@ function personalise_element_attribute(element, profileAttribute, AttributeName)
 		}
 }
 
-function chnageElement(element, settings) {
-	if (isDefined(settings.Symbol.url)) {
+function changeElement(element, settings) {
+	if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
 
 		//set width and height
 		var height = "30";
