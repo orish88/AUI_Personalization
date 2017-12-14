@@ -1,11 +1,13 @@
 {
     "name": "prof1",
-    "AUI:desc": "Orish- first simple demo profile",
-    "cssFile": {
+    "AUI:desc": "Orish- first simple demo file",
+    "cssFile": 
+    {
         "cssFileLink": "https://rawgit.com/orish88/AUI_Personalization/master/profiles/accessibilityNew.css",
         "linkIndex": "0"
     },
-    "css": [
+    "css": 
+    [
         {
             "propertyName": "backgroundColor",
             "value": "Black"
@@ -62,10 +64,12 @@
             }
         }
     ],
-    "attributes": [
+    "attributes": {
+        "AUI-action":
         {
             "name": "AUI-action",
-            "details": [
+            "details": {
+                "compose":
                 {
                     "offName": "compose",
                     "type": [
@@ -100,6 +104,7 @@
                         ]
                     }
                 },
+                "delete":
                 {
                     "offName": "delete",
                     "type": [
@@ -134,11 +139,12 @@
                         ]
                     }
                 }
-            ]
+            }
         },
-        {
+        "AUI-destination":{
             "name": "AUI-destination",
-            "details": [
+            "details": {
+                "home":
                 {
                     "offName": "home",
                     "type": [
@@ -173,6 +179,7 @@
                         ]
                     }
                 },
+                "email":
                 {
                     "offName": "email",
                     "type": [
@@ -208,7 +215,7 @@
                         ]
                     }
                 }
-            ]
+            }
         }
-    ]
+    }
 }
