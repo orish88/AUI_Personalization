@@ -4,8 +4,9 @@
     "css": 
     {
         "cssFileLink": "https://rawgit.com/orish88/AUI_Personalization/master/profiles/accessibilityNew.css",
+        
         "linkIndex": "0",
-        //in case there's no css file, otherwise redundant:
+
         "cssSettings": 
         [
             {
