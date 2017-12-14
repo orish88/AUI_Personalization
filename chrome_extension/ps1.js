@@ -63,12 +63,30 @@ function personalizePage(profile) {
 		personalizeCSS(profile.css);
 	}
 	if (isDefined(profile.tagnames)) {
-		// personalizeTagnames(profile.tagnames);
+		personalizeTagnames(profile.tagnames);
 	}
 	if (isDefined(profile.attributes)) {
 		personalizeAttributes(profile.attributes);
 	}
 
+}
+
+function personalizeTagnames(tagnames){
+	var tagnameList = Object.keys(tagnames);
+	tagnameList.forEach(tagname=>{
+		personalizeTagname(tagnames[tagname]);
+	});
+}
+
+function personalizeTagname(tagname) {
+	console.log("personalize tagme called on: " + tagname.offName);
+	if (isDefined(tagname.offName) && isDefined(tagname.settings)) {
+		var elementsWithTagname = document.getElementsByTagName(tagname.offName);
+		elementsWithTagname.forEach(element => {
+			applySettingsOnElement(element, tagname.settings)
+
+		});
+	}
 }
 /**
  * apply page css settings
@@ -76,9 +94,11 @@ function personalizePage(profile) {
  */
 function personalizeCSS(cssSettings) {
 	//personalize css:
-	var cssFile = profile.css.cssFileLink;
+	var cssFile = cssSettings.cssFileLink;
+	console.log("css settings css file: "+ cssFile);
+	
 	if (isDefined(cssFile)) {
-		var linkIndex = profile.cssFile.linkIndex;
+		var linkIndex = cssSettings.linkIndex;
 		changeCSSFile(cssFile, parseInt(linkIndex));
 		console.log("new css: " + document.getElementsByTagName("link").item(linkIndex));
 	} else {
@@ -151,7 +171,11 @@ function personalizeAttributeValue(element, attrVal) {
 }
 
 function applySettingsOnElement(element, settings) {
+	console.log("apply settings: "+settings+" on: "+element);
 	//apply css changes:
+	if(!isDefined(settings)){
+		return;
+	}
 	if (isDefined(settings.css)) {
 		var styleSettings = settings.css;
 		setCSS(element, styleSettings);
