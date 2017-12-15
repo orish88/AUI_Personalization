@@ -74,6 +74,7 @@ function personalizePage(profile) {
 }
 
 function personalizeItemScopes(itemtypes) {
+	console.log("personalize itemScopes called");
 
 	var elementsWithItemtype = document.querySelectorAll('[itemtype]');
 	var elementsWithItemtypeList = [...elementsWithItemtype]; //convert nodelist to array
@@ -83,11 +84,15 @@ function personalizeItemScopes(itemtypes) {
 }
 
 function personalizeItempropsInsideType(elementWithItemtype) {
+
 	var typeVal = elementWithItemtype.getAttribute("itemtype");
+	console.log("personalize itemprop inside type( "+typeVal+") " +elementWithItemtype+" called");
 	if (isDefined(typeVal)) {
-		var elementsWithItemprop = elementWithItemtype.querySelectorAll("itemprop");
+		var elementsWithItemprop = elementWithItemtype.querySelectorAll('[itemprop]');
 		var elementsWithItempropList = [...elementsWithItemprop];
+		console.log("elements with item propr list size: "+elementsWithItempropList.length);
 		elementsWithItempropList.forEach(element => {
+			console.log("personalize itemprop element - in loop before call:  val: ("+typeVal+") element: " +element+" ");
 			personalizeItempropElement(element, typeVal);
 		});
 	}
@@ -95,9 +100,12 @@ function personalizeItempropsInsideType(elementWithItemtype) {
 
 function personalizeItempropElement(element, typeVal) {
 	var propVal = element.getAttribute("itemprop");
+	console.log("personalize itemprop element. typeval: "+typeVal+",proprVal "+propVal +" called");
 	//todo: take the itemtype value and apply its settings to the ekement its declared on) 
 	var changeAttrVal = window.profile.itemscope.itemtypes[typeVal].itemprops[propVal];
+
 	if (isDefined(changeAttrVal)) {
+		console.log("itemprop- changeAttrVal.inherits: "+changeAttrVal.inherits);
 		applySettingsOnElement(element, changeAttrVal);
 	}
 }
@@ -212,6 +220,7 @@ function personalizeAttributeValue(element, attrVal) {
 function applySettingsOnElement(element, attrVal) {
 
 	if (isDefined(attrVal.inherits)) {
+		console.log("inherits called on element: "+element+" with attr val: "+attrVal.offName);
 		var attributeName = attrVal.inherits.attributeName;
 		var attributeValue = attrVal.inherits.attributeValue;
 		var inheritedAttrVal = window.profile.attributes[attributeName].details[attributeValue];

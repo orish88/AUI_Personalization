@@ -244,48 +244,48 @@
                                 }
                             ]
                         }
+                    },
+                    "itemListElement": {
+                        "offName": "itemListElement",
+                        "type": [],
+                        "name": "ItemList-itemListElement",
+                        "inherits": {
+                            "attributeName": "AUI-destination",
+                            "attributeValue": "home"
+                        }
                     }
                 },
-                "itemListElement": {
-                    "offName": "itemListElement",
+                "value": {
+                    "offName": "http://schema.org/ItemList",
                     "type": [],
-                    "name": "ItemList-itemListElement",
-                    "inherits": {
-                        "attributeName": "AUI-destination",
-                        "attributeValue": "home"
-                    }
-                }
-            },
-            "value": {
-                "offName": "http://schema.org/ItemList",
-                "type": [],
-                "name": "our itemtype itemlist",
-                "inherits": "",
-                "settings": {
-                    "shortcut": "",
-                    "longdesc": "itemtype of type itemlist",
-                    "tooltip": "itemtype itemlist",
-                    "text": "itemtype itemlist",
-                    "Symbol": {
-                        "url": "",
-                        "creator": {
-                            "name": "",
-                            "url": ""
+                    "name": "our itemtype itemlist",
+                    "inherits": "",
+                    "settings": {
+                        "shortcut": "",
+                        "longdesc": "itemtype of type itemlist",
+                        "tooltip": "itemtype itemlist",
+                        "text": "itemtype itemlist",
+                        "Symbol": {
+                            "url": "",
+                            "creator": {
+                                "name": "",
+                                "url": ""
+                            },
+                            "settings": {
+                                "width": "",
+                                "height": "",
+                                "margin": "",
+                                "padding": ""
+                            }
                         },
-                        "settings": {
-                            "width": "",
-                            "height": "",
-                            "margin": "",
-                            "padding": ""
-                        }
-                    },
-                    "@aria-hidden": "false",
-                    "css": [
-                        {
-                            "propertyName": "",
-                            "value": ""
-                        }
-                    ]
+                        "@aria-hidden": "false",
+                        "css": [
+                            {
+                                "propertyName": "",
+                                "value": ""
+                            }
+                        ]
+                    }
                 }
             }
         }
