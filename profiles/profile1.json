@@ -183,7 +183,7 @@
                         "shortcut": "",
                         "longdesc": "this links to the our email page.",
                         "tooltip": "our email",
-                        "text": "our email",
+                        "text": "",
                         "Symbol": {
                             "url": "",
                             "creator": {
@@ -221,7 +221,143 @@
                         "Symbol": {
                             "url": "",
                             "creator": {
-                                "name": "Jardson Almeida, The Noun Project",
+                                "name": "",
+                                "url": ""
+                            },
+                            "settings": {
+                                "width": "60",
+                                "height": "60",
+                                "margin": "",
+                                "padding": ""
+                            }
+                        },
+                        "@aria-hidden": "false",
+                        "css": [
+                            {
+                                "propertyName": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                },
+                "about": {
+                    "offName": "about",
+                    "type": [
+                        "link"
+                    ],
+                    "name": "about us link",
+                    "inherits": "",
+                    "settings": {
+                        "shortcut": "SHIFT+H",
+                        "longdesc": "this links to info about the creator etc.",
+                        "tooltip": "information about the creator",
+                        "text": "",
+                        "Symbol": {
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/abou_red.jpg",
+                            "creator": {
+                                "name": "",
+                                "url": ""
+                            },
+                            "settings": {
+                                "width": "60",
+                                "height": "60",
+                                "margin": "",
+                                "padding": ""
+                            }
+                        },
+                        "@aria-hidden": "false",
+                        "css": [
+                            {
+                                "propertyName": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                },
+                "contact": {
+                    "offName": "contact",
+                    "type": [
+                        "link"
+                    ],
+                    "name": "contact us",
+                    "inherits": "",
+                    "settings": {
+                        "shortcut": "SHIFT+H",
+                        "longdesc": "contach the creators",
+                        "tooltip": "contact the creators",
+                        "text": "",
+                        "Symbol": {
+                            "url": "https://github.com/orish88/AUI_Personalization/blob/master/images/contact_us_phone_red.jpg",
+                            "creator": {
+                                "name": "",
+                                "url": ""
+                            },
+                            "settings": {
+                                "width": "60",
+                                "height": "60",
+                                "margin": "",
+                                "padding": ""
+                            }
+                        },
+                        "@aria-hidden": "false",
+                        "css": [
+                            {
+                                "propertyName": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                },
+                "sitemap": {
+                    "offName": "sitemap",
+                    "type": [
+                        "link"
+                    ],
+                    "name": "website map",
+                    "inherits": "",
+                    "settings": {
+                        "shortcut": "SHIFT+H",
+                        "longdesc": "map of the website",
+                        "tooltip": "map of this website",
+                        "text": "",
+                        "Symbol": {
+                            "url": "https://github.com/orish88/AUI_Personalization/blob/master/images/sitemap_red.png",
+                            "creator": {
+                                "name": "",
+                                "url": ""
+                            },
+                            "settings": {
+                                "width": "60",
+                                "height": "60",
+                                "margin": "",
+                                "padding": ""
+                            }
+                        },
+                        "@aria-hidden": "false",
+                        "css": [
+                            {
+                                "propertyName": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                },
+                "lang": {
+                    "offName": "lang",
+                    "type": [
+                        "link"
+                    ],
+                    "name": "pick language",
+                    "inherits": "",
+                    "settings": {
+                        "shortcut": "SHIFT+H",
+                        "longdesc": "pick language",
+                        "tooltip": "pick language",
+                        "text": "Language",
+                        "Symbol": {
+                            "url": "https://github.com/orish88/AUI_Personalization/blob/master/images/lang_red.png",
+                            "creator": {
+                                "name": "",
                                 "url": ""
                             },
                             "settings": {
@@ -240,6 +376,8 @@
                         ]
                     }
                 }
+
+
             }
         }
     },
