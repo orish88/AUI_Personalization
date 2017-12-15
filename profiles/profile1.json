@@ -150,7 +150,7 @@
                         "tooltip": "home",
                         "text": "",
                         "Symbol": {
-                            "url": "https://cloud.githubusercontent.com/assets/10908915/9038627/6c2fda60-39fe-11e5-8f07-8fd95e1abb41.png",
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home_red.jpg",
                             "creator": {
                                 "name": "Jardson Almeida, The Noun Project",
                                 "url": ""
@@ -185,7 +185,7 @@
                         "tooltip": "our email",
                         "text": "",
                         "Symbol": {
-                            "url": "",
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home_red.jpg",
                             "creator": {
                                 "name": "",
                                 "url": ""
@@ -321,7 +321,7 @@
                         "tooltip": "map of this website",
                         "text": "",
                         "Symbol": {
-                            "url": "https://github.com/orish88/AUI_Personalization/blob/master/images/sitemap_red.png",
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap_red.png",
                             "creator": {
                                 "name": "",
                                 "url": ""
@@ -355,7 +355,7 @@
                         "tooltip": "pick language",
                         "text": "Language",
                         "Symbol": {
-                            "url": "https://github.com/orish88/AUI_Personalization/blob/master/images/lang_red.png",
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang_red.png",
                             "creator": {
                                 "name": "",
                                 "url": ""
