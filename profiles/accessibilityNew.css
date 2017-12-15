@@ -43,15 +43,25 @@ nav {
 	  
 
 .inner {
-  overflow: visible; }
+  overflow: visible; 
+}
 
 header {
   padding: 5px 20px 10px 50px; }
   
-  a {
-  color:  #069;}
-  a:hover, a:focus, a:visited {
-    text-decoration: none; }
+a {
+  color:  #069;
+}
+
+a:hover, a:focus, a:visited {
+    text-decoration: none; 
+}
+h1 {
+  color:rgb(223, 247, 14)
+}
+strong {
+   color:rgb(223, 247, 14)
+}
 
 header {
   padding: 5px 20px 10px 20px; }
