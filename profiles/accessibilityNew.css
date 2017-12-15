@@ -71,7 +71,7 @@ h1,
 h2,
 h3,
 .main a {
-  color: #1A4F79; }
+  color: rgb(77, 248, 71); }
 
 .main a:visited {
   border-bottom: 1px dashed #1A4F79; }
@@ -170,11 +170,11 @@ h3,
 	  }
 	  
 	     h1 {
-         color: #333;
+         color: rgb(211, 243, 70);
          }
 		 h2{  color: #069;}
 		 .bigblue {
-	color: #000040;
+	color:rgb(211, 243, 70);
 	font-size:larger;
 }
    .main {
