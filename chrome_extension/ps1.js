@@ -62,28 +62,64 @@ function personalizePage(profile) {
 	if (isDefined(profile.css)) {
 		personalizeCSS(profile.css);
 	}
-	if (isDefined(profile.tagnames)) {
-		personalizeTagnames(profile.tagnames);
+	if (isDefined(profile.tagNames)) {
+		personalizeTagnames(profile.tagNames);
 	}
 	if (isDefined(profile.attributes)) {
 		personalizeAttributes(profile.attributes);
 	}
-
+	if (isDefined(profile.itemscope && isDefined(profile.itemscope.itemtypes))) {
+		personalizeItemScopes(profile.itemscope.itemtypes);
+	}
 }
 
-function personalizeTagnames(tagnames){
+function personalizeItemScopes(itemtypes) {
+
+	var elementsWithItemtype = document.querySelectorAll('[itemtype]');
+	var elementsWithItemtypeList = [...elementsWithItemtype]; //convert nodelist to array
+	elementsWithItemtypeList.forEach(element => {
+		personalizeItempropsInsideType(element);
+	});
+}
+
+function personalizeItempropsInsideType(elementWithItemtype) {
+	var typeVal = elementWithItemtype.getAttribute("itemtype");
+	if (isDefined(typeVal)) {
+		var elementsWithItemprop = elementWithItemtype.querySelectorAll("itemprop");
+		var elementsWithItempropList = [...elementsWithItemprop];
+		elementsWithItempropList.forEach(element => {
+			personalizeItempropElement(element, typeVal);
+		});
+	}
+}
+
+function personalizeItempropElement(element, typeVal) {
+	var propVal = element.getAttribute("itemprop");
+	//todo: take the itemtype value and apply its settings to the ekement its declared on) 
+	var changeAttrVal = window.profile.itemscope.itemtypes[typeVal].itemprops[propVal];
+	if (isDefined(changeAttrVal)) {
+		applySettingsOnElement(element, changeAttrVal);
+	}
+}
+
+function personalizeTagnames(tagnames) {
+
+	console.log("personalize tagnames called: " + tagnames);
+
 	var tagnameList = Object.keys(tagnames);
-	tagnameList.forEach(tagname=>{
+	tagnameList.forEach(tagname => {
+		console.log("tagname key: " + tagname);
 		personalizeTagname(tagnames[tagname]);
 	});
 }
 
 function personalizeTagname(tagname) {
-	console.log("personalize tagme called on: " + tagname.offName);
-	if (isDefined(tagname.offName) && isDefined(tagname.settings)) {
+	console.log("personalize tagname called on: " + tagname.offName);
+	if (isDefined(tagname.offName)) {
 		var elementsWithTagname = document.getElementsByTagName(tagname.offName);
-		elementsWithTagname.forEach(element => {
-			applySettingsOnElement(element, tagname.settings)
+		var elementsWithTagnameList = Array.prototype.slice.call(elementsWithTagname);
+		elementsWithTagnameList.forEach(element => {
+			applySettingsOnElement(element, tagname)
 
 		});
 	}
@@ -95,8 +131,8 @@ function personalizeTagname(tagname) {
 function personalizeCSS(cssSettings) {
 	//personalize css:
 	var cssFile = cssSettings.cssFileLink;
-	console.log("css settings css file: "+ cssFile);
-	
+	console.log("css settings css file: " + cssFile);
+
 	if (isDefined(cssFile)) {
 		var linkIndex = cssSettings.linkIndex;
 		changeCSSFile(cssFile, parseInt(linkIndex));
@@ -164,57 +200,71 @@ function personalizeAttributeValue(element, attrVal) {
 	}
 	if (!isDefined(attrVal.settings)) {
 		console.log("missing settings on " + attrVal.offName);
-		return;
 	}
-	applySettingsOnElement(element, attrVal.settings);
+	applySettingsOnElement(element, attrVal);
 
 }
+/**
+ * apply settings(inside attrVal) on elements- includes inheritance!
+ * @param {*} element 
+ * @param {*} attrVal 
+ */
+function applySettingsOnElement(element, attrVal) {
 
-function applySettingsOnElement(element, settings) {
-	console.log("apply settings: "+settings+" on: "+element);
-	//apply css changes:
-	if(!isDefined(settings)){
-		return;
-	}
-	if (isDefined(settings.css)) {
-		var styleSettings = settings.css;
-		setCSS(element, styleSettings);
-	}
-	//change text and symbol:
-	if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
+	if (isDefined(attrVal.inherits)) {
+		var attributeName = attrVal.inherits.attributeName;
+		var attributeValue = attrVal.inherits.attributeValue;
+		var inheritedAttrVal = window.profile.attributes[attributeName].details[attributeValue];
+		applySettingsOnElement(element, inheritedAttrVal);
 
-		//set width and height
-		var height = "30";
-		var width = "30";
-		if (isDefined(settings.height))
-			var height = settings.Symbol.settings.height;
+	} else {
 
-		if (isDefined(settings.Symbol.settings.width))
-			var width = settings.Symbol.settings.width;
-
-		//add icon when text is defined
-		if (isDefined(settings.text))
-			element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + settings.text;
-		//add icon when text isn't defined
-		else element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
-	}
-	else {
-		//change text only
-		if (isDefined(settings.text)) {
-			element.innerHTML = settings.text;
+		var settings = attrVal.settings;
+		console.log("apply settings: " + settings + " on: " + element);
+		//apply css changes:
+		if (!isDefined(settings)) {
+			return;
 		}
-	}
-	//change width to fit text
-	element.style.width = "auto";
-	element.style.paddingRight = "0.5em";
-	element.style.paddingLeft = "0.5em"
-	// add/change tooltip
-	if (isDefined(settings.tooltip)) {
-		element.title = settings.tooltip;
-	}
-	// add/change shortcut (accesskey)
-	if (isDefined(settings.shortcut)) {
-		element.accessKey = settings.shortcut;
+		if (isDefined(settings.css)) {
+			var styleSettings = settings.css;
+			setCSS(element, styleSettings);
+		}
+		//change text and symbol:
+		if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
+
+			//set width and height
+			var height = "30";
+			var width = "30";
+			if (isDefined(settings.height))
+				var height = settings.Symbol.settings.height;
+
+			if (isDefined(settings.Symbol.settings.width))
+				var width = settings.Symbol.settings.width;
+
+			//add icon when text is defined
+			if (isDefined(settings.text))
+				element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + settings.text;
+			//add icon when text isn't defined
+			else element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
+		}
+		else {
+			//change text only
+			if (isDefined(settings.text)) {
+				element.innerHTML = settings.text;
+			}
+		}
+		//change width to fit text
+		element.style.width = "auto";
+		element.style.paddingRight = "0.5em";
+		element.style.paddingLeft = "0.5em"
+		// add/change tooltip
+		if (isDefined(settings.tooltip)) {
+			element.title = settings.tooltip;
+		}
+		// add/change shortcut (accesskey)
+		if (isDefined(settings.shortcut)) {
+			element.accessKey = settings.shortcut;
+		}
 	}
 }
 

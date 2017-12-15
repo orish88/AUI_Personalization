@@ -1,14 +1,10 @@
 {
     "name": "prof1",
     "AUI:desc": "Orish- first simple demo file",
-    "css": 
-    {
+    "css": {
         "cssFileLink": "https://rawgit.com/orish88/AUI_Personalization/master/profiles/accessibilityNew.css",
-        
         "linkIndex": "0",
-
-        "cssSettings": 
-        [
+        "cssSettings": [
             {
                 "propertyName": "backgroundColor",
                 "value": "Black"
@@ -23,13 +19,10 @@
             }
         ]
     },
-   
-    "tagNames": 
-    {
-        "a":{
+    "tagNames": {
+        "a": {
             "offName": "a",
-            "settings": 
-            {
+            "settings": {
                 "css": [
                     {
                         "propertyName": "font-size",
@@ -68,18 +61,16 @@
         }
     },
     "attributes": {
-        "AUI-action":
-        {
+        "AUI-action": {
             "name": "AUI-action",
             "details": {
-                "compose":
-                {
+                "compose": {
                     "offName": "compose",
                     "type": [
                         "button"
                     ],
                     "name": "compose button",
-                    "inherits": "false",
+                    "inherits": "",
                     "settings": {
                         "shortcut": "SHIFT + C",
                         "longdesc": "this button writes or creates your new work.",
@@ -107,14 +98,13 @@
                         ]
                     }
                 },
-                "delete":
-                {
+                "delete": {
                     "offName": "delete",
                     "type": [
                         "button"
                     ],
                     "name": "delete button",
-                    "inherits": "false",
+                    "inherits": "",
                     "settings": {
                         "shortcut": "SHIFT + D",
                         "longdesc": "this button delete your work.",
@@ -144,17 +134,16 @@
                 }
             }
         },
-        "AUI-destination":{
+        "AUI-destination": {
             "name": "AUI-destination",
             "details": {
-                "home":
-                {
+                "home": {
                     "offName": "home",
                     "type": [
                         "link"
                     ],
                     "name": "home link",
-                    "inherits": "false",
+                    "inherits": "",
                     "settings": {
                         "shortcut": "SHIFT+H",
                         "longdesc": "this links to the home page.",
@@ -182,15 +171,14 @@
                         ]
                     }
                 },
-                "email":
-                {
+                "email": {
                     "offName": "email",
                     "type": [
                         "link",
                         "text"
                     ],
                     "name": "our email link",
-                    "inherits": "false",
+                    "inherits": "",
                     "settings": {
                         "shortcut": "",
                         "longdesc": "this links to the our email page.",
@@ -217,6 +205,87 @@
                             }
                         ]
                     }
+                }
+            }
+        }
+    },
+    "itemscope": {
+        "itemtypes": {
+            "http://schema.org/ItemList": {
+                "itemprops": {
+                    "name": {
+                        "offName": "name",
+                        "type": [],
+                        "name": "ItemList-Name",
+                        "inherits": "",
+                        "settings": {
+                            "shortcut": "",
+                            "longdesc": "itemtype itemlist with itemprop name",
+                            "tooltip": "list-name",
+                            "text": "Training itemprop",
+                            "Symbol": {
+                                "url": "",
+                                "creator": {
+                                    "name": "",
+                                    "url": ""
+                                },
+                                "settings": {
+                                    "width": "",
+                                    "height": "",
+                                    "margin": "",
+                                    "padding": ""
+                                }
+                            },
+                            "@aria-hidden": "false",
+                            "css": [
+                                {
+                                    "propertyName": "",
+                                    "value": ""
+                                }
+                            ]
+                        }
+                    }
+                },
+                "itemListElement": {
+                    "offName": "itemListElement",
+                    "type": [],
+                    "name": "ItemList-itemListElement",
+                    "inherits": {
+                        "attributeName": "AUI-destination",
+                        "attributeValue": "home"
+                    }
+                }
+            },
+            "value": {
+                "offName": "http://schema.org/ItemList",
+                "type": [],
+                "name": "our itemtype itemlist",
+                "inherits": "",
+                "settings": {
+                    "shortcut": "",
+                    "longdesc": "itemtype of type itemlist",
+                    "tooltip": "itemtype itemlist",
+                    "text": "itemtype itemlist",
+                    "Symbol": {
+                        "url": "",
+                        "creator": {
+                            "name": "",
+                            "url": ""
+                        },
+                        "settings": {
+                            "width": "",
+                            "height": "",
+                            "margin": "",
+                            "padding": ""
+                        }
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
                 }
             }
         }
