@@ -1,16 +1,76 @@
 {
     "name": "prof1",
-    "AUI:desc": "Orish- first simple demo profile",
-    [
-        {
-            "@AUI-action": [
-                {
+    "AUI:desc": "Orish- first simple demo file",
+    "css": {
+        "cssFileLink": "https://rawgit.com/orish88/AUI_Personalization/master/profiles/accessibilityNew.css",
+        "linkIndex": "0",
+        "cssSettings": [
+            {
+                "propertyName": "backgroundColor",
+                "value": "Black"
+            },
+            {
+                "propertyName": "color",
+                "value": "Orange"
+            },
+            {
+                "propertyName": "font-size",
+                "value": "200%"
+            }
+        ]
+    },
+    "tagNames": {
+        "a": {
+            "offName": "a",
+            "settings": {
+                "css": [
+                    {
+                        "propertyName": "font-size",
+                        "value": "200%"
+                    },
+                    {
+                        "propertyName": "border-color",
+                        "value": "black"
+                    },
+                    {
+                        "propertyName": "color",
+                        "value": "red"
+                    },
+                    {
+                        "propertyName": "border-style",
+                        "value": "solid"
+                    },
+                    {
+                        "propertyName": "font-family",
+                        "value": "Gotham, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+                    },
+                    {
+                        "propertyName": "text-transform",
+                        "value": "none"
+                    },
+                    {
+                        "propertyName": "width",
+                        "value": "auto"
+                    },
+                    {
+                        "propertyName": "background-color",
+                        "value": " #dfe9e9"
+                    }
+                ]
+            }
+        }
+    },
+    "attributes": {
+        "AUI-action": {
+            "name": "AUI-action",
+            "details": {
+                "compose": {
                     "offName": "compose",
                     "type": [
                         "button"
                     ],
                     "name": "compose button",
-                    "inherits": "false",
+                    "inherits": "",
                     "settings": {
                         "shortcut": "SHIFT + C",
                         "longdesc": "this button writes or creates your new work.",
@@ -38,13 +98,13 @@
                         ]
                     }
                 },
-                {
+                "delete": {
                     "offName": "delete",
                     "type": [
                         "button"
                     ],
                     "name": "delete button",
-                    "inherits": "false",
+                    "inherits": "",
                     "settings": {
                         "shortcut": "SHIFT + D",
                         "longdesc": "this button delete your work.",
@@ -72,22 +132,23 @@
                         ]
                     }
                 }
-            ]
+            }
         },
-        {
-            "@AUI-destination": [
-                {
+        "AUI-destination": {
+            "name": "AUI-destination",
+            "details": {
+                "home": {
                     "offName": "home",
                     "type": [
                         "link"
                     ],
                     "name": "home link",
-                    "inherits": "false",
+                    "inherits": "",
                     "settings": {
                         "shortcut": "SHIFT+H",
                         "longdesc": "this links to the home page.",
                         "tooltip": "home",
-                        "text": "home button",
+                        "text": "",
                         "Symbol": {
                             "url": "https://cloud.githubusercontent.com/assets/10908915/9038627/6c2fda60-39fe-11e5-8f07-8fd95e1abb41.png",
                             "creator": {
@@ -95,8 +156,8 @@
                                 "url": ""
                             },
                             "settings": {
-                                "width": "43",
-                                "height": "43",
+                                "width": "60",
+                                "height": "60",
                                 "margin": "",
                                 "padding": ""
                             }
@@ -110,14 +171,14 @@
                         ]
                     }
                 },
-                {
+                "email": {
                     "offName": "email",
                     "type": [
                         "link",
                         "text"
                     ],
                     "name": "our email link",
-                    "inherits": "false",
+                    "inherits": "",
                     "settings": {
                         "shortcut": "",
                         "longdesc": "this links to the our email page.",
@@ -144,7 +205,123 @@
                             }
                         ]
                     }
+                },
+                "services": {
+                    "offName": "services",
+                    "type": [
+                        "link"
+                    ],
+                    "name": "services link",
+                    "inherits": "",
+                    "settings": {
+                        "shortcut": "SHIFT+H",
+                        "longdesc": "this links to the home page.",
+                        "tooltip": "Services",
+                        "text": "Offered Services",
+                        "Symbol": {
+                            "url": "",
+                            "creator": {
+                                "name": "Jardson Almeida, The Noun Project",
+                                "url": ""
+                            },
+                            "settings": {
+                                "width": "60",
+                                "height": "60",
+                                "margin": "",
+                                "padding": ""
+                            }
+                        },
+                        "@aria-hidden": "false",
+                        "css": [
+                            {
+                                "propertyName": "",
+                                "value": ""
+                            }
+                        ]
+                    }
                 }
-            ]
+            }
+        }
+    },
+    "itemscope": {
+        "itemtypes": {
+            "http://schema.org/ItemList": {
+                "itemprops": {
+                    "name": {
+                        "offName": "name",
+                        "type": [],
+                        "name": "ItemList-Name",
+                        "inherits": "",
+                        "settings": {
+                            "shortcut": "",
+                            "longdesc": "itemtype itemlist with itemprop name",
+                            "tooltip": "list-name",
+                            "text": "Training itemprop",
+                            "Symbol": {
+                                "url": "",
+                                "creator": {
+                                    "name": "",
+                                    "url": ""
+                                },
+                                "settings": {
+                                    "width": "",
+                                    "height": "",
+                                    "margin": "",
+                                    "padding": ""
+                                }
+                            },
+                            "@aria-hidden": "false",
+                            "css": [
+                                {
+                                    "propertyName": "",
+                                    "value": ""
+                                }
+                            ]
+                        }
+                    },
+                    "itemListElement": {
+                        "offName": "itemListElement",
+                        "type": [],
+                        "name": "ItemList-itemListElement",
+                        "inherits": {
+                            "attributeName": "AUI-destination",
+                            "attributeValue": "home"
+                        }
+                    }
+                },
+                "value": {
+                    "offName": "http://schema.org/ItemList",
+                    "type": [],
+                    "name": "our itemtype itemlist",
+                    "inherits": "",
+                    "settings": {
+                        "shortcut": "",
+                        "longdesc": "itemtype of type itemlist",
+                        "tooltip": "itemtype itemlist",
+                        "text": "itemtype itemlist",
+                        "Symbol": {
+                            "url": "",
+                            "creator": {
+                                "name": "",
+                                "url": ""
+                            },
+                            "settings": {
+                                "width": "",
+                                "height": "",
+                                "margin": "",
+                                "padding": ""
+                            }
+                        },
+                        "@aria-hidden": "false",
+                        "css": [
+                            {
+                                "propertyName": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                }
+            }
         }
     }
+}

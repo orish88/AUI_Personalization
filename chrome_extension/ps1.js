@@ -1,6 +1,6 @@
 
 
-getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile_v2.json');
+getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
 
 // download JSON skin in url, and personalise page based on the settings in it  
 function getPersonalization(url) {
