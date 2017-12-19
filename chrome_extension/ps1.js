@@ -62,11 +62,12 @@ function personalizePage(profile) {
 	if (isDefined(profile.css)) {
 		personalizeCSS(profile.css);
 	}
-	if (isDefined(profile.tagNames)) {
-		personalizeTagnames(profile.tagNames);
-	}
+
 	if (isDefined(profile.attributes)) {
 		personalizeAttributes(profile.attributes);
+	}
+	if (isDefined(profile.tagNames)) {
+		personalizeTagnames(profile.tagNames);
 	}
 	if (isDefined(profile.itemscope && isDefined(profile.itemscope.itemtypes))) {
 		personalizeItemScopes(profile.itemscope.itemtypes);
@@ -277,25 +278,48 @@ function applySettingsOnElement(element, attrVal) {
 		//change text and symbol:
 		if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
 
+
 			//set width and height
 			var height = "30";
 			var width = "30";
 			if (isDefined(settings.height))
 				var height = settings.Symbol.settings.height;
 
-			if (isDefined(settings.Symbol.settings.width))
+			if (isDefined(settings.Symbol.settings.width)) {
 				var width = settings.Symbol.settings.width;
-
+			}
+			var imgToAdd = document.createElement("img");
+			imgToAdd.setAttribute("src", settings.Symbol.url);
+			imgToAdd.setAttribute("height", height);
+			imgToAdd.setAttribute("width", width);
 			//add icon when text is defined
-			if (isDefined(settings.text))
-				element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + settings.text;
-			//add icon when text isn't defined
-			// else element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " ";
-			else if (isDefined(settings.Symbol.replacetext) && settings.Symbol.replacetext === "true" ) {
+			if (isDefined(settings.text)) {
+
+				element.text = settings.text;
+				imgToAdd.setAttribute("alt", settings.text);
+				element.appendChild(imgToAdd);	
+
+				// element.src = settings.Symbol.url;
+
+				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + settings.text;
+				//add icon when text isn't defined
+				// else element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " ";
+			} else if (isDefined(settings.Symbol.replacetext) && settings.Symbol.replacetext === "true") {
 				console.log("inside replace text");
-				element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> ";
-			}else{
-				element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;	
+				element.text = "";				
+				imgToAdd.setAttribute("alt", element.text);
+				imgToAdd.alt = element.innerHTML;
+				element.appendChild(imgToAdd);
+				// element.src= settings.Symbol.url;
+
+				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\" " + element.innerHTML + "\"\> ";
+			} else {
+				//no text, no replace text
+				imgToAdd.setAttribute("alt", element.text);
+				element.appendChild(imgToAdd);
+				// element.src= settings.Symbol.url;
+				// element.text = element.innerHTML;
+				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
 			}
 		}
 		else {
@@ -305,9 +329,9 @@ function applySettingsOnElement(element, attrVal) {
 			}
 		}
 		//change width to fit text
-		element.style.width = "auto";
-		element.style.paddingRight = "0.5em";
-		element.style.paddingLeft = "0.5em"
+		// element.style.width = "auto";
+		// element.style.paddingRight = "0.5em";
+		// element.style.paddingLeft = "0.5em";
 		// add/change tooltip
 		if (isDefined(settings.tooltip)) {
 			element.title = settings.tooltip;

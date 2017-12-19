@@ -259,7 +259,7 @@
                         "tooltip": "information about the creator",
                         "text": "",
                         "Symbol": {
-                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/aboutred2.png",
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/about_red2.png",
                             "replacetext":"true",
                             "creator": {
                                 "name": "",
