@@ -19,6 +19,8 @@
             }
         ]
     },
+    "simplification":"critical"
+    ,
     "tagNames": {
         "a": {
             "offName": "a",

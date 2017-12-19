@@ -78,11 +78,13 @@ function personalizePage(profile) {
 }
 
 function personalizeSimplification(simplificationLevel) {
+	console.log("simplification levle: "+simplificationLevel);
 	var simplificationValue = simplicficationFromStirngToInt(simplificationLevel);
 
-	var simplificationElements = document.querySelectorAll("[AUI-simplification]");
+	var simplificationElements = document.querySelectorAll('[AUI-simplification]');
 	simplificationElements.forEach(element=>{
-		if(simplicficationFromStirngToInt( element.getAttribute("aui-simplification") ) > simplificationValue ){
+		if(simplicficationFromStirngToInt( element.getAttribute("AUI-simplification") ) > simplificationValue ){
+			console.log("element "+element+ " hidden: ");
 			element.hidden = true;
 		}
 	})
