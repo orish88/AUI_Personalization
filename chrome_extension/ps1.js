@@ -72,13 +72,14 @@ function personalizePage(profile) {
 		personalizeItemScopes(profile.itemscope.itemtypes);
 	}
 	if(isDefined(profile.simplification)){
+		console.log("simplification levle: "+simplificationLevel);
 		var simplificationLevel = profile.simplification;
 		personalizeSimplification(simplificationLevel); 
 	}
 }
 
 function personalizeSimplification(simplificationLevel) {
-	console.log("simplification levle: "+simplificationLevel);
+	console.log("simplification level: "+simplificationLevel);
 	var simplificationValue = simplicficationFromStirngToInt(simplificationLevel);
 
 	var simplificationElements = document.querySelectorAll('[AUI-simplification]');
