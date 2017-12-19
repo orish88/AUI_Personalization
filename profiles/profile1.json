@@ -153,7 +153,7 @@
                         "text": "",
                         "Symbol": {
                             "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_red.png",
-                            "teplacetext":"true",
+                            "replacetext":"true",
                             "creator": {
                                 "name": "Jardson Almeida, The Noun Project",
                                 "url": ""
@@ -188,7 +188,8 @@
                         "tooltip": "our email",
                         "text": "",
                         "Symbol": {
-                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email_red.jpg",
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email_orange.jpg",
+                            "replacetext":"false",
                             "creator": {
                                 "name": "",
                                 "url": ""
@@ -325,8 +326,8 @@
                         "tooltip": "map of this website",
                         "text": "",
                         "Symbol": {
-                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap_red.png",
-                            "teplacetext":"true",
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap_red3.png",
+                            "replacetext":"true",
                             "creator": {
                                 "name": "",
                                 "url": ""
@@ -361,7 +362,7 @@
                         "text": "Language",
                         "Symbol": {
                             "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang_red.png",
-                            "teplacetext":"true",
+                            "replacetext":"true",
                             "creator": {
                                 "name": "",
                                 "url": ""
