@@ -1,7 +1,9 @@
 {
     "name": "prof1",
     "AUI:desc": "Orish- first simple demo file",
+    
     "css": {
+
         "cssFileLink": "https://rawgit.com/orish88/AUI_Personalization/master/profiles/accessibilityNew.css",
         "linkIndex": "0",
         "cssSettings": [
