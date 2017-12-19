@@ -71,6 +71,39 @@ function personalizePage(profile) {
 	if (isDefined(profile.itemscope && isDefined(profile.itemscope.itemtypes))) {
 		personalizeItemScopes(profile.itemscope.itemtypes);
 	}
+	if(isDefined(profile.simplification)){
+		var simplificationLevel = profile.simplification;
+		personalizeSimplification(simplificationLevel); 
+	}
+}
+
+function personalizeSimplification(simplificationLevel) {
+	var simplificationValue = simplicficationFromStirngToInt(simplificationLevel);
+
+	var simplificationElements = document.querySelectorAll("[AUI-simplification]");
+	simplificationElements.forEach(element=>{
+		if(simplicficationFromStirngToInt( element.getAttribute("aui-simplification") ) > simplificationValue ){
+			element.hidden = true;
+		}
+	})
+}
+function simplicficationFromStirngToInt(simplificationString){
+	var simplificationValue = 1;
+	switch (simplificationString) {
+		case "critical":
+			simplificationValue = 1;
+			break;
+		case "high":
+			simplificationValue = 2;
+			break;
+		case "medium":
+			simplificationValue = 3;
+			break;
+		case "low":
+			simplificationValue = 4;
+			break;	
+	}
+	return simplificationString;
 }
 
 function personalizeItemScopes(itemtypes) {
