@@ -153,13 +153,14 @@
                         "text": "",
                         "Symbol": {
                             "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_red.png",
+                            "teplacetext":"true",
                             "creator": {
                                 "name": "Jardson Almeida, The Noun Project",
                                 "url": ""
                             },
                             "settings": {
                                 "width": "100",
-                                "height": "180",
+                                "height": "250",
                                 "margin": "",
                                 "padding": ""
                             }
@@ -194,7 +195,7 @@
                             },
                             "settings": {
                                 "width": "100",
-                                "height": "180",
+                                "height": "300",
                                 "margin": "",
                                 "padding": ""
                             }
@@ -256,6 +257,7 @@
                         "text": "",
                         "Symbol": {
                             "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/abou_red.jpg",
+                            "replacetext":"true",
                             "creator": {
                                 "name": "",
                                 "url": ""
@@ -324,6 +326,7 @@
                         "text": "",
                         "Symbol": {
                             "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap_red.png",
+                            "teplacetext":"true",
                             "creator": {
                                 "name": "",
                                 "url": ""
@@ -358,6 +361,7 @@
                         "text": "Language",
                         "Symbol": {
                             "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang_red.png",
+                            "teplacetext":"true",
                             "creator": {
                                 "name": "",
                                 "url": ""
