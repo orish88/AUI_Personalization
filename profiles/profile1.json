@@ -390,7 +390,7 @@
             }
         }
     },
-    "itemscope": {
+    "scopes": {
         "itemtypes": {
             "http://schema.org/ItemList": {
                 "itemprops": {
@@ -469,6 +469,85 @@
                     }
                 }
             }
+        },
+        "autocomplete": {
+            "on": {
+                "names": {
+                    "fname": {
+                        "offName": "fname",
+                        "type": [],
+                        "name": "ItemList-Name",
+                        "inherits": "",
+                        "settings": {
+                            "shortcut": "",
+                            "longdesc": "itemtype itemlist with itemprop name",
+                            "tooltip": "first name tooltip",
+                            "text": "Training itemprop",
+                            "Symbol": {
+                                "url": "",
+                                "creator": {
+                                    "name": "",
+                                    "url": ""
+                                },
+                                "settings": {
+                                    "width": "",
+                                    "height": "",
+                                    "margin": "",
+                                    "padding": ""
+                                }
+                            },
+                            "@aria-hidden": "false",
+                            "css": [
+                                {
+                                    "propertyName": "color",
+                                    "value": "red"
+                                }
+                            ]
+                        }
+                    },
+                    "lname": {
+                        "offName": "lname",
+                        "type": [],
+                        "name": "last name",
+                        "settings":{
+                            "tooltip":"last name tooltip"   
+                        }
+                    }
+                },
+                "value": {
+                    "offName": "on",
+                    "type": [],
+                    "name": "our itemtype itemlist",
+                    "inherits": "",
+                    "settings": {
+                        "shortcut": "",
+                        "longdesc": "itemtype of type itemlist",
+                        "tooltip": "autocomplete (scope start,no name) tooltip",
+                        "text": "itemtype itemlist",
+                        "Symbol": {
+                            "url": "",
+                            "creator": {
+                                "name": "",
+                                "url": ""
+                            },
+                            "settings": {
+                                "width": "",
+                                "height": "",
+                                "margin": "",
+                                "padding": ""
+                            }
+                        },
+                        "@aria-hidden": "false",
+                        "css": [
+                            {
+                                "propertyName": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                }
+            }
         }
+
     }
 }

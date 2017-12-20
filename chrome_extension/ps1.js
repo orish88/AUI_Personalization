@@ -69,11 +69,14 @@ function personalizePage(profile) {
 	if (isDefined(profile.tagNames)) {
 		personalizeTagnames(profile.tagNames);
 	}
-	if (isDefined(profile.itemscope && isDefined(profile.itemscope.itemtypes))) {
-		personalizeItemScopes(profile.itemscope.itemtypes);
+	if (isDefined(profile.scopes && isDefined(profile.scopes.itemtypes))) {
+		personalizeItemScopes(profile.scopes.itemtypes);
+	}
+	if (isDefined(profile.scopes && isDefined(profile.scopes.autocomplete))) {
+		personalizeAutocomplete(profile.scopes.autocomplete);
 	}
 	if(isDefined(profile.simplification)){
-		console.log("simplification levle: "+simplificationLevel);
+		console.log("simplification level: "+simplificationLevel);
 		var simplificationLevel = profile.simplification;
 		personalizeSimplification(simplificationLevel); 
 	}
@@ -110,6 +113,41 @@ function simplicficationFromStirngToInt(simplificationString){
 	return simplificationString;
 }
 
+function personalizeAutocomplete(autocomplete) {
+	console.log("personalize Autocomplete called");
+	var elementsWithItemtype = document.querySelectorAll('[autocomplete = "on" ]');
+	var elementsWithItemtypeList = [...elementsWithItemtype]; //convert nodelist to array
+	elementsWithItemtypeList.forEach(element => {
+			personalizeNamesInsideAutocomplete(element);
+	});
+}
+function personalizeNamesInsideAutocomplete(elementWithAutoComplete){
+
+	console.log("personalize autocomplete for " +elementWithAutoComplete+" called");
+	if (isDefined(typeVal)) {
+		var elementsWithName = elementWithAutoComplete.querySelectorAll('[name]:not[autocomplete="off"]');
+		var elementsWithNameList = [...elementsWithName];
+		console.log("elements with name list size: "+elementsWithNameList.length);
+		elementsWithNameList.forEach(element => {
+			console.log("personalize autocomplete name element - in loop before call:  val: ("+typeVal+") element: " +element+" ");
+			personalizeAutoCompleteNameElement(element);
+		});
+	}
+}
+
+function personalizeAutoCompleteNameElement(elementWithName){
+	var nameVal = element.getAttribute("name");
+	console.log("personalize autocomplete element. nameVal: " +nameVal +" called");
+	//todo: take the itemtype value and apply its settings to the ekement its declared on) 
+	var changeAttrVal = window.profile.scopes.autocomplete["on"].names[nameVal];
+
+	if (isDefined(changeAttrVal)) {
+		console.log("auticomplete name- changeAttrVal.inherits: "+changeAttrVal.inherits);
+		applySettingsOnElement(element, changeAttrVal);
+	}
+}
+
+//itemtypes
 function personalizeItemScopes(itemtypes) {
 	console.log("personalize itemScopes called");
 
@@ -139,7 +177,7 @@ function personalizeItempropElement(element, typeVal) {
 	var propVal = element.getAttribute("itemprop");
 	console.log("personalize itemprop element. typeval: "+typeVal+",proprVal "+propVal +" called");
 	//todo: take the itemtype value and apply its settings to the ekement its declared on) 
-	var changeAttrVal = window.profile.itemscope.itemtypes[typeVal].itemprops[propVal];
+	var changeAttrVal = window.profile.scopes.itemtypes[typeVal].itemprops[propVal];
 
 	if (isDefined(changeAttrVal)) {
 		console.log("itemprop- changeAttrVal.inherits: "+changeAttrVal.inherits);
