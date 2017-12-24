@@ -121,29 +121,29 @@ function personalizeAutocomplete(autocomplete) {
 			personalizeNamesInsideAutocomplete(element);
 	});
 }
-function personalizeNamesInsideAutocomplete(elementWithAutoComplete){
+function personalizeNamesInsideAutocomplete(elementWithAutoComplete) {
 
-	console.log("personalize autocomplete for " +elementWithAutoComplete+" called");
-	if (isDefined(typeVal)) {
-		var elementsWithName = elementWithAutoComplete.querySelectorAll('[name]:not[autocomplete="off"]');
-		var elementsWithNameList = [...elementsWithName];
-		console.log("elements with name list size: "+elementsWithNameList.length);
-		elementsWithNameList.forEach(element => {
-			console.log("personalize autocomplete name element - in loop before call:  val: ("+typeVal+") element: " +element+" ");
-			personalizeAutoCompleteNameElement(element);
-		});
-	}
+	console.log("personalize autocomplete for " + elementWithAutoComplete + " called");
+
+	var elementsWithName = elementWithAutoComplete.querySelectorAll('input[name]:not([autocomplete="off"])');
+	var elementsWithNameList = [...elementsWithName];
+	console.log("elements with name list size: " + elementsWithNameList.length);
+	elementsWithNameList.forEach(element => {
+		console.log("personalize autocomplete name element - in loop before call: element: " + element + " ");
+		personalizeAutoCompleteNameElement(element);
+	});
+
 }
 
 function personalizeAutoCompleteNameElement(elementWithName){
-	var nameVal = element.getAttribute("name");
+	var nameVal = elementWithName.getAttribute("name");
 	console.log("personalize autocomplete element. nameVal: " +nameVal +" called");
 	//todo: take the itemtype value and apply its settings to the ekement its declared on) 
 	var changeAttrVal = window.profile.scopes.autocomplete["on"].names[nameVal];
 
 	if (isDefined(changeAttrVal)) {
 		console.log("auticomplete name- changeAttrVal.inherits: "+changeAttrVal.inherits);
-		applySettingsOnElement(element, changeAttrVal);
+		applySettingsOnElement(elementWithName, changeAttrVal);
 	}
 }
 
@@ -354,7 +354,7 @@ function applySettingsOnElement(element, attrVal) {
 			} else {
 				//no text, no replace text
 				imgToAdd.setAttribute("alt", element.text);
-				element.appendChild(imgToAdd);
+				element.insertBefore(imgToAdd, element.firstChild);
 				// element.src= settings.Symbol.url;
 				// element.text = element.innerHTML;
 				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;

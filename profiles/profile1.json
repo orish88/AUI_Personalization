@@ -9,7 +9,7 @@
         "cssSettings": [
             {
                 "propertyName": "backgroundColor",
-                "value": "Black"
+                "value": "Gray"
             },
             {
                 "propertyName": "color",
@@ -402,8 +402,8 @@
                         "settings": {
                             "shortcut": "",
                             "longdesc": "itemtype itemlist with itemprop name",
-                            "tooltip": "list-name",
-                            "text": "Training itemprop",
+                            "tooltip": "Training",
+                            "text": "Training",
                             "Symbol": {
                                 "url": "",
                                 "creator": {
