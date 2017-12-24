@@ -9,11 +9,11 @@
         "cssSettings": [
             {
                 "propertyName": "backgroundColor",
-                "value": "Gray"
+                "value": "Blue"
             },
             {
                 "propertyName": "color",
-                "value": "Orange"
+                "value": "Red"
             },
             {
                 "propertyName": "font-size",

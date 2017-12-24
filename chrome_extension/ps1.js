@@ -220,13 +220,13 @@ function personalizeCSS(cssSettings) {
 		var linkIndex = cssSettings.linkIndex;
 		changeCSSFile(cssFile, parseInt(linkIndex));
 		console.log("new css: " + document.getElementsByTagName("link").item(linkIndex));
-	} else {
-		var cssBodySettings = profile.css.cssSettings;
-		if (isDefined(cssBodySettings)) {
-			console.log("set body css called on " + cssBodySettings);
-			setCSS(document.body.style, cssBodySettings);
-		}
 	}
+	var cssBodySettings = profile.css.cssSettings;
+	if (isDefined(cssBodySettings)) {
+		console.log("set body css called on " + cssBodySettings);
+		setCSS(document.body.style, cssBodySettings);
+	}
+
 }
 
 
@@ -354,6 +354,8 @@ function applySettingsOnElement(element, attrVal) {
 			} else {
 				//no text, no replace text
 				imgToAdd.setAttribute("alt", element.text);
+				//TODO: Add case of language from right to left like hebrew
+				// element.appendChild(imgToAdd);
 				element.insertBefore(imgToAdd, element.firstChild);
 				// element.src= settings.Symbol.url;
 				// element.text = element.innerHTML;
