@@ -224,7 +224,7 @@ function personalizeCSS(cssSettings) {
 	var cssBodySettings = profile.css.cssSettings;
 	if (isDefined(cssBodySettings)) {
 		console.log("set body css called on " + cssBodySettings);
-		setCSS(document.body.style, cssBodySettings);
+		setCSS(document.body, cssBodySettings);
 	}
 
 }
@@ -396,7 +396,8 @@ function setCSS(element, settings) {
 			var propertyName = settingPair.propertyName;
 			if (isDefined(settingPair.value)) {
 				var value = settingPair.value;
-				$(element).css(propertyName, value);
+				element.style[propertyName] = value;
+				// $(element).css(propertyName, value);
 			}
 		}
 	});

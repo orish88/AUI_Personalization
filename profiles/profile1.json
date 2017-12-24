@@ -294,7 +294,7 @@
                         "tooltip": "contact the creators",
                         "text": "",
                         "Symbol": {
-                            "url": "https://github.com/orish88/AUI_Personalization/blob/master/images/contact_us_phone_red.jpg",
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/contact_us_phone_red.jpg",
                             "creator": {
                                 "name": "",
                                 "url": ""
@@ -309,7 +309,11 @@
                         "@aria-hidden": "false",
                         "css": [
                             {
-                                "propertyName": "",
+                                "propertyName": "backgroundColor",
+                                "value": "black"
+                            },
+                            {
+                                "propertyName": "color",
                                 "value": ""
                             }
                         ]
