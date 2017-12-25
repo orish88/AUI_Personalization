@@ -22,43 +22,41 @@
     "simplification": "critical",
     "tagNames": {
         "a": {
-            "offName": "a",
-            "settings": {
-                "css": [
-                    {
-                        "propertyName": "font-size",
-                        "value": "200%"
-                    },
-                    {
-                        "propertyName": "border-color",
-                        "value": "red"
-                    },
-                    {
-                        "propertyName": "color",
-                        "value": "red"
-                    },
-                    {
-                        "propertyName": "border-style",
-                        "value": "solid"
-                    },
-                    {
-                        "propertyName": "font-family",
-                        "value": "Gotham, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
-                    },
-                    {
-                        "propertyName": "text-transform",
-                        "value": "none"
-                    },
-                    {
-                        "propertyName": "width",
-                        "value": "auto"
-                    },
-                    {
-                        "propertyName": "background-color",
-                        "value": "black"
-                    }
-                ]
-            }
+            "name": "a",
+            "css": [
+                {
+                    "propertyName": "font-size",
+                    "value": "200%"
+                },
+                {
+                    "propertyName": "border-color",
+                    "value": "red"
+                },
+                {
+                    "propertyName": "color",
+                    "value": "red"
+                },
+                {
+                    "propertyName": "border-style",
+                    "value": "solid"
+                },
+                {
+                    "propertyName": "font-family",
+                    "value": "Gotham, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+                },
+                {
+                    "propertyName": "text-transform",
+                    "value": "none"
+                },
+                {
+                    "propertyName": "width",
+                    "value": "auto"
+                },
+                {
+                    "propertyName": "background-color",
+                    "value": "black"
+                }
+            ]
         }
     },
     "attributes": {
