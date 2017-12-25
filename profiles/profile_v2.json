@@ -343,41 +343,35 @@
             "http://schema.org/ItemList": {
                 "itemprops": {
                     "name": {
-                        "offName": "name",
+                        "name": "name",
                         "type": [],
-                        "name": "ItemList-Name",
                         "inherits": "",
-                        "settings": {
-                            "shortcut": "",
-                            "longdesc": "itemtype itemlist with itemprop name",
-                            "tooltip": "Training",
-                            "text": "Training",
-                            "Symbol": {
-                                "url": "",
-                                "creator": {
-                                    "name": "",
-                                    "url": ""
-                                },
-                                "settings": {
-                                    "width": "",
-                                    "height": "",
-                                    "margin": "",
-                                    "padding": ""
-                                }
+                        "shortcut": "",
+                        "longdesc": "itemtype itemlist with itemprop name",
+                        "tooltip": "Training",
+                        "text": "Training",
+                        "Symbol": {
+                            "url": "",
+                            "creator": {
+                                "name": "",
+                                "url": ""
                             },
-                            "@aria-hidden": "false",
-                            "css": [
-                                {
-                                    "propertyName": "",
-                                    "value": ""
-                                }
-                            ]
-                        }
+                            "width": "",
+                            "height": "",
+                            "margin": "",
+                            "padding": ""
+                        },
+                        "@aria-hidden": "false",
+                        "css": [
+                            {
+                                "propertyName": "",
+                                "value": ""
+                            }
+                        ]
                     },
                     "itemListElement": {
-                        "offName": "itemListElement",
+                        "name": "itemListElement",
                         "type": [],
-                        "name": "ItemList-itemListElement",
                         "inherits": {
                             "attributeName": "AUI-destination",
                             "attributeValue": "home"
@@ -385,36 +379,31 @@
                     }
                 },
                 "value": {
-                    "offName": "http://schema.org/ItemList",
+                    "name": "http://schema.org/ItemList",
                     "type": [],
-                    "name": "our itemtype itemlist",
                     "inherits": "",
-                    "settings": {
-                        "shortcut": "",
-                        "longdesc": "itemtype of type itemlist",
-                        "tooltip": "itemtype itemlist",
-                        "text": "itemtype itemlist",
-                        "Symbol": {
-                            "url": "",
-                            "creator": {
-                                "name": "",
-                                "url": ""
-                            },
-                            "settings": {
-                                "width": "",
-                                "height": "",
-                                "margin": "",
-                                "padding": ""
-                            }
+                    "shortcut": "",
+                    "longdesc": "itemtype of type itemlist",
+                    "tooltip": "itemtype itemlist",
+                    "text": "itemtype itemlist",
+                    "Symbol": {
+                        "url": "",
+                        "creator": {
+                            "name": "",
+                            "url": ""
                         },
-                        "@aria-hidden": "false",
-                        "css": [
-                            {
-                                "propertyName": "",
-                                "value": ""
-                            }
-                        ]
-                    }
+                        "width": "",
+                        "height": "",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
                 }
             }
         },
@@ -422,77 +411,64 @@
             "on": {
                 "names": {
                     "fname": {
-                        "offName": "fname",
+                        "name": "fname",
                         "type": [],
-                        "name": "ItemList-Name",
                         "inherits": "",
-                        "settings": {
-                            "shortcut": "",
-                            "longdesc": "itemtype itemlist with itemprop name",
-                            "tooltip": "first name tooltip",
-                            "text": "Training itemprop",
-                            "Symbol": {
-                                "url": "",
-                                "creator": {
-                                    "name": "",
-                                    "url": ""
-                                },
-                                "settings": {
-                                    "width": "",
-                                    "height": "",
-                                    "margin": "",
-                                    "padding": ""
-                                }
-                            },
-                            "@aria-hidden": "false",
-                            "css": [
-                                {
-                                    "propertyName": "color",
-                                    "value": "red"
-                                }
-                            ]
-                        }
-                    },
-                    "lname": {
-                        "offName": "lname",
-                        "type": [],
-                        "name": "last name",
-                        "settings": {
-                            "tooltip": "last name tooltip"
-                        }
-                    }
-                },
-                "value": {
-                    "offName": "on",
-                    "type": [],
-                    "name": "our itemtype itemlist",
-                    "inherits": "",
-                    "settings": {
                         "shortcut": "",
-                        "longdesc": "itemtype of type itemlist",
-                        "tooltip": "autocomplete (scope start,no name) tooltip",
-                        "text": "itemtype itemlist",
+                        "longdesc": "itemtype itemlist with itemprop name",
+                        "tooltip": "first name tooltip",
+                        "text": "Training itemprop",
                         "Symbol": {
                             "url": "",
                             "creator": {
                                 "name": "",
                                 "url": ""
                             },
-                            "settings": {
-                                "width": "",
-                                "height": "",
-                                "margin": "",
-                                "padding": ""
-                            }
+                            "width": "",
+                            "height": "",
+                            "margin": "",
+                            "padding": ""
                         },
                         "@aria-hidden": "false",
                         "css": [
                             {
-                                "propertyName": "",
-                                "value": ""
+                                "propertyName": "color",
+                                "value": "red"
                             }
                         ]
+                    },
+                    "lname": {
+                        "name": "lname",
+                        "type": [],
+                        "tooltip": "last name tooltip"
                     }
+                },
+                "value": {
+                    "name": "on",
+                    "type": [],
+                    "inherits": "",
+                    "shortcut": "",
+                    "longdesc": "itemtype of type itemlist",
+                    "tooltip": "autocomplete (scope start,no name) tooltip",
+                    "text": "itemtype itemlist",
+                    "Symbol": {
+                        "url": "",
+                        "creator": {
+                            "name": "",
+                            "url": ""
+                        },
+                        "width": "",
+                        "height": "",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
                 }
             }
         }
