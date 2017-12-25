@@ -7,11 +7,11 @@
         "cssSettings": [
             {
                 "propertyName": "backgroundColor",
-                "value": "Black"
+                "value": "Blue"
             },
             {
                 "propertyName": "color",
-                "value": "Orange"
+                "value": "Red"
             },
             {
                 "propertyName": "font-size",
@@ -19,6 +19,7 @@
             }
         ]
     },
+    "simplification": "critical",
     "tagNames": {
         "a": {
             "offName": "a",
@@ -30,7 +31,7 @@
                     },
                     {
                         "propertyName": "border-color",
-                        "value": "black"
+                        "value": "red"
                     },
                     {
                         "propertyName": "color",
@@ -54,7 +55,7 @@
                     },
                     {
                         "propertyName": "background-color",
-                        "value": " #dfe9e9"
+                        "value": "black"
                     }
                 ]
             }
@@ -62,154 +63,284 @@
     },
     "attributes": {
         "AUI-action": {
-            "name": "AUI-action",
-            "details": {
-                "compose": {
-                    "offName": "compose",
-                    "type": [
-                        "button"
-                    ],
-                    "name": "compose button",
-                    "inherits": "",
-                    "settings": {
-                        "shortcut": "SHIFT + C",
-                        "longdesc": "this button writes or creates your new work.",
-                        "tooltip": "compose",
-                        "text": "compose now",
-                        "Symbol": {
-                            "url": "http://cdn4.iconfinder.com/data/icons/miu/22/common_new_edit_compose_-128.png",
-                            "creator": {
-                                "name": "",
-                                "url": ""
-                            },
-                            "settings": {
-                                "width": "",
-                                "height": "",
-                                "margin": "",
-                                "padding": ""
-                            }
-                        },
-                        "@aria-hidden": "false",
-                        "css": [
-                            {
-                                "propertyName": "",
-                                "value": ""
-                            }
-                        ]
-                    }
+            "global_settings": {
+                "name": "AUI-action"
+            },
+            "compose": {
+                "name": "compose",
+                "type": [
+                    "button"
+                ],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "this button writes or creates your new work.",
+                "tooltip": "compose",
+                "text": "compose now",
+                "Symbol": {
+                    "url": "http://cdn4.iconfinder.com/data/icons/miu/22/common_new_edit_compose_-128.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
                 },
-                "delete": {
-                    "offName": "delete",
-                    "type": [
-                        "button"
-                    ],
-                    "name": "delete button",
-                    "inherits": "",
-                    "settings": {
-                        "shortcut": "SHIFT + D",
-                        "longdesc": "this button delete your work.",
-                        "tooltip": "delete",
-                        "text": "delete",
-                        "Symbol": {
-                            "url": "http://cdn4.iconfinder.com/data/icons/miu/23/editor_trash_delete_recycle_bin-64.png",
-                            "creator": {
-                                "name": "",
-                                "url": ""
-                            },
-                            "settings": {
-                                "width": "",
-                                "height": "",
-                                "margin": "",
-                                "padding": ""
-                            }
-                        },
-                        "@aria-hidden": "false",
-                        "css": [
-                            {
-                                "propertyName": "",
-                                "value": ""
-                            }
-                        ]
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
                     }
-                }
+                ]
+            },
+            "delete": {
+                "name": "delete",
+                "type": [
+                    "button"
+                ],
+                "inherits": "",
+                "shortcut": "SHIFT + D",
+                "longdesc": "this button delete your work.",
+                "tooltip": "delete",
+                "text": "delete",
+                "Symbol": {
+                    "url": "http://cdn4.iconfinder.com/data/icons/miu/23/editor_trash_delete_recycle_bin-64.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
             }
         },
         "AUI-destination": {
-            "name": "AUI-destination",
-            "details": {
+            "global_settings": {
+                "name": "AUI-destination"
+            },
                 "home": {
-                    "offName": "home",
+                    "name": "home",
                     "type": [
                         "link"
                     ],
-                    "name": "home link",
                     "inherits": "",
-                    "settings": {
-                        "shortcut": "SHIFT+H",
-                        "longdesc": "this links to the home page.",
-                        "tooltip": "home",
-                        "text": "home button",
-                        "Symbol": {
-                            "url": "https://cloud.githubusercontent.com/assets/10908915/9038627/6c2fda60-39fe-11e5-8f07-8fd95e1abb41.png",
-                            "creator": {
-                                "name": "Jardson Almeida, The Noun Project",
-                                "url": ""
-                            },
-                            "settings": {
-                                "width": "43",
-                                "height": "43",
-                                "margin": "",
-                                "padding": ""
-                            }
+                    "shortcut": "SHIFT+H",
+                    "longdesc": "this links to the home page.",
+                    "tooltip": "home",
+                    "text": "",
+                    "Symbol": {
+                        "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_red.png",
+                        "replacetext": "true",
+                        "creator": {
+                            "name": "Jardson Almeida, The Noun Project",
+                            "url": ""
                         },
-                        "@aria-hidden": "false",
-                        "css": [
-                            {
-                                "propertyName": "",
-                                "value": ""
-                            }
-                        ]
-                    }
+                        "width": "100",
+                        "height": "250",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
                 },
                 "email": {
-                    "offName": "email",
+                    "name": "email",
                     "type": [
                         "link",
                         "text"
                     ],
-                    "name": "our email link",
                     "inherits": "",
-                    "settings": {
-                        "shortcut": "",
-                        "longdesc": "this links to the our email page.",
-                        "tooltip": "our email",
-                        "text": "our email",
-                        "Symbol": {
-                            "url": "",
-                            "creator": {
-                                "name": "",
-                                "url": ""
-                            },
-                            "settings": {
-                                "width": "",
-                                "height": "",
-                                "margin": "",
-                                "padding": ""
-                            }
+                    "shortcut": "",
+                    "longdesc": "this links to the our email page.",
+                    "tooltip": "our email",
+                    "text": "",
+                    "Symbol": {
+                        "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email_orange.png",
+                        "replacetext": "false",
+                        "creator": {
+                            "name": "",
+                            "url": ""
                         },
-                        "@aria-hidden": "false",
-                        "css": [
-                            {
-                                "propertyName": "",
-                                "value": ""
-                            }
-                        ]
-                    }
+                        "width": "100",
+                        "height": "300",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
+                },
+                "services": {
+                    "name": "services",
+                    "type": [
+                        "link"
+                    ],
+                    "inherits": "",
+                    "shortcut": "SHIFT+H",
+                    "longdesc": "this links to the home page.",
+                    "tooltip": "Services",
+                    "text": "Offered Services",
+                    "Symbol": {
+                        "url": "",
+                        "creator": {
+                            "name": "",
+                            "url": ""
+                        },
+                        "width": "100",
+                        "height": "180",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
+                },
+                "about": {
+                    "name": "about",
+                    "type": [
+                        "link"
+                    ],
+                    "inherits": "",
+                    "shortcut": "SHIFT+H",
+                    "longdesc": "this links to info about the creator etc.",
+                    "tooltip": "information about the creator",
+                    "text": "",
+                    "Symbol": {
+                        "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/about_red2.png",
+                        "replacetext": "true",
+                        "creator": {
+                            "name": "",
+                            "url": ""
+                        },
+                        "width": "100",
+                        "height": "180",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
+                },
+                "contact": {
+                    "name": "contact",
+                    "type": [
+                        "link"
+                    ],
+                    "inherits": "",
+                    "shortcut": "SHIFT+H",
+                    "longdesc": "contach the creators",
+                    "tooltip": "contact the creators",
+                    "text": "",
+                    "Symbol": {
+                        "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/contact_us_phone_red.jpg",
+                        "creator": {
+                            "name": "",
+                            "url": ""
+                        },
+                        "width": "100",
+                        "height": "180",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
+                },
+                "sitemap": {
+                    "name": "sitemap",
+                    "type": [
+                        "link"
+                    ],
+                    "inherits": "",
+                    "shortcut": "SHIFT+H",
+                    "longdesc": "map of the website",
+                    "tooltip": "map of this website",
+                    "text": "",
+                    "Symbol": {
+                        "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap_red3.png",
+                        "replacetext": "true",
+                        "creator": {
+                            "name": "",
+                            "url": ""
+                        },
+                        "width": "100",
+                        "height": "180",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
+                },
+                "lang": {
+                    "name": "lang",
+                    "type": [
+                        "link"
+                    ],
+                    "inherits": "",
+                    "shortcut": "SHIFT+H",
+                    "longdesc": "pick language",
+                    "tooltip": "pick language",
+                    "text": "Language",
+                    "Symbol": {
+                        "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang_red.png",
+                        "replacetext": "true",
+                        "creator": {
+                            "name": "",
+                            "url": ""
+                        },
+                        "width": "100",
+                        "height": "180",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
                 }
             }
-        }
     },
-    "itemscope": {
+    "scopes": {
         "itemtypes": {
             "http://schema.org/ItemList": {
                 "itemprops": {
@@ -221,8 +352,8 @@
                         "settings": {
                             "shortcut": "",
                             "longdesc": "itemtype itemlist with itemprop name",
-                            "tooltip": "list-name",
-                            "text": "Training itemprop",
+                            "tooltip": "Training",
+                            "text": "Training",
                             "Symbol": {
                                 "url": "",
                                 "creator": {
@@ -264,6 +395,84 @@
                         "shortcut": "",
                         "longdesc": "itemtype of type itemlist",
                         "tooltip": "itemtype itemlist",
+                        "text": "itemtype itemlist",
+                        "Symbol": {
+                            "url": "",
+                            "creator": {
+                                "name": "",
+                                "url": ""
+                            },
+                            "settings": {
+                                "width": "",
+                                "height": "",
+                                "margin": "",
+                                "padding": ""
+                            }
+                        },
+                        "@aria-hidden": "false",
+                        "css": [
+                            {
+                                "propertyName": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "autocomplete": {
+            "on": {
+                "names": {
+                    "fname": {
+                        "offName": "fname",
+                        "type": [],
+                        "name": "ItemList-Name",
+                        "inherits": "",
+                        "settings": {
+                            "shortcut": "",
+                            "longdesc": "itemtype itemlist with itemprop name",
+                            "tooltip": "first name tooltip",
+                            "text": "Training itemprop",
+                            "Symbol": {
+                                "url": "",
+                                "creator": {
+                                    "name": "",
+                                    "url": ""
+                                },
+                                "settings": {
+                                    "width": "",
+                                    "height": "",
+                                    "margin": "",
+                                    "padding": ""
+                                }
+                            },
+                            "@aria-hidden": "false",
+                            "css": [
+                                {
+                                    "propertyName": "color",
+                                    "value": "red"
+                                }
+                            ]
+                        }
+                    },
+                    "lname": {
+                        "offName": "lname",
+                        "type": [],
+                        "name": "last name",
+                        "settings": {
+                            "tooltip": "last name tooltip"
+                        }
+                    }
+                },
+                "value": {
+                    "offName": "on",
+                    "type": [],
+                    "name": "our itemtype itemlist",
+                    "inherits": "",
+                    "settings": {
+                        "shortcut": "",
+                        "longdesc": "itemtype of type itemlist",
+                        "tooltip": "autocomplete (scope start,no name) tooltip",
                         "text": "itemtype itemlist",
                         "Symbol": {
                             "url": "",

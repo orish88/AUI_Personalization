@@ -1,353 +1,40 @@
-/* name: personalisation1.0.js
-
-author: Ayelet Seeman
-
-The script personalises the web page according to user settings in the JSON profile
-
-see more at: https://github.com/ayelet-seeman/coga.personalisation/
-*/
-console.log(document)
 
 
-getPersonalisation('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile_v2.json');
-
-
-
-alert("ps1 runs 7");
-// getPersonalisation('https://rawgit.com/ayelet-seeman/coga.personalisation/JSON-Script/json_skin.json');
-/* name: personalisation1.0.js
-
-author: Ayelet Seeman
-
-The script personalises the web page according to user settings in the JSON profile
-
-see more at: https://github.com/ayelet-seeman/coga.personalisation/
-*/
-
-
+getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
+//test changes(1)
 // download JSON skin in url, and personalise page based on the settings in it  
-function getPersonalisation(url) {
+function getPersonalization(url) {
 	//load json skin (profile) and run it
 	makeCorsRequest(url);
-
 }
+// Make the actual CORS request.
+function makeCorsRequest(url) {
 
-var gProfile;
-
-//personalise page based on the settings in the JSON object recieved
-function personalisePage(profile) {
-
-	gProfile = profile;
-	//personalize css:
-	var cssFile = profile.cssFile.cssFileLink;
-	var cssArray = profile.css;
-
-
-	// console.log("set body css called on: "+ cssArray);
-	if (isDefined(cssFile)) {
-		var linkIndex = profile.cssFile.linkIndex;
-		changeCSS(cssFile, parseInt(linkIndex));
-		console.log("new css: " + document.getElementsByTagName("link").item(linkIndex));
-	}
-	else
-		if (isDefined(cssArray)) {
-			console.log("set body css called on " + cssArray);
-			setBodyCSS(cssArray);
-		}
-
-	//personalize tagnames:
-	if (isDefined(profile.tagNames)) {
-		console.log("in tagnames loop");
-		for (var k = 0; k < profile.tagNames.length; k++) {
-			personalizeTagName(profile.tagNames[k]);
-		}
-	}
-
-	//personalize attributes:	
-	console.log("prof (4) length: " + profile.attributes.length);
-	for (var i = 0; i < profile.attributes.length; i++) {
-		var attribute = profile.attributes[i];
-		console.log("attr: " + attribute);
-		console.log("attr name: " + attribute.name);
-		personalizeAttribute(attribute);
-	}
-
-
-
-	//select all elements in document
-
-	// var x = document.querySelectorAll('body *');
-
-	// for (var i = 0; i < x.length; i++) {
-	// 	//run personalisation
-	// 	personalise_element(x[i], profile);
-	// }
-
-	//hide button for loading JSON skin. Line will be removed in later versions.
-
-	// document.getElementById("personalise_page").setAttribute("aria-hidden", "true");
-
-}
-function personalizeTagName(tagnameInfo) {
-	console.log("personalize tagname called");
-	var elementsWithTagName = document.getElementsByTagName(tagnameInfo.offName);
-	for (var i = 0; i < elementsWithTagName.length; i++) {
-		console.log("elemets with tagname: " + elementsWithTagName[i]);
-		personalise_element_tagname(elementsWithTagName[i], tagnameInfo);
-	}
-
-}
-function personalizeAttribute(attribute) {
-	var elementsWithAttr = document.querySelectorAll('[' + attribute.name + ']');
-	// var elementsWithAttr = document.querySelectorAll("href");
-	console.log("query result length: " + elementsWithAttr.length);
-	for (var i = 0; i < elementsWithAttr.length; i++) {
-		console.log("elemets with attr: " + elementsWithAttr[i]);
-		personalise_element_attribute(elementsWithAttr[i], attribute.details, attribute.name);
-	}
-}
-
-function personalise_element_tagname(element, tagNameInfo) {
-	if (isDefined(tagNameInfo)){
-		if (isDefined(tagNameInfo.offName)){
-			//check if element needs to be personalised differently
-			if (element.tagName == "INPUT") {
-				style_form_element(element, tagNameInfo);
-			}
-		}else{
-			return;
-		}
-	}else{
+	var xhr = createCORSRequest('GET', url);
+	if (!xhr) {
+		alert('CORS not supported');
 		return;
 	}
-	console.log("in personalise_element_tagname- defined: "+tagNameInfo.offName);
 
-	//change descendents
-	if (isDefined(tagNameInfo.descendents)) {
-		setCSS_des(element, tagNameInfo.descendents);
+	// Response handlers.
+	xhr.onload = function () {
+		var text = xhr.responseText;
+		//parse JSON
+		var jsonSkin = JSON.parse(text);
+		//make global variable
 
-	}
+		window.profile = jsonSkin;
 
-	//check icon exists
+		//run settings
+		personalizePage(jsonSkin);
 
-	if (isDefined(tagNameInfo.settings)) {
+	};
 
-		if (isDefined(tagNameInfo.settings.Symbol) && isDefined(tagNameInfo.settings.Symbol.url)  ) {
+	xhr.onerror = function () {
+		console.log("looks like the browser doesn't support CORS. Alternatives include using a proxy or JSONP.");
+	};
 
-			//set width and height
-			var height = "30";
-			var width = "30";
-			if (isDefined(tagNameInfo.settings.Symbol.settings.height))
-				var height = tagNameInfo.settings.Symbol.settings.height;
-
-			if (isDefined(tagNameInfo.settings.Symbol.settings.width))
-				var width = tagNameInfo.settings.Symbol.settings.width;
-
-
-			//add icon when text is defined
-			if (isDefined(tagNameInfo.settings.text))
-				element.innerHTML = "\<img src\=\"" + tagNameInfo.settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + tagNameInfo.settings.text;
-
-			//add icon when text isn't defined
-			else element.innerHTML = "\<img src\=\"" + tagNameInfo.settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
-		}
-
-		else {
-			//change text only
-			if (isDefined(tagNameInfo.settings.text))
-				element.innerHTML = tagNameInfo.settings.text;
-		}
-
-		//change width to fit text
-		element.style.width = "auto";
-		element.style.paddingRight = "0.5em";
-		element.style.paddingLeft = "0.5em"
-
-		//change style
-		var styleSettings = tagNameInfo.settings.css;
-		setCSS(element, styleSettings);
-
-		// add/change tooltip
-		if (isDefined(tagNameInfo.settings.tooltip))
-			element.title = tagNameInfo.settings.tooltip;
-
-		// add/change shortcut (accesskey)
-		if (isDefined(tagNameInfo.settings.shortcut))
-			element.accessKey = tagNameInfo.settings.shortcut;
-
-
-	}
-
-
-
-
-
-}
-/**
- * get the change settings of the inherited attribute+val combo 
- * @param {*} attribute 
- * @param {*} value 
- */
-function findInheritedSettings(attributeName, valueName) 
-{
-	if (isDefined(gProfile)) 
-	{
-		for (var i = 0; i < gProfile.attributes.length; i++) 
-		{
-			var curAttribute = gProfile.attributes[i];
-			if (curAttribute.name === attributeName) 
-			{
-				for (var j = 0; j < curAttribute.details.length; j++) 
-				{
-					var curValue = curAttribute.details[j];
-					if ( curValue.offName === valueName ) 
-					{
-						return curValue;
-					}
-				}
-			}
-		}
-	}
-}
-//personalise element by attributeName according to the settings in the JSON object recieved
-//works also with tag name
-function personalise_element_attribute(element, profileAttribute, AttributeName) {
-	// if( isDefined(profileAttribute.inherit) ){
-	// 	personalise_element_attribute(element,profile.attributes.)
-	// }
-	//code for an attribute
-	// else 
-	var attribute = element.getAttribute(AttributeName);
-	//check they are defined
-	if (isDefined(profileAttribute))
-		if (isDefined(attribute)) {
-
-			var numFunc = profileAttribute.length;
-
-			//get settings for that element
-			for (var j = 0; j < numFunc; j++) {
-				if (isDefined(profileAttribute[j].offName))
-					if (attribute == profileAttribute[j].offName) {
-						
-						//check icon exists
-
-						if (isDefined(profileAttribute[j].settings)) {
-							changeElement(element , profileAttribute[j].settings );
-						}
-					}
-			}
-		}
-}
-
-function changeElement(element, settings) {
-	if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
-
-		//set width and height
-		var height = "30";
-		var width = "30";
-		if (isDefined(settings.height))
-			var height = settings.Symbol.settings.height;
-
-		if (isDefined(settings.Symbol.settings.width))
-			var width = settings.Symbol.settings.width;
-
-		//add icon when text is defined
-		if (isDefined(settings.text))
-			element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + settings.text;
-		//add icon when text isn't defined
-		else element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
-	}
-	else {
-		//change text only
-		if (isDefined(settings.text))
-			element.innerHTML = settings.text;
-	}
-
-	//change width to fit text
-	element.style.width = "auto";
-	element.style.paddingRight = "0.5em";
-	element.style.paddingLeft = "0.5em"
-
-	//change style
-	var styleSettings = settings.css;
-	setCSS(element, styleSettings);
-
-	// add/change tooltip
-	if (isDefined(settings.tooltip))
-		element.title = settings.tooltip;
-
-	// add/change shortcut (accesskey)
-	if (isDefined(settings.shortcut))
-		element.accessKey = settings.shortcut;
-}
-
-
-//hide or display element by it's aria-importance according to the settings in the JSON object recieved
-function personalise_element_importance(element, imp_settings) {
-	arImp = element.getAttribute("aria-importance");
-
-	if (isDefined(arImp) && isDefined(imp_settings[arImp].settings['@aria-hidden'])) {
-		//change aria-hidden attribute
-		if (imp_settings[arImp].settings['@aria-hidden'] == "false")
-			element.setAttribute("aria-hidden", "false");
-		else if (imp_settings[arImp].settings['@aria-hidden'] == "true")
-			element.setAttribute("aria-hidden", "true");
-	}
-}
-
-//display elements with an aria-importance attribute one level lower than currently displayed
-function moreOptions(profile) {
-
-	var temp = 0;
-	//change settings in local JSON skin (profile)
-	if (profile['@aria-importance'].high.settings['@aria-hidden'] == "true")
-		profile['@aria-importance'].high.settings['@aria-hidden'] = "false";
-	else
-		if (profile['@aria-importance'].med.settings['@aria-hidden'] == "true")
-			profile['@aria-importance'].med.settings['@aria-hidden'] = "false";
-		else
-			if (profile['@aria-importance'].low.settings['@aria-hidden'] == "true") {
-				profile['@aria-importance'].low.settings['@aria-hidden'] = "false";
-				temp = 1;
-			}
-	//personalise importance according to new profile
-	personalise_page_importance(profile);
-	// hide the more options button if all elements are displayed
-	if (temp == 1) document.getElementById("more_options").setAttribute("aria-hidden", "true");
-
-
-}
-
-//hide elements with an aria-importance attribute one level higher than currently hidden
-function lessOptions(profile) {
-	//change settings in local JSON skin (profile)		
-	if (profile['@aria-importance'].low.settings['@aria-hidden'] == "false")
-		profile['@aria-importance'].low.settings['@aria-hidden'] = "true";
-	else
-		if (profile['@aria-importance'].med.settings['@aria-hidden'] == "false")
-			profile['@aria-importance'].med.settings['@aria-hidden'] = "true";
-		else
-			if (profile['@aria-importance'].high.settings['@aria-hidden'] == "false") {
-				profile['@aria-importance'].high.settings['@aria-hidden'] = "true";
-
-			}
-	//personalise importance according to new profile			 
-	personalise_page_importance(profile);
-}
-
-//hide or display elements by aria-importance according to the settings in the JSON object recieved
-function personalise_page_importance(profile) {
-
-
-	//select all elements in document
-	var x = document.querySelectorAll('body *');
-
-	for (var i = 0; i < x.length; i++) {
-		//hide or display element
-		personalise_element_importance(x[i], profile['@aria-importance']);
-
-	}
-
+	xhr.send();
 }
 
 // Create the XHR object.
@@ -367,175 +54,359 @@ function createCORSRequest(method, url) {
 	return xhr;
 }
 
+//personalise page based on the settings in the JSON object recieved
+function personalizePage(profile) {
 
-// Make the actual CORS request.
-function makeCorsRequest(url) {
+	console.log("personalize page called for profile: " + profile.name);
 
-	var xhr = createCORSRequest('GET', url);
-	if (!xhr) {
-		alert('CORS not supported');
-		return;
+	if (isDefined(profile.css)) {
+		personalizeCSS(profile.css);
 	}
 
-	// Response handlers.
-	xhr.onload = function () {
-		var text = xhr.responseText;
-		//parse JSON
-		var jsonSkin = JSON.parse(text);
-		//make global variable
+	if (isDefined(profile.attributes)) {
+		personalizeAttributes(profile.attributes);
+	}
+	if (isDefined(profile.tagNames)) {
+		personalizeTagnames(profile.tagNames);
+	}
+	if (isDefined(profile.scopes && isDefined(profile.scopes.itemtypes))) {
+		personalizeItemScopes(profile.scopes.itemtypes);
+	}
+	if (isDefined(profile.scopes && isDefined(profile.scopes.autocomplete))) {
+		personalizeAutocomplete(profile.scopes.autocomplete);
+	}
+	if(isDefined(profile.simplification)){
+		console.log("simplification level: "+simplificationLevel);
+		var simplificationLevel = profile.simplification;
+		personalizeSimplification(simplificationLevel); 
+	}
+}
 
-		console.log(jsonSkin["name"]);
-		var cogadesc = "AUI:desc";
-		console.log(jsonSkin[cogadesc]);
-		window.profile = jsonSkin;
+function personalizeSimplification(simplificationLevel) {
+	console.log("simplification level: "+simplificationLevel);
+	var simplificationValue = simplicficationFromStirngToInt(simplificationLevel);
 
-		//run settings
-		personalisePage(jsonSkin);
+	var simplificationElements = document.querySelectorAll('[AUI-simplification]');
+	simplificationElements.forEach(element=>{
+		if(simplicficationFromStirngToInt( element.getAttribute("AUI-simplification") ) > simplificationValue ){
+			console.log("element "+element+ " hidden: ");
+			element.hidden = true;
+		}
+	});
+}
+function simplicficationFromStirngToInt(simplificationString){
+	var simplificationValue = 1;
+	switch (simplificationString) {
+		case "critical":
+			simplificationValue = 1;
+			break;
+		case "high":
+			simplificationValue = 2;
+			break;
+		case "medium":
+			simplificationValue = 3;
+			break;
+		case "low":
+			simplificationValue = 4;
+			break;	
+	}
+	return simplificationString;
+}
 
-	};
+function personalizeAutocomplete(autocomplete) {
+	console.log("personalize Autocomplete called");
+	var elementsWithItemtype = document.querySelectorAll('[autocomplete = "on" ]');
+	var elementsWithItemtypeList = [...elementsWithItemtype]; //convert nodelist to array
+	elementsWithItemtypeList.forEach(element => {
+			personalizeNamesInsideAutocomplete(element);
+	});
+}
+function personalizeNamesInsideAutocomplete(elementWithAutoComplete) {
 
-	xhr.onerror = function () {
-		console.log("looks like the browser doesn't support CORS. Alternatives include using a proxy or JSONP.");
-	};
+	console.log("personalize autocomplete for " + elementWithAutoComplete + " called");
 
-	xhr.send();
+	var elementsWithName = elementWithAutoComplete.querySelectorAll('input[name]:not([autocomplete="off"])');
+	var elementsWithNameList = [...elementsWithName];
+	console.log("elements with name list size: " + elementsWithNameList.length);
+	elementsWithNameList.forEach(element => {
+		console.log("personalize autocomplete name element - in loop before call: element: " + element + " ");
+		personalizeAutoCompleteNameElement(element);
+	});
+
+}
+
+function personalizeAutoCompleteNameElement(elementWithName){
+	var nameVal = elementWithName.getAttribute("name");
+	console.log("personalize autocomplete element. nameVal: " +nameVal +" called");
+	//todo: take the itemtype value and apply its settings to the ekement its declared on) 
+	var changeAttrVal = window.profile.scopes.autocomplete["on"].names[nameVal];
+
+	if (isDefined(changeAttrVal)) {
+		console.log("auticomplete name- changeAttrVal.inherits: "+changeAttrVal.inherits);
+		applySettingsOnElement(elementWithName, changeAttrVal);
+	}
+}
+
+//itemtypes
+function personalizeItemScopes(itemtypes) {
+	console.log("personalize itemScopes called");
+
+	var elementsWithItemtype = document.querySelectorAll('[itemtype]');
+	var elementsWithItemtypeList = [...elementsWithItemtype]; //convert nodelist to array
+	elementsWithItemtypeList.forEach(element => {
+		personalizeItempropsInsideType(element);
+	});
+}
+
+function personalizeItempropsInsideType(elementWithItemtype) {
+
+	var typeVal = elementWithItemtype.getAttribute("itemtype");
+	console.log("personalize itemprop inside type( "+typeVal+") " +elementWithItemtype+" called");
+	if (isDefined(typeVal)) {
+		var elementsWithItemprop = elementWithItemtype.querySelectorAll('[itemprop]');
+		var elementsWithItempropList = [...elementsWithItemprop];
+		console.log("elements with item propr list size: "+elementsWithItempropList.length);
+		elementsWithItempropList.forEach(element => {
+			console.log("personalize itemprop element - in loop before call:  val: ("+typeVal+") element: " +element+" ");
+			personalizeItempropElement(element, typeVal);
+		});
+	}
+}
+
+function personalizeItempropElement(element, typeVal) {
+	var propVal = element.getAttribute("itemprop");
+	console.log("personalize itemprop element. typeval: "+typeVal+",proprVal "+propVal +" called");
+	//todo: take the itemtype value and apply its settings to the ekement its declared on) 
+	var changeAttrVal = window.profile.scopes.itemtypes[typeVal].itemprops[propVal];
+
+	if (isDefined(changeAttrVal)) {
+		console.log("itemprop- changeAttrVal.inherits: "+changeAttrVal.inherits);
+		applySettingsOnElement(element, changeAttrVal);
+	}
+}
+
+function personalizeTagnames(tagnames) {
+
+	console.log("personalize tagnames called: " + tagnames);
+
+	var tagnameList = Object.keys(tagnames);
+	tagnameList.forEach(tagname => {
+		console.log("tagname key: " + tagname);
+		personalizeTagname(tagnames[tagname]);
+	});
+}
+
+function personalizeTagname(tagname) {
+	console.log("personalize tagname called on: " + tagname.offName);
+	if (isDefined(tagname.offName)) {
+		var elementsWithTagname = document.getElementsByTagName(tagname.offName);
+		var elementsWithTagnameList = Array.prototype.slice.call(elementsWithTagname);
+		elementsWithTagnameList.forEach(element => {
+			applySettingsOnElement(element, tagname)
+
+		});
+	}
+}
+/**
+ * apply page css settings
+ * @param {*} cssSettings 
+ */
+function personalizeCSS(cssSettings) {
+	//personalize css:
+	var cssFile = cssSettings.cssFileLink;
+	console.log("css settings css file: " + cssFile);
+
+	if (isDefined(cssFile)) {
+		var linkIndex = cssSettings.linkIndex;
+		changeCSSFile(cssFile, parseInt(linkIndex));
+		console.log("new css: " + document.getElementsByTagName("link").item(linkIndex));
+	}
+	var cssBodySettings = profile.css.cssSettings;
+	if (isDefined(cssBodySettings)) {
+		console.log("set body css called on " + cssBodySettings);
+		setCSS(document.body, cssBodySettings);
+	}
+
 }
 
 
-
 //change css file
-function changeCSS(cssFile, cssLinkIndex) {
-
+function changeCSSFile(cssFile, cssLinkIndex) {
 	var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-
 	var newlink = document.createElement("link");
 	newlink.setAttribute("rel", "stylesheet");
 	newlink.setAttribute("type", "text/css");
 	newlink.setAttribute("href", cssFile);
-
 	document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
 }
-//set elements' CSS according to the settings in the JSON object recieved
-function setCSS(element, settings) {
-	if (isDefined(settings))
-		for (var i = 0; i < settings.length; i++) {
-			if (isDefined(settings[i].propertyName)) {
-				var propertyName = settings[i].propertyName;
-				if (isDefined(settings[i].value)) {
-					var value = settings[i].value;
-					$(element).css(propertyName, value);
-				}
-			}
-		}
-}
-function setBodyCSS(settings) {
-	// var backgroundColorStr = 'backgroundColor';
-	// var color = 'Green';
-	// document.body.style[backgroundColorSt]= 'Green';
-	if (isDefined(settings))
-		for (var i = 0; i < settings.length; i++) {
-			if (isDefined(settings[i].propertyName)) {
-				var propertyName = settings[i].propertyName;
-				if (isDefined(settings[i].value)) {
-					var value = settings[i].value;
-					$(document.body.style).css(propertyName, value);
-					document.body.style[propertyName] = value;
-					console.log("bodyCss - set this " + propertyName + " to '" + value + "'");
-				}
-			}
-		}
-}
 
 
-//set elements' descendents' CSS according to the settings in the JSON object recieved
-function setCSS_des(element, des_settings) {
-	if (isDefined(des_settings))
-		for (var i = 0; i < des_settings.length; i++) {
-			var styleSettings = des_settings[i].settings.css;
-			if (isDefined(styleSettings));
-			for (var j = 0; j < styleSettings.length; j++) {
-				var propertyName = styleSettings[j].propertyName;
-				var value = styleSettings[j].value;
-				if (isDefined(propertyName) && isDefined(value))
-					$(element).find(des_settings[i].descendentTag).css(propertyName, value);
-			}
-		}
 
-}
-
-// personalise text and icon of form (input) element according to settings in the JSON object recieved
-function style_form_element(elem, profileFeature) {
-	//add icon
-	//note: adding an icon changes slightly the color of the button
-
-	if (isDefined(profileFeature.settings.Symbol.url)) {
-		if (isDefined(profileFeature.settings.text))
-			elem.value = "    " + profileFeature.settings.text;
-		else elem.value = "    " + elem.value;
-		elem.style.backgroundPosition = "left";
-		elem.style.backgroundRepeat = "no\-repeat";
-		elem.style.backgroundSize = "1.2em";
-		elem.style.backgroundImage = "url(" + profileFeature.settings.Symbol.url + ")";
+/**
+ * iterate over the attributes in the profile and change the relevant elements in the DOM 
+ * according to the value and settings.
+ * @param {*} attributes 
+ */
+function personalizeAttributes(attributes) {
+	if (isDefined(attributes)) {
+		var attrList = Object.keys(attributes);
+		attrList.forEach(attributeName => {
+			personalizeAttribute(attributes[attributeName]);
+		});
 	}
+}
+/**
+ * change settings for all element in the DOM that have certain attribute
+ * @param {*} attribute 
+ */
+function personalizeAttribute(attribute) {
+	if (!isDefined(attribute.name) || !isDefined(attribute.details)) {
+		return;
+	}
+	console.log("personalizeAttribute called on: " + attribute.name);
 
-	else
-		if (isDefined(profileFeature.settings.text))
-			elem.value = profileFeature.settings.text;
+	//iterate over all elements with field 'attribute.name' in the DOM
+	var elementsWithAttr = document.querySelectorAll('[' + attribute.name + ']');
+	elementsWithAttr.forEach(element => {
+		var attrValName = element.getAttribute(attribute.name);
+		console.log("attr: " + attribute.name + "= attrValName: " + attrValName);
+		var attrVal = attribute.details[attrValName];
+		personalizeAttributeValue(element, attrVal);
 
+	});
 }
 
-//returns false if the variable is undefined, empty or equalls to null, and true otherwise
+function personalizeAttributeValue(element, attrVal) {
+	if (!isDefined(attrVal)) {
+		console.log("illegal attribute value " + attrVal + " in " + element);
+		return;
+	}
+	if (!isDefined(attrVal.settings)) {
+		console.log("missing settings on " + attrVal.offName);
+	}
+	applySettingsOnElement(element, attrVal);
+
+}
+/**
+ * apply settings(inside attrVal) on elements- includes inheritance!
+ * @param {*} element 
+ * @param {*} attrVal 
+ */
+function applySettingsOnElement(element, attrVal) {
+
+	if (isDefined(attrVal.inherits)) {
+		console.log("inherits called on element: "+element+" with attr val: "+attrVal.offName);
+		var attributeName = attrVal.inherits.attributeName;
+		var attributeValue = attrVal.inherits.attributeValue;
+		var inheritedAttrVal = window.profile.attributes[attributeName].details[attributeValue];
+		applySettingsOnElement(element, inheritedAttrVal);
+
+	} else {
+
+		var settings = attrVal.settings;
+		console.log("apply settings: " + settings + " on: " + element);
+		//apply css changes:
+		if (!isDefined(settings)) {
+			return;
+		}
+		if (isDefined(settings.css)) {
+			var styleSettings = settings.css;
+			setCSS(element, styleSettings);
+		}
+		//change text and symbol:
+		if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
+
+
+			//set width and height
+			var height = "30";
+			var width = "30";
+			if (isDefined(settings.height))
+				var height = settings.Symbol.settings.height;
+
+			if (isDefined(settings.Symbol.settings.width)) {
+				var width = settings.Symbol.settings.width;
+			}
+			var imgToAdd = document.createElement("img");
+			imgToAdd.setAttribute("src", settings.Symbol.url);
+			imgToAdd.setAttribute("height", height);
+			imgToAdd.setAttribute("width", width);
+			//add icon when text is defined
+			if (isDefined(settings.text)) {
+
+				element.text = settings.text;
+				imgToAdd.setAttribute("alt", settings.text);
+				element.appendChild(imgToAdd);	
+
+				// element.src = settings.Symbol.url;
+
+				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + settings.text;
+				//add icon when text isn't defined
+				// else element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " ";
+			} else if (isDefined(settings.Symbol.replacetext) && settings.Symbol.replacetext === "true") {
+				console.log("inside replace text");
+				element.text = "";				
+				imgToAdd.setAttribute("alt", element.text);
+				imgToAdd.alt = element.innerHTML;
+				element.appendChild(imgToAdd);
+				// element.src= settings.Symbol.url;
+
+				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\" " + element.innerHTML + "\"\> ";
+			} else {
+				//no text, no replace text
+				imgToAdd.setAttribute("alt", element.text);
+				//TODO: Add case of language from right to left like hebrew
+				// element.appendChild(imgToAdd);
+				element.insertBefore(imgToAdd, element.firstChild);
+				// element.src= settings.Symbol.url;
+				// element.text = element.innerHTML;
+				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
+			}
+		}
+		else {
+			//change text only
+			if (isDefined(settings.text)) {
+				element.innerHTML = settings.text;
+			}
+		}
+		//change width to fit text
+		// element.style.width = "auto";
+		// element.style.paddingRight = "0.5em";
+		// element.style.paddingLeft = "0.5em";
+		// add/change tooltip
+		if (isDefined(settings.tooltip)) {
+			element.title = settings.tooltip;
+		}
+		// add/change shortcut (accesskey)
+		if (isDefined(settings.shortcut)) {
+			element.accessKey = settings.shortcut;
+		}
+	}
+}
+
+/**
+ * 
+ set elements' CSS according to the settings in the JSON object recieved
+ */
+function setCSS(element, settings) {
+	if (!isDefined(settings)) {
+		return;
+	}
+	settings.forEach(settingPair => {
+		if (isDefined(settingPair.propertyName)) {
+			var propertyName = settingPair.propertyName;
+			if (isDefined(settingPair.value)) {
+				var value = settingPair.value;
+				element.style[propertyName] = value;
+				// $(element).css(propertyName, value);
+			}
+		}
+	});
+}
+
+
 function isDefined(variable) {
 	if (variable != null && variable != undefined && variable != "")
 		return true;
-	console.log("Problem: "+variable+" is not defined");	
 	return false;
 
 }
-
-//personalise page by attributeName according to the settings in the JSON object recieved
-//also works with tagName
-function personalise_page_attribute(profileAttribute, AttributeName) {
-
-
-	//select all elements
-	var x = document.querySelectorAll('body *');
-
-	for (var i = 0; i < x.length; i++) {
-		//personalise each element by attribute
-		personalise_element_attribute(x[i], profileAttribute, AttributeName);
-	}
-
-}
-
-//personalise page by aria-function according to the settings in the JSON object recieved
-function personalise_page_function(profile) {
-
-	personalise_page_attribute(profile['@aria-function'], "aria-function");
-
-
-}
-
-//personalise page by role according to the settings in the JSON object recieved
-function personalise_page_role(profile) {
-
-	personalise_page_attribute(profile['@role'], "role");
-
-
-}
-
-//personalise page by tag name according to the settings in the JSON object recieved
-function personalise_page_tagName(profile) {
-
-	personalise_page_attribute(profile['@tagName'], "tagName");
-
-
-}
-
-
-
-
-
-
-
-

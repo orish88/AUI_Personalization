@@ -309,11 +309,7 @@
                         "@aria-hidden": "false",
                         "css": [
                             {
-                                "propertyName": "backgroundColor",
-                                "value": "black"
-                            },
-                            {
-                                "propertyName": "color",
+                                "propertyName": "",
                                 "value": ""
                             }
                         ]

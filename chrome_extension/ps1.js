@@ -260,17 +260,18 @@ function personalizeAttributes(attributes) {
  * @param {*} attribute 
  */
 function personalizeAttribute(attribute) {
-	if (!isDefined(attribute.name) || !isDefined(attribute.details)) {
+	if (!isDefined(attribute.global_settings)|| ! isDefined(attribute.global_settings.name) ) {
 		return;
 	}
-	console.log("personalizeAttribute called on: " + attribute.name);
+	console.log("new version personalizeAttribute called on: " + attribute.global_settings.name);
 
+	var attributeName = attribute.global_settings.name;
 	//iterate over all elements with field 'attribute.name' in the DOM
-	var elementsWithAttr = document.querySelectorAll('[' + attribute.name + ']');
+	var elementsWithAttr = document.querySelectorAll('[' + attributeName + ']');
 	elementsWithAttr.forEach(element => {
-		var attrValName = element.getAttribute(attribute.name);
-		console.log("attr: " + attribute.name + "= attrValName: " + attrValName);
-		var attrVal = attribute.details[attrValName];
+		var attrValName = element.getAttribute(attributeName);
+		console.log("attr: " + attributeName + "= attrValName: " + attrValName);
+		var attrVal = attribute[attrValName];
 		personalizeAttributeValue(element, attrVal);
 
 	});
@@ -281,9 +282,7 @@ function personalizeAttributeValue(element, attrVal) {
 		console.log("illegal attribute value " + attrVal + " in " + element);
 		return;
 	}
-	if (!isDefined(attrVal.settings)) {
-		console.log("missing settings on " + attrVal.offName);
-	}
+
 	applySettingsOnElement(element, attrVal);
 
 }
@@ -298,17 +297,15 @@ function applySettingsOnElement(element, attrVal) {
 		console.log("inherits called on element: "+element+" with attr val: "+attrVal.offName);
 		var attributeName = attrVal.inherits.attributeName;
 		var attributeValue = attrVal.inherits.attributeValue;
-		var inheritedAttrVal = window.profile.attributes[attributeName].details[attributeValue];
+		var inheritedAttrVal = window.profile.attributes[attributeName][attributeValue];
 		applySettingsOnElement(element, inheritedAttrVal);
 
 	} else {
 
-		var settings = attrVal.settings;
+		var settings = attrVal;
 		console.log("apply settings: " + settings + " on: " + element);
 		//apply css changes:
-		if (!isDefined(settings)) {
-			return;
-		}
+
 		if (isDefined(settings.css)) {
 			var styleSettings = settings.css;
 			setCSS(element, styleSettings);
@@ -320,11 +317,11 @@ function applySettingsOnElement(element, attrVal) {
 			//set width and height
 			var height = "30";
 			var width = "30";
-			if (isDefined(settings.height))
-				var height = settings.Symbol.settings.height;
+			if (isDefined(settings.Symbol.height))
+				var height = settings.Symbol.height;
 
-			if (isDefined(settings.Symbol.settings.width)) {
-				var width = settings.Symbol.settings.width;
+			if (isDefined(settings.Symbol.width)) {
+				var width = settings.Symbol.width;
 			}
 			var imgToAdd = document.createElement("img");
 			imgToAdd.setAttribute("src", settings.Symbol.url);
