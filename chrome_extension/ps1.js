@@ -293,22 +293,43 @@ function applySettingsOnElement(element, attrVal) {
 	if(isDefined(attrVal.type)){
 		var isType = false;
 		var elementType = element.tagName.toUpperCase();
-		attrVal.type.forEach(type =>{
+
+
+		for(var i=0; i < attrVal.type.length; i++){
+			var type = attrVal.type[i];
 			if(type.startsWith("not")){
 				if(type.length < 5 ){
 					continue;
 				}
 				type = type.substring(4);
 				if(type.toUpperCase() === elementType){
+					console.log("in for: change revoked due to type missmatch:\neleType: "+elementType+"\ntype: "+type+"\nval: "+attrVal.name);
 					return;
 				}
 			}else
 			if(type.toUpperCase() === elementType){
 				isType = true;
 				break;
-			}
-		});
+			}	
+		}
+		// attrVal.type.forEach(type =>{
+		// 	if(type.startsWith("not")){
+		// 		if(type.length < 5 ){
+		// 			continue;
+		// 		}
+		// 		type = type.substring(4);
+		// 		if(type.toUpperCase() === elementType){
+		// 			console.log("change revoked due to type missmatch:\neleType: "+elementType+"\ntype: "+type+"\nval: "+attrVal.name);
+		// 			return;
+		// 		}
+		// 	}else
+		// 	if(type.toUpperCase() === elementType){
+		// 		isType = true;
+		// 		break;
+		// 	}
+		// });
 		if(!isType){
+			console.log("change revoked due to type missmatch:\neleType: "+elementType+"\ntype: "+type+"\nval: "+attrVal.name);
 			return;
 		}
 

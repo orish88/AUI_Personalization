@@ -156,8 +156,7 @@
             "email": {
                 "name": "email",
                 "type": [
-                    "link",
-                    "text"
+
                 ],
                 "inherits": "",
                 "shortcut": "",
@@ -187,7 +186,7 @@
             "services": {
                 "name": "services",
                 "type": [
-                    "not a"
+                    
                 ],
                 "inherits": "",
                 "shortcut": "SHIFT+H",
@@ -275,7 +274,7 @@
             "sitemap": {
                 "name": "sitemap",
                 "type": [
-                    " "
+                    ""
                 ],
                 "inherits": "",
                 "shortcut": "SHIFT+H",
