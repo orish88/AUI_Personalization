@@ -1,6 +1,8 @@
 
 
-getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
+// getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
+
+getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile_v2.json');
 //test changes(1)
 // download JSON skin in url, and personalise page based on the settings in it  
 function getPersonalization(url) {
@@ -188,7 +190,6 @@ function personalizeItempropElement(element, typeVal) {
 function personalizeTagnames(tagnames) {
 
 	console.log("personalize tagnames called: " + tagnames);
-
 	var tagnameList = Object.keys(tagnames);
 	tagnameList.forEach(tagname => {
 		console.log("tagname key: " + tagname);
@@ -197,13 +198,12 @@ function personalizeTagnames(tagnames) {
 }
 
 function personalizeTagname(tagname) {
-	console.log("personalize tagname called on: " + tagname.offName);
-	if (isDefined(tagname.offName)) {
-		var elementsWithTagname = document.getElementsByTagName(tagname.offName);
+	console.log("personalize tagname called on: " + tagname.name);
+	if (isDefined(tagname.name)) {
+		var elementsWithTagname = document.getElementsByTagName(tagname.name);
 		var elementsWithTagnameList = Array.prototype.slice.call(elementsWithTagname);
 		elementsWithTagnameList.forEach(element => {
 			applySettingsOnElement(element, tagname)
-
 		});
 	}
 }
