@@ -9,10 +9,7 @@
                 "propertyName": "backgroundColor",
                 "value": "Blue"
             },
-            {
-                "propertyName": "color",
-                "value": "Red"
-            },
+
             {
                 "propertyName": "font-size",
                 "value": "200%"
