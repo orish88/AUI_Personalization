@@ -284,7 +284,7 @@
                 "contact": {
                     "offName": "contact",
                     "type": [
-                        "link"
+                        "not h2"
                     ],
                     "name": "contact us",
                     "inherits": "",

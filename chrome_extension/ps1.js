@@ -260,7 +260,7 @@ function personalizeAttributes(attributes) {
  * @param {*} attribute 
  */
 function personalizeAttribute(attribute) {
-	if (!isDefined(attribute.global_settings)|| ! isDefined(attribute.global_settings.name) ) {
+	if ( !isDefined(attribute.global_settings)|| !isDefined(attribute.global_settings.name) ) {
 		return;
 	}
 	console.log("new version personalizeAttribute called on: " + attribute.global_settings.name);
@@ -282,9 +282,7 @@ function personalizeAttributeValue(element, attrVal) {
 		console.log("illegal attribute value " + attrVal + " in " + element);
 		return;
 	}
-
 	applySettingsOnElement(element, attrVal);
-
 }
 /**
  * apply settings(inside attrVal) on elements- includes inheritance!
@@ -292,9 +290,31 @@ function personalizeAttributeValue(element, attrVal) {
  * @param {*} attrVal 
  */
 function applySettingsOnElement(element, attrVal) {
+	if(isDefined(attrVal.type)){
+		var isType = false;
+		var elementType = element.tagName.toUpperCase();
+		attrVal.type.forEach(type =>{
+			if(type.startsWith("not")){
+				if(type.length < 5 ){
+					continue;
+				}
+				type = type.substring(4);
+				if(type.toUpperCase() === elementType){
+					return;
+				}
+			}else
+			if(type.toUpperCase() === elementType){
+				isType = true;
+				break;
+			}
+		});
+		if(!isType){
+			return;
+		}
 
+	}
 	if (isDefined(attrVal.inherits)) {
-		console.log("inherits called on element: "+element+" with attr val: "+attrVal.offName);
+		console.log("inherits called on element: "+element+" with attr val: "+attrVal.name);
 		var attributeName = attrVal.inherits.attributeName;
 		var attributeValue = attrVal.inherits.attributeValue;
 		var inheritedAttrVal = window.profile.attributes[attributeName][attributeValue];
