@@ -295,6 +295,7 @@ function applySettingsOnElement(element, attrVal) {
 		var elementType = element.tagName.toUpperCase();
 
 
+		//check if relevant type:
 		for(var i=0; i < attrVal.type.length; i++){
 			var type = attrVal.type[i];
 			if(type.startsWith("not")){
@@ -312,22 +313,6 @@ function applySettingsOnElement(element, attrVal) {
 				break;
 			}	
 		}
-		// attrVal.type.forEach(type =>{
-		// 	if(type.startsWith("not")){
-		// 		if(type.length < 5 ){
-		// 			continue;
-		// 		}
-		// 		type = type.substring(4);
-		// 		if(type.toUpperCase() === elementType){
-		// 			console.log("change revoked due to type missmatch:\neleType: "+elementType+"\ntype: "+type+"\nval: "+attrVal.name);
-		// 			return;
-		// 		}
-		// 	}else
-		// 	if(type.toUpperCase() === elementType){
-		// 		isType = true;
-		// 		break;
-		// 	}
-		// });
 		if(!isType){
 			console.log("change revoked due to type missmatch:\neleType: "+elementType+"\ntype: "+type+"\nval: "+attrVal.name);
 			return;
@@ -353,18 +338,19 @@ function applySettingsOnElement(element, attrVal) {
 		}
 		//change text and symbol:
 		if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
-
-
 			//set width and height
 			var height = "30";
 			var width = "30";
-			if (isDefined(settings.Symbol.height))
-				var height = settings.Symbol.height;
 
+			if (isDefined(settings.Symbol.height)){
+				var height = settings.Symbol.height;
+			}
 			if (isDefined(settings.Symbol.width)) {
 				var width = settings.Symbol.width;
 			}
 			var imgToAdd = document.createElement("img");
+			
+			console.log("Element: "+element+"\nelement height= "+element.text.fontSize+"\nelement width= "+element.width);
 			imgToAdd.setAttribute("src", settings.Symbol.url);
 			imgToAdd.setAttribute("height", height);
 			imgToAdd.setAttribute("width", width);
@@ -376,7 +362,6 @@ function applySettingsOnElement(element, attrVal) {
 				element.appendChild(imgToAdd);	
 
 				// element.src = settings.Symbol.url;
-
 				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + settings.text;
 				//add icon when text isn't defined
 				// else element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " ";
@@ -387,7 +372,6 @@ function applySettingsOnElement(element, attrVal) {
 				imgToAdd.alt = element.innerHTML;
 				element.appendChild(imgToAdd);
 				// element.src= settings.Symbol.url;
-
 				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\" " + element.innerHTML + "\"\> ";
 			} else {
 				//no text, no replace text
