@@ -1,11 +1,40 @@
 
+//   "background": {
+//     "scripts": [ "background_e.js" ]
+//   }
 
+// alert("ps1_e.js called");
 // getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
 
-getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile_v2.json');
+console.log("ps1_e called 2");
+
+
+// document.addEventListener('DOMContentLoaded', () => {  
+// 	alert("dom loaded 3");
+// 	var bt = document.getElementById("bt_personalize_page");
+// 	bt.addEventListener('click' ,()=>{
+// 		alert("personalize page clicked");
+// 		getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
+// 	});
+// });
+
+// chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+//     console.log("tabs2:"+tabs[0].id);
+// });
+
+// alert("ps1_e called");
+
+getPersonalization(profileJson);
+
 //test changes(1)
 // download JSON skin in url, and personalise page based on the settings in it  
 function getPersonalization(url) {
+	console.log("ps1_e called 3");
+	// alert("get personalization called");
+	// var script = 'document.body.style.backgroundColor="Yellow";';
+	// chrome.tabs.executeScript({
+	// 	code: script
+	//   });
 	//load json skin (profile) and run it
 	makeCorsRequest(url);
 }
@@ -58,6 +87,8 @@ function createCORSRequest(method, url) {
 
 //personalise page based on the settings in the JSON object recieved
 function personalizePage(profile) {
+
+	// alert("personalizee page called");
 
 	console.log("personalize page called for profile: " + profile.name);
 
@@ -323,6 +354,7 @@ function applySettingsOnElement(element, attrVal) {
 		console.log("inherits called on element: "+element+" with attr val: "+attrVal.name);
 		var attributeName = attrVal.inherits.attributeName;
 		var attributeValue = attrVal.inherits.attributeValue;
+		console.log("inherits: attrname: "+attributeName+" attrVal: "+attributeValue );
 		var inheritedAttrVal = window.profile.attributes[attributeName][attributeValue];
 		applySettingsOnElement(element, inheritedAttrVal);
 
