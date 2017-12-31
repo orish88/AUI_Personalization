@@ -366,11 +366,12 @@ function applySettingsOnElement(element, attrVal) {
 			console.log("Element: "+element+"\nelement height= "+$(element).height()+"\nelement width= "+$(element).width());
 			imgToAdd.setAttribute("src", settings.Symbol.url);
 
-			if(isDefined(settings.css_class)){
-				var cssClass= settings.css_class;
+			if(isDefined(settings.Symbol.css_class)){
+				var cssClass= settings.Symbol.css_class;
 				imgToAdd.setAttribute("class",cssClass);
 				console.log("cssClass: "+cssClass+" added to image in: "+attrVal.name);
-				
+			}else{
+				console.log("cssClass not defined on: "+attrVal.name);
 			}
 			
 			// imgToAdd.setAttribute("height", height);
