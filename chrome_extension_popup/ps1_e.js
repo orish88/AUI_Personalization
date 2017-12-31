@@ -1,28 +1,7 @@
 
-//   "background": {
-//     "scripts": [ "background_e.js" ]
-//   }
-
-// alert("ps1_e.js called");
 // getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
 
 console.log("ps1_e called 2");
-
-
-// document.addEventListener('DOMContentLoaded', () => {  
-// 	alert("dom loaded 3");
-// 	var bt = document.getElementById("bt_personalize_page");
-// 	bt.addEventListener('click' ,()=>{
-// 		alert("personalize page clicked");
-// 		getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
-// 	});
-// });
-
-// chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-//     console.log("tabs2:"+tabs[0].id);
-// });
-
-// alert("ps1_e called");
 
 getPersonalization(profileJson);
 
@@ -374,25 +353,36 @@ function applySettingsOnElement(element, attrVal) {
 			var height = "30";
 			var width = "30";
 
-			if (isDefined(settings.Symbol.height)){
-				var height = settings.Symbol.height;
-			}
-			if (isDefined(settings.Symbol.width)) {
-				var width = settings.Symbol.width;
-			}
+			// if (isDefined(settings.Symbol.height)){
+			// 	// var height = settings.Symbol.height;
+			// 	var height = $(element).height();
+			// }
+			// if (isDefined(settings.Symbol.width)) {
+			// 	// var width = settings.Symbol.width;
+			// 	var width = $(element).width();
+			// }
 			var imgToAdd = document.createElement("img");
 			
-			console.log("Element: "+element+"\nelement height= "+element.height+"\nelement width= "+element.width);
+			console.log("Element: "+element+"\nelement height= "+$(element).height()+"\nelement width= "+$(element).width());
 			imgToAdd.setAttribute("src", settings.Symbol.url);
-			imgToAdd.setAttribute("height", height);
-			imgToAdd.setAttribute("width", width);
+
+			if(isDefined(settings.css_class)){
+				var cssClass= settings.css_class;
+				imgToAdd.setAttribute("class",cssClass);
+				console.log("cssClass: "+cssClass+" added to image in: "+attrVal.name);
+				
+			}
+			
+			// imgToAdd.setAttribute("height", height);
+			// imgToAdd.setAttribute("width", width);
+
+			// scaleImage(imgToAdd,attrVal.name);
+			
 			//add icon when text is defined
 			if (isDefined(settings.text)) {
-
 				element.text = settings.text;
 				imgToAdd.setAttribute("alt", settings.text);
 				element.appendChild(imgToAdd);	
-
 				// element.src = settings.Symbol.url;
 				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + settings.text;
 				//add icon when text isn't defined
@@ -437,6 +427,24 @@ function applySettingsOnElement(element, attrVal) {
 	}
 }
 
+
+function scaleImage(img,name){
+	console.log("scale image called on: "+img);
+	$(img).on('load',function(){
+		var css;
+
+		console.log("name: "+name+"\nh: "+$(this).height()+"\nw: "+$(this).width()+"\nph: "+$(this).parent().height()+"\npw: "+$(this).parent().width());
+
+		var mHeight = Math.min( $(this).parent().height() , $(this).height() );
+		var mWidth =  Math.min( $(this).parent().width() , $(this).width() ); 
+		css = {width : mWidth , height: mHeight };
+		// var ratio=$(this).width() / $(this).height();
+		// var pratio=$(this).parent().width() / $(this).parent().height();
+		// if (ratio<pratio) css={width:'auto', height:'100%'};
+		// else css={width:'100%', height:'auto'};
+		$(this).css(css);
+	});
+}
 /**
  * 
  set elements' CSS according to the settings in the JSON object recieved

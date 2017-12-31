@@ -11,13 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
 			alert("please enter a url of json profile, and press again.");
 		}
 
-
-		chrome.tabs.executeScript(null, {
-			code: 'var profileJson ="'+urlInput+'";'
-		}, function() {
-			chrome.tabs.executeScript(null, {file: "ps1_e.js"});
-			// chrome.tabs.executeScript(tab.id, {file: 'content.js'});
+		chrome.tabs.executeScript(null, {file: "jquery.js"}, function(){  
+			chrome.tabs.executeScript(null, {
+				code: 'var profileJson ="'+urlInput+'";'
+			}, function() {
+				chrome.tabs.executeScript(null, {file: "ps1_e.js"});
+				// chrome.tabs.executeScript(tab.id, {file: 'content.js'});
+			});
 		});
+
+
 
 		
 	});
