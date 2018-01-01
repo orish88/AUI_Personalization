@@ -81,10 +81,10 @@ function personalizePage(profile) {
 	if (isDefined(profile.tagNames)) {
 		personalizeTagnames(profile.tagNames);
 	}
-	if (isDefined(profile.scopes && isDefined(profile.scopes.itemtypes))) {
+	if (  isDefined(profile.scopes) && isDefined(profile.scopes.itemtypes) ) {
 		personalizeItemScopes(profile.scopes.itemtypes);
 	}
-	if (isDefined(profile.scopes && isDefined(profile.scopes.autocomplete))) {
+	if ( isDefined(profile.scopes) && isDefined(profile.scopes.autocomplete) ) {
 		personalizeAutocomplete(profile.scopes.autocomplete);
 	}
 	if(isDefined(profile.simplification)){
