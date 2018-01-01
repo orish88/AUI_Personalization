@@ -190,7 +190,6 @@ function personalizeItempropElement(element, typeVal) {
 	console.log("personalize itemprop element. typeval: "+typeVal+",proprVal "+propVal +" called");
 	//todo: take the itemtype value and apply its settings to the ekement its declared on) 
 	var changeAttrVal = window.profile.scopes.itemtypes[typeVal].itemprops[propVal];
-
 	if (isDefined(changeAttrVal)) {
 		console.log("itemprop- changeAttrVal.inherits: "+changeAttrVal.inherits);
 		applySettingsOnElement(element, changeAttrVal);
@@ -198,7 +197,6 @@ function personalizeItempropElement(element, typeVal) {
 }
 
 function personalizeTagnames(tagnames) {
-
 	console.log("personalize tagnames called: " + tagnames);
 	var tagnameList = Object.keys(tagnames);
 	tagnameList.forEach(tagname => {
@@ -213,7 +211,7 @@ function personalizeTagname(tagname) {
 		var elementsWithTagname = document.getElementsByTagName(tagname.name);
 		var elementsWithTagnameList = Array.prototype.slice.call(elementsWithTagname);
 		elementsWithTagnameList.forEach(element => {
-			applySettingsOnElement(element, tagname)
+			applySettingsOnElement(element, tagname);
 		});
 	}
 }
@@ -405,8 +403,8 @@ function applySettingsOnElement(element, attrVal) {
 				//no text, no replace text
 				imgToAdd.setAttribute("alt", element.text);
 				//TODO: Add case of language from right to left like hebrew
+				
 				// element.appendChild(imgToAdd);
-
 				
 				// element.insertBefore(imgToAdd, element.firstChild);
 				$(imgToAdd).insertBefore(element);
