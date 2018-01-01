@@ -363,13 +363,14 @@ function applySettingsOnElement(element, attrVal) {
 			// }
 			var imgToAdd = document.createElement("img");
 			
-			console.log("Element: "+element+"\nelement height= "+$(element).height()+"\nelement width= "+$(element).width());
+			console.log("Element dims: "+element+"\nelement height= "+$(element).height()+"\nelement width= "+$(element).width());
 			imgToAdd.setAttribute("src", settings.Symbol.url);
 
 			if(isDefined(settings.Symbol.css_class)){
 				var cssClass= settings.Symbol.css_class;
 				imgToAdd.setAttribute("class",cssClass);
-				console.log("cssClass: "+cssClass+" added to image in: "+attrVal.name);
+				console.log("cssClass: "+cssClass+" added to image in:  "+attrVal.name);
+				// element.style.height =imgToAdd.style.height;
 			}else{
 				console.log("cssClass not defined on: "+attrVal.name);
 			}
@@ -377,13 +378,16 @@ function applySettingsOnElement(element, attrVal) {
 			// imgToAdd.setAttribute("height", height);
 			// imgToAdd.setAttribute("width", width);
 
-			// scaleImage(imgToAdd,attrVal.name);
+			scaleImage(element,imgToAdd,attrVal.name);
 			
 			//add icon when text is defined
 			if (isDefined(settings.text)) {
 				element.text = settings.text;
 				imgToAdd.setAttribute("alt", settings.text);
-				element.appendChild(imgToAdd);	
+			
+				// element.appendChild(imgToAdd);	
+				$( imgToAdd ).appendTo( element );
+
 				// element.src = settings.Symbol.url;
 				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + settings.text;
 				//add icon when text isn't defined
@@ -393,7 +397,8 @@ function applySettingsOnElement(element, attrVal) {
 				element.text = "";				
 				imgToAdd.setAttribute("alt", element.text);
 				imgToAdd.alt = element.innerHTML;
-				element.appendChild(imgToAdd);
+				// element.appendChild(imgToAdd);
+				$( imgToAdd ).appendTo( element );
 				// element.src= settings.Symbol.url;
 				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\" " + element.innerHTML + "\"\> ";
 			} else {
@@ -401,7 +406,11 @@ function applySettingsOnElement(element, attrVal) {
 				imgToAdd.setAttribute("alt", element.text);
 				//TODO: Add case of language from right to left like hebrew
 				// element.appendChild(imgToAdd);
-				element.insertBefore(imgToAdd, element.firstChild);
+
+				
+				// element.insertBefore(imgToAdd, element.firstChild);
+				$(imgToAdd).insertBefore(element);
+				
 				// element.src= settings.Symbol.url;
 				// element.text = element.innerHTML;
 				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
@@ -429,21 +438,35 @@ function applySettingsOnElement(element, attrVal) {
 }
 
 
-function scaleImage(img,name){
+function scaleImage(element,img,name){
 	console.log("scale image called on: "+img);
+	// $(img).on('load',function(){
+	// 	var css;
+
+	// 	console.log("name: "+name+"\nh: "+$(this).height()+"\nw: "+$(this).width()+"\nph: "+$(this).parent().height()+"\npw: "+$(this).parent().width());
+
+	// 	var mHeight = Math.min( $(this).parent().height() , $(this).height() );
+	// 	var mWidth =  Math.min( $(this).parent().width() , $(this).width() ); 
+	// 	css = {width : mWidth , height: mHeight };
+	// 	// var ratio=$(this).width() / $(this).height();
+	// 	// var pratio=$(this).parent().width() / $(this).parent().height();
+	// 	// if (ratio<pratio) css={width:'auto', height:'100%'};
+	// 	// else css={width:'100%', height:'auto'};
+	// 	$(this).css(css);
+	// });
 	$(img).on('load',function(){
 		var css;
 
-		console.log("name: "+name+"\nh: "+$(this).height()+"\nw: "+$(this).width()+"\nph: "+$(this).parent().height()+"\npw: "+$(this).parent().width());
+		console.log("name: "+name+"\nh: "+$(this).height()+"\nw: "+$(this).width()+"\nimgh: "+$(img).height()+"\nimgw: "+$(img).width());
 
-		var mHeight = Math.min( $(this).parent().height() , $(this).height() );
-		var mWidth =  Math.min( $(this).parent().width() , $(this).width() ); 
+		var mHeight = Math.max( $(img).height() , $(this).height() );
+		var mWidth =  Math.max( $(img).width() , $(this).width() ); 
 		css = {width : mWidth , height: mHeight };
 		// var ratio=$(this).width() / $(this).height();
 		// var pratio=$(this).parent().width() / $(this).parent().height();
 		// if (ratio<pratio) css={width:'auto', height:'100%'};
 		// else css={width:'100%', height:'auto'};
-		$(this).css(css);
+		$(element).css(css);
 	});
 }
 /**
@@ -456,10 +479,13 @@ function setCSS(element, settings) {
 	}
 	settings.forEach(settingPair => {
 		if (isDefined(settingPair.propertyName)) {
+
 			var propertyName = settingPair.propertyName;
 			if (isDefined(settingPair.value)) {
 				var value = settingPair.value;
-				element.style[propertyName] = value;
+				$(element).css(propertyName,value);
+				// element.style[propertyName] = value;
+			
 				// $(element).css(propertyName, value);
 			}
 		}
