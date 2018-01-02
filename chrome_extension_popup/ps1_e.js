@@ -71,23 +71,23 @@ function personalizePage(profile) {
 
 	console.log("personalize page called for profile: " + profile.name);
 
-	if (isDefined(profile.css)) {
+	if ( isDefined(profile.css)) {
 		personalizeCSS(profile.css);
 	}
 
-	if (isDefined(profile.attributes)) {
+	if ( isDefined(profile.attributes)) {
 		personalizeAttributes(profile.attributes);
 	}
-	if (isDefined(profile.tagNames)) {
+	if ( isDefined(profile.tagNames)) {
 		personalizeTagnames(profile.tagNames);
 	}
-	if (  isDefined(profile.scopes) && isDefined(profile.scopes.itemtypes) ) {
+	if ( isDefined(profile.scopes) && isDefined(profile.scopes.itemtypes) ) {
 		personalizeItemScopes(profile.scopes.itemtypes);
 	}
 	if ( isDefined(profile.scopes) && isDefined(profile.scopes.autocomplete) ) {
 		personalizeAutocomplete(profile.scopes.autocomplete);
 	}
-	if(isDefined(profile.simplification)){
+	if( isDefined(profile.simplification)){
 		console.log("simplification level: "+simplificationLevel);
 		var simplificationLevel = profile.simplification;
 		personalizeSimplification(simplificationLevel); 
@@ -378,6 +378,14 @@ function applySettingsOnElement(element, attrVal) {
 				// element.style.height =imgToAdd.style.height;
 			}else{
 				console.log("cssClass not defined on: "+attrVal.name);
+				if( isDefined(settings.Symbol.height) ){
+					console.log("height defined on: "+attrVal.name);
+					imgToAdd.setAttribute("height",settings.Symbol.height);
+				}
+				if( isDefined(settings.Symbol.width) ){
+					console.log("width defined on: "+attrVal.name);
+					imgToAdd.setAttribute("width",settings.Symbol.width);
+				}
 			}
 			
 			// imgToAdd.setAttribute("height", height);
