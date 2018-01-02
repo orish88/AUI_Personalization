@@ -242,7 +242,7 @@ function addCSSFile(cssFile, cssLinkIndex) {
 
 	var newlink = document.createElement("LINK");
 	// var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-	// var newlink = document.createElement("link");
+	// var newlink = document.createElement("link");36
 	newlink.setAttribute("rel", "stylesheet");
 	newlink.setAttribute("type", "text/css");
 	newlink.setAttribute("href", cssFile);
@@ -365,7 +365,12 @@ function applySettingsOnElement(element, attrVal) {
 			
 			console.log("Element dims: "+element+"\nelement height= "+$(element).height()+"\nelement width= "+$(element).width());
 			imgToAdd.setAttribute("src", settings.Symbol.url);
-
+			console.log("element simplification: "+element.getAttribute("AUI-simplification"));
+			if(isDefined( element.getAttribute("AUI-simplification")) ){
+				imgToAdd.setAttribute("AUI-simplification",element.getAttribute("AUI-simplification")); 
+				console.log("image to Add simplification: "+imgToAdd.getAttribute("AUI-simplification"));
+			}
+				
 			if(isDefined(settings.Symbol.css_class)){
 				var cssClass= settings.Symbol.css_class;
 				imgToAdd.setAttribute("class",cssClass);
