@@ -97,7 +97,6 @@ function personalizePage(profile) {
 function personalizeSimplification(simplificationLevel) {
 	console.log("simplification level: "+simplificationLevel);
 	var simplificationValue = simplicficationFromStirngToInt(simplificationLevel);
-
 	var simplificationElements = document.querySelectorAll('[AUI-simplification]');
 	simplificationElements.forEach(element=>{
 		if(simplicficationFromStirngToInt( element.getAttribute("AUI-simplification") ) > simplificationValue ){
@@ -226,8 +225,8 @@ function personalizeCSS(cssSettings) {
 
 	if (isDefined(cssFile)) {
 		var linkIndex = cssSettings.linkIndex;
-		changeCSSFile(cssFile, parseInt(linkIndex));
-		console.log("new css: " + document.getElementsByTagName("link").item(linkIndex));
+		addCSSFile(cssFile, parseInt(linkIndex));
+		console.log("add new css called: " +cssFile);
 	}
 	var cssBodySettings = profile.css.cssSettings;
 	if (isDefined(cssBodySettings)) {
@@ -239,13 +238,16 @@ function personalizeCSS(cssSettings) {
 
 
 //change css file
-function changeCSSFile(cssFile, cssLinkIndex) {
-	var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+function addCSSFile(cssFile, cssLinkIndex) {
+
 	var newlink = document.createElement("link");
-	newlink.setAttribute("rel", "stylesheet");
+	// var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+	// var newlink = document.createElement("link");
+	newlink.set8Attribute("rel", "stylesheet");
 	newlink.setAttribute("type", "text/css");
 	newlink.setAttribute("href", cssFile);
-	document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+	// document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+	document.getElementsByTagName("head")[0].appendChild(newlink);
 }
 
 
@@ -438,20 +440,7 @@ function applySettingsOnElement(element, attrVal) {
 
 function scaleImage(element,img,name){
 	console.log("scale image called on: "+img);
-	// $(img).on('load',function(){
-	// 	var css;
 
-	// 	console.log("name: "+name+"\nh: "+$(this).height()+"\nw: "+$(this).width()+"\nph: "+$(this).parent().height()+"\npw: "+$(this).parent().width());
-
-	// 	var mHeight = Math.min( $(this).parent().height() , $(this).height() );
-	// 	var mWidth =  Math.min( $(this).parent().width() , $(this).width() ); 
-	// 	css = {width : mWidth , height: mHeight };
-	// 	// var ratio=$(this).width() / $(this).height();
-	// 	// var pratio=$(this).parent().width() / $(this).parent().height();
-	// 	// if (ratio<pratio) css={width:'auto', height:'100%'};
-	// 	// else css={width:'100%', height:'auto'};
-	// 	$(this).css(css);
-	// });
 	$(img).on('load',function(){
 		var css;
 
@@ -460,10 +449,7 @@ function scaleImage(element,img,name){
 		var mHeight = Math.max( $(img).height() , $(this).height() );
 		var mWidth =  Math.max( $(img).width() , $(this).width() ); 
 		css = {width : mWidth , height: mHeight };
-		// var ratio=$(this).width() / $(this).height();
-		// var pratio=$(this).parent().width() / $(this).parent().height();
-		// if (ratio<pratio) css={width:'auto', height:'100%'};
-		// else css={width:'100%', height:'auto'};
+
 		$(element).css(css);
 	});
 }
