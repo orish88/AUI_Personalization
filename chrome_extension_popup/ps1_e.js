@@ -240,10 +240,10 @@ function personalizeCSS(cssSettings) {
 //change css file
 function addCSSFile(cssFile, cssLinkIndex) {
 
-	var newlink = document.createElement("link");
+	var newlink = document.createElement("LINK");
 	// var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
 	// var newlink = document.createElement("link");
-	newlink.set8Attribute("rel", "stylesheet");
+	newlink.setAttribute("rel", "stylesheet");
 	newlink.setAttribute("type", "text/css");
 	newlink.setAttribute("href", cssFile);
 	// document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);

@@ -22,7 +22,7 @@
             "css": [
                 {
                     "propertyName": "font-size",
-                    "value": "200%"
+                    "value": "150%"
                 },
                 {
                     "propertyName": "border-color",
@@ -150,7 +150,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email_orange.png",
                     "css_class":"aui_images",
-                    "replacetext": "false",
+                    "replacetext": "true",
                     "creator": {
                         "name": "",
                         "url": ""
