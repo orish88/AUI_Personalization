@@ -37,10 +37,12 @@ background-color: #000000
 }
 
 .aui_header_images{
+  background-color: #ffffff;   
   height: 60px;
   width: 60px;
 }
 .aui_email_images{
+  background-color: #ffffff;   
   height: 60px;
   width: 80px;
 }

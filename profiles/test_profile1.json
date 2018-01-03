@@ -390,12 +390,13 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang1_noun.png",
-                    "css_class":"",
+                    "css_class":"aui_header_images",
                     "replacetext": "false",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
+                    
                     "width": "60",
                     "height": "60",
                     "margin": "",
