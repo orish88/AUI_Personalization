@@ -178,7 +178,7 @@
                 "tooltip": "home",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_red.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home1_noun.png",
                     "css_class":"aui_header_images",
                     "replacetext": "true",
                     "creator": {
@@ -209,7 +209,7 @@
                 "tooltip": "Sign in",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signin1_red.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signin1_noun.png",
                     "css_class":"aui_header_images",
                     "replacetext": "false",
                     "creator": {
@@ -240,7 +240,7 @@
                 "tooltip": "email us",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email_orange.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email1_noun.png",
                     "css_class":"aui_email_images",
                     "replacetext": "true",
                     "creator": {
@@ -300,7 +300,7 @@
                 "tooltip": "information about the creator",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/about_red2.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/about1_noun.png",
                     "css_class":"aui_header_images",
                     "replacetext": "true",
                     "creator": {
@@ -331,7 +331,7 @@
                 "tooltip": "contact the creators",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/contact_us_phone_red.jpg",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/contact_us1_noun.png",
                     "css_class":"aui_header_images",
                     "creator": {
                         "name": "",
@@ -361,7 +361,7 @@
                 "tooltip": "map of this website",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap_red3.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap1_noun.png",
                     "css_class":"aui_header_images",
                     "replacetext": "true",
                     "creator": {
@@ -389,7 +389,7 @@
                 "tooltip": "pick language",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang_red.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang1_noun.png",
                     "css_class":"",
                     "replacetext": "false",
                     "creator": {
