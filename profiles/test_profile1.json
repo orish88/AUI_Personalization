@@ -6,10 +6,6 @@
         "linkIndex": "0",
         "cssSettings": [
             {
-                "propertyName": "backgroundColor",
-                "value": "Blue"
-            },
-            {
                 "propertyName": "font-size",
                 "value": "120%"
             }
