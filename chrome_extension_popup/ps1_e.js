@@ -366,7 +366,7 @@ function applySettingsOnElement(element, attrVal) {
 			console.log("Element dims: "+element+"\nelement height= "+$(element).height()+"\nelement width= "+$(element).width());
 			imgToAdd.setAttribute("src", settings.Symbol.url);
 			console.log("element simplification: "+element.getAttribute("AUI-simplification"));
-			if(isDefined( element.getAttribute("AUI-simplification")) ){
+			if(isDefined( element.getAttribute("AUI-simplification") ) ){
 				imgToAdd.setAttribute("AUI-simplification",element.getAttribute("AUI-simplification")); 
 				console.log("image to Add simplification: "+imgToAdd.getAttribute("AUI-simplification"));
 			}

@@ -6,8 +6,7 @@ body {
   padding: 0;
   font: 20px/1.6 'Helvetica Neue', Arial, sans-serif;
   font-size: 200%;
-  background-color:rgba(37, 57, 236, 0.904);
-  color: rgb(250, 138, 74);
+  
   text-rendering: optimizeLegibility; }
 
 .aui_header_images{

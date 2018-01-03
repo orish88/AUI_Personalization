@@ -136,6 +136,35 @@
                         "value": ""
                     }
                 ]
+            },
+            "help": {
+                "name": "help",
+                "type": [
+                ],
+                "inherits": "",
+                "shortcut": "SHIFT + D",
+                "longdesc": "press to get website help",
+                "tooltip": "help",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/help1_noun.png",
+                    "css_class":"aui_header_images",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
             }
         },
         "AUI-destination": {
@@ -158,6 +187,37 @@
                     "replacetext": "true",
                     "creator": {
                         "name": "Jardson Almeida, The Noun Project",
+                        "url": ""
+                    },
+                    "width": "100",
+                    "height": "250",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "signin": {
+                "name": "signin",
+                "type": [
+                    "a","not div"
+                ],
+                "inherits": "",
+                "shortcut": "SHIFT+H",
+                "longdesc": "link to sign in to the website",
+                "tooltip": "Sign in",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signin1_red.png",
+                    "css_class":"aui_header_images",
+                    "replacetext": "false",
+                    "creator": {
+                        "name": "",
                         "url": ""
                     },
                     "width": "100",
@@ -340,8 +400,8 @@
                         "name": "",
                         "url": ""
                     },
-                    "width": "10",
-                    "height": "10",
+                    "width": "20",
+                    "height": "20",
                     "margin": "",
                     "padding": ""
                 },
