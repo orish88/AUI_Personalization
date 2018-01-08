@@ -349,9 +349,7 @@ function applySettingsOnElement(element, attrVal) {
 		}
 		//change text and symbol:
 		if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
-			//set width and height
-			var height = "30";
-			var width = "30";
+
 
 			// if (isDefined(settings.Symbol.height)){
 			// 	// var height = settings.Symbol.height;
@@ -370,64 +368,73 @@ function applySettingsOnElement(element, attrVal) {
 				imgToAdd.setAttribute("AUI-simplification",element.getAttribute("AUI-simplification")); 
 				console.log("image to Add simplification: "+imgToAdd.getAttribute("AUI-simplification"));
 			}
-				
-			if(isDefined(settings.Symbol.css_class)){
-				var cssClass= settings.Symbol.css_class;
-				imgToAdd.setAttribute("class",cssClass);
-				console.log("cssClass: "+cssClass+" added to image in:  "+attrVal.name);
-				// element.style.height =imgToAdd.style.height;
-			}else{
-				console.log("cssClass not defined on: "+attrVal.name);
-				if( isDefined(settings.Symbol.height) ){
-					console.log("height defined on: "+attrVal.name);
-					imgToAdd.setAttribute("height",settings.Symbol.height);
-				}
-				if( isDefined(settings.Symbol.width) ){
-					console.log("width defined on: "+attrVal.name);
-					imgToAdd.setAttribute("width",settings.Symbol.width);
-				}
+			if (isDefined(settings.tooltip)) {
+				imgToAdd.title = settings.tooltip;
 			}
+			
+			
+			var scaleType = "none";
+			if (isDefined(settings.Symbol.css_class)) {
+				var cssClass = settings.Symbol.css_class;
+				imgToAdd.setAttribute("class", cssClass);
+				console.log("cssClass: " + cssClass + " added to image in:  " + attrVal.name);
+				scaleType = "cssClass";
+				// element.style.height =imgToAdd.style.height;
+			} else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.width)) {
+				console.log("cssClass not defined on: " + attrVal.name);
+				console.log("height defined on: " + attrVal.name);
+				imgToAdd.setAttribute("height", settings.Symbol.height);
+				console.log("width defined on: " + attrVal.name);
+				imgToAdd.setAttribute("width", settings.Symbol.width);
+				scaleType = "fixed";
+			}
+			// scaleImage(element,imgToAdd,attrVal.name,scaleType);				
+			
 			
 			// imgToAdd.setAttribute("height", height);
 			// imgToAdd.setAttribute("width", width);
 
-			scaleImage(element,imgToAdd,attrVal.name);
-			
+			var inner = element.innerHTML;
 			//add icon when text is defined
 			if (isDefined(settings.text)) {
-				element.text = settings.text;
-				imgToAdd.setAttribute("alt", settings.text);
+
+				inner = settings.text;
+				element.innerHTML = inner;	
+
+				// element.text = settings.text;
+				// imgToAdd.setAttribute("alt", settings.text);
 			
 				// element.appendChild(imgToAdd);	
-				$( imgToAdd ).appendTo( element );
+				// $( imgToAdd ).appendTo( element );
 
 				// element.src = settings.Symbol.url;
 				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + settings.text;
 				//add icon when text isn't defined
 				// else element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " ";
-			} else if (isDefined(settings.Symbol.replacetext) && settings.Symbol.replacetext === "true") {
-				console.log("inside replace text");
-				element.text = "";				
-				imgToAdd.setAttribute("alt", element.text);
-				imgToAdd.alt = element.innerHTML;
+			} else if ( isDefined(settings.Symbol.replacetext) && settings.Symbol.replacetext === "true" ) {
+				inner = "";
+				// console.log("inside replace text");
+				// element.text = "";				
+				// imgToAdd.setAttribute("alt", element.text);
+				// imgToAdd.alt = element.innerHTML;
 				// element.appendChild(imgToAdd);
-				$( imgToAdd ).appendTo( element );
+				// $( imgToAdd ).appendTo( element );
 				// element.src= settings.Symbol.url;
 				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\" " + element.innerHTML + "\"\> ";
 			} else {
+
 				//no text, no replace text
-				imgToAdd.setAttribute("alt", element.text);
+				// imgToAdd.setAttribute("alt", element.text);
 				//TODO: Add case of language from right to left like hebrew
-				
 				// element.appendChild(imgToAdd);
-				
 				// element.insertBefore(imgToAdd, element.firstChild);
-				$(imgToAdd).insertBefore(element);
-				
+				// $(imgToAdd).insertBefore(element);
 				// element.src= settings.Symbol.url;
 				// element.text = element.innerHTML;
 				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
 			}
+			scaleImage(element,imgToAdd,settings.name,scaleImage,inner);	
+
 		}
 		else {
 			//change text only
@@ -451,20 +458,50 @@ function applySettingsOnElement(element, attrVal) {
 }
 
 
-function scaleImage(element,img,name){
-	console.log("scale image called on: "+img);
+function scaleImage(element, img, name, scaleType, inner) {
+	console.log("scale image called on: " + img);
 
-	$(img).on('load',function(){
-		var css;
 
-		console.log("name: "+name+"\nh: "+$(this).height()+"\nw: "+$(this).width()+"\nimgh: "+$(img).height()+"\nimgw: "+$(img).width());
+	//TODO: check inner and finish this for ALL SCENARIOS
 
-		var mHeight = Math.max( $(img).height() , $(this).height() );
-		var mWidth =  Math.max( $(img).width() , $(this).width() ); 
-		css = {width : mWidth , height: mHeight };
+	//inner can be:
+	// "" if no text
+	// elelment.innerHtml 
+	// settings.text
+	
+	if (scaleType === "none") {
 
-		$(element).css(css);
-	});
+		var sizeCoefficient = 1;		
+		switch(inner){
+			case "":
+			element.innerHTML = "";				
+			break;
+			case element.innerHTML:
+				sizeCoefficient = 2;
+				break;
+			default:
+				console.log("problem: default reached on scaleType none");
+				return;
+		}
+
+		$(img).on('load', function () {
+			var css;
+
+			console.log("name: " + name + "\nh: " + $(this).height() + "\nw: " + $(this).width() + "\neh: " + $(element).height() + "\new: " + $(img).width());
+
+			var mHeight = $(element).height();
+			var mWidth = sizeCoefficient*$(element).width();
+			css = { width: mWidth, height: mHeight };
+
+			$(img).css(css);
+			$(element).html('');
+			$(img).appendTo(element);
+		});
+	}else if(scaleType === "cssClass") {
+		$(img).appendTo(element);
+	}else{ //fixed dims
+		$(img).appendTo(element);
+	}
 }
 /**
  * 

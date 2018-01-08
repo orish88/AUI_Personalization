@@ -6,6 +6,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 	<title>Personalised Website demo- Ori</title>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
+	<script src="jquery.js"></script>
 	<link rel="stylesheet" href="./AUI-TestSite/stylesheet.css">
 	<style></style>
 </head>
@@ -19,7 +22,7 @@
 				<li class="nav">
 					<a aria-function="home" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Main</a>
 				</li>
-				<li class="nav">
+				<li id="liCompose" class="nav">
 					<a AUI-action="compose" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Compose</a>
 				</li>
 				<li class="nav">
@@ -34,7 +37,7 @@
 			<h3>AUI-destination elements: </h3>
 			<ul class="nav">
 				<li class="nav">
-					<a AUI-destination="home" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Home</a>
+					<a id="home" AUI-destination="home" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Home</a>
 				</li>
 				<li class="nav">
 					<a AUI-action="compose" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Compose</a>
@@ -46,19 +49,69 @@
 
 		</div>
 	</div>
-	<div id = "inputDiv" >
+	<div id="inputDiv">
 		<form action="/action_page.php" autocomplete="on">
-			First name:<input type="text" name="fname"><br>
-			Last name: <input type="text" name="lname" autocomplete="on"><br>
-			E-mail: <input type="email" name="email" ><br>
+			First name:
+			<input type="text" name="fname">
+			<br> Last name:
+			<input type="text" name="lname" autocomplete="on">
+			<br> E-mail:
+			<input type="email" name="email">
+			<br>
 			<input type="submit">
-		  </form>
-		  <p>Fill in and submit the form, then reload the page to see how autocomplete works.</p>
-		  <p>Notice that autocomplete is "on" for the form, but "off" for the e-mail field.</p>
-		  
+		</form>
+		<p>Fill in and submit the form, then reload the page to see how autocomplete works.</p>
+		<p>Notice that autocomplete is "on" for the form, but "off" for the e-mail field.</p>
+
 	</div>
+	<a id="aid">aAid</a>
 
 
+	<button onclick="myFunction()">Try it</button>
+
+
+	<script>
+		function myFunction() {
+			var element = document.getElementById("home");
+			var imgToAdd = document.createElement("img");
+			var btn = document.createElement("BUTTON");        // Create a <button> element
+			var t = document.createTextNode("CLICK ME");       // Create a text node
+			// btn.appendChild(t);                                // Append the text to <button>
+			// document.body.appendChild(btn);                    // Append <button> to <body>
+
+			console.log("Element dims: " + element + "\nelement height= " + $(element).height() + "\nelement width= " + $(element).width());
+			imgToAdd.setAttribute("src", "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png");
+			console.log("img dims: " + imgToAdd + "\nimg height= " + $(imgToAdd).height() + "\nimg width= " + $(imgToAdd).width());
+			// $( imgToAdd ).clone(true).appendTo( element );
+			console.log("element height: " + $(element).height() );
+			scaleImage(element,imgToAdd)
+			$(element).html('');
+
+			$(imgToAdd).appendTo(element);
+
+			// element.appendChild(btn);
+			// $(element).html('');
+			// $(imgToAdd).appendTo(element);
+			// $(imgToAdd).appendTo("#aid");
+			// $(btn).insertBefore(element);
+			// $(element).append(btn);
+
+		}
+		function scaleImage(element, img) {
+			console.log("scale image called on: " + img);
+
+			$(img).on('load', function () {
+				var css;
+
+				console.log("h: " + $(this).height() + "\nw: " + $(this).width() + "\neh: " + $(element).height() + "\new: " + $(element).width());
+
+				var mHeight = Math.min($(element).height(), $(this).height());
+				var mWidth = Math.min($(element).width(), $(this).width());
+				css = { width: mWidth, height: mHeight };
+				$(img).css(css);			
+			});
+		}
+	</script>
 </body>
 
 </html>
