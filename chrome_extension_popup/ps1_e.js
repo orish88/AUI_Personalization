@@ -74,13 +74,13 @@ function personalizePage(profile) {
 	if ( isDefined(profile.css)) {
 		personalizeCSS(profile.css);
 	}
-
-	if ( isDefined(profile.attributes)) {
-		personalizeAttributes(profile.attributes);
-	}
 	if ( isDefined(profile.tagNames)) {
 		personalizeTagnames(profile.tagNames);
 	}
+	if ( isDefined(profile.attributes)) {
+		personalizeAttributes(profile.attributes);
+	}
+
 	if ( isDefined(profile.scopes) && isDefined(profile.scopes.itemtypes) ) {
 		personalizeItemScopes(profile.scopes.itemtypes);
 	}
@@ -348,100 +348,61 @@ function applySettingsOnElement(element, attrVal) {
 			setCSS(element, styleSettings);
 		}
 		//change text and symbol:
-		if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
+		insertImage(element,settings);
+		// if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
 
-
-			// if (isDefined(settings.Symbol.height)){
-			// 	// var height = settings.Symbol.height;
-			// 	var height = $(element).height();
-			// }
-			// if (isDefined(settings.Symbol.width)) {
-			// 	// var width = settings.Symbol.width;
-			// 	var width = $(element).width();
-			// }
-			var imgToAdd = document.createElement("img");
+		// 	var imgToAdd = document.createElement("img");
 			
-			console.log("Element dims: "+element+"\nelement height= "+$(element).height()+"\nelement width= "+$(element).width());
-			imgToAdd.setAttribute("src", settings.Symbol.url);
-			console.log("element simplification: "+element.getAttribute("AUI-simplification"));
-			if(isDefined( element.getAttribute("AUI-simplification") ) ){
-				imgToAdd.setAttribute("AUI-simplification",element.getAttribute("AUI-simplification")); 
-				console.log("image to Add simplification: "+imgToAdd.getAttribute("AUI-simplification"));
-			}
-			if (isDefined(settings.tooltip)) {
-				imgToAdd.title = settings.tooltip;
-			}
+		// 	console.log("Element dims: "+element+"\nelement height= "+$(element).height()+"\nelement width= "+$(element).width());
+		// 	imgToAdd.setAttribute("src", settings.Symbol.url);
+		// 	console.log("element simplification: "+element.getAttribute("AUI-simplification"));
+		// 	if(isDefined( element.getAttribute("AUI-simplification") ) ){
+		// 		imgToAdd.setAttribute("AUI-simplification",element.getAttribute("AUI-simplification")); 
+		// 		console.log("image to Add simplification: "+imgToAdd.getAttribute("AUI-simplification"));
+		// 	}
+		// 	if (isDefined(settings.tooltip)) {
+		// 		imgToAdd.title = settings.tooltip;
+		// 	}
 			
 			
-			var scaleType = "none";
-			if (isDefined(settings.Symbol.css_class)) {
-				var cssClass = settings.Symbol.css_class;
-				imgToAdd.setAttribute("class", cssClass);
-				console.log("cssClass: " + cssClass + " added to image in:  " + attrVal.name);
-				scaleType = "cssClass";
-				// element.style.height =imgToAdd.style.height;
-			} else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.width)) {
-				console.log("cssClass not defined on: " + attrVal.name);
-				console.log("height defined on: " + attrVal.name);
-				imgToAdd.setAttribute("height", settings.Symbol.height);
-				console.log("width defined on: " + attrVal.name);
-				imgToAdd.setAttribute("width", settings.Symbol.width);
-				scaleType = "fixed";
-			}
-			// scaleImage(element,imgToAdd,attrVal.name,scaleType);				
-			
-			
-			// imgToAdd.setAttribute("height", height);
-			// imgToAdd.setAttribute("width", width);
+		// 	var scaleType = "none";
+		// 	if (isDefined(settings.Symbol.css_class)) {
+		// 		var cssClass = settings.Symbol.css_class;
+		// 		imgToAdd.setAttribute("class", cssClass);
+		// 		console.log("cssClass: " + cssClass + " added to image in:  " + attrVal.name);
+		// 		scaleType = "cssClass";
+		// 		// element.style.height =imgToAdd.style.height;
+		// 	} else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.width)) {
+		// 		console.log("cssClass not defined on: " + attrVal.name);
+		// 		console.log("height defined on: " + attrVal.name);
+		// 		imgToAdd.setAttribute("height", settings.Symbol.height);
+		// 		console.log("width defined on: " + attrVal.name);
+		// 		imgToAdd.setAttribute("width", settings.Symbol.width);
+		// 		scaleType = "fixed";
+		// 	}
+		
+		// 	var inner = element.innerHTML;
+		// 	//add icon when text is defined
+		// 	if (isDefined(settings.text)) {
 
-			var inner = element.innerHTML;
-			//add icon when text is defined
-			if (isDefined(settings.text)) {
+		// 		inner = settings.text;
+		// 		element.innerHTML = inner;	
 
-				inner = settings.text;
-				element.innerHTML = inner;	
+		// 	} else if ( isDefined(settings.Symbol.replacetext) && settings.Symbol.replacetext === "true" ) {
+		// 		inner = "";
+		// 	} else {
+						
+		// 	}
+		// 	scaleImage(element,imgToAdd,settings.name,scaleType,inner);
+		// 	$(imgToAdd).appendTo(element);	
+		// }
+		// else{
+		// 	//change text only
+		// 	if (isDefined(settings.text)) {
+		// 		element.innerHTML = settings.text;
+		// 	}
+		// }
 
-				// element.text = settings.text;
-				// imgToAdd.setAttribute("alt", settings.text);
-			
-				// element.appendChild(imgToAdd);	
-				// $( imgToAdd ).appendTo( element );
-
-				// element.src = settings.Symbol.url;
-				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + settings.text;
-				//add icon when text isn't defined
-				// else element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " ";
-			} else if ( isDefined(settings.Symbol.replacetext) && settings.Symbol.replacetext === "true" ) {
-				inner = "";
-				// console.log("inside replace text");
-				// element.text = "";				
-				// imgToAdd.setAttribute("alt", element.text);
-				// imgToAdd.alt = element.innerHTML;
-				// element.appendChild(imgToAdd);
-				// $( imgToAdd ).appendTo( element );
-				// element.src= settings.Symbol.url;
-				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\" " + element.innerHTML + "\"\> ";
-			} else {
-
-				//no text, no replace text
-				// imgToAdd.setAttribute("alt", element.text);
-				//TODO: Add case of language from right to left like hebrew
-				// element.appendChild(imgToAdd);
-				// element.insertBefore(imgToAdd, element.firstChild);
-				// $(imgToAdd).insertBefore(element);
-				// element.src= settings.Symbol.url;
-				// element.text = element.innerHTML;
-				// element.innerHTML = "\<img src\=\"" + settings.Symbol.url + "\" style\=\" margin:0em; padding:0em; padding\-top:-0.2em; float:left; \" height\=\"" + height + "\"  width\=\"" + width + "\"  alt\=\"\"\> " + " " + element.innerHTML;
-			}
-			scaleImage(element,imgToAdd,settings.name,scaleImage,inner);	
-
-		}
-		else {
-			//change text only
-			if (isDefined(settings.text)) {
-				element.innerHTML = settings.text;
-			}
-		}
 		//change width to fit text
 		// element.style.width = "auto";
 		// element.style.paddingRight = "0.5em";
@@ -461,15 +422,14 @@ function applySettingsOnElement(element, attrVal) {
 function scaleImage(element, img, name, scaleType, inner) {
 	console.log("scale image called on: " + img);
 
-
 	//TODO: check inner and finish this for ALL SCENARIOS
-
 	//inner can be:
 	// "" if no text
 	// elelment.innerHtml 
 	// settings.text
 	
 	if (scaleType === "none") {
+		console.log("inside scaletype none: "+name);
 
 		var sizeCoefficient = 1;		
 		switch(inner){
@@ -483,24 +443,55 @@ function scaleImage(element, img, name, scaleType, inner) {
 				console.log("problem: default reached on scaleType none");
 				return;
 		}
-
-		$(img).on('load', function () {
+		
+		// $(img).on('load', function () {
 			var css;
 
-			console.log("name: " + name + "\nh: " + $(this).height() + "\nw: " + $(this).width() + "\neh: " + $(element).height() + "\new: " + $(img).width());
-
+			console.log("name: " + name + "\nh: " + $(img).height() + "\nw: " + $(img).width() + "\neh: " + $(element).height() + "\new: " + $(element).width());
 			var mHeight = $(element).height();
 			var mWidth = sizeCoefficient*$(element).width();
 			css = { width: mWidth, height: mHeight };
-
 			$(img).css(css);
-			$(element).html('');
-			$(img).appendTo(element);
-		});
-	}else if(scaleType === "cssClass") {
-		$(img).appendTo(element);
-	}else{ //fixed dims
-		$(img).appendTo(element);
+			if( sizeCoefficient > 1 ){
+				$(element).width( sizeCoefficient * $(element).width() );
+			}		
+		// });
+	}
+	// else if(scaleType === "cssClass") {
+	// 	$(img).appendTo(element);
+	// }else{ //fixed dims
+	// 	$(img).appendTo(element);
+	// }
+}
+
+function insertImage(element,settings){
+	if( isDefined(settings.Symbol) && isDefined(settings.Symbol.url) ){
+
+		if(isDefined(settings.text)){
+			$(element).html(settings.text);
+		}
+		var mHeight = $(element).height();
+		var mWidth = $(element).width();
+		
+		console.log("inside insert image");
+		var newImg = document.createElement('img');
+		newImg.setAttribute("src",settings.Symbol.url);
+		if (isDefined(settings.tooltip)) {
+			newImg.title = settings.tooltip;
+		}
+		if( isDefined(settings.Symbol.css_class) ){
+			newImg.setAttribute("class",settings.Symbol.css_class);
+		}else if( isDefined(settings.Symbol.height) && isDefined(settings.Symbol.height)  ){
+			$(newImg).css( { height:settings.Symbol.height , width:settings.Symbol.width });
+		}else{
+			$(newImg).css( { height:$(element).height() , width:'auto' });	
+			// $(newImg).css( { height:'200%' , width:'200%' });			
+		}
+		if(isDefined(settings.Symbol.replacetext) && settings.Symbol.replacetext === "true" ){
+			$(element).html('');			
+		}
+		$(newImg).appendTo(element);
+		console.log( settings.name+" settings:\ninner: "+element.innerHTML+"\nimage sizes are: h:"+$(newImg).height()+" w:"+$(newImg).width() );
 	}
 }
 /**

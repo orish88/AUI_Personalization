@@ -84,10 +84,14 @@
 			console.log("img dims: " + imgToAdd + "\nimg height= " + $(imgToAdd).height() + "\nimg width= " + $(imgToAdd).width());
 			// $( imgToAdd ).clone(true).appendTo( element );
 			console.log("element height: " + $(element).height() );
+
+			console.log("1");
 			scaleImage(element,imgToAdd)
-			$(element).html('');
+			// $(element).html('');
+			console.log("7");
 
 			$(imgToAdd).appendTo(element);
+			console.log("8");
 
 			// element.appendChild(btn);
 			// $(element).html('');
@@ -99,17 +103,27 @@
 		}
 		function scaleImage(element, img) {
 			console.log("scale image called on: " + img);
+			console.log("2");
 
-			$(img).on('load', function () {
+			var sizeCoefficient = 2;
+			$(element).html('');
+			console.log("3");			
+			// $(img).on('load', function () {
+				console.log("4");
 				var css;
-
-				console.log("h: " + $(this).height() + "\nw: " + $(this).width() + "\neh: " + $(element).height() + "\new: " + $(element).width());
-
-				var mHeight = Math.min($(element).height(), $(this).height());
-				var mWidth = Math.min($(element).width(), $(this).width());
+				console.log("h: " + $(img).height() + "\nw: " + $(img).width() + "\neh: " + $(element).height() + "\new: " + $(element).width());
+				// var mHeight = Math.min($(element).height(), $(this).height());
+				// var mWidth = Math.min($(element).width(), $(this).width());
+				// css = { width: mWidth, height: mHeight };
+				var mHeight = $(element).height();
+				var mWidth = $(element).width();
 				css = { width: mWidth, height: mHeight };
-				$(img).css(css);			
-			});
+				$(img).css(css);
+				console.log("5");
+				$(element).width(sizeCoefficient*$(element).width());
+				console.log("6");				
+				// $(img).appendTo(element);			
+			// });
 		}
 	</script>
 </body>
