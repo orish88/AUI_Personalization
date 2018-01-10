@@ -175,7 +175,7 @@
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "this links to the home page.",
-                "tooltip": "home",
+                "tooltip": "",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",
@@ -297,7 +297,7 @@
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "this links to info about the creator etc.",
-                "tooltip": "information about the creator",
+                "tooltip": "",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/about2_noun.png",
@@ -386,7 +386,7 @@
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "pick language",
-                "tooltip": "pick language",
+                "tooltip": "",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang1_noun.png",

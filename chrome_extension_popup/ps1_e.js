@@ -437,6 +437,7 @@ function insertImage(element, settings) {
 				$(element).html('');
 				$(newImg).appendTo(element);
 			} else if (  settings.Symbol.replacetext === "tooltip" ){
+				console.log("image tooltip called for: "+settings.name);
 				$(element).tooltip({ content: newImg });
 			}else if(  settings.Symbol.replacetext === "before" ){
 				$(newImg).insertBefore(element);
