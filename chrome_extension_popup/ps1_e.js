@@ -349,65 +349,7 @@ function applySettingsOnElement(element, attrVal) {
 		}
 		//change text and symbol:
 		insertImage(element,settings);
-		// if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
 
-		// 	var imgToAdd = document.createElement("img");
-			
-		// 	console.log("Element dims: "+element+"\nelement height= "+$(element).height()+"\nelement width= "+$(element).width());
-		// 	imgToAdd.setAttribute("src", settings.Symbol.url);
-		// 	console.log("element simplification: "+element.getAttribute("AUI-simplification"));
-		// 	if(isDefined( element.getAttribute("AUI-simplification") ) ){
-		// 		imgToAdd.setAttribute("AUI-simplification",element.getAttribute("AUI-simplification")); 
-		// 		console.log("image to Add simplification: "+imgToAdd.getAttribute("AUI-simplification"));
-		// 	}
-		// 	if (isDefined(settings.tooltip)) {
-		// 		imgToAdd.title = settings.tooltip;
-		// 	}
-			
-			
-		// 	var scaleType = "none";
-		// 	if (isDefined(settings.Symbol.css_class)) {
-		// 		var cssClass = settings.Symbol.css_class;
-		// 		imgToAdd.setAttribute("class", cssClass);
-		// 		console.log("cssClass: " + cssClass + " added to image in:  " + attrVal.name);
-		// 		scaleType = "cssClass";
-		// 		// element.style.height =imgToAdd.style.height;
-		// 	} else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.width)) {
-		// 		console.log("cssClass not defined on: " + attrVal.name);
-		// 		console.log("height defined on: " + attrVal.name);
-		// 		imgToAdd.setAttribute("height", settings.Symbol.height);
-		// 		console.log("width defined on: " + attrVal.name);
-		// 		imgToAdd.setAttribute("width", settings.Symbol.width);
-		// 		scaleType = "fixed";
-		// 	}
-		
-		// 	var inner = element.innerHTML;
-		// 	//add icon when text is defined
-		// 	if (isDefined(settings.text)) {
-
-		// 		inner = settings.text;
-		// 		element.innerHTML = inner;	
-
-		// 	} else if ( isDefined(settings.Symbol.replacetext) && settings.Symbol.replacetext === "true" ) {
-		// 		inner = "";
-		// 	} else {
-						
-		// 	}
-		// 	scaleImage(element,imgToAdd,settings.name,scaleType,inner);
-		// 	$(imgToAdd).appendTo(element);	
-		// }
-		// else{
-		// 	//change text only
-		// 	if (isDefined(settings.text)) {
-		// 		element.innerHTML = settings.text;
-		// 	}
-		// }
-
-		//change width to fit text
-		// element.style.width = "auto";
-		// element.style.paddingRight = "0.5em";
-		// element.style.paddingLeft = "0.5em";
-		// add/change tooltip
 		if (isDefined(settings.tooltip)) {
 			element.title = settings.tooltip;
 		}
@@ -464,34 +406,43 @@ function scaleImage(element, img, name, scaleType, inner) {
 	// }
 }
 
-function insertImage(element,settings){
-	if( isDefined(settings.Symbol) && isDefined(settings.Symbol.url) ){
+function insertImage(element, settings) {
+	if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
 
-		if(isDefined(settings.text)){
+		if (isDefined(settings.text)) {
 			$(element).html(settings.text);
 		}
 		var mHeight = $(element).height();
 		var mWidth = $(element).width();
-		
+
 		console.log("inside insert image");
 		var newImg = document.createElement('img');
-		newImg.setAttribute("src",settings.Symbol.url);
+		newImg.setAttribute("src", settings.Symbol.url);
 		if (isDefined(settings.tooltip)) {
 			newImg.title = settings.tooltip;
 		}
-		if( isDefined(settings.Symbol.css_class) ){
-			newImg.setAttribute("class",settings.Symbol.css_class);
-		}else if( isDefined(settings.Symbol.height) && isDefined(settings.Symbol.height)  ){
-			$(newImg).css( { height:settings.Symbol.height , width:settings.Symbol.width });
-		}else{
-			$(newImg).css( { height:$(element).height() , width:'auto' });	
+		if (isDefined(settings.Symbol.css_class)) {
+			newImg.setAttribute("class", settings.Symbol.css_class);
+		} else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.height)) {
+			$(newImg).css({ height: settings.Symbol.height, width: settings.Symbol.width });
+		} else {
+			$(newImg).css({ height: $(element).height(), width: 'auto' });
 			// $(newImg).css( { height:'200%' , width:'200%' });			
 		}
-		if(isDefined(settings.Symbol.replacetext) && settings.Symbol.replacetext === "true" ){
-			$(element).html('');			
+		if (!isDefined(settings.Symbol.replacetext)) {
+			//TODO: what should be the default?
+			$(newImg).appendTo(element);
+		} else {
+			if ( settings.Symbol.replacetext === "replace") {
+				$(element).html('');
+				$(newImg).appendTo(element);
+			} else if (  settings.Symbol.replacetext === "tooltip" ){
+				$(element).tooltip({ content: newImg });
+			}else if(  settings.Symbol.replacetext === "before" ){
+				$(newImg).insertBefore(element);
+			}
 		}
-		$(newImg).appendTo(element);
-		console.log( settings.name+" settings:\ninner: "+element.innerHTML+"\nimage sizes are: h:"+$(newImg).height()+" w:"+$(newImg).width() );
+		console.log(settings.name + " settings:\ninner: " + element.innerHTML + "\nimage sizes are: h:" + $(newImg).height() + " w:" + $(newImg).width());
 	}
 }
 /**
