@@ -180,7 +180,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",
                     "css_class":"aui_header_images",
-                    "replacetext": "true",
+                    "replacetext": "replace",
                     "creator": {
                         "name": "Jardson Almeida, The Noun Project",
                         "url": ""
@@ -211,7 +211,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signin1_noun.png",
                     "css_class":"aui_header_images",
-                    "replacetext": "false",
+                    "replacetext": "before",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -242,7 +242,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email1_noun.png",
                     "css_class":"aui_email_images",
-                    "replacetext": "true",
+                    "replacetext": "replace",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -302,7 +302,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/about2_noun.png",
                     "css_class":"aui_header_images",
-                    "replacetext": "true",
+                    "replacetext": "replace",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -363,7 +363,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap1_noun.png",
                     "css_class":"aui_header_images",
-                    "replacetext": "true",
+                    "replacetext": "replace",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -391,7 +391,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang1_noun.png",
                     "css_class":"aui_header_images",
-                    "replacetext": "false",
+                    "replacetext": "before",
                     "creator": {
                         "name": "",
                         "url": ""

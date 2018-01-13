@@ -438,13 +438,27 @@ function insertImage(element, settings) {
 				$(newImg).appendTo(element);
 			} else if (  settings.Symbol.replacetext === "tooltip" ){
 				console.log("image tooltip called for: "+settings.name);
-				$(element).tooltip({ content: newImg });
+				// element.setAttribute("title",newImg);
+				addToolTip(element,newImg.outerHTML);
+				// $(element).tooltip({ content: "test tooltip!" });
+				// $(".skip").tooltip({ content: "test tooltip!!!" });
+				// $( element ).tooltip( "content", "Awesome title!" );
 			}else if(  settings.Symbol.replacetext === "before" ){
 				$(newImg).insertBefore(element);
 			}
 		}
 		console.log(settings.name + " settings:\ninner: " + element.innerHTML + "\nimage sizes are: h:" + $(newImg).height() + " w:" + $(newImg).width());
 	}
+}
+function addToolTip(element, imgOuterHtml) {
+	element.setAttribute('title', imgOuterHtml);
+	$(element).tooltip({
+		"animated": "fade",
+		"placement": "top",
+		"html": true
+	});
+	// if(isDefined(window.profile.global_settings.tooltip_settings))
+	// $(element).tooltip(window.profile.global_settings.tooltip_settings);
 }
 /**
  * 

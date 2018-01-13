@@ -8,8 +8,13 @@
 	<title>Personalised Website demo- Ori</title>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
-	<script src="jquery.js"></script>
+	<script src="jquery.min.js"></script>
+
+	<script src="bootstrap.min.js"></script>
+
 	<link rel="stylesheet" href="./AUI-TestSite/stylesheet.css">
+	<!--	<link rel="stylesheet" href="./AUI-TestSite/bootstrap.css"> -->
+	<!-- <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
 	<style></style>
 </head>
 
@@ -23,7 +28,8 @@
 					<a aria-function="home" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Main</a>
 				</li>
 				<li id="liCompose" class="nav">
-					<a AUI-action="compose" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Compose</a>
+					<a data-toggle="tooltip" AUI-action="compose" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html"
+					 class="navBar">Compose</a>
 				</li>
 				<li class="nav">
 					<a aria-importance="low" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Delete</a>
@@ -37,10 +43,12 @@
 			<h3>AUI-destination elements: </h3>
 			<ul class="nav">
 				<li class="nav">
-					<a id="home" AUI-destination="home" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Home</a>
+					<a id="home" AUI-destination="home" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar"
+					 title="https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png">Home</a>
 				</li>
 				<li class="nav">
-					<a AUI-action="compose" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Compose</a>
+					<a id="compose" title="<img src='https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png' />" AUI-action="compose"
+					 href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Compose</a>
 				</li>
 				<li class="nav">
 					<a aria-importance="low" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Delete</a>
@@ -62,70 +70,143 @@
 		</form>
 		<p>Fill in and submit the form, then reload the page to see how autocomplete works.</p>
 		<p>Notice that autocomplete is "on" for the form, but "off" for the e-mail field.</p>
-
 	</div>
 	<a id="aid">aAid</a>
+	<a data-toggle="tooltip" title="<img src='https://getbootstrap.com/apple-touch-icon.png' />">
+		Hola Mundo!
+	</a>
+	<a id="riverroad" href="#" title="">image of 1 Maple St.</a>
+
+	<div class="container">
+		<br/>
+		<div class="row" id="panelPrecios">
+			<div class="items">
+				<ul>
+					<li>
+						<a data-toggle="tooltip" title="<img src='https://getbootstrap.com/apple-touch-icon.png' />">
+							Hola Mundo!
+						</a>
+					</li>
+					<li>
+						<a data-toggle="tooltip" title="<img src='http://utbcn.com/img/logosCursas/logo_UTBCN_180x180.png' />">
+							Hola Mundo!
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<a data-toggle="tooltip" title="<img src='https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png' />">
+		PLEASE WORK TOOLTIP!
+	</a>
+
+	<a id="content">
+		<a>
 
 
-	<button onclick="myFunction()">Try it</button>
 
 
-	<script>
-		function myFunction() {
-			var element = document.getElementById("home");
-			var imgToAdd = document.createElement("img");
-			var btn = document.createElement("BUTTON");        // Create a <button> element
-			var t = document.createTextNode("CLICK ME");       // Create a text node
-			// btn.appendChild(t);                                // Append the text to <button>
-			// document.body.appendChild(btn);                    // Append <button> to <body>
 
-			console.log("Element dims: " + element + "\nelement height= " + $(element).height() + "\nelement width= " + $(element).width());
-			imgToAdd.setAttribute("src", "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png");
-			console.log("img dims: " + imgToAdd + "\nimg height= " + $(imgToAdd).height() + "\nimg width= " + $(imgToAdd).width());
-			// $( imgToAdd ).clone(true).appendTo( element );
-			console.log("element height: " + $(element).height() );
+			<button onclick="myFunction()">Try it</button>
 
-			console.log("1");
-			scaleImage(element,imgToAdd)
-			// $(element).html('');
-			console.log("7");
+			});
 
-			$(imgToAdd).appendTo(element);
-			console.log("8");
+			<script>
+				function myFunction() {
 
-			// element.appendChild(btn);
-			// $(element).html('');
-			// $(imgToAdd).appendTo(element);
-			// $(imgToAdd).appendTo("#aid");
-			// $(btn).insertBefore(element);
-			// $(element).append(btn);
+					$(document).ready(function () {
+						$("#content").html('<a id="riverroad" href="#" title="" >image of 2 Maple St.</a>');
+						$("#content #riverroad").tooltip({ content: '<img src="http://icdn.pro/images/fr/a/v/avatar-barbe-brun-homme-utilisateur-icone-9665-128.png" />' });
 
-		}
-		function scaleImage(element, img) {
-			console.log("scale image called on: " + img);
-			console.log("2");
+					});
 
-			var sizeCoefficient = 2;
-			$(element).html('');
-			console.log("3");			
-			// $(img).on('load', function () {
-				console.log("4");
-				var css;
-				console.log("h: " + $(img).height() + "\nw: " + $(img).width() + "\neh: " + $(element).height() + "\new: " + $(element).width());
-				// var mHeight = Math.min($(element).height(), $(this).height());
-				// var mWidth = Math.min($(element).width(), $(this).width());
-				// css = { width: mWidth, height: mHeight };
-				var mHeight = $(element).height();
-				var mWidth = $(element).width();
-				css = { width: mWidth, height: mHeight };
-				$(img).css(css);
-				console.log("5");
-				$(element).width(sizeCoefficient*$(element).width());
-				console.log("6");				
-				// $(img).appendTo(element);			
-			// });
-		}
-	</script>
-</body>
+
+					var element = document.getElementById("home");
+					var imgToAdd = document.createElement("img");
+					var btn = document.createElement("BUTTON");        // Create a <button> element
+					var t = document.createTextNode("CLICK ME");
+					$('#compose').tooltip({
+						content: "<img src='http://utbcn.com/img/logosCursas/logo_UTBCN_180x180.png' />",
+						animated: 'fade',
+						placement: 'bottom',
+						html: true
+					});
+					// Create a text node
+					// btn.appendChild(t);                                // Append the text to <button>
+					// document.body.appendChild(btn);                    // Append <button> to <body>
+
+					console.log("Element dims: " + element + "\nelement height= " + $(element).height() + "\nelement width= " + $(element).width());
+					imgToAdd.setAttribute("src", "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png");
+					console.log("img dims: " + imgToAdd + "\nimg height= " + $(imgToAdd).height() + "\nimg width= " + $(imgToAdd).width());
+					// $( imgToAdd ).clone(true).appendTo( element );
+					console.log("element height: " + $(element).height());
+
+					console.log("1");
+					scaleImage(element, imgToAdd)
+					addToolTip(element, "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",imgToAdd);
+					// $(element).html('');
+					console.log("7");
+
+					$(imgToAdd).appendTo(element);
+					console.log("8");
+
+					// element.appendChild(btn);
+					// $(element).html('');
+					// $(imgToAdd).appendTo(element);
+					// $(imgToAdd).appendTo("#aid");
+					// $(btn).insertBefore(element);
+					// $(element).append(btn);
+
+					// $(".navBar").tooltip("tooltip#1");
+					$("#riverroad").tooltip({ content: '<img src="https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png" />' });
+
+					// $( "#compose" ).setAttribute("data-toggle","tooltip");
+					$('#compose[data-toggle="tooltip"]').tooltip({ content: "<img src='http://utbcn.com/img/logosCursas/logo_UTBCN_180x180.png' />" });
+					console.log("10");
+				}
+				function scaleImage(element, img) {
+					console.log("scale image called on: " + img);
+					console.log("2");
+					var sizeCoefficient = 2;
+					$(element).html('');
+					console.log("3");
+					// $(img).on('load', function () {
+					console.log("4");
+					var css;
+					console.log("h: " + $(img).height() + "\nw: " + $(img).width() + "\neh: " + $(element).height() + "\new: " + $(element).width());
+					// var mHeight = Math.min($(element).height(), $(this).height());
+					// var mWidth = Math.min($(element).width(), $(this).width());
+					// css = { width: mWidth, height: mHeight };
+					var mHeight = $(element).height();
+					var mWidth = $(element).width();
+					css = { width: mWidth, height: mHeight };
+					$(img).css(css);
+					console.log("5");
+					$(element).width(sizeCoefficient * $(element).width());
+					console.log("6");
+					// $(img).appendTo(element);			
+					// });
+				}
+				function addToolTip(element, url,imgToAdd) {
+					element.setAttribute('title', imgToAdd.outerHTML);
+					$(element).tooltip({
+						animated: 'fade',
+						placement: 'bottom',
+						html: true
+					});
+				}
+			</script>
+
+			<script>
+				$('[data-toggle="tooltip"]').tooltip({
+					content: '<img src= "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png"/>',
+					animated: 'fade',
+					placement: 'bottom',
+					html: true
+				});
+				// # sourceURL = pen.js
+			</script>
+			</body>
 
 </html>

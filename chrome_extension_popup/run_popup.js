@@ -41,18 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	document.getElementById("bt_personalize_page_test_profile2").addEventListener('click', () => {
 		// alert("personalize page clicked 2");
-		chrome.tabs.executeScript(null, { file: "popper.js" }, function () {
-
-			chrome.tabs.executeScript(null, { file: "jquery.js" }, function () {
-				chrome.tabs.executeScript(null, { file: "bootstrap.min.js" }, function () {
-					chrome.tabs.executeScript(null, {
-						code: 'var profileJson ="https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile2.json";'
-					}, function () {
-						chrome.tabs.executeScript(null, { file: "ps1_e.js" });
-						// chrome.tabs.executeScript(tab.id, {file: 'content.js'});
+		// chrome.tabs.executeScript(null, { file: "popper.js" }, function () {
+			// chrome.tabs.executeScript(null, { file: "bootstrap.min.js" }, function () {
+				chrome.tabs.executeScript(null, { file: "jquery.min.js" }, function () {
+					chrome.tabs.executeScript(null, { file: "bootstrap.min.js" }, function () {
+						chrome.tabs.executeScript(null, {
+							code: 'var profileJson ="https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile2.json";'
+						}, function () {
+							chrome.tabs.executeScript(null, { file: "ps1_e.js" });
+							// chrome.tabs.executeScript(tab.id, {file: 'content.js'});
+						});
 					});
 				});
-			});
-		});
+			// });
+		// });
 	});
 });
