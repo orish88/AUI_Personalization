@@ -1,14 +1,6 @@
 {
     "name": "prof1",
     "AUI:desc": "Orish- first simple demo file",
-    "global_settings":{
-        "tooltip_settings":{    
-            "animated": "fade",
-            "placement": "top",
-            "html": true
-            
-        }
-    },
     "css": {
         "cssFileLink": "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_css1.css",
         "linkIndex": "0",
@@ -152,7 +144,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/help2_noun.png",
-                    "css_class":"",
+                    "css_class":"aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -183,18 +175,18 @@
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "this links to the home page.",
-                "tooltip": "",
+                "tooltip": "home",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",
-                    "css_class":"",
-                    "replacetext": "false",
+                    "css_class":"aui_header_images",
+                    "replacetext": "replace",
                     "creator": {
                         "name": "Jardson Almeida, The Noun Project",
                         "url": ""
                     },
-                    "width": "",
-                    "height": "",
+                    "width": "100",
+                    "height": "250",
                     "margin": "",
                     "padding": ""
                 },
@@ -218,14 +210,14 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signin1_noun.png",
-                    "css_class":"",
-                    "replacetext": "true",
+                    "css_class":"aui_header_images",
+                    "replacetext": "before",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "",
-                    "height": "",
+                    "width": "100",
+                    "height": "250",
                     "margin": "",
                     "padding": ""
                 },
@@ -249,14 +241,14 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email1_noun.png",
-                    "css_class":"",
-                    "replacetext": "false",
+                    "css_class":"aui_email_images",
+                    "replacetext": "replace",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "",
-                    "height": "",
+                    "width": "100",
+                    "height": "300",
                     "margin": "",
                     "padding": ""
                 },
@@ -284,8 +276,8 @@
                         "name": "",
                         "url": ""
                     },
-                    "width": "",
-                    "height": "",
+                    "width": "100",
+                    "height": "180",
                     "margin": "",
                     "padding": ""
                 },
@@ -305,18 +297,18 @@
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "this links to info about the creator etc.",
-                "tooltip": "",
+                "tooltip": "information about the creator",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/about2_noun.png",
-                    "css_class":"",
-                    "replacetext": "true",
+                    "css_class":"aui_header_images",
+                    "replacetext": "replace",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "",
-                    "height": "",
+                    "width": "100",
+                    "height": "180",
                     "margin": "",
                     "padding": ""
                 },
@@ -340,13 +332,13 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/contact_us2_noun.png",
-                    "css_class":"",
+                    "css_class":"aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "",
-                    "height": "",
+                    "width": "100",
+                    "height": "180",
                     "margin": "",
                     "padding": ""
                 },
@@ -370,14 +362,14 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap1_noun.png",
-                    "css_class":"",
-                    "replacetext": "true",
+                    "css_class":"aui_header_images",
+                    "replacetext": "replace",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "",
-                    "height": "",
+                    "width": "100",
+                    "height": "180",
                     "margin": "",
                     "padding": ""
                 },
@@ -394,18 +386,19 @@
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "pick language",
-                "tooltip": "",
+                "tooltip": "pick language",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang1_noun.png",
-                    "replacetext": "false",
+                    "css_class":"aui_header_images",
+                    "replacetext": "before",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
                     
-                    "width": "",
-                    "height": "",
+                    "width": "60",
+                    "height": "60",
                     "margin": "",
                     "padding": ""
                 },
