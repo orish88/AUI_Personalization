@@ -444,14 +444,7 @@ function insertImage(element, settings) {
 				$(newImg).appendTo(element);
 			} else if (  settings.Symbol.replacetext === "tooltip" ){
 				console.log("image tooltip called for: "+settings.name);
-				// element.setAttribute("title",newImg);
-				
-				// addToolTip(element,newImg.outerHTML);
-
 				altAddToolTip(element,newImg);
-				// $(element).tooltip({ content: "test tooltip!" });
-				// $(".skip").tooltip({ content: "test tooltip!!!" });
-				// $( element ).tooltip( "content", "Awesome title!" );
 			}else if(  settings.Symbol.replacetext === "before" ){
 				$(newImg).insertBefore(element);
 			}
@@ -459,23 +452,28 @@ function insertImage(element, settings) {
 		console.log(settings.name + " settings:\ninner: " + element.innerHTML + "\nimage sizes are: h:" + $(newImg).height() + " w:" + $(newImg).width());
 	}
 }
-function addToolTip(element, imgOuterHtml) {
-	element.setAttribute('title', imgOuterHtml);
-	$(element).tooltip({
-		"animated": "fade",
-		"placement": "top",
-		"html": true
-	});
+// function addToolTip(element, imgOuterHtml) {
+// 	element.setAttribute('title', imgOuterHtml);
+// 	$(element).tooltip({
+// 		"animated": "fade",
+// 		"placement": "top",
+// 		"html": true
+// 	});
 
-	// if(isDefined(window.profile.global_settings.tooltip_settings))
-	// $(element).tooltip(window.profile.global_settings.tooltip_settings);
-}
+// 	// if(isDefined(window.profile.global_settings.tooltip_settings))
+// 	// $(element).tooltip(window.profile.global_settings.tooltip_settings);
+// }
 
 function altAddToolTip(element, newImg) {
 
 	$(newImg).attr("role", "tooltip");
-	hideImg(newImg);
+	$(document).ready(function(){
+		hideImg(newImg);
+	});
+
+	//todo: decide how to add with tooltip_settings
 	$(newImg).insertBefore(element);
+
 	$(element).mouseover(function () {
 		console.log("mouseover called");
 		showImg(newImg);
@@ -483,7 +481,9 @@ function altAddToolTip(element, newImg) {
 	});
 	$(element).mouseleave(function () {
 		console.log("mouseleave called");
-		hideImg(newImg);
+		if( !( $(element).is(":focus") ) ){
+			hideImg(newImg);
+		}
 	});
 
 	$(element).focus(function () {
@@ -492,7 +492,9 @@ function altAddToolTip(element, newImg) {
 	});
 	$(element).focusout(function () {
 		console.log("focusout called");
-		hideImg(newImg);
+		if ($(element+':hover').length != 0) {
+			hideImg(newImg);
+		}
 	});
 
 	$(element).keydown(function (ev) {
