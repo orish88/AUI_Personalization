@@ -22,7 +22,7 @@
 	<!-- AUI-action div -->
 	<div lang="en">
 		<div id="nav" role="navigation">
-			<h3>AUI-action elements: </h3>
+			<h3 aria-hidden = "true" >AUI-action elements: </h3>
 			<ul class="nav">
 				<li class="nav">
 					<a aria-function="home" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Main</a>
@@ -102,9 +102,13 @@
 	</a>
 
 	<a id="content">
-		<a>
-
-
+	</a>
+<div class="text">
+	<label id="tp1-label" for="first">First Name:</label>
+	<input type="text" id="first" name="first" size="20" aria-labelledby="tp1-label" aria-describedby="tp1" aria-required="false"
+	/>
+	<div id="tp1" class="tooltip" role="tooltip" aria-hidden="true">Your first name is a optional</div>
+</div>
 
 
 
@@ -144,7 +148,7 @@
 
 					console.log("1");
 					scaleImage(element, imgToAdd)
-					addToolTip(element, "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",imgToAdd);
+					addToolTip(element, "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png", imgToAdd);
 					// $(element).html('');
 					console.log("7");
 
@@ -188,7 +192,7 @@
 					// $(img).appendTo(element);			
 					// });
 				}
-				function addToolTip(element, url,imgToAdd) {
+				function addToolTip(element, url, imgToAdd) {
 					element.setAttribute('title', imgToAdd.outerHTML);
 					$(element).tooltip({
 						animated: 'fade',
@@ -207,6 +211,6 @@
 				});
 				// # sourceURL = pen.js
 			</script>
-			</body>
+</body>
 
 </html>

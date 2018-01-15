@@ -1,7 +1,7 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 4,
 
-  "name": "AUI Personalization Copy3",
+  "name": "AUI Personalization (4)",
   "description": "This extension allows the user to personalize the current page  .",
   "version": "1.0",
 

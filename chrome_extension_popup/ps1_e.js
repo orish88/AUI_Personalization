@@ -233,6 +233,12 @@ function personalizeCSS(cssSettings) {
 		console.log("set body css called on " + cssBodySettings);
 		setCSS(document.body, cssBodySettings);
 	}
+	// setCSS("hidden",[
+	// 	{
+	// 		"propertyName": "display",
+	// 		"value": "none"
+	// 	}
+	// ]);
 
 }
 
@@ -439,7 +445,10 @@ function insertImage(element, settings) {
 			} else if (  settings.Symbol.replacetext === "tooltip" ){
 				console.log("image tooltip called for: "+settings.name);
 				// element.setAttribute("title",newImg);
-				addToolTip(element,newImg.outerHTML);
+				
+				// addToolTip(element,newImg.outerHTML);
+
+				altAddToolTip(element,newImg);
 				// $(element).tooltip({ content: "test tooltip!" });
 				// $(".skip").tooltip({ content: "test tooltip!!!" });
 				// $( element ).tooltip( "content", "Awesome title!" );
@@ -457,8 +466,51 @@ function addToolTip(element, imgOuterHtml) {
 		"placement": "top",
 		"html": true
 	});
+
 	// if(isDefined(window.profile.global_settings.tooltip_settings))
 	// $(element).tooltip(window.profile.global_settings.tooltip_settings);
+}
+
+function altAddToolTip(element, newImg) {
+
+	$(newImg).attr("role", "tooltip");
+	hideImg(newImg);
+	$(newImg).insertBefore(element);
+	$(element).mouseover(function () {
+		console.log("mouseover called");
+		showImg(newImg);
+		// $(newImg).show();
+	});
+	$(element).mouseleave(function () {
+		console.log("mouseleave called");
+		hideImg(newImg);
+	});
+
+	$(element).focus(function () {
+		console.log("focus called");
+		showImg(newImg);
+	});
+	$(element).focusout(function () {
+		console.log("focusout called");
+		hideImg(newImg);
+	});
+
+	$(element).keydown(function (ev) {
+		if (ev.which == 27) {
+		hideImg(newImg);
+			ev.preventDefault();
+			return false;
+		}
+	});
+}
+
+function hideImg(img){
+	$(img).attr("aria-hidden", "true");
+	$(img).addClass("hidden");
+}
+function showImg(img){
+	$(img).attr("aria-hidden", "false");
+	$(img).removeClass("hidden");
 }
 /**
  * 
