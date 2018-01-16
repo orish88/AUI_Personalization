@@ -481,45 +481,45 @@ function altAddToolTip(element, newImg) {
 	// div.appendChild(span);
 	$(span).appendTo(div);
 	span.setAttribute("id", spanId);
-	$(span).addClass("tooltip");
+
 	$(newImg).appendTo(span);
 	// span.appendChild(newImg);
 	$(span).attr("role", "tooltip");
-	$(span).append($(element).html());
+	$(span).append('<p>p text</p>');
+	$(span).addClass("tooltip");
 	$(document).ready(function () {
 		console.log("on ready hide image called: " + spanId);
 		hideImg(span);
+	});
+	$(element).mouseover(function () {
+		console.log("mouseover called");
+		showImg(span);
+		// $(newImg).show();
+	});
+	$(element).mouseleave(function () {
+		console.log("mouseleave called");
+		if (!($(element).is(":focus"))) {
+			hideImg(span);
+		}
+	});
 
-		$(element).mouseover(function () {
-			console.log("mouseover called");
-			showImg(span);
-			// $(newImg).show();
-		});
-		$(element).mouseleave(function () {
-			console.log("mouseleave called");
-			if (!($(element).is(":focus"))) {
-				hideImg(span);
-			}
-		});
+	$(element).focus(function () {
+		console.log("focus called");
+		showImg(span);
+	});
+	$(element).focusout(function () {
+		console.log("focusout called");
+		if ($(element + ':hover').length != 0) {
+			hideImg(span);
+		}
+	});
 
-		$(element).focus(function () {
-			console.log("focus called");
-			showImg(span);
-		});
-		$(element).focusout(function () {
-			console.log("focusout called");
-			if ($(element + ':hover').length != 0) {
-				hideImg(span);
-			}
-		});
-
-		$(element).keydown(function (ev) {
-			if (ev.which == 27) {
-				hideImg(span);
-				ev.preventDefault();
-				return false;
-			}
-		});
+	$(element).keydown(function (ev) {
+		if (ev.which == 27) {
+			hideImg(span);
+			ev.preventDefault();
+			return false;
+		}
 	});
 
 	//todo: decide how to add with tooltip_settings
@@ -563,9 +563,9 @@ function setCSS(element, settings) {
 
 function addTooltipCssClasses(){
 
-	createCssClass(".tooltip,.arrow:after",'  background:#111; background:rgba(0,0,0,0.9)}');
+	createCssClass(".tooltip,.arrow:after",'  background:gray; ');
 	createCssClass('.tooltip',
-	'font-size:100px;'+
+	'font-size:14px;'+
 	'font-weight:regular;'+
 	'position:relative;'+
 	'padding:10px 20px;'+
@@ -579,8 +579,7 @@ function addTooltipCssClasses(){
 	'text-align:center;'+
 	'text-decoration:none;'+
 	'box-shadow:0 0 3px #000;'+
-	'z-index:9999'+
-	'background-color:blue');
+	'z-index:9999');
 	// createCssClass('.tooltip','  font-size:14px;'+
 	// 'font-weight:regular;'+
 	// 'position:relative;'+
