@@ -71,7 +71,7 @@ function personalizePage(profile) {
 	// alert("personalizee page called");
 
 	console.log("personalize page called for profile: " + profile.name);
-	// addTooltipCssClasses();
+	addTooltipCssClasses();
 	if ( isDefined(profile.css)) {
 		personalizeCSS(profile.css);
 	}
@@ -468,24 +468,58 @@ function insertImage(element, settings) {
 
 function altAddToolTip(element, newImg) {
 
-	var ctrStr = ""+gCtr++;
-	var divId= 'div'+ctrStr;
-	var spanId = 'div'+ctrStr;
-	var divStr = '<div id="'+divId+'" </div>';
+	var ctrStr = "" + gCtr++;
+	var divId = 'div' + ctrStr;
+	var spanId = 'div' + ctrStr;
+	var divStr = '<div id="' + divId + '" </div>';
 	// element.insertBefore(span,null);
 	// $(span).insertBefore(element);
 	$(element).wrap(divStr);
 	var div = document.getElementById(divId);
 	// div.setAttribute("id","div"+(gCtr++) );
 	var span = document.createElement("span");
-	div.appendChild(span);
-	span.setAttribute("id",spanId);	
-	$(span).addClass(".tooltip");
-	span.appendChild(newImg);
+	// div.appendChild(span);
+	$(span).appendTo(div);
+	span.setAttribute("id", spanId);
+	$(span).addClass("tooltip");
+	$(newImg).appendTo(span);
+	// span.appendChild(newImg);
 	$(span).attr("role", "tooltip");
-	$(document).ready(function(){
-		console.log("on ready hide image called: "+spanId);
+	$(span).append($(element).html());
+	$(document).ready(function () {
+		console.log("on ready hide image called: " + spanId);
 		hideImg(span);
+
+		$(element).mouseover(function () {
+			console.log("mouseover called");
+			showImg(span);
+			// $(newImg).show();
+		});
+		$(element).mouseleave(function () {
+			console.log("mouseleave called");
+			if (!($(element).is(":focus"))) {
+				hideImg(span);
+			}
+		});
+
+		$(element).focus(function () {
+			console.log("focus called");
+			showImg(span);
+		});
+		$(element).focusout(function () {
+			console.log("focusout called");
+			if ($(element + ':hover').length != 0) {
+				hideImg(span);
+			}
+		});
+
+		$(element).keydown(function (ev) {
+			if (ev.which == 27) {
+				hideImg(span);
+				ev.preventDefault();
+				return false;
+			}
+		});
 	});
 
 	//todo: decide how to add with tooltip_settings
@@ -493,36 +527,6 @@ function altAddToolTip(element, newImg) {
 	// element.appendChild(span);
 
 
-	$(element).mouseover(function () {
-		console.log("mouseover called");
-		showImg(span);
-		// $(newImg).show();
-	});
-	$(element).mouseleave(function () {
-		console.log("mouseleave called");
-		if( !( $(element).is(":focus") ) ){
-			hideImg(span);
-		}
-	});
-
-	$(element).focus(function () {
-		console.log("focus called");
-		showImg(span);
-	});
-	$(element).focusout(function () {
-		console.log("focusout called");
-		if ($(element+':hover').length != 0) {
-			hideImg(span);
-		}
-	});
-
-	$(element).keydown(function (ev) {
-		if (ev.which == 27) {
-		hideImg(span);
-			ev.preventDefault();
-			return false;
-		}
-	});
 }
 
 function hideImg(img){
@@ -560,9 +564,10 @@ function setCSS(element, settings) {
 function addTooltipCssClasses(){
 
 	createCssClass(".tooltip,.arrow:after",'  background:#111; background:rgba(0,0,0,0.9)}');
-	createCssClass('span.tooltip','  font-size:14px;'+
+	createCssClass('.tooltip',
+	'font-size:100px;'+
 	'font-weight:regular;'+
-	'position:absolute;'+
+	'position:relative;'+
 	'padding:10px 20px;'+
 	'color:#fff;'+
 	'-webkit-border-radius:7px;'+
@@ -574,27 +579,46 @@ function addTooltipCssClasses(){
 	'text-align:center;'+
 	'text-decoration:none;'+
 	'box-shadow:0 0 3px #000;'+
-	'z-index:9999');
-	createCssClass('.tooltip .arrow','  display:block;'+
-	'width:70px;'+
-	'height:16px;'+
-	'overflow:hidden;'+
-	'position:absolute;'+
-	'left:50%;'+
-	'margin-left:-35px;'+
-	'bottom:-16px');
-	createCssClass('.tooltip .arrow:after','  content:"";'+
-	'position:absolute;'+
-	'left:20px;'+
-	'top:-20px;'+
-	'width:25px;'+
-	'height:25px;'+
-	'-webkit-box-shadow:6px 5px 9px -9px #000 5px 6px 9px -9px #000;'+
-	'-moz-box-shadow:6px 5px 9px -9px #000 5px 6px 9px -9px #000;'+
-	'box-shadow:6px 5px 9px -9px #000 5px 6px 9px -9px #000;'+
-	'-webkit-transform:rotate(45deg);'+
-	'-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);'+
-	'-o-transform:rotate(45deg);transform:rotate(45deg)');
+	'z-index:9999'+
+	'background-color:blue');
+	// createCssClass('.tooltip','  font-size:14px;'+
+	// 'font-weight:regular;'+
+	// 'position:relative;'+
+	// 'padding:10px 20px;'+
+	// 'color:#fff;'+
+	// '-webkit-border-radius:7px;'+
+	// '-moz-border-radius:7px;border-radius:7px;'+
+	// '-webkit-background-clip:padding-box;'+
+	// '-moz-background-clip:padding;'+
+	// 'background-clip:padding-box;'+
+	// 'margin-top:20px;'+
+	// 'text-align:center;'+
+	// 'text-decoration:none;'+
+	// 'box-shadow:0 0 3px #000;'+
+	// 'z-index:9999'+
+	// 'background-color:blue');
+
+	// createCssClass(".main","background-color:blue");
+	// createCssClass('.tooltip .arrow','  display:block;'+
+	// 'width:70px;'+
+	// 'height:16px;'+
+	// 'overflow:hidden;'+
+	// 'position:absolute;'+
+	// 'left:50%;'+
+	// 'margin-left:-35px;'+
+	// 'bottom:-16px');
+	// createCssClass('.tooltip .arrow:after','  content:"";'+
+	// 'position:absolute;'+
+	// 'left:20px;'+
+	// 'top:-20px;'+
+	// 'width:25px;'+
+	// 'height:25px;'+
+	// '-webkit-box-shadow:6px 5px 9px -9px #000 5px 6px 9px -9px #000;'+
+	// '-moz-box-shadow:6px 5px 9px -9px #000 5px 6px 9px -9px #000;'+
+	// 'box-shadow:6px 5px 9px -9px #000 5px 6px 9px -9px #000;'+
+	// '-webkit-transform:rotate(45deg);'+
+	// '-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);'+
+	// '-o-transform:rotate(45deg);transform:rotate(45deg)');
 	
 
 }
