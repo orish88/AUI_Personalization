@@ -261,7 +261,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email1_noun.png",
                     "css_class":"aui_header_images",
-                    "replacetext": "before",
+                    "replacetext": "tooltip",
                     "creator": {
                         "name": "",
                         "url": ""
