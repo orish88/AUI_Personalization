@@ -260,7 +260,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email1_noun.png",
-                    "css_class":"",
+                    "css_class":"aui_header_images",
                     "replacetext": "before",
                     "creator": {
                         "name": "",
@@ -316,7 +316,7 @@
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "this links to info about the creator etc.",
-                "tooltip": "",
+                "tooltip": "Website Information",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/about2_noun.png",
@@ -382,13 +382,13 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap1_noun.png",
                     "css_class":"",
-                    "replacetext": "replace",
+                    "replacetext": "tooltip",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "60px",
-                    "height": "60px",
+                    "width": "100px",
+                    "height": "100px",
                     "margin": "",
                     "padding": ""
                 },

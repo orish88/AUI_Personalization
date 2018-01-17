@@ -577,7 +577,7 @@ function setCSS(element, settings) {
 
 
 function addTooltipCssClasses(){
-	createCssClass(".tooltip,.arrow:after",'  background:gray; ');
+	createCssClass(".tooltip,.arrow:after",'  background:black; ');
 	createCssClass('.tooltip',
 	'font-size:14px;'+
 	'font-weight:regular;'+
