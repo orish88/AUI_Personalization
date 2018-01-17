@@ -194,7 +194,7 @@
                 "inherits": "",
                 "shortcut": "Shift+H",
                 "longdesc": "this links to the home page.",
-                "tooltip": "Go to home page",
+                "tooltip": "Go to homepage",
                 "text": "home text",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",
@@ -415,8 +415,8 @@
                         "url": ""
                     },
                     
-                    "width": "",
-                    "height": "",
+                    "width": "100",
+                    "height": "100",
                     "margin": "",
                     "padding": ""
                 },
