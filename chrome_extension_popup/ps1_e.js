@@ -358,9 +358,9 @@ function applySettingsOnElement(element, attrVal) {
 		//change text and symbol:
 		insertImage(element,settings);
 
-		if (isDefined(settings.tooltip)) {
-			element.title = settings.tooltip;
-		}
+		// if (isDefined(settings.tooltip)) {
+		// 	element.title = settings.tooltip;
+		// }
 		// add/change shortcut (accesskey)
 		if (isDefined(settings.shortcut)) {
 			element.accessKey = settings.shortcut;
@@ -426,9 +426,9 @@ function insertImage(element, settings) {
 		console.log("inside insert image");
 		var newImg = document.createElement('img');
 		newImg.setAttribute("src", settings.Symbol.url);
-		if (isDefined(settings.tooltip)) {
-			newImg.title = settings.tooltip;
-		}
+		// if (isDefined(settings.tooltip)) {
+		// 	newImg.title = settings.tooltip;
+		// }
 		if (isDefined(settings.Symbol.css_class)) {
 			newImg.setAttribute("class", settings.Symbol.css_class);
 		} else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.height)) {
@@ -496,9 +496,9 @@ function altAddToolTip(element, newImg,settings) {
 	$(span).addClass("tooltip");
 
 	/*add text to the span */
-	if(isDefined(settings.text)){
+	if(isDefined(settings.tooltip)){
 		var p = document.createElement("p");
-		$(p).html(settings.text);
+		$(p).html(settings.tooltip);
 		$(p).appendTo(span);
 		
 	}
@@ -577,7 +577,6 @@ function setCSS(element, settings) {
 
 
 function addTooltipCssClasses(){
-
 	createCssClass(".tooltip,.arrow:after",'  background:gray; ');
 	createCssClass('.tooltip',
 	'font-size:14px;'+
@@ -604,7 +603,6 @@ function addTooltipCssClasses(){
 	createCssClass('[aria-hidden="true"]', 'display: none');
 	createCssClass('[aria-hidden="false"]', 'display: block');
 	createCssClass('a:focus, a:active', 'text-decoration: underline;');
-
 }
 function createCssClass(className,propertiesStr){
 	var style = document.createElement('style');

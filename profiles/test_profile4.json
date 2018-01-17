@@ -198,7 +198,7 @@
                 "text": "home text",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",
-                    "css_class":"",
+                    "css_class":"aui_header_images",
                     "replacetext": "tooltip",
                     "creator": {
                         "name": "Jardson Almeida, The Noun Project",
@@ -320,7 +320,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/about2_noun.png",
-                    "css_class":"",
+                    "css_class":"aui_header_images",
                     "replacetext": "tooltip",
                     "creator": {
                         "name": "",
@@ -387,8 +387,8 @@
                         "name": "",
                         "url": ""
                     },
-                    "width": "",
-                    "height": "",
+                    "width": "60px",
+                    "height": "60px",
                     "margin": "",
                     "padding": ""
                 },
