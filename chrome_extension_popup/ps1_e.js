@@ -591,7 +591,8 @@ function addTooltipCssClasses(){
 	'font-weight:regular;'+
 	'position:absolute;'+
 	'bottom:100%;'+
-	'right:25%;'+
+	// 'right:20%;'+
+	// 'left:100%;'+
 	'overflow:visible;'+
 	'padding:10px 20px;'+
 	'color:#fff;'+
