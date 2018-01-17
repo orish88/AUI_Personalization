@@ -417,9 +417,9 @@ function scaleImage(element, img, name, scaleType, inner) {
 function insertImage(element, settings) {
 	if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
 
-		if (isDefined(settings.text)) {
-			$(element).html(settings.text);
-		}
+		// if (isDefined(settings.text)) {
+		// 	$(element).html(settings.text);
+		// }
 		var mHeight = $(element).height();
 		var mWidth = $(element).width();
 
@@ -446,8 +446,11 @@ function insertImage(element, settings) {
 				$(newImg).appendTo(element);
 			} else if (  settings.Symbol.replacetext === "tooltip" ){
 				console.log("image tooltip called for: "+settings.name);
-				altAddToolTip(element,newImg);
+				altAddToolTip(element,newImg,settings);
 			}else if(  settings.Symbol.replacetext === "before" ){
+				if (isDefined(settings.text)) {
+					$(element).html(settings.text);
+				}
 				$(newImg).insertBefore(element);
 			}
 		}
@@ -466,27 +469,39 @@ function insertImage(element, settings) {
 // 	// $(element).tooltip(window.profile.global_settings.tooltip_settings);
 // }
 
-function altAddToolTip(element, newImg) {
+function altAddToolTip(element, newImg,settings) {
 
 	var ctrStr = "" + gCtr++;
 	var divId = 'div' + ctrStr;
-	var spanId = 'div' + ctrStr;
+	var spanId = 'span' + ctrStr;
 	var divStr = '<div id="' + divId + '" </div>';
 	// element.insertBefore(span,null);
 	// $(span).insertBefore(element);
 	$(element).wrap(divStr);
 	var div = document.getElementById(divId);
+	$(div).addClass("tooltip_parent");
 	// div.setAttribute("id","div"+(gCtr++) );
 	var span = document.createElement("span");
 	// div.appendChild(span);
 	$(span).appendTo(div);
-	span.setAttribute("id", spanId);
+	// span.setAttribute("id", spanId);
+	$(span).attr("id",spanId);
+
+	$(element).attr("aria-describedby",spanId);
 
 	$(newImg).appendTo(span);
 	// span.appendChild(newImg);
 	$(span).attr("role", "tooltip");
-	$(span).append('<p>p text</p>');
+	// $(span).append('<p>p text</p>');
 	$(span).addClass("tooltip");
+
+	/*add text to the span */
+	if(isDefined(settings.text)){
+		var p = document.createElement("p");
+		$(p).html(settings.text);
+		$(p).appendTo(span);
+		
+	}
 	$(document).ready(function () {
 		console.log("on ready hide image called: " + spanId);
 		hideImg(span);
@@ -507,11 +522,11 @@ function altAddToolTip(element, newImg) {
 		console.log("focus called");
 		showImg(span);
 	});
-	$(element).focusout(function () {
+	$(element).blur(function () {
 		console.log("focusout called");
-		if ($(element + ':hover').length != 0) {
+		// if ($(element + ':hover').length != 0) {
 			hideImg(span);
-		}
+		// }
 	});
 
 	$(element).keydown(function (ev) {
@@ -567,58 +582,28 @@ function addTooltipCssClasses(){
 	createCssClass('.tooltip',
 	'font-size:14px;'+
 	'font-weight:regular;'+
-	'position:relative;'+
+	'position:absolute;'+
+	'bottom:100%;'+
+	'right:25%;'+
+	'overflow:visible;'+
 	'padding:10px 20px;'+
 	'color:#fff;'+
 	'-webkit-border-radius:7px;'+
-	'-moz-border-radius:7px;border-radius:7px;'+
+	'-moz-border-radius:7px;'+
+	'border-radius:7px;'+
 	'-webkit-background-clip:padding-box;'+
 	'-moz-background-clip:padding;'+
 	'background-clip:padding-box;'+
-	'margin-top:20px;'+
+	'margin-bottom: 20%;'+
 	'text-align:center;'+
 	'text-decoration:none;'+
 	'box-shadow:0 0 3px #000;'+
-	'z-index:9999');
-	// createCssClass('.tooltip','  font-size:14px;'+
-	// 'font-weight:regular;'+
-	// 'position:relative;'+
-	// 'padding:10px 20px;'+
-	// 'color:#fff;'+
-	// '-webkit-border-radius:7px;'+
-	// '-moz-border-radius:7px;border-radius:7px;'+
-	// '-webkit-background-clip:padding-box;'+
-	// '-moz-background-clip:padding;'+
-	// 'background-clip:padding-box;'+
-	// 'margin-top:20px;'+
-	// 'text-align:center;'+
-	// 'text-decoration:none;'+
-	// 'box-shadow:0 0 3px #000;'+
-	// 'z-index:9999'+
-	// 'background-color:blue');
-
-	// createCssClass(".main","background-color:blue");
-	// createCssClass('.tooltip .arrow','  display:block;'+
-	// 'width:70px;'+
-	// 'height:16px;'+
-	// 'overflow:hidden;'+
-	// 'position:absolute;'+
-	// 'left:50%;'+
-	// 'margin-left:-35px;'+
-	// 'bottom:-16px');
-	// createCssClass('.tooltip .arrow:after','  content:"";'+
-	// 'position:absolute;'+
-	// 'left:20px;'+
-	// 'top:-20px;'+
-	// 'width:25px;'+
-	// 'height:25px;'+
-	// '-webkit-box-shadow:6px 5px 9px -9px #000 5px 6px 9px -9px #000;'+
-	// '-moz-box-shadow:6px 5px 9px -9px #000 5px 6px 9px -9px #000;'+
-	// 'box-shadow:6px 5px 9px -9px #000 5px 6px 9px -9px #000;'+
-	// '-webkit-transform:rotate(45deg);'+
-	// '-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);'+
-	// '-o-transform:rotate(45deg);transform:rotate(45deg)');
-	
+	'z-index:9999;');
+	createCssClass('.tooltip_parent',
+	"position:relative;");
+	createCssClass('[aria-hidden="true"]', 'display: none');
+	createCssClass('[aria-hidden="false"]', 'display: block');
+	createCssClass('a:focus, a:active', 'text-decoration: underline;');
 
 }
 function createCssClass(className,propertiesStr){
