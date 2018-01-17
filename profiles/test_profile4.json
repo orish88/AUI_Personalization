@@ -101,7 +101,7 @@
                     
                 ],
                 "inherits": "",
-                "shortcut": "SHIFT + C",
+                "shortcut": "Shift + C",
                 "longdesc": "this button writes or creates your new work.",
                 "tooltip": "compose",
                 "text": "compose now",
@@ -129,7 +129,7 @@
                 "type": [
                 ],
                 "inherits": "",
-                "shortcut": "SHIFT + D",
+                "shortcut": "Shift + D",
                 "longdesc": "this button delete your work.",
                 "tooltip": "delete",
                 "text": "delete",
@@ -157,7 +157,7 @@
                 "type": [
                 ],
                 "inherits": "",
-                "shortcut": "SHIFT + D",
+                "shortcut": "Shift + D",
                 "longdesc": "press to get website help",
                 "tooltip": "help",
                 "text": "",
@@ -192,7 +192,7 @@
                     "a","not div"
                 ],
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "Shift+H",
                 "longdesc": "this links to the home page.",
                 "tooltip": "Go to home page",
                 "text": "home text",
@@ -223,7 +223,7 @@
                     "a","not div"
                 ],
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "Shift+H",
                 "longdesc": "link to sign in to the website",
                 "tooltip": "Sign in",
                 "text": "",
@@ -254,7 +254,7 @@
 
                 ],
                 "inherits": "",
-                "shortcut": "",
+                "shortcut": "E",
                 "longdesc": "this links to the our email page.",
                 "tooltip": "email us",
                 "text": "",
@@ -285,7 +285,7 @@
                     
                 ],
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "Shift+H",
                 "longdesc": "this links to the site's services",
                 "tooltip": "Services",
                 "text": "Offered Services",
@@ -314,7 +314,7 @@
                     "a"
                 ],
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "i",
                 "longdesc": "this links to info about the creator etc.",
                 "tooltip": "Website Information",
                 "text": "",
@@ -345,7 +345,7 @@
                     ""
                 ],
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "Shift+H",
                 "longdesc": "contach the creators",
                 "tooltip": "contact the creators",
                 "text": "",
@@ -375,7 +375,7 @@
                     ""
                 ],
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "Shift+H",
                 "longdesc": "map of the website",
                 "tooltip": "map of this website",
                 "text": "",
@@ -403,7 +403,7 @@
             "lang": {
                 "name": "lang",
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "Shift+H",
                 "longdesc": "pick language",
                 "tooltip": "",
                 "text": "",

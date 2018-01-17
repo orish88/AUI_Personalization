@@ -502,6 +502,9 @@ function altAddToolTip(element, newImg,settings) {
 		$(p).appendTo(span);
 		
 	}
+	if(isDefined(settings.shortcut)){
+		defineKeyboardShortcut(element,span,settings.shortcut);
+	}
 	$(document).ready(function () {
 		console.log("on ready hide image called: " + spanId);
 		hideImg(span);
@@ -613,9 +616,40 @@ function createCssClass(className,propertiesStr){
 }
 
 
+function defineKeyboardShortcut(elm, span, keys){
+	console.log("define shortcut: "+span.id+": "+keys);
+	$(elm).keydown(function (ev) {
+		if (isKeys(ev,keys)) {
+			showImg(span);
+			ev.preventDefault();
+			return false;
+		}
+	});
+
+}
+function isKeys(event,keys){
+
+	if(keys.indexOf("+") > -1){
+		var 
+		var arr = str.split("+").map(function(item) {
+			return item.trim();
+		});
+		if(event.getModifierState(arr[0]) && event.which == arr[1].changeAttrVal(0)){
+			return true;
+		}
+		return false;
+	}else{
+		/*todo: FIX TO FIT MODIFIER KEYS like ctrl shift alt */
+		return event.which == keys.charCodeAt(0);
+	}
+
+
+}
+
 function isDefined(variable) {
 	if (variable != null && variable != undefined && variable != "")
 		return true;
 	return false;
 
 }
+
