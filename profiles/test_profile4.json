@@ -428,7 +428,43 @@
                     }
                 ]
             }
+        },
+        "AUI-symbol": {
+            "global_settings": {
+                "name": "AUI-symbol"
+            },
+            "https://en.wikipedia.org/wiki/Copyright": {
+                "name": "https://en.wikipedia.org/wiki/Copyright",
+                "type": [
+                    
+                ],
+                "inherits": "",
+                "shortcut": "Shift + C",
+                "longdesc": "Copyrights information",
+                "tooltip": "Copyrights Information",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/copyright1_noun.png",
+                    "replacetext": "tooltip",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "100px",
+                    "height": "100px",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            }
         }
+
     },
     "scopes": {
         "itemtypes": {
