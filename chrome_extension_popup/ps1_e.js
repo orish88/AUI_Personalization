@@ -488,6 +488,7 @@ function altAddToolTip(element, newImg,settings) {
 	$(span).attr("id",spanId);
 
 	$(element).attr("aria-describedby",spanId);
+	$(element).attr("tabindex","0");	
 
 	$(newImg).appendTo(span);
 	// span.appendChild(newImg);
@@ -549,7 +550,6 @@ function altAddToolTip(element, newImg,settings) {
 
 	// element.appendChild(span);
 
-
 }
 
 function hideImg(img){
@@ -590,7 +590,7 @@ function addTooltipCssClasses(){
 	'font-size:14px;'+
 	'font-weight:regular;'+
 	'position:absolute;'+
-	'bottom:100%;'+
+	'bottom:40px;'+
 	// 'right:20%;'+
 	// 'left:100%;'+
 	'overflow:visible;'+
@@ -602,7 +602,7 @@ function addTooltipCssClasses(){
 	'-webkit-background-clip:padding-box;'+
 	'-moz-background-clip:padding;'+
 	'background-clip:padding-box;'+
-	'margin-bottom: 20%;'+
+	// 'margin-bottom: 20%;'+
 	'text-align:center;'+
 	'text-decoration:none;'+
 	'box-shadow:0 0 3px #000;'+
