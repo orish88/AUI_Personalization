@@ -479,8 +479,9 @@ function altAddToolTip(element, newImg,settings) {
 	// $(span).insertBefore(element);
 	$(element).wrap(divStr);
 	var div = document.getElementById(divId);
-	$(div).addClass("tooltip_parent");
-	// div.setAttribute("id","div"+(gCtr++) );
+
+	// $(div).addClass("tooltip_parent");
+
 	var span = document.createElement("span");
 	// div.appendChild(span);
 	$(span).appendTo(div);
@@ -488,20 +489,25 @@ function altAddToolTip(element, newImg,settings) {
 	$(span).attr("id",spanId);
 
 	$(element).attr("aria-describedby",spanId);
-	$(element).attr("tabindex","0");	
+
 
 	$(newImg).appendTo(span);
 	// span.appendChild(newImg);
 	$(span).attr("role", "tooltip");
 	// $(span).append('<p>p text</p>');
-	$(span).addClass("tooltip");
 
+	$(span).addClass("tooltip");
+	positionSpan(span,element);
+
+
+	var oldElem = element;
+	element = div;
+	$(element).attr("tabindex","0");	
 	/*add text to the span */
 	if(isDefined(settings.tooltip)){
 		var p = document.createElement("p");
 		$(p).html(settings.tooltip);
 		$(p).appendTo(span);
-		
 	}
 
 	$(document).ready(function () {
@@ -531,7 +537,7 @@ function altAddToolTip(element, newImg,settings) {
 		// }
 	});
 
-	$(element).keydown(function (ev) {
+	$(document.body).keydown(function (ev) {
 
 		if (isKeys(ev,settings.shortcut)) {
 			showImg(span);
@@ -585,12 +591,13 @@ function setCSS(element, settings) {
 
 
 function addTooltipCssClasses(){
-	createCssClass(".tooltip,.arrow:after",'  background:black; ');
+	// createCssClass(".tooltip,.arrow:after",'  background:yellow; ');
 	createCssClass('.tooltip',
+	'background:black; '+
 	'font-size:14px;'+
 	'font-weight:regular;'+
 	'position:absolute;'+
-	'bottom:40px;'+
+	// 'top:40px;'+
 	// 'right:20%;'+
 	// 'left:100%;'+
 	'overflow:visible;'+
@@ -606,12 +613,13 @@ function addTooltipCssClasses(){
 	'text-align:center;'+
 	'text-decoration:none;'+
 	'box-shadow:0 0 3px #000;'+
-	'z-index:9999;');
+	'z-index:99999999;');
 	createCssClass('.tooltip_parent',
 	"position:relative;");
 	createCssClass('[aria-hidden="true"]', 'display: none');
 	createCssClass('[aria-hidden="false"]', 'display: block');
 	createCssClass('a:focus, a:active', 'text-decoration: underline;');
+	
 }
 function createCssClass(className,propertiesStr){
 	var style = document.createElement('style');
@@ -642,7 +650,7 @@ function isKeys(event,keys){
 		var arr = keys.split("+").map(function(item) {
 			return item.trim();
 		});
-		if(checkModifier(arr[0],event) && event.which == arr[1].changeAttrVal(0)){
+		if(checkModifier(arr[0],event) && event.which == arr[1].charCodeAt(0)){
 			return true;
 		}
 		return false;
@@ -671,5 +679,24 @@ function checkModifier(modifierStr,event){
 		return true;
 	}
 	return false;
+}
+
+function positionSpan(span,element){
+
+	// var addToTop = -1.5*element.height;
+	// var addToLeft = -500;
+	var bodyRect = document.body.getBoundingClientRect();
+    var elemRect = element.getBoundingClientRect();
+	var top_offset = elemRect.top - bodyRect.top;
+	var left_offset = elemRect.left - bodyRect.left;
+	console.log('Element is ' + top_offset + ' vertical pixels from <body>');
+	console.log('Element is ' + left_offset + ' horizontal pixels from <body>');
+	console.log("bodyRect: top: "+bodyRect.top+" left: "+bodyRect.left);
+	console.log("elemRect: top: "+elemRect.top+" left: "+elemRect.left);
+
+	span.style.top = elemRect.top;
+	span.style.left = elemRect.left;
+	// span.style.top = top_offset + addToTop;
+	// span.style.left = left_offset +addToLeft;
 }
 

@@ -223,7 +223,7 @@
                     "a","not div"
                 ],
                 "inherits": "",
-                "shortcut": "Shift+H",
+                "shortcut": "Shift+L",
                 "longdesc": "link to sign in to the website",
                 "tooltip": "Sign in",
                 "text": "",
@@ -285,7 +285,7 @@
                     
                 ],
                 "inherits": "",
-                "shortcut": "Shift+H",
+                "shortcut": "Shift+R",
                 "longdesc": "this links to the site's services",
                 "tooltip": "Services",
                 "text": "Offered Services",
@@ -314,7 +314,7 @@
                     "a"
                 ],
                 "inherits": "",
-                "shortcut": "i",
+                "shortcut": "I",
                 "longdesc": "this links to info about the creator etc.",
                 "tooltip": "Website Information",
                 "text": "",
@@ -345,7 +345,7 @@
                     ""
                 ],
                 "inherits": "",
-                "shortcut": "Shift+H",
+                "shortcut": "Shift+Q",
                 "longdesc": "contach the creators",
                 "tooltip": "contact the creators",
                 "text": "",
@@ -375,7 +375,7 @@
                     ""
                 ],
                 "inherits": "",
-                "shortcut": "Shift+H",
+                "shortcut": "Shift+M",
                 "longdesc": "map of the website",
                 "tooltip": "map of this website",
                 "text": "",
@@ -403,7 +403,7 @@
             "lang": {
                 "name": "lang",
                 "inherits": "",
-                "shortcut": "Shift+H",
+                "shortcut": "L",
                 "longdesc": "pick language",
                 "tooltip": "",
                 "text": "",
