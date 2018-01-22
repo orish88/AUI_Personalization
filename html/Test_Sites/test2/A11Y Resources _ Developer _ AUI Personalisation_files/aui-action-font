@@ -1,0 +1,394 @@
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+	src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.aui-action-compose-font:before {
+	content: "\f044"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-next-font:before {
+	content: "\f061"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-delete-font:before {
+	content: "\f014"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-previous-font:before {
+	content: "\f060"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-toc-font:before {
+	content: "\f03a"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-submit-font:before {
+	content: "\f18e"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-confirm-font:before {
+	content: "\f00c";
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-undo-font:before {
+	content: "\f0e2"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-cancel-font:before {
+	content: "\f05e"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-reset-font:before {
+	content: "\f177"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-label-font:before {
+	content: "\f02b"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-buy-font:before {
+	content: "\f07a"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-checkout-font:before {
+	content: "\f218"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-add-font:before {
+	content: "\f067"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-move-font:before {
+	content: "\f047"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-save-font:before {
+	content: "\f0c7"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-send-font:before {
+	content: "\f1d8"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-close-font:before {
+	content: "\f00d"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-more-font:before {
+	content: "\f150"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-print-font:before {
+	content: "\f02f"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-received-font:before {
+	content: "\f07c"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-sent-font:before {
+	content: "\f115"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-edit-font:before {
+	content: "\f040"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-forward-font:before {
+	content: "\f064"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-reply-font:before {
+	content: "\f2ba"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-upload-font:before {
+	content: "\f093"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-download-font:before {
+	content: "\f019"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-connect-font:before {
+	content: "\f1e6"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+
+.aui-action-open-font:before {
+	content: "\f15c"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-new-font:before {
+	content: "\f15b"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-settings-font:before {
+	content: "\f085"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-mode-font:before {
+	content: "\f205"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-increase-font:before {
+	content: "\f055"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-decrease-font:before {
+	content: "\f056"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-play-font:before {
+	content: "\f04b"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-pause-font:before {
+	content: "\f04c"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-captions-font:before {
+	content: "\f20a"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-mute-font:before {
+	content: "\f026"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-volume-font:before {
+	content: "\f028"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-channel-font:before {
+	content: "\f26c"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-temperature-font:before {
+	content: "\f2cb"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-brightness-font:before {
+	content: "\f185"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-profile-font:before {
+	content: "\f0c0"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-expand-font:before {
+	content: "\f150"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-refresh-font:before {
+	content: "\f021"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-properties-font:before {
+	content: "\f013"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-help-font:before {
+	content: "\f05a"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-cut-font:before {
+	content: "\f0c4"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-copy-font:before {
+	content: "\f24d"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-paste-font:before {
+	content: "\f0ea"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-color-font:before {
+	content: "\f1fc"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-date-font:before {
+	content: "\f073"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-remove-font:before {
+	content: "\f068"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-right-font:before {
+	content: "\f101"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-action-left-font:before {
+	content: "\f100"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+

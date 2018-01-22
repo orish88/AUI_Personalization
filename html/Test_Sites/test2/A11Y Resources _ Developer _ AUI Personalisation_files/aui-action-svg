@@ -1,0 +1,441 @@
+
+.aui-action-compose-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/compose_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-next-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/next_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-delete-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/delete_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-previous-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/previous_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-toc-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/toc_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-submit-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/submit_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-confirm-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/confirm_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-undo-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/undo_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-cancel-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/cancel_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-reset-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/reset_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-label-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/label_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-buy-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/buy_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-checkout-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/checkout_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-add-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/add_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-move-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/move_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-save-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/save_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-send-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/send_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-close-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/close_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-more-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/more_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-print-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/print_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-received-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/received_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-sent-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/sent_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-edit-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/edit_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-forward-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/forward_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-reply-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/reply_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-upload-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/upload_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-download-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/download_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-connect-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/connect_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-open-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/open_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-new-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/new_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-settings-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/settings_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-mode-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/mode_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-increase-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/higher_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-decrease-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/lower_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-play-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/play_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-pause-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/pause_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-captions-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/captions_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-mute-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/mute_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-volume-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/volume_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-channel-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/channel_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-temperature-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/temperature_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-brightness-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/brightness_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-profile-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/profile_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-expand-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/expand_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-refresh-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/refresh_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-properties-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/properties_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-help-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/help_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-cut-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/cut_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-copy-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/copy_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-paste-svg:before {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/paste_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-color-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/colour_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-date-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/date_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-remove-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/remove_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-right-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/right_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-action-left-svg:before {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/action/left_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+

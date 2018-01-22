@@ -6,20 +6,54 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Getting Started Extension's Popup</title>
   <style type="text/css">
-    body {
+    /* body {
       margin: 10px;
       white-space: nowrap;
     }
 
     h1 {
       font-size: 15px;
-    }
+    } */
 
-    #container {
+    /* #container {
       align-items: center;
       display: flex;
       justify-content: space-between;
+    } */
+   /* button{  */
+      /* align-items: left; */
+      /* height : 100px; */
+      /* width : 200px; */
+      /* display: inline-block; */
+      /* margin:20px; */
+    /* } */
+    /* img{ */
+      /* align-items: center; */
+      /* height : 100px; */
+      /* width : 100px; */
+      /* float:left; */
+    /* } */
+    /* p{ */
+      /* align-items: center; */
+      /* height : 100px; */
+      /* width : 100px; */
+      /* float:left; */
+    /* }  */
+    .btn{
+      height: 50px;
+      width: 200px;
+      margin: 5px; 
     }
+    .btn img { 
+    height: 30px;
+    width:50px; 
+    display: inline-block;
+    vertical-align: middle;
+    /* margin-left:10px; */
+    background: #f00;
+    padding: 5px;
+    border-radius: 5px;
+}
   </style>
 
   <!--
@@ -36,17 +70,21 @@
 <body>
   <h1> Athena ICT Personalization</h1>
   <div>
-    <button id="bt_personalize_page_test_profile2"  onclick="myFunction()" title="change tooltip">
-      Change Tooltip</button>
+    <button class="btn" id="bt_personalize_page_test_profile2"  onclick="myFunction()" title="change tooltip">
+      <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/tooltip1_noun.png"></img>
+      <span>Change Tooltip</span>
+    </button>
   </div>
   <div>
-    <button id="bt_personalize_page_test_profile1"  onclick="myFunction()">
-      Change Page   </button>
+    <button class= "btn" id="bt_personalize_page_test_profile1"  onclick="myFunction()">
+        <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/image1_noun.png"></img>
+        <span>Change Page</span>  
+      </button>
   </div>
   <div id="container">
-    <button id="bt_personalize_page" onclick="myFunction()">
-      Click to Personalize page</button>
-    <input id="input_enter_profile_url" placeholder="Enter profile json url here">
+    <input class="btn" id="input_enter_profile_url" placeholder="Enter profile json url here">
+    <button class="btn" id="bt_personalize_page" onclick="myFunction()">
+      Click to Personalize page with url
     </button>
   </div>
   <script>

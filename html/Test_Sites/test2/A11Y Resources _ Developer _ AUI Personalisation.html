@@ -1,0 +1,4249 @@
+
+<!-- saved from url=(0074)https://a11y-resources.com/developer/adaptable-ui-personalisation#test-use -->
+<html lang="en"><!-- Copyright Mark Wilcock --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="https://a11y-resources.com/img/favicon.png">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>A11Y Resources | Developer | AUI Personalisation</title>
+
+	<!-- CSS Imports (Interal & External Imports) -->
+
+	<link rel="stylesheet" href="./A11Y Resources _ Developer _ AUI Personalisation_files/main.css">
+	<link rel="stylesheet" href="./A11Y Resources _ Developer _ AUI Personalisation_files/font-awesome.min.css">
+	<link rel="stylesheet" href="./A11Y Resources _ Developer _ AUI Personalisation_files/monokai-sublime.css">
+
+	<link rel="stylesheet" href="./A11Y Resources _ Developer _ AUI Personalisation_files/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+	<!-- CSS AUI Styles -->
+
+	<link rel="stylesheet" href="./A11Y Resources _ Developer _ AUI Personalisation_files/aui-action-font">
+	<link rel="stylesheet" href="./A11Y Resources _ Developer _ AUI Personalisation_files/aui-action-svg">
+	<link rel="stylesheet" href="./A11Y Resources _ Developer _ AUI Personalisation_files/aui-destination-font">
+	<link rel="stylesheet" href="./A11Y Resources _ Developer _ AUI Personalisation_files/aui-destination-svg">
+	<link rel="stylesheet" href="./A11Y Resources _ Developer _ AUI Personalisation_files/aui-field-svg">
+
+	<!-- Font Imports -->
+
+	<link href="./A11Y Resources _ Developer _ AUI Personalisation_files/css" rel="stylesheet" type="text/css">
+	<link href="./A11Y Resources _ Developer _ AUI Personalisation_files/css(1)" rel="stylesheet">
+
+	<!-- Google Analytics -->
+
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-110088214-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-110088214-1');
+	</script><style></style>
+
+
+	<style>
+
+	#toc_container {
+		background: #f9f9f9 none repeat scroll 0 0;
+		border: 1px solid #aaa;
+		display: table;
+		font-size: 95%;
+		margin-bottom: 1em;
+		padding: 20px;
+		width: 213px;
+	}
+
+	.toc_title {
+		font-weight: 700;
+		text-align: left;
+	}
+
+
+	#toc_container li, #toc_container ul, #toc_container ul li{
+		list-style: outside none none !important;
+	}
+
+	.toc_list{
+		padding:0px;
+	}
+
+	@media (min-width: 960px){
+		.overflow-none{
+			overflow: hidden;
+		}
+	}
+
+	.note{
+		background: #fff4cc;
+		border-color: #ffe070;
+		border-left-width: 5px;
+		border-left-style: solid;
+		margin-bottom: 10px;
+		padding-top: 10px;
+		overflow: hidden;
+		padding-left: 30px;
+	}
+
+	.aui-article h2{
+		padding-top:10px;
+	}
+
+	.aui-article h3{
+		padding: 0px;
+		padding-top: 40px;
+		font-size: 160%;
+		text-decoration: underline dotted;
+	}
+
+	.aui-article h4{
+		font-size: 120%;
+		padding-top: 20px;
+		text-decoration: underline;
+	}
+
+	.aui-article h5{
+		font-size: 100%;
+		padding-top: 10px;
+		font-weight:bold;
+	}
+
+	.centre{
+		display: flex;
+		justify-content: center;
+	}
+
+	.btn-download{
+		font-weight:bold;
+		font-color:white;
+	}
+
+	.aui-destination-section a{
+		color:white;
+	}
+
+	.aui-destination-section a:focus, .aui-destination-section a:hover{
+		color:white;
+		text-decoration: underline !important;
+	}
+
+	.aui-field-section label {
+		color:white;
+	}
+
+	.doc-working-draft{
+		background: #2B7481 none repeat scroll 0 0;
+		border: 1px solid #aaa;
+		display: table;
+		font-size: 95%;
+		margin-bottom: 1em;
+		padding: 20px;
+		margin-top:20px;
+		color:white;
+	}
+
+	.doc-working-draft p{
+		margin-bottom: 0px;
+	}
+
+	.margin-zero p{
+		margin-bottom:0px;
+		margin-top:0px;
+	}
+
+	.content-section{
+		padding-top: 90px;
+		margin-top: -90px;
+	}
+
+	.margin-zero
+
+	.snippet em {
+		background-color: lightgrey;
+	}
+
+	.underline-onfocus a:hover, .underline-onfocus a:focus{
+		text-decoration: underline !important;
+	}
+
+	@media (min-width: 960px){
+
+		.stuck {
+			position:fixed;
+			top:80px;
+		}
+
+		.toc_title {
+			font-weight: 700;
+			text-align: center !important;
+		}
+
+	}
+
+</style>
+</head>
+
+<!--Body Start -->
+
+
+<body screen_capture_injected="true"><header>
+<a class="skipnav" id="top-of-page" href="https://a11y-resources.com/developer/adaptable-ui-personalisation#header-section">Skip Navigation</a>
+
+<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse navbar-static-top navbar-header" id="nav-container" role="banner">
+
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-contents">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+<a href="https://a11y-resources.com/"> <img class="header-branding" src="./A11Y Resources _ Developer _ AUI Personalisation_files/banner-logo.png" alt="A11Y Pattern Logo"></a>
+
+<div class="navbar-collapse collapse justify-content-stretch upper-nav" id="navbar-contents">
+
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://a11y-resources.com/">Getting Started</a>
+</li>
+
+<li class="nav-item active-pos">
+	<a class="nav-link" href="https://a11y-resources.com/developers">Developer Resources</a>
+	</li>
+
+				<li class="nav-item">
+<a class="nav-link" href="https://a11y-resources.com/designers">Designer Resources</a>
+</li>
+
+				<li class="nav-item">
+<a class="nav-link" href="https://a11y-resources.com/external">External Resources</a>
+</li>
+</ul></div></nav>
+</header>
+
+
+
+	<!-- Beginning of Main Section -->
+
+	<div id="header-section" class="header-section">
+
+		<!-- Header Title -->
+
+		<div class="container">
+
+			<h1>AUI Personalisation Semantics</h1>
+			<em>Providing a framework for a personally tailoried experience.</em>
+
+		</div>
+	</div>
+
+	<!-- Main Content & Sub Nav -->
+
+	<div class="header-buffer">
+
+	</div>
+
+
+	<main role="main" class="aui-article main-content" id="main-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-12">
+					<div class="sticky-wrapper" style=""><div class="basic-sticky-example">
+						<div id="toc_container">
+							<h2 class="toc_title">Contents</h2>
+							<ul class="toc_list underline-onfocus">
+								<li><a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#overview">1. Overview</a></li>
+								<li><a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#aui-action">2. AUI Action</a></li>
+								<li><a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#aui-destination">3. AUI Destination</a></li>
+								<li><a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#aui-field">4. AUI Field</a></li>
+								<li><a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#test-use">5. How to Use or Test</a></li>
+							</ul>
+						</div>
+
+						<div class="doc-working-draft">
+							<p>Working Draft</p>
+							<em>Last Updated: 18/01/2018</em>
+						</div>
+					</div></div>
+				</div> <!-- Column -->
+				<div class="col-lg-9 col-12">
+
+					<section id="overview" class="content-section">
+						<h2>Overview</h2>
+						<p>Personalisation involves tailoring aspects of the user experience to meet the needs and preferences of the user. For example, having familiar terms and symbols is key to many users being able to use the web. However, what is familiar for one user may be unfamiliar to another requiring them to learn new symbols. The challenge has been the ability to identify the types of content in a document that should be adapted to the preferred user experience.</p>
+						<p>The introduction of standardized semantics allows web applications to customize the exposure of that content to one that is familiar to individuals based on their needs and preferences. This specification defines standard semantics to enable user driven personalization such as the association of a user-preferred symbols to elements having those semantics. This ensures that users can quickly find familiar icons, such as a help icon, that apply to user interface elements.</p>
+
+
+						<div class="centre">
+							<a style="margin-right:10px;margin-bottom:10px;" class="btn-section btn-download" href="https://a11y-resources.com/dl/AUI-Personalisation-(Font).zip" download="AUI Personalisation (Font)">Download Font Styles (.zip) <i style="padding-left:5px" class="fa fa-download" aria-hidden="true"></i></a>
+							<a style="margin-bottom:10px" class="btn-section btn-download" href="https://a11y-resources.com/dl/AUI-Personalisation-(SVG).zip" download="AUI Personalisation (SVG)">Download SVG Styles (.zip) <i class="fa fa-download" aria-hidden="true"></i></a>
+						</div>
+						<div class="note underline-onfocus">
+							<strong>Note:</strong>
+							<p>The fonts (<a href="http://fontawesome.io/" target="_blank">FontAwesome <span class="fa fa-external-link fa-spacing" title="This link opens a new window or tab."></span></a>) &amp; SVGs (<a href="https://material.io/icons/" target="_blank">Google Material Icons <span class="fa fa-external-link fa-spacing" title="This link opens a new window or tab."></span></a>) used within the included examples are license as per their individual licenses.</p>
+							<ul>
+								<li><a href="http://fontawesome.io/license/" target="_blank">FontAwesome License <span class="fa fa-external-link fa-spacing" title="This link opens a new window or tab."></span></a></li>
+								<li><a href="https://github.com/google/material-design-icons/blob/master/LICENSE" target="_blank">Google Icon License <span class="fa fa-external-link fa-spacing" title="This link opens a new window or tab."></span></a></li>
+							</ul>
+
+						</div>
+
+						<section id="aui-action" class="content-section">
+
+							<h2>Action</h2>
+							
+							<p>The action attribute provides the context of a button. It is typically used on a button element or element with role="button". A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation.</p>
+
+							<div class="centre">
+
+								<a style="margin-right:10px; margin-bottom:10px" class="btn-section btn-download" href="https://a11y-resources.com/dl/AUI-Action-Style-(Font).zip" download="AUI Action Style (Font)">Download Font Styles (Only Action) <i style="padding-left:5px" class="fa fa-download" aria-hidden="true"></i></a>
+
+								<a style="margin-bottom:10px" class="btn-section btn-download" href="https://a11y-resources.com/dl/AUI-Action-Style-(SVG).zip" download="AUI Action Style (SVG)">Download SVG Styles (Only Action) <i style="padding-left:5px" class="fa fa-download" aria-hidden="true"></i></a>
+
+							</div>
+
+							<div class="note">
+								<strong>Note:</strong>
+								<p>There is no default value.</p>
+							</div>
+
+							<h3> The Code</h3>
+							<div class="row">
+
+								<div class="col-xl-6 col-lg-12 html-code-snippet ">
+									<p class="code-upper-title">HTML</p>
+									<pre><code class="html code-snippet overflow-none hljs xml">
+										<p class="c-lvl1"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aui-action</span>=<span class="hljs-string">"compose"</span>&gt;</span>Compose<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></p>
+										<p class="c-lvl1">/*Replace 'compose' with the appropriate*/</p>
+									</code></pre>
+								</div>
+
+								<div class="col-xl-6 col-lg-12 css-code-snippet">
+
+									<p class="code-upper-title">CSS</p>
+
+									<pre><code class="css code-snippet overflow-none hljs">
+										<p class="c-lvl1"><span class="hljs-comment">/*Styling via Font Icon*/</span></p>
+										<p class="c-lvl1"><span class="hljs-selector-attr">[aui-action="compose"]</span><span class="hljs-selector-pseudo">:before</span> {</p>
+										<p class="c-lvl2"><span class="hljs-attribute">content</span>: <span class="hljs-string">"\f044"</span>; <span class="hljs-comment">/*Icon Code*/</span></p>
+										<p class="c-lvl2"><span class="hljs-attribute">font-family</span>: FontAwesome;</p>
+										<p class="c-lvl2"><span class="hljs-attribute">float</span>:left;</p>
+										<p class="c-lvl2"><span class="hljs-attribute">margin-right</span>:<span class="hljs-number">5px</span>;</p>
+										<p class="c-lvl1">}</p>
+
+										<p class="c-lvl1"><span class="hljs-comment">/*Styling via SVG Image*/</span></p>
+										<p class="c-lvl1"><span class="hljs-selector-attr">[aui-action="compose"]</span><span class="hljs-selector-pseudo">:before</span> {</p>
+										<p class="c-lvl2"><span class="hljs-attribute">content</span>: <span class="hljs-string">" "</span>;</p>
+										<p class="c-lvl2"><span class="hljs-attribute">ackground-image</span>: <span class="hljs-built_in">url</span>(../img/compose.svg);</p>
+										<p class="c-lvl2"><span class="hljs-attribute">background-repeat</span>: no-repeat;</p>
+										<p class="c-lvl2"><span class="hljs-attribute">background-size</span>: <span class="hljs-number">20px</span>, <span class="hljs-number">20px</span>;</p>
+										<p class="c-lvl2"><span class="hljs-attribute">padding-left</span>: <span class="hljs-number">30px</span>;</p>
+										<p class="c-lvl1">}</p>
+
+									</code></pre>
+
+								</div>
+							</div>
+							<h3> Compose </h3>
+							<em class="snippet">aui-action="compose"</em>
+							<p> Compose new item such as an email.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="compose" class="btn btn-3 btn-3a">Compose</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Compose</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-compose-font">Compose</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Compose</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-compose-svg">Compose</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+
+							<h3> Next </h3>
+							<em class="snippet">aui-action="next"</em>
+							<p> Move to the next item in the series. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="next" class="btn btn-3 btn-3a">Next</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Next</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-next-font">Next</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Next</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-next-svg">Next</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+
+							<h3> Delete </h3>
+							<em class="snippet">aui-action="delete"</em>
+							<p>Delete current item, selected control or text.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="delete" class="btn btn-3 btn-3a">Delete</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Delete</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-delete-font">Delete</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Delete</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-delete-svg">Delete</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Previous </h3>
+							<em class="snippet">aui-action="previous"</em>
+							<p>Move to the previous item in the series. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="previous" class="btn btn-3 btn-3a">Previous</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Previous</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-previous-font">Previous</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Previous</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-previous-svg">Previous</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Table of Contents (TOC) </h3>
+							<em class="snippet">aui-action="toc"</em>
+							<p>Opens a table of content.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="toc" class="btn btn-3 btn-3a">TOC</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">TOC</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-toc-font">TOC</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">TOC</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-toc-svg">TOC</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Submit </h3>
+							<em class="snippet">aui-action="submit"</em>
+							<p>Submits the form data or request to the server. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="submit" class="btn btn-3 btn-3a">Submit</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Submit</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-submit-font">Submit</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Submit</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-submit-svg">Submit</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Confirm </h3>
+							<em class="snippet">aui-action="confirm"</em>
+							<p>Confirms the form request to the server. For example, an "ok" button. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="confirm" class="btn btn-3 btn-3a">Confirm</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Confirm</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-confirm-font">Confirm</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Confirm</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-confirm-svg">Confirm</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Undo </h3>
+							<em class="snippet">aui-action="undo"</em>
+							<p>Revert to the state before the user's most recent changes.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="undo" class="btn btn-3 btn-3a">Undo</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Undo</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-undo-font">Undo</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Undo</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-undo-svg">Undo</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Cancel </h3>
+							<em class="snippet">aui-action="cancel"</em>
+							<p>Closes the dialog and discards any changes the user may have made within that dialog. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="cancel" class="btn btn-3 btn-3a">Cancel</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Cancel</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-cancel-font">Cancel</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Cancel</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-cancel-svg">Cancel</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Reset </h3>
+							<em class="snippet">aui-action="reset"</em>
+							<p>Resets all the controls to their initial values.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="reset" class="btn btn-3 btn-3a">Reset</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Reset</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-reset-font">Reset</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Reset</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-reset-svg">Reset</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Label </h3>
+							<em class="snippet">aui-action="label"</em>
+							<p>Add label to the selected item or the item at the current location.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="label" class="btn btn-3 btn-3a">Label</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Label</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-label-font">Label</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Label</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-label-svg">Label</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Buy </h3>
+							<em class="snippet">aui-action="buy"</em>
+							<p>Buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="buy" class="btn btn-3 btn-3a">Buy</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Buy</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-buy-font">Buy</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Buy</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-buy-svg">Buy</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Checkout </h3>
+							<em class="snippet">aui-action="checkout"</em>
+							<p>Buy the selected item or buy the item at the current location. Often involves adding the current item into a shopping cart. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="checkout" class="btn btn-3 btn-3a">Checkout</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Checkout</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-checkout-font">Checkout</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Checkout</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-checkout-svg">Checkout</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Add </h3>
+							<em class="snippet">aui-action="add"</em>
+							<p>Add the selected item or the item at the current location to a list.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="add" class="btn btn-3 btn-3a">Add</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Add</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-add-font">Add</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Add</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-add-svg">Add</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Move </h3>
+							<em class="snippet">aui-action="move"</em>
+							<p>Move the selected item.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="move" class="btn btn-3 btn-3a">Move</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Move</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-move-font">Move</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Move</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-move-svg">Move</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Save </h3>
+							<em class="snippet">aui-action="save"</em>
+							<p>Save the current content. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="save" class="btn btn-3 btn-3a">Save</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Save</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-save-font">Save</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Save</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-save-svg">Save</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Send </h3>
+							<em class="snippet">aui-action="send"</em>
+							<p>Send a form, email or request. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="send" class="btn btn-3 btn-3a">Send</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Send</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-send-font">Send</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Send</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-send-svg">Send</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Close </h3>
+							<em class="snippet">aui-action="close"</em>
+							<p>Close current dialog. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="close" class="btn btn-3 btn-3a">Close</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Close</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-close-font">Close</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Close</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-close-svg">Close</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> More </h3>
+							<em class="snippet">aui-action="more"</em>
+							<p>Show more information.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="more" class="btn btn-3 btn-3a">More</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">More</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-more-font">More</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">More</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-more-svg">More</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Print </h3>
+							<em class="snippet">aui-action="print"</em>
+							<p>Print current page, selection or the item at the current location.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="print" class="btn btn-3 btn-3a">Print</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Print</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-print-font">Print</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Print</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-print-svg">Print</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Received </h3>
+							<em class="snippet">aui-action="received"</em>
+							<p>Open received folder.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="received" class="btn btn-3 btn-3a">Received</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Received</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-received-font">Received</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Received</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-received-svg">Received</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Sent </h3>
+							<em class="snippet">aui-action="sent"</em>
+							<p>Open sent folder.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="sent" class="btn btn-3 btn-3a">Sent</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Sent</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-sent-font">Sent</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Sent</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-sent-svg">Sent</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Edit </h3>
+							<em class="snippet">aui-action="edit"</em>
+							<p>Edit current item, selection or the item at the current location.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="edit" class="btn btn-3 btn-3a">Edit</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Edit</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-edit-font">Edit</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Edit</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-edit-svg">Edit</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Forward </h3>
+							<em class="snippet">aui-action="forward"</em>
+							<p>Forward to current item such as an email.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="forward" class="btn btn-3 btn-3a">Forward</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Forward</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-forward-font">Forward</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Forward</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-forward-svg">Forward</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Reply </h3>
+							<em class="snippet">aui-action="reply"</em>
+							<p>Reply to current item such as an email. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="reply" class="btn btn-3 btn-3a">Reply</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Reply</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-reply-font">Reply</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Reply</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-reply-svg">Reply</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Upload </h3>
+							<em class="snippet">aui-action="upload"</em>
+							<p>Upload file to the server.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="upload" class="btn btn-3 btn-3a">Upload</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Upload</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-upload-font">Upload</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Upload</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-upload-svg">Upload</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Download </h3>
+							<em class="snippet">aui-action="download"</em>
+							<p>Download file from the server.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="download" class="btn btn-3 btn-3a">Download</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Download</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-download-font">Download</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Download</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-download-svg">Download</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Connect </h3>
+							<em class="snippet">aui-action="connect"</em>
+							<p>Connect a communication channel.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="connect" class="btn btn-3 btn-3a">Connect</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Connect</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-connect-font">Connect</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Connect</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-connect-svg">Connect</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Open </h3>
+							<em class="snippet">aui-action="open"</em>
+							<p>Open item. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="open" class="btn btn-3 btn-3a">Open</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Open</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-open-font">Open</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Open</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-open-svg">Open</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> New </h3>
+							<em class="snippet">aui-action="new"</em>
+							<p>Open new item. (Implied simplification= "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="new" class="btn btn-3 btn-3a">New</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">New</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-new-font">New</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">New</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-new-svg">New</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Settings </h3>
+							<em class="snippet">aui-action="settings"</em>
+							<p>Open settings and options.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="settings" class="btn btn-3 btn-3a">Settings</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Settings</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-settings-font">Settings</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Settings</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-settings-svg">Settings</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Mode </h3>
+							<em class="snippet">aui-action="mode"</em>
+							<p>Change the mode or functionality. (Implied simplification= "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="mode" class="btn btn-3 btn-3a">Mode</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Mode</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-mode-font">Mode</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Mode</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-mode-svg">Mode</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Increase </h3>
+							<em class="snippet">aui-action="increase"</em>
+							<p>Increases the level of the relevant setting. (Implied simplification= "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="increase" class="btn btn-3 btn-3a">Increase</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Increase</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-increase-font">Increase</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Increase</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-increase-svg">Increase</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Decrease </h3>
+							<em class="snippet">aui-action="decrease"</em>
+							<p>Increases the level of the relevant setting. (Implied simplification= "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="decrease" class="btn btn-3 btn-3a">Decrease</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Decrease</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-decrease-font">Decrease</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Decrease</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-decrease-svg">Decrease</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Play </h3>
+							<em class="snippet">aui-action="play"</em>
+							<p>Play a multimedia, audio or video element or object. (Implied simplification= "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="play" class="btn btn-3 btn-3a">Play</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Play</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-play-font">Play</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Play</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-play-svg">Play</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Pause </h3>
+							<em class="snippet">aui-action="pause"</em>
+							<p>Pause a multimedia, audio or video element or object. (Implied simplification= "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="pause" class="btn btn-3 btn-3a">Pause</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Pause</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-pause-font">Pause</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Pause</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-pause-svg">Pause</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Captions </h3>
+							<em class="snippet">aui-action="captions"</em>
+							<p>Show the settings for captions and subtitles.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="captions" class="btn btn-3 btn-3a">Captions</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Captions</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-captions-font">Captions</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Captions</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-captions-svg">Captions</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Mute </h3>
+							<em class="snippet">aui-action="mute"</em>
+							<p>Mute or toggle the mute option.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="mute" class="btn btn-3 btn-3a">Mute</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Mute</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-mute-font">Mute</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Mute</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-mute-svg">Mute</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Volume </h3>
+							<em class="snippet">aui-action="volume"</em>
+							<p>Change or show the settings for the volume. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="volume" class="btn btn-3 btn-3a">Volume</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Volume</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-volume-font">Volume</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Volume</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-volume-svg">Volume</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Channel </h3>
+							<em class="snippet">aui-action="channel"</em>
+							<p>Change or show the settings for the channel. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="channel" class="btn btn-3 btn-3a">Channel</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Channel</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-channel-font">Channel</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Channel</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-channel-svg">Channel</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Temperature </h3>
+							<em class="snippet">aui-action="temperature"</em>
+							<p>Change or show the settings for the temperature. (Implied simplification = "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="temperature" class="btn btn-3 btn-3a">Temp</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Temp</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-temperature-font">Temp</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Temp</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-temperature-svg">Temp</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Brightness </h3>
+							<em class="snippet">aui-action="brightness"</em>
+							<p>Change or show the settings for the brightness.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="brightness" class="btn btn-3 btn-3a">Brightness</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Brightness</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-brightness-font">Brightness</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Brightness</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-brightness-svg">Brightness</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Profile </h3>
+							<em class="snippet">aui-action="profile"</em>
+							<p>Opens the user's profile page.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="profile" class="btn btn-3 btn-3a">Profile</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Profile</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-profile-font">Profile</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Profile</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-profile-svg">Profile</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Expand </h3>
+							<em class="snippet">aui-action="expand"</em>
+							<p>Expand or unexpand the current item.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="expand" class="btn btn-3 btn-3a">Expand</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Expand</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-expand-font">Expand</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Expand</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-expand-svg">Expand</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Refresh </h3>
+							<em class="snippet">aui-action="refresh"</em>
+							<p>Manually refresh the current contents of the screen.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="refresh" class="btn btn-3 btn-3a">Refresh</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Refresh</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-refresh-font">Refresh</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Refresh</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-refresh-svg">Refresh</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Properties </h3>
+							<em class="snippet">aui-action="properties"</em>
+							<p>Shows the properties of the item.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="properties" class="btn btn-3 btn-3a">Propty</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Propty</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-properties-font">Propty</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Propty</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-properties-svg">Propty</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Help </h3>
+							<em class="snippet">aui-action="help"</em>
+							<p>Opens a help function. (Implied simplification= "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="help" class="btn btn-3 btn-3a">Help</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Help</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-help-font">Help</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Help</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-help-svg">Help</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Cut </h3>
+							<em class="snippet">aui-action="cut"</em>
+							<p>Removes the selected control, item or text and places it on the Clipboard.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="cut" class="btn btn-3 btn-3a">Cut</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Cut</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-cut-font">Cut</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Cut</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-cut-svg">Cut</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Copy </h3>
+							<em class="snippet">aui-action="copy"</em>
+							<p>Copies the selected control, item or text onto the Clipboard.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="copy" class="btn btn-3 btn-3a">Copy</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Copy</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-copy-font">Copy</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Copy</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-copy-svg">Copy</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Paste </h3>
+							<em class="snippet">aui-action="paste"</em>
+							<p>Paste the content from the clipboard to the current position.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="paste" class="btn btn-3 btn-3a">Paste</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Paste</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-paste-font">Paste</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Paste</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-paste-svg">Paste</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Colour </h3>
+							<em class="snippet">aui-action="color"</em>
+							<p>Opens a colour picker.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="color" class="btn btn-3 btn-3a">Colour</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Colour</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-color-font">Colour</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Colour</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-color-svg">Colour</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Date </h3>
+							<em class="snippet">aui-action="date"</em>
+							<p>Opens a date control. (Implied simplification= "critical".)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="date" class="btn btn-3 btn-3a">Date</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Date</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-date-font">Date</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Date</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-date-svg">Date</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Remove </h3>
+							<em class="snippet">aui-action="remove"</em>
+							<p>Remove an item from a list.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="remove" class="btn btn-3 btn-3a">Remove</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Remove</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-remove-font">Remove</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Remove</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-remove-svg">Remove</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Right </h3>
+							<em class="snippet">aui-action="right"</em>
+							<p>Moves a selected item to the right to another column or list.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="right" class="btn btn-3 btn-3a">Right</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Right</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-right-font">Right</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Right</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-right-svg">Right</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3> Left </h3>
+							<em class="snippet">aui-action="left"</em>
+							<p>Moves a selected item to the left to another column or list.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a button marked-up with he AUI attribute, a button styled using fonts and a button styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet">
+
+									<p class="code-upper-title">Button Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-2 col-lg-12">
+											<p class="example-header">Example</p>
+											<button aui-action="left" class="btn btn-3 btn-3a">Left</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (FONT ICON)</p>
+											<button class="btn btn-3 btn-3a">Left</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-left-font">Left</button>
+										</div>
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-5 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<button class="btn btn-3 btn-3a">Left</button>
+											<i class="fa fa-arrow-right example-text" aria-hidden="true"></i>
+											<button class="btn btn-3 btn-3a aui-action-left-svg">Left</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</section>
+
+
+						<hr>
+
+						<!-- AUI Destination Section -->
+
+						<section id="aui-destination" class="content-section">
+
+							<h2>Destination</h2>
+							<p>The destination term categorizes the target of a hyperlink. A personalization agent or user agent may add additional familiar user interface features to help users understand the link and follow the right one easily. User agents might add a familiar customized icon to the link, or style the link in a customized way, or position the link on the page in a location that the user generally expects to find a link of the particular type.</p>
+
+							<div class="centre">
+								<a style="margin-right:10px; margin-bottom:10px;" class="btn-section btn-download" href="https://a11y-resources.com/dl/AUI-Destination-Style-(Font).zip" download="AUI Destination Style (Font)">Download Font Styles (Only Destination) <i style="padding-left:5px" class="fa fa-download" aria-hidden="true"></i></a>
+								<a style="margin-bottom:10px;" class="btn-section btn-download" href="https://a11y-resources.com/dl/AUI-Destination-Style-(SVG).zip" download="AUI Destination Style (SVG)">Download SVG Styles (Only Destination) <i style="padding-left:5px;" class="fa fa-download" aria-hidden="true"></i></a>
+							</div>
+
+							<div class="note">
+								<strong>Note:</strong>
+								<p>There is no default value.</p>
+							</div>
+
+							<h3> The Code</h3>
+							<div class="row">
+
+								<div class="col-xl-6 col-lg-12 html-code-snippet ">
+									<p class="code-upper-title">HTML</p>
+									<pre><code class="html code-snippet overflow-none hljs xml">
+										<p class="c-lvl1"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">aui-destination</span>=<span class="hljs-string">"home"</span>&gt;</span>Homepage<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></p>
+										<p class="c-lvl1">/*Replace 'home' with the appropriate attribute*/</p>
+									</code></pre>
+								</div>
+
+								<div class="col-xl-6 col-lg-12 css-code-snippet">
+
+									<p class="code-upper-title">CSS</p>
+
+									<pre><code class="css code-snippet overflow-none hljs">
+										<p class="c-lvl1"><span class="hljs-comment">/*Styling via Font Icon*/</span></p>
+										<p class="c-lvl1"><span class="hljs-selector-attr">[aui-destination="home"]</span>{</p>
+										<p class="c-lvl2"><span class="hljs-attribute">content</span>: <span class="hljs-string">"\f015"</span>; <span class="hljs-comment">/*Icon Code*/</span></p>
+										<p class="c-lvl2"><span class="hljs-attribute">font-family</span>: FontAwesome;</p>
+										<p class="c-lvl2"><span class="hljs-attribute">float</span>:left;</p>
+										<p class="c-lvl2"><span class="hljs-attribute">margin-right</span>:<span class="hljs-number">5px</span>;</p>
+										<p class="c-lvl1">}</p>
+
+										<p class="c-lvl1"><span class="hljs-comment">/*Styling via SVG Image*/</span></p>
+										<p class="c-lvl1"><span class="hljs-selector-attr">[aui-destination="home"]</span><span class="hljs-selector-pseudo">:before</span> {</p>
+										<p class="c-lvl2"><span class="hljs-attribute">content</span>: <span class="hljs-string">" "</span>;</p>
+										<p class="c-lvl2"><span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(../img/home.svg);</p>
+										<p class="c-lvl2"><span class="hljs-attribute">background-repeat</span>: no-repeat;</p>
+										<p class="c-lvl2"><span class="hljs-attribute">background-size</span>: <span class="hljs-number">20px</span>, <span class="hljs-number">20px</span>;</p>
+										<p class="c-lvl2"><span class="hljs-attribute">padding-left</span>: <span class="hljs-number">30px</span>;</p>
+										<p class="c-lvl1">}</p>
+
+									</code></pre>
+
+								</div>
+							</div>
+
+							<div class="aui-destination-section">
+
+								<h3 id="home"> Home </h3>
+								<em class="snippet">aui-destination="home"</em>
+								<p>Initial or main page of a website or application.</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#home" aui-destination="home" aria-label="Empty link for example purposes only">Homepage</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#home" class="aui-destination-home-font" aria-label="Empty link for example purposes only">Homepage</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#home" class="aui-destination-home-svg" aria-label="Empty link for example purposes only">Homepage</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="contact"> Contact </h3>
+								<em class="snippet">aui-destination="contact"</em>
+								<p>Opens contact information for content owner or producer</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#contact" aui-destination="contact" aria-label="Empty link for example purposes only">Contact Us</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#contact" class="aui-destination-contact-font" aria-label="Empty link for example purposes only">Contact Us</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#contact" class="aui-destination-contact-svg" aria-label="Empty link for example purposes only">Contact Us</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="phone"> Phone </h3>
+								<em class="snippet">aui-destination="phone"</em>
+								<p>Phone content owner or producer</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#phone" aui-destination="phone" aria-label="Empty link for example purposes only">Phone Us</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#phone" class="aui-destination-phone-font" aria-label="Empty link for example purposes only">Phone Us</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#phone" class="aui-destination-phone-svg" aria-label="Empty link for example purposes only">Phone Us</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="email"> Email </h3>
+								<em class="snippet">aui-destination="email"</em>
+								<p>Email content owner or producer</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#email" aui-destination="email" aria-label="Empty link for example purposes only">Email Us</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#email" class="aui-destination-email-font" aria-label="Empty link for example purposes only">Email Us</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#email" class="aui-destination-email-svg" aria-label="Empty link for example purposes only">Email Us</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="sitemap"> Sitemap </h3>
+								<em class="snippet">aui-destination="sitemap"</em>
+								<p>Content containing a list of pages in a web site</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#sitemap" aui-destination="sitemap" aria-label="Empty link for example purposes only">Sitemap</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#sitemap" class="aui-destination-sitemap-font" aria-label="Empty link for example purposes only">Sitemap</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#sitemap" class="aui-destination-sitemap-svg" aria-label="Empty link for example purposes only">Sitemap</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="accessibility-statement"> Accessibility Statement </h3>
+								<em class="snippet">aui-destination="accessibilityStatement"</em>
+								<p>Information about the accessibility in a web site or web content.</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#accessibility-statement" aui-destination="accessibilityStatement" aria-label="Empty link for example purposes only">Accessibility Statement</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#accessibility-statement" class="aui-destination-accessibilityStatement-font" aria-label="Empty link for example purposes only">Accessibility Statement</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#accessibility-statement" class="aui-destination-accessibilityStatement-svg" aria-label="Empty link for example purposes only">Accessibility Statement</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="help"> Help </h3>
+								<em class="snippet">aui-destination="help"</em>
+								<p>A help function, support or instructions</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#help" aui-destination="help" aria-label="Empty link for example purposes only">Help</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#help" class="aui-destination-help-font" aria-label="Empty link for example purposes only">Help</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#help" class="aui-destination-help-svg" aria-label="Empty link for example purposes only">Help</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="chat"> Chat </h3>
+								<em class="snippet">aui-destination="chat"</em>
+								<p>Human help or a dialog help function such as a chat bot</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#chat" aui-destination="chat" aria-label="Empty link for example purposes only">Chat to Us</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#chat" class="aui-destination-chat-font" aria-label="Empty link for example purposes only">Chat to Us</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#chat" class="aui-destination-chat-svg" aria-label="Empty link for example purposes only">Chat to Us</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="about"> About </h3>
+								<em class="snippet">aui-destination="about"</em>
+								<p>Information about the content owner or producer</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#about" aui-destination="about" aria-label="Empty link for example purposes only">About Us</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#about" class="aui-destination-about-font" aria-label="Empty link for example purposes only">About Us</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#about" class="aui-destination-about-svg" aria-label="Empty link for example purposes only">About Us</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="terms"> Terms </h3>
+								<em class="snippet">aui-destination="terms"</em>
+								<p>Terms and conditions</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#terms" aui-destination="terms" aria-label="Empty link for example purposes only">Terms &amp; Condtions</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#terms" class="aui-destination-terms-font" aria-label="Empty link for example purposes only">Terms &amp; Condtions</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#terms" class="aui-destination-terms-svg" aria-label="Empty link for example purposes only">Terms &amp; Condtions</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="tools"> Tools </h3>
+								<em class="snippet">aui-destination="tools"</em>
+								<p>Available tools for the current content</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#tools" aui-destination="tools" aria-label="Empty link for example purposes only">Tools</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#tools" class="aui-destination-tools-font" aria-label="Empty link for example purposes only">Tools</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#tools" class="aui-destination-tools-svg" aria-label="Empty link for example purposes only">Tools</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="services"> Services </h3>
+								<em class="snippet">aui-destination="services"</em>
+								<p>Services available from the content provider</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#services" aui-destination="services" aria-label="Empty link for example purposes only">Services</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#services" class="aui-destination-services-font" aria-label="Empty link for example purposes only">Services</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#services" class="aui-destination-services-svg" aria-label="Empty link for example purposes only">Services</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="products"> Products </h3>
+								<em class="snippet">aui-destination="products"</em>
+								<p>Products available from the content provider</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#products" aui-destination="products" aria-label="Empty link for example purposes only">Products</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#products" class="aui-destination-products-font" aria-label="Empty link for example purposes only">Products</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#products" class="aui-destination-products-svg" aria-label="Empty link for example purposes only">Products</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="comment"> Comment </h3>
+								<em class="snippet">aui-destination="comment"</em>
+								<p>Submit a comment on the current item</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#comment" aui-destination="comment" aria-label="Empty link for example purposes only">Comments</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#comment" class="aui-destination-comment-font" aria-label="Empty link for example purposes only">Comments</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#comment" class="aui-destination-comment-svg" aria-label="Empty link for example purposes only">Comments</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="language"> Language </h3>
+								<em class="snippet">aui-destination="language"</em>
+								<p>Language options</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#language" aui-destination="language" aria-label="Empty link for example purposes only">Languages</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#language" class="aui-destination-language-font" aria-label="Empty link for example purposes only">Languages</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#language" class="aui-destination-language-svg" aria-label="Empty link for example purposes only">Languages</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="sign-in"> Sign In </h3>
+								<em class="snippet">aui-destination="signin"</em>
+								<p>Sign in to current web site or application</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#sign-in" aui-destination="signin" aria-label="Empty link for example purposes only">Sign In</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#sign-in" class="aui-destination-signin-font" aria-label="Empty link for example purposes only">Sign In</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#sign-in" class="aui-destination-signin-svg" aria-label="Empty link for example purposes only">Sign In</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="sign-out"> Sign Out </h3>
+								<em class="snippet">aui-destination="signout"</em>
+								<p>Sign out current web site or application</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#sign-out" aui-destination="signout" aria-label="Empty link for example purposes only">Sign Out</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#sign-out" class="aui-destination-signout-font" aria-label="Empty link for example purposes only">Sign Out</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#sign-out" class="aui-destination-signout-svg" aria-label="Empty link for example purposes only">Sign Out</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="register"> Register </h3>
+								<em class="snippet">aui-destination="register"</em>
+								<p>Register for the current web site or application</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#register" aui-destination="register" aria-label="Empty link for example purposes only">Register</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#register" class="aui-destination-register-font" aria-label="Empty link for example purposes only">Register</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#register" class="aui-destination-register-svg" aria-label="Empty link for example purposes only">Register</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="social"> Social </h3>
+								<em class="snippet">aui-destination="social"</em>
+								<p>Content provider on social media</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#social" aui-destination="social" aria-label="Empty link for example purposes only">Social</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#social" class="aui-destination-social-font" aria-label="Empty link for example purposes only">Social</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#social" class="aui-destination-social-svg" aria-label="Empty link for example purposes only">Social</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3 id="post"> Post </h3>
+								<em class="snippet">aui-destination="post"</em>
+								<p>Post current item. Item will be visible to other parties.</p>
+
+								<h4>Examples</h4>
+								<p>These examples a link marked-up with he AUI attribute, a link styled using fonts and a link styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet">
+
+										<p class="code-upper-title">Link Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#post" aui-destination="post" aria-label="Empty link for example purposes only">Post</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (FONT ICON)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#post" class="aui-destination-post-font" aria-label="Empty link for example purposes only">Post</a>
+											</div>
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-4 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#post" class="aui-destination-post-svg" aria-label="Empty link for example purposes only">Post</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</section>
+
+						<hr>
+
+						<!-- AUI Field Section -->
+
+						<section id="aui-field" class="content-section">
+
+
+							<h2>Field</h2>
+
+
+							<p>Field provides the context of a text input field such as a text box. It is typically used on an input of type text, or element with a responding role.</p>
+							<p>A personalization agent may add a symbol, replace the text with a more familiar term, or give it a specific presentation. Note that there is no default value. The user experience may include filling in the field and adding an icon. AUI-field values that would typically be on form controls and would have a user context - for example phone would relate to the user's phone.</p>
+
+							<div class="centre">
+								<a style="margin-right:10px; margin-bottom:10px;" class="btn-section btn-download" href="https://a11y-resources.com/dl/AUI-Field-Style-(SVG).zip" download="AUI Field Style (SVG)">Download SVG Styles (Only Field) <i style="padding-left:5px" class="fa fa-download" aria-hidden="true"></i></a>
+							</div>
+
+							<div class="note">
+								<strong>Note:</strong>
+								<p>There is no default value. There can be more then one value for a field, such as aui-field="country postcode"</p>
+							</div>
+
+							<h3> The Code</h3>
+
+							<div class="col-12 html-code-snippet ">
+								<p class="code-upper-title">HTML</p>
+								<pre><code class="html code-snippet hljs xml">
+									<p class="c-lvl1"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"firstname"</span>&gt;</span>Full Name <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></p>
+									<p class="c-lvl1"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"firstname"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">aui-field</span>=<span class="hljs-string">"name"</span> /&gt;</span></p>
+									<p class="c-lvl1">/*Replace 'name' with the appropriate*/</p>
+								</code></pre>
+							</div>
+
+							<div class="col-12 css-code-snippet">
+
+								<p class="code-upper-title">CSS</p>
+
+								<pre><code class="css code-snippet overflow-none hljs">
+									<p class="c-lvl1"><span class="hljs-comment">/*Styling via SVG Icon*/</span></p>
+									<p class="c-lvl1"><span class="hljs-selector-attr">[aui-field="name"]</span> {</p>
+									<p class="c-lvl2"><span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(../img/icon-name.svg), <span class="hljs-built_in">linear-gradient</span>(to right, #000000 20px,#ffffff 100%);</p>
+									<p class="c-lvl2"><span class="hljs-attribute">background-size</span>: <span class="hljs-number">20px</span> <span class="hljs-number">20px</span>;</p>
+									<p class="c-lvl2"><span class="hljs-attribute">background-repeat</span>: no-repeat;</p>
+									<p class="c-lvl2"><span class="hljs-attribute">padding-left</span>: <span class="hljs-number">25px</span>;</p>
+									<p class="c-lvl1">}</p>
+								</code></pre>
+
+							</div>
+
+							<h3>Name</h3>
+							<em class="snippet">aui-field="name"</em>
+							<p>Full name</p>
+
+							<h4>Examples</h4>
+							<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet aui-field-section">
+
+									<p class="code-upper-title">Field Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example</p>
+											<label for="firstname">Full Name</label>
+											<input id="firstname" type="text" aui-field="name">
+										</div>
+
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<label for="firstname">Full Name</label>
+											<input id="firstname" type="text" class="aui-field-name-svg">
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3>Honorific Prefix</h3>
+							<em class="snippet">aui-field="honorificPrefix"</em>
+							<p>	prefix or title (Mr., Mrs. Dr., etc.)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet aui-field-section">
+
+									<p class="code-upper-title">Field Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example</p>
+											<label for="honorific-prefix">Honorific Prefix</label>
+											<input id="honorific-prefix" type="text" aui-field="honorificPrefix">
+										</div>
+
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<label for="honorific-prefix">Honorific Prefix</label>
+											<input id="honorific-prefix" type="text" class="aui-field-honorificPrefix-svg">
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3>Given Name (First Name)</h3>
+							<em class="snippet">aui-field="givenName"</em>
+							<p>	given or first name</p>
+
+							<h4>Examples</h4>
+							<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet aui-field-section">
+
+									<p class="code-upper-title">Field Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example</p>
+											<label for="given-name">Given Name</label>
+											<input id="given-name" type="text" aui-field="givenName">
+										</div>
+
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<label for="given-name">Given Name</label>
+											<input id="given-name" type="text" class="aui-field-givenName-svg">
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3>Additional Name (Middle Name)</h3>
+							<em class="snippet">aui-field="additionalName"</em>
+							<p>	additional or middle name </p>
+
+							<h4>Examples</h4>
+							<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet aui-field-section">
+
+									<p class="code-upper-title">Field Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example</p>
+											<label for="additional-name">Additional Name</label>
+											<input id="additional-name" type="text" aui-field="additionalName">
+										</div>
+
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<label for="additional-name">Additional Name</label>
+											<input id="additional-name" type="text" class="aui-field-additionalName-svg">
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3>Additional Name Initial (Middle Name)</h3>
+							<em class="snippet">aui-field="additionalNameInitial"</em>
+							<p>	additional or middle name initial</p>
+
+							<h4>Examples</h4>
+							<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet aui-field-section">
+
+									<p class="code-upper-title">Field Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example</p>
+											<label for="additional-name-initial">Additional Name Initial</label>
+											<input id="additional-name-initial" type="text" aui-field="additionalNameInitial">
+										</div>
+
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<label for="additional-name-initial">Additional Name Initial</label>
+											<input id="additional-name-initial" type="text" class="aui-field-additionalNameInitial-svg">
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3>Family Name (Surname)</h3>
+							<em class="snippet">aui-field="familyName"</em>
+							<p>Family name, surname, or last name.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet aui-field-section">
+
+									<p class="code-upper-title">Field Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example</p>
+											<label for="family-name">Family Name</label>
+											<input id="family-name" type="text" aui-field="familyName">
+										</div>
+
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<label for="family-name">Family Name</label>
+											<input id="family-name" type="text" class="aui-field-familyName-svg">
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+
+							<h3>Honorific Suffix</h3>
+							<em class="snippet">aui-field="honorificSuffix"</em>
+							<p>Suffix (Jr., II, etc.)</p>
+
+							<h4>Examples</h4>
+							<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet aui-field-section">
+
+									<p class="code-upper-title">Field Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example</p>
+											<label for="honorific-suffix">Honorific Prefix</label>
+											<input id="honorific-suffix" type="text" aui-field="honorificSuffix">
+										</div>
+
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<label for="honorific-suffix">Honorific Prefix</label>
+											<input id="honorific-suffix" type="text" class="aui-field-honorificSuffix-svg">
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+
+							<h3>Nickname</h3>
+							<em class="snippet">aui-field="nickname"</em>
+							<p>Nickname.</p>
+
+							<h4>Examples</h4>
+							<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+							<div class="row">
+								<div class="col-12 example-snippet aui-field-section">
+
+									<p class="code-upper-title">Field Examples</p>
+
+									<div class="row example-row">
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example</p>
+											<label for="nickname">Nickname</label>
+											<input id="nickname" type="text" aui-field="nickname">
+										</div>
+
+										<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+										<div class="col-xl-6 col-lg-12">
+											<p class="example-header">Example (.SVG)</p>
+											<label for="nickname">Nickname</label>
+											<input id="nickname" type="text" class="aui-field-nickname-svg">
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<h3>Street Address</h3>
+							<em class="snippet">aui-field="streetAddress"</em>
+							<p>Full street address condensed into one line.</p>
+
+							<div class="note">
+								<strong>Note:</strong>
+								<p>Street Address has three linked sub fields:
+									</p><ul>
+										<li>Address Line 1 - First line of street address. [AUI Field = "addressLine1"]</li>
+										<li>Address Line 2 - Second line of street address. [AUI Field = "addressLine2"]</li>
+										<li>Address Line 3 - Third line of street address. [AUI Field = "addressLine3"]</li>
+									</ul>
+
+								</div>
+
+								<h4>Examples</h4>
+								<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet aui-field-section">
+
+										<p class="code-upper-title">Field Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-6 col-lg-12">
+												<p class="example-header">Example</p>
+												<label for="street-address">Street Address</label>
+												<input id="street-address" type="text" aui-field="streetAddress">
+											</div>
+
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-6 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<label for="street-address">Street Address</label>
+												<input id="street-address" type="text" class="aui-field-streetAddress-svg">
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3>City</h3>
+								<em class="snippet">aui-field="city"</em>
+								<p>Locality or city.</p>
+
+								<h4>Examples</h4>
+								<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet aui-field-section">
+
+										<p class="code-upper-title">Field Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-6 col-lg-12">
+												<p class="example-header">Example</p>
+												<label for="city">City</label>
+												<input id="city" type="text" aui-field="city">
+											</div>
+
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-6 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<label for="city">City</label>
+												<input id="city" type="text" class="aui-field-city-svg">
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3>Area</h3>
+								<em class="snippet">aui-field="area"</em>
+								<p>administrative area, state, province, or region</p>
+
+								<h4>Examples</h4>
+								<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet aui-field-section">
+
+										<p class="code-upper-title">Field Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-6 col-lg-12">
+												<p class="example-header">Example</p>
+												<label for="area">Area</label>
+												<input id="area" type="text" aui-field="area">
+											</div>
+
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-6 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<label for="area">Area</label>
+												<input id="area" type="text" class="aui-field-area-svg">
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3>Postalcode</h3>
+								<em class="snippet">aui-field="postalcode"</em>
+								<p>postal or ZIP code</p>
+
+								<h4>Examples</h4>
+								<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet aui-field-section">
+
+										<p class="code-upper-title">Field Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-6 col-lg-12">
+												<p class="example-header">Example</p>
+												<label for="postalcode">Postalcode</label>
+												<input id="postalcode" type="text" aui-field="postalcode">
+											</div>
+
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-6 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<label for="postalcode">Postalcode</label>
+												<input id="postalcode" type="text" class="aui-field-postalcode-svg">
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3>Country</h3>
+								<em class="snippet">aui-field="country"</em>
+								<p>Country name.</p>
+
+								<h4>Examples</h4>
+								<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+								<div class="row">
+									<div class="col-12 example-snippet aui-field-section">
+
+										<p class="code-upper-title">Field Examples</p>
+
+										<div class="row example-row">
+											<div class="col-xl-6 col-lg-12">
+												<p class="example-header">Example</p>
+												<label for="country">Country</label>
+												<input id="country" type="text" aui-field="country">
+											</div>
+
+											<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+											<div class="col-xl-6 col-lg-12">
+												<p class="example-header">Example (.SVG)</p>
+												<label for="country">Country</label>
+												<input id="country" type="text" class="aui-field-country-svg">
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<h3>Fax</h3>
+								<em class="snippet">aui-field="fax"</em>
+								<p>Full fax number, including country code.</p>
+
+								<div class="note">
+									<strong>Note:</strong>
+									<p>Fax has five linked sub fields:
+										</p><ul>
+											<li>Fax Country Code - International country code. [AUI Field = "faxCountryCode"]</li>
+											<li>Fax National - National fax number: full number minus country code. [AUI Field = "faxNational"]</li>
+											<li>Fax Area Code - Area code. [AUI Field = "faxAreaCode"]</li>
+											<li>Fax Local - Local fax number: full number minus country and area codes. [AUI Field = "faxLocal"]</li>
+											<li>Fax Extension - Fax extension number. [AUI Field = "faxExtension"]</li>
+										</ul>
+
+									</div>
+
+									<h4>Examples</h4>
+									<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+									<div class="row">
+										<div class="col-12 example-snippet aui-field-section">
+
+											<p class="code-upper-title">Field Examples</p>
+
+											<div class="row example-row">
+												<div class="col-xl-6 col-lg-12">
+													<p class="example-header">Example</p>
+													<label for="fax">Fax</label>
+													<input id="fax" type="text" aui-field="fax">
+												</div>
+
+												<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+												<div class="col-xl-6 col-lg-12">
+													<p class="example-header">Example (.SVG)</p>
+													<label for="fax">Fax</label>
+													<input id="fax" type="text" class="aui-field-fax-svg">
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+									<h3>Email</h3>
+									<em class="snippet">aui-field="email"</em>
+									<p>Email address.</p>
+
+									<h4>Examples</h4>
+									<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+									<div class="row">
+										<div class="col-12 example-snippet aui-field-section">
+
+											<p class="code-upper-title">Field Examples</p>
+
+											<div class="row example-row">
+												<div class="col-xl-6 col-lg-12">
+													<p class="example-header">Example</p>
+													<label for="email">Email</label>
+													<input id="email" type="text" aui-field="email">
+												</div>
+
+												<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+												<div class="col-xl-6 col-lg-12">
+													<p class="example-header">Example (.SVG)</p>
+													<label for="email">Email</label>
+													<input id="email" type="text" class="aui-field-email-svg">
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+									<h3>Telephone</h3>
+									<em class="snippet">aui-field="tel"</em>
+									<p>Full phone number, including country code.</p>
+
+									<div class="note">
+										<strong>Note:</strong>
+										<p>Telephone number has three linked sub fields:
+											</p><ul>
+												<li>Telephone Country Code - International country code. [AUI Field = "telCountryCode"]</li>
+												<li>Telephone National - National phone number: full number minus country code. [AUI Field = "telNational"]</li>
+												<li>Telephone Area Code - Area code. [AUI Field = "telAreaCode"]</li>
+												<li>Telephone Local - Local phone number: full number minus country and area codes. [AUI Field = "telLocal"]</li>
+												<li>Telephone Extension - Phone extension number. [AUI Field = "telExtension"]</li>
+											</ul>
+
+										</div>
+
+										<h4>Examples</h4>
+										<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+										<div class="row">
+											<div class="col-12 example-snippet aui-field-section">
+
+												<p class="code-upper-title">Field Examples</p>
+
+												<div class="row example-row">
+													<div class="col-xl-6 col-lg-12">
+														<p class="example-header">Example</p>
+														<label for="tel">Telephone Number</label>
+														<input id="tel" type="text" aui-field="tel">
+													</div>
+
+													<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+													<div class="col-xl-6 col-lg-12">
+														<p class="example-header">Example (.SVG)</p>
+														<label for="tel">Telephone Number</label>
+														<input id="tel" type="text" class="aui-field-tel-svg">
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+										<h3>Credit Card Details</h3>
+										<em class="snippet">aui-field="ccName"</em>
+										<p>Credit</p>
+
+										<div class="note">
+											<strong>Note:</strong>
+											<p>Six fields relating to credit card details is present within the AUI personalisation semantics:</p>
+											<ul>
+												<li>Credit Card Name - Full name, as it appears on credit card. [AUI Field = "ccName"]</li>
+												<li>Credit Card Number - Credit card number. [AUI Field = "ccNumber"]</li>
+												<li>Credit Card Exp Month - Month of expiration of credit card. [AUI Field = "ccExpMonth"]</li>
+												<li>Credit Card Exp Year - Year of expiration of credit card. [AUI Field = "ccExpYear"]</li>
+												<li>Credit Card Exp - Date of expiration of credit card. [AUI Field = "ccExp"]</li>
+												<li>Credit Card CSC - Credit card security code. [AUI Field = "ccCsc"]</li>
+											</ul>
+
+										</div>
+
+										<h4>Examples</h4>
+										<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+										<div class="row">
+											<div class="col-12 example-snippet aui-field-section">
+
+												<p class="code-upper-title">Field Examples</p>
+
+												<div class="row example-row">
+													<div class="col-xl-6 col-lg-12">
+														<p class="example-header">Example</p>
+														<label for="cc-name">Credit Card Name</label>
+														<input id="cc-name" type="text" aui-field="ccName">
+													</div>
+
+													<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+													<div class="col-xl-6 col-lg-12">
+														<p class="example-header">Example (.SVG)</p>
+														<label for="cc-name">Credit Card Name</label>
+														<input id="cc-name" type="text" class="aui-field-ccName-svg">
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+										<h3>Language</h3>
+										<em class="snippet">aui-field="language"</em>
+										<p>Preferred language.</p>
+
+										<h4>Examples</h4>
+										<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+										<div class="row">
+											<div class="col-12 example-snippet aui-field-section">
+
+												<p class="code-upper-title">Field Examples</p>
+
+												<div class="row example-row">
+													<div class="col-xl-6 col-lg-12">
+														<p class="example-header">Example</p>
+														<label for="language">Language</label>
+														<input id="language" type="text" aui-field="language">
+													</div>
+
+													<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+													<div class="col-xl-6 col-lg-12">
+														<p class="example-header">Example (.SVG)</p>
+														<label for="language">Language</label>
+														<input id="language" type="text" class="aui-field-language-svg">
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+										<h3>Birthday</h3>
+										<em class="snippet">aui-field="bday"</em>
+										<p>	Birthdate.</p>
+
+										<div class="note">
+											<strong>Note:</strong>
+											<p>Birthday has three linked sub fields:
+												</p><ul>
+													<li>Birthday Year - Year of birthday. [AUI Field = "bdayYear"]</li>
+													<li>Birthday Month - Month of birthday. [AUI Field = "bdayMonth"]</li>
+													<li>Birthday Day - Day of birthday. [AUI Field = "bdayDay"]</li>
+												</ul>
+
+											</div>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="bday">Birthdate</label>
+															<input id="bday" type="text" aui-field="bday">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="bday">Birthdate</label>
+															<input id="bday" type="text" class="aui-field-bday-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<h3>Transaction Currency</h3>
+											<em class="snippet">aui-field="transactionCurrency"</em>
+											<p>The monetary system being used for the transaction. Note that there may be a change to allow for adding options.</p>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="currency">Currency</label>
+															<input id="currency" type="text" aui-field="transactionCurrency">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="currency">Currency</label>
+															<input id="currency" type="text" class="aui-field-transactionCurrency-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<h3>Transaction Amount</h3>
+											<em class="snippet">aui-field="transactionAmount"</em>
+											<p>The amount that the user is committing to for a transaction. (Often used when entering a bid or sale price.)</p>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="language">Cost</label>
+															<input id="language" type="text" aui-field="transactionAmount">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="language">Cost</label>
+															<input id="language" type="text" class="aui-field-transactionAmount-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<h3>Topic</h3>
+											<em class="snippet">aui-field="topic"</em>
+											<p>Topic for the form. Typically selected from a list of reserved words.</p>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="topic">Topic</label>
+															<input id="topic" type="text" aui-field="topic">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="topic">Topic</label>
+															<input id="topic" type="text" class="aui-field-topic-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<h3>Comment</h3>
+											<em class="snippet">aui-field="comment"</em>
+											<p>Comment section. Typically a free text field.</p>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="comment">Comment</label>
+															<input id="comment" type="text" aui-field="comment">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="comment">Comment</label>
+															<input id="comment" type="text" class="aui-field-comment-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<h3>Subject</h3>
+											<em class="snippet">aui-field="subject"</em>
+											<p>Form subject. Typically a free text field.</p>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="subject">Subject</label>
+															<input id="subject" type="text" aui-field="subject">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="subject">Subject</label>
+															<input id="subject" type="text" class="aui-field-subject-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<h3>Answer</h3>
+											<em class="snippet">aui-field="answer"</em>
+											<p>Answer to a section question.</p>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="answer">Answerx</label>
+															<input id="answer" type="text" aui-field="answer">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="answer">Answer</label>
+															<input id="answer" type="text" class="aui-field-answer-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<h3>Organisation</h3>
+											<em class="snippet">aui-field="org"</em>
+											<p>Company or organization.</p>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="org">Organisation</label>
+															<input id="org" type="text" aui-field="org">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="org">Organisation</label>
+															<input id="org" type="text" class="aui-field-org-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<h3>Position</h3>
+											<em class="snippet">aui-field="position"</em>
+											<p>User's position or title within company or organization</p>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="organization-title">Position</label>
+															<input id="organization-title" type="text" aui-field="position">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="position">Position</label>
+															<input id="position" type="text" class="aui-field-position-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<h3>Sex</h3>
+											<em class="snippet">aui-field="sex"</em>
+											<p>Sex or gender.</p>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="sex">Sex</label>
+															<input id="sex" type="text" aui-field="sex">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="sex">Sex</label>
+															<input id="sex" type="text" class="aui-field-sex-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<h3>Gender</h3>
+											<em class="snippet">aui-field="gender"</em>
+											<p>Gender identity.</p>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="gender">Gender</label>
+															<input id="gender" type="text" aui-field="gender">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="gender">Gender</label>
+															<input id="gender" type="text" class="aui-field-gender-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<h3>Website URL</h3>
+											<em class="snippet">aui-field="url"</em>
+											<p>Website URL.</p>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="url">Website URL</label>
+															<input id="url" type="text" aui-field="url">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="url">Website URL</label>
+															<input id="url" type="text" class="aui-field-url-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<h3>Photo</h3>
+											<em class="snippet">aui-field="photo"</em>
+											<p>Photo or avatar.</p>
+
+											<h4>Examples</h4>
+											<p>These examples a field marked-up with he AUI attribute and a field styled using a SVG, as to provide the user with a personalisable experience.</p>
+
+											<div class="row">
+												<div class="col-12 example-snippet aui-field-section">
+
+													<p class="code-upper-title">Field Examples</p>
+
+													<div class="row example-row">
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example</p>
+															<label for="photo">Photo</label>
+															<input id="photo" type="text" aui-field="photo">
+														</div>
+
+														<!-- DON'T COPY THIS DIV'S CODE IT'S AN EXAMPLE AND DOESN'T HAVE THE CORRECT MARK-UP -->
+														<div class="col-xl-6 col-lg-12">
+															<p class="example-header">Example (.SVG)</p>
+															<label for="photo">Photo</label>uy
+															<input id="photo" type="text" class="aui-field-photo-svg">
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</section>
+
+										<section id="test-use" class="content-section">
+
+											<hr>
+
+											<h2>How to Use or Test</h2>
+
+											<p>Implementing the personalisation semantics provides user with an invaluable tool, as to tailor their personal experience on your web-based applications, however how do you ensure that you have implemented it correctly or for that fact use it?</p>
+
+												<p>These semantics could be used within scripts to manipulate those specific interactions, however on a basic level it provides the means to style each interaction specifically, as to provide a rememberable and distinct indicator. The easiest method therefore to test or use the implementation would be to style these elements using CSS. The method for such would vary depending on the browser utilised, below are a few possible methods to achieve this on a number of browsers. </p>
+
+											<h3>Chrome &amp; Firefox</h3>
+											<p>Multiple add-ons and methods exist which could be used as to style the elements, however, one of the easiest is utilising add-ons from the Chrome and Firefox add-on store, as to inject CSS into the web-based applications viewed.</p>
+											<p>A few possible add-ons for Chrome and Firefox to achieve this are as follows:</p>
+
+											<ul>
+												<li>Custom Style Script (<a href="https://chrome.google.com/webstore/detail/custom-style-script/ecjfaoeopefafjpdgnfcjnhinpbldjij/related?hl=en">Chrome Download</a> / <a href="https://addons.mozilla.org/en-GB/firefox/addon/custom-style-script/">Firefox Download</a>)</li>
+								
+												</ul>
+
+												<div class="note underline-onfocus">
+													<strong>Disclaimer:</strong>
+													<p>These links are provided as a convenience and for informational purposes only; Installing and/or visiting these resources is at the users own risk.</p>
+												</div>
+
+
+												<h4>Custom Style Script Guide</h4>
+
+
+												<p>Custom Style Script is an add-on available on Google Chrome and Firefox, which allows a wide range of CSS/Java scripts to be injected onto either a specific web-based applications or across all visited destinations.</p>
+
+												<h5>Step 1 - Install the Addon</h5>
+												<p>Visit the corresponding download link (<a href="https://chrome.google.com/webstore/detail/custom-style-script/ecjfaoeopefafjpdgnfcjnhinpbldjij/related?hl=en">Chrome Download</a> / <a href="https://addons.mozilla.org/en-GB/firefox/addon/custom-style-script/">Firefox Download</a>) for the add-on, then select "Add to Chrome" or “Add to Firefox”, followed by “Add Extension” or “Add” respectively.</p>
+
+													<img style="padding-bottom: 50px;" class="img-fluid" alt="" src="./A11Y Resources _ Developer _ AUI Personalisation_files/add_chrome_addon.png">
+
+													<img style="padding-bottom: 50px;" class="img-fluid" alt="" src="./A11Y Resources _ Developer _ AUI Personalisation_files/add_firefox_addon.png">
+
+												<h5>Step 2 - Addon Information</h5>
+												<p>Information and settings regarding the add-on can be accessed via the menu item which will have been added to the main bar alternatively on Firefox it can be access in the Add-ons menu (CTRL + SHIFT + A).</p>
+
+												<img style="padding-bottom: 50px;" class="img-fluid" alt="" src="./A11Y Resources _ Developer _ AUI Personalisation_files/options_chrome.png">
+
+												<img style="padding-bottom: 50px;" class="img-fluid" alt="" src="./A11Y Resources _ Developer _ AUI Personalisation_files/options_firefox.png">
+
+												<h5>Step 3 - Addon Configuration</h5>
+												<p>Select the icon within the upper bar, then select "Open Options Menu", then insert the CSS or script into the fields provided, followed by the plus button.</p>
+												<div class="note underline-onfocus margin-zero">
+													<strong>Note:</strong>
+													<p>The following is a guide as to what should be contrained within each field:</p>
+													<ul>
+														<li><p>URL Field - Should be filled as '*' if the change is to be global or a specific URL should be entered.</p></li>
+														<li><p>JavaScript Field - Should be filled with any JavaScript to be run on the target URL.</p></li>
+														<li><p>Style Field - Should be filled with any CSS to be applied to the target URL.</p></li>
+													</ul>
+												</div>
+
+												<img style="padding-bottom: 50px;" class="img-fluid" alt="" src="./A11Y Resources _ Developer _ AUI Personalisation_files/options_add_chrome.png">
+
+												<img style="padding-bottom: 50px;" class="img-fluid" alt="" src="./A11Y Resources _ Developer _ AUI Personalisation_files/options_add_firefox.png">
+
+												<h3>Safari</h3>
+												<p>Safaris has add-ons which can be installed to provide additional features or options. The advance settings within Safari provide the functionality to define custom CSS to be applied when visiting web-based applications. Therefore, an add-on could be used as to inject CSS into the website, however this is not necessary as the user can use the inbuilt tools.</p>
+
+												<h5>Adding CSS</h5>
+												<p>Navigate to Safari's "Advance Options", then select the CSS file.</p>
+
+												<img style="padding-bottom: 50px;" class="img-fluid" alt="" src="./A11Y Resources _ Developer _ AUI Personalisation_files/safari_css_option.png">
+
+											
+
+
+
+											</section>
+
+
+
+<hr>
+
+
+										</section></div>
+
+									</div> <!-- Column -->
+								</div> <!-- Row -->
+
+							
+						
+
+
+
+					
+
+
+				
+			</main>
+			<footer class="footer" role="contentinfo">
+
+	<div class="header-buffer">
+
+	</div>
+
+	<div class="footer-first">
+
+		<div class="container">
+
+			<div class="row footer-first-content">
+
+				<div class="col-md-4">
+
+					<ul>
+
+						<li><a href="https://a11y-resources.com/accessibility-statement">Accessibility Statement</a></li>
+						<li><a href="https://a11y-resources.com/accessibility-statement">Contact Us</a></li>
+						<li><a href="https://a11y-resources.com/accessibility-statement">Privacy and Cookies Policy</a></li>
+						<li><a href="https://a11y-resources.com/accessibility-statement">Website Feedback</a></li>
+
+					</ul>
+
+				</div>
+
+				<div class="col-md-4">
+<h2>Stay Informed</h2>
+<p>Join our email newsletter mailing list to stay up to date with campaigns, news and guidance.</p>
+<a href="https://a11y-resources.com/external" class="btn-dev">Sign-up Now</a>
+
+
+				</div>
+
+
+
+				<div class="col-md-4">
+
+					<h2 role="heading" aria-level="2">Stay Connected</h2>
+
+					<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#" class="fa fa fa-facebook-square"></a>
+					<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#" class="fa fa-twitter-square"></a>
+					<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#" class="fa fa-youtube-square"></a>
+
+				</div>
+			</div>
+
+			<div class="footer-second">                 
+				<p>Copyrighted</p>
+			</div>
+
+		</div>  
+	</div>
+</footer>
+			<!-- end footer --> 
+
+		
+	
+
+	<a href="https://a11y-resources.com/developer/adaptable-ui-personalisation#top-of-page" class="cd-top">Navigate back to the top of the site</a>
+
+	<!-- Script Import -->
+
+	<script src="./A11Y Resources _ Developer _ AUI Personalisation_files/jquery.min.js.הורד"></script>
+	<script src="./A11Y Resources _ Developer _ AUI Personalisation_files/top-scroll.js.הורד"></script>
+	<script src="./A11Y Resources _ Developer _ AUI Personalisation_files/jquery-3.1.1.slim.min.js.הורד" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="./A11Y Resources _ Developer _ AUI Personalisation_files/tether.min.js.הורד" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="./A11Y Resources _ Developer _ AUI Personalisation_files/bootstrap.min.js.הורד" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script src="./A11Y Resources _ Developer _ AUI Personalisation_files/highlight.pack.js.הורד"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="./A11Y Resources _ Developer _ AUI Personalisation_files/jquery.waypoints.js.הורד"></script>
+	<script src="./A11Y Resources _ Developer _ AUI Personalisation_files/jquery.waypoints.min.js.הורד"></script>
+	<script src="./A11Y Resources _ Developer _ AUI Personalisation_files/sticky.min.js.הורד"></script>
+	<script>
+		var sticky = new Waypoint.Sticky({
+			element: $('.basic-sticky-example')[0]
+		})
+	</script>
+
+
+
+</body></html>

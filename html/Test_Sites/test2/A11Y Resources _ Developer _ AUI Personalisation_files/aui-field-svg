@@ -1,0 +1,325 @@
+.aui-field-name-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/personal_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-honorificPrefix-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/personal_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-givenName-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/personal_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-additionalName-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/personal_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-additionalNameInitial-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/personal_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-familyName-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/personal_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-honorificSuffix-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/personal_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-nickname-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/personal_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-streetAddress-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/location_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-addressLine1-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/location_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+
+.aui-field-addressLine2-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/location_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+
+.aui-field-addressLine3-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/location_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+
+.aui-field-city-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/city_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-area-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/location_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-postalcode-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/location_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-country-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/location_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-fax-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/fax_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-faxCountryCode-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/fax_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-faxNational-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/fax_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-faxAreaCode-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/fax_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-faxLocal-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/fax_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-faxExtension-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/fax_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-email-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/email_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-tel-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/phone_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-ccName-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/cc_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-ccNumber-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/cc_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-ccExpMonth-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/cc_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-ccExpYear-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/cc_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-ccCsc-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/cc_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-language-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/language_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-bday-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/birthday_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-bdayYear-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/birthday_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-bdayMonth-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/birthday_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-bdayDay-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/birthday_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-transactionCurrency-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/currency_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-transactionAmount-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/currency_amount_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-topic-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/topic_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-comment-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/comment_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-subject-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/subject_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-answer-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/answer_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-org-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/org_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-position-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/organization-title_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-sex-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/sex_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-gender-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/gender_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-url-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/url_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-field-photo-svg {
+	background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/field/photo_icon.svg), linear-gradient(to right, #000000 25px,#ffffff 100%); 
+	background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+

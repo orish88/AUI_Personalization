@@ -1,0 +1,160 @@
+
+.aui-destination-home-svg{
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/home_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-contact-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/contact_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-phone-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/phone_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-email-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/email_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-sitemap-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/sitemap_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-accessibilityStatement-svg {
+    content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/accessibility_statement_icon.svg); 
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-help-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/help_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-chat-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/chat_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-about-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/about_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-terms-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/terms_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-tools-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/tools_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-services-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/services_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-products-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/products_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-comment-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/comment_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-language-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/language_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-signin-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/signin_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-signout-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/signout_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-register-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/register_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-social-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/social_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.aui-destination-post-svg {
+	content: " ";
+    background-image: url(https://a11y-resources.com/img/aui-personalisation-icons/destination/post_icon.svg); 
+	background-size: 20px, 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}

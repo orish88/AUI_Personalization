@@ -1,0 +1,147 @@
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+	src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.aui-destination-home-font:before {
+	content: "\f015"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-contact-font:before {
+	content: "\f232"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-phone-font:before {
+	content: "\f095"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-email-font:before {
+	content: "\f0e0"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-sitemap-font:before {
+	content: "\f0e8"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-accessibilityStatement-font:before {
+	content: "\f02d";
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-help-font:before {
+	content: "\f059";
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-chat-font:before {
+	content: "\f27b"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-about-font:before {
+	content: "\f129"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-terms-font:before {
+	content: "\f187"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-tools-font:before {
+	content: "\f0ad"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-services-font:before {
+	content: "\f27e"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-products-font:before {
+	content: "\f16b"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-comment-font:before {
+	content: "\f086"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-language-font:before {
+	content: "\f1ab"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-signin-font:before {
+	content: "\f090"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-signout-font:before {
+	content: "\f08b"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-register-font:before {
+	content: "\f2bb"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-social-font:before {
+	content: "\f045"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}
+
+.aui-destination-post-font:before {
+	content: "\f1d8"; 
+	font-family: FontAwesome;
+	float:left;
+	margin-right:5px;
+}

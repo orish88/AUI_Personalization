@@ -97,16 +97,17 @@ function personalizePage(profile) {
 
 function personalizeSimplification(simplificationLevel) {
 	console.log("simplification level: "+simplificationLevel);
-	var simplificationValue = simplicficationFromStirngToInt(simplificationLevel);
+	var simplificationValue = simplicficationFromStringToInt(simplificationLevel);
 	var simplificationElements = document.querySelectorAll('[AUI-simplification]');
 	simplificationElements.forEach(element=>{
-		if(simplicficationFromStirngToInt( element.getAttribute("AUI-simplification") ) > simplificationValue ){
+		if(simplicficationFromStringToInt( element.getAttribute("AUI-simplification") ) > simplificationValue ){
 			console.log("element "+element+ " hidden: ");
 			element.hidden = true;
+			$(element).attr("aria-hidden","true");
 		}
 	});
 }
-function simplicficationFromStirngToInt(simplificationString){
+function simplicficationFromStringToInt(simplificationString){
 	var simplificationValue = 1;
 	switch (simplificationString) {
 		case "critical":
@@ -699,5 +700,36 @@ function positionSpan(span,element){
 	span.style.left = elemRect.left;
 	// span.style.top = top_offset + addToTop;
 	// span.style.left = left_offset +addToLeft;
+}
+
+function personalizeDistraction() {
+
+	/*animations, auto-starting, moving, ad, message, chat , overlay, popup
+Auto-changing (logs) third-party, offer ( includes suggestions). */
+
+	var distStr = window.profile.aui - distraction;
+	if (!isDefined(distStr)) {
+		return;
+	}
+	if (distStr === "all") {
+		$("[aui-distraction]").each(function (index) {
+			$(this).attr("aria-hidden","true");
+		});
+		return;
+	}
+	var distractionsArray = distStr.split(",").map(function(item) {
+		return item.trim();
+	  });
+
+	  distractionsArray.forEach(distractionType=>{
+		$("[aui-distraction='"+distractionType+"']").each(function (index) {
+			$(this).attr("aria-hidden","true");
+		});
+	  });
+
+	  
+
+
+
 }
 
