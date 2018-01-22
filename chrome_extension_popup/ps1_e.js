@@ -540,7 +540,8 @@ function altAddToolTip(element, newImg,settings) {
 	$(document.body).keydown(function (ev) {
 
 		if (isKeys(ev,settings.shortcut)) {
-			showImg(span);
+			// showImg(span);
+			$(element).focus();
 			ev.preventDefault();
 			return false;
 		}
