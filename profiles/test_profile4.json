@@ -164,7 +164,43 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/help2_noun.png",
+                    "replacetext":"tooltip",
                     "css_class":"",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        "aui-field": {
+            "global_settings": {
+                "name": "aui-field"
+            },
+            "search": {
+                "name": "search",
+                "type": [
+                    
+                ],
+                "inherits": "",
+                "shortcut": "SHIFT + S",
+                "longdesc": "Search input",
+                "tooltip": "search",
+                "text": "Type here to Search",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/search1_noun.png",
+                    "replacetext":"tooltip",
                     "creator": {
                         "name": "",
                         "url": ""
