@@ -11,6 +11,7 @@
             }
         ]
     },
+    "aui-distraction":"animations, auto-starting, moving, ad, message, chat , overlay, popup",
     "simplification": "critical",
     "tagNames": {
         "a": {
