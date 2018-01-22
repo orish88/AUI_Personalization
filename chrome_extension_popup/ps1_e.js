@@ -93,6 +93,10 @@ function personalizePage(profile) {
 		var simplificationLevel = profile.simplification;
 		personalizeSimplification(simplificationLevel); 
 	}
+	if(isDefined(profile["aui-distraction"])){
+		console.log("aui-distraction: "+profile["aui-distraction"]);
+		personalizeDistraction();
+	}
 }
 
 function personalizeSimplification(simplificationLevel) {
@@ -707,29 +711,28 @@ function personalizeDistraction() {
 	/*animations, auto-starting, moving, ad, message, chat , overlay, popup
 Auto-changing (logs) third-party, offer ( includes suggestions). */
 
-	var distStr = window.profile.aui - distraction;
+
+
+	var distStr = window.profile["aui-distraction"];
+	console.log("personalize distraction called. distStr: "+distStr);
 	if (!isDefined(distStr)) {
 		return;
 	}
 	if (distStr === "all") {
 		$("[aui-distraction]").each(function (index) {
-			$(this).attr("aria-hidden","true");
+			console.log("distraction element: "+$(this).html());
+			$(this).attr("aria-hidden", "true");
 		});
 		return;
 	}
-	var distractionsArray = distStr.split(",").map(function(item) {
+	var distractionsArray = distStr.split(",").map(function (item) {
 		return item.trim();
-	  });
+	});
 
-	  distractionsArray.forEach(distractionType=>{
-		$("[aui-distraction='"+distractionType+"']").each(function (index) {
-			$(this).attr("aria-hidden","true");
+	distractionsArray.forEach(distractionType => {
+		$("[aui-distraction='" + distractionType + "']").each(function (index) {
+			$(this).attr("aria-hidden", "true");
 		});
-	  });
-
-	  
-
-
-
+	});
 }
 

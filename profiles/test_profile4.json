@@ -30,6 +30,7 @@
             }
         ]
     },
+    "aui-distraction":"all",
     "simplification": "critical",
     "tagNames": {
         "a": {
