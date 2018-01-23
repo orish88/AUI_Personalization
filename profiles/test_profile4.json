@@ -132,7 +132,7 @@
                 "inherits": "",
                 "shortcut": "Shift + D",
                 "longdesc": "this button delete your work.",
-                "tooltip": "delete",
+                "tooltip": "Delete",
                 "text": "delete",
                 "Symbol": {
                     "url": "http://cdn4.iconfinder.com/data/icons/miu/23/editor_trash_delete_recycle_bin-64.png",
@@ -160,7 +160,7 @@
                 "inherits": "",
                 "shortcut": "Shift + D",
                 "longdesc": "press to get website help",
-                "tooltip": "help",
+                "tooltip": "Help",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/help2_noun.png",
@@ -190,7 +190,7 @@
                 "inherits": "",
                 "shortcut": "Shift + S",
                 "longdesc": "change website Settings",
-                "tooltip": "Settigns",
+                "tooltip": "Settings",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/settings1_noun.png",
@@ -226,11 +226,11 @@
                 "inherits": "",
                 "shortcut": "SHIFT + S",
                 "longdesc": "Search input",
-                "tooltip": "search",
+                "tooltip": "Search",
                 "text": "Type here to Search",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/search1_noun.png",
-                    "css_class":"aui_header_images",
+
                     "replacetext":"tooltip",
                     "creator": {
                         "name": "",
@@ -315,6 +315,36 @@
                     }
                 ]
             },
+            "signout": {
+                "name": "signout",
+                "type": [
+                ],
+                "inherits": "",
+                "shortcut": "Ctrl+L",
+                "longdesc": "link to sign out of the website",
+                "tooltip": "Sign out",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signout1_noun.png",
+                    "css_class":"aui_header_images",
+                    "replacetext": "tooltip",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
             "email": {
                 "name": "email",
                 "type": [
@@ -323,7 +353,7 @@
                 "inherits": "",
                 "shortcut": "E",
                 "longdesc": "this links to the our email page.",
-                "tooltip": "email us",
+                "tooltip": "Email us",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email1_noun.png",
@@ -415,7 +445,7 @@
                 "inherits": "",
                 "shortcut": "Shift+Q",
                 "longdesc": "contach the creators",
-                "tooltip": "contact the creators",
+                "tooltip": "Contact the creators",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/contact_us2_noun.png",
@@ -446,7 +476,7 @@
                 "inherits": "",
                 "shortcut": "Shift+M",
                 "longdesc": "map of the website",
-                "tooltip": "map of this website",
+                "tooltip": "Map of this website",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap1_noun.png",
@@ -497,6 +527,35 @@
                         "value": ""
                     }
                 ]
+            },
+            "tools": {
+                "name": "tools",
+                "inherits": "",
+                "shortcut": "T",
+                "longdesc": "Tools",
+                "tooltip": "Tools",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/tools1_noun.png",
+                    "css_class":"aui_header_images",
+                    "replacetext": "tooltip",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    
+                    "width": "100px",
+                    "height": "100px",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
             }
         },
         "AUI-symbol": {
@@ -515,6 +574,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/copyright1_noun.png",
+                    "css_class":"aui_header_images",
                     "replacetext": "tooltip",
                     "creator": {
                         "name": "",
@@ -582,7 +642,7 @@
                     "inherits": "",
                     "shortcut": "",
                     "longdesc": "itemtype of type itemlist",
-                    "tooltip": "itemtype itemlist",
+                    "tooltip": "Itemtype itemlist",
                     "text": "itemtype itemlist",
                     "Symbol": {
                         "url": "",
@@ -614,7 +674,7 @@
                         "inherits": "",
                         "shortcut": "",
                         "longdesc": "itemtype itemlist with itemprop name",
-                        "tooltip": "first name tooltip",
+                        "tooltip": "First name tooltip",
                         "text": "Training itemprop",
                         "Symbol": {
                             "url": "",
@@ -638,7 +698,7 @@
                     "lname": {
                         "name": "lname",
                         "type": [],
-                        "tooltip": "last name tooltip"
+                        "tooltip": "Last name tooltip"
                     }
                 },
                 "value": {
@@ -647,7 +707,7 @@
                     "inherits": "",
                     "shortcut": "",
                     "longdesc": "itemtype of type itemlist",
-                    "tooltip": "autocomplete (scope start,no name) tooltip",
+                    "tooltip": "Autocomplete (scope start,no name) tooltip",
                     "text": "itemtype itemlist",
                     "Symbol": {
                         "url": "",

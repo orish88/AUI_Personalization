@@ -85,7 +85,7 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "this button writes or creates your new work.",
-                "tooltip": "compose",
+                "tooltip": "Compose",
                 "text": "compose now",
                 "Symbol": {
                     "url": "http://cdn4.iconfinder.com/data/icons/miu/22/common_new_edit_compose_-128.png",
@@ -113,7 +113,7 @@
                 "inherits": "",
                 "shortcut": "SHIFT + D",
                 "longdesc": "this button delete your work.",
-                "tooltip": "delete",
+                "tooltip": "Delete",
                 "text": "delete",
                 "Symbol": {
                     "url": "http://cdn4.iconfinder.com/data/icons/miu/23/editor_trash_delete_recycle_bin-64.png",
@@ -142,11 +142,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + D",
                 "longdesc": "press to get website help",
-                "tooltip": "help",
+                "tooltip": "Help",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/help2_noun.png",
                     "css_class":"aui_header_images",
+                    "replacetext":"replace",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -171,7 +172,7 @@
                 "inherits": "",
                 "shortcut": "Shift + S",
                 "longdesc": "change website Settings",
-                "tooltip": "Settigns",
+                "tooltip": "Settings",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/settings1_noun.png",
@@ -207,7 +208,7 @@
                 "inherits": "",
                 "shortcut": "SHIFT + S",
                 "longdesc": "Search input",
-                "tooltip": "search",
+                "tooltip": "Search",
                 "text": "Type here to Search",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/search1_noun.png",
@@ -242,7 +243,7 @@
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "this links to the home page.",
-                "tooltip": "home",
+                "tooltip": "Home",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",
@@ -285,6 +286,35 @@
                     },
                     "width": "100",
                     "height": "250",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "signout": {
+                "name": "signout",
+                "type": [
+                ],
+                "inherits": "",
+                "shortcut": "Ctrl+L",
+                "longdesc": "link to sign out of the website",
+                "tooltip": "Sign out",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signout1_noun.png",
+                    "replacetext": "replace",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
                     "margin": "",
                     "padding": ""
                 },
@@ -394,11 +424,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "contach the creators",
-                "tooltip": "contact the creators",
+                "tooltip": "Contact the creators",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/contact_us2_noun.png",
                     "css_class":"aui_header_images",
+                    "replacetext":"replace",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -465,6 +496,34 @@
                     
                     "width": "60",
                     "height": "60",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "tools": {
+                "name": "tools",
+                "inherits": "",
+                "shortcut": "T",
+                "longdesc": "Tools",
+                "tooltip": "Tools",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/tools1_noun.png",
+                    "replacetext": "replace",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    
+                    "width": "100px",
+                    "height": "100px",
                     "margin": "",
                     "padding": ""
                 },
