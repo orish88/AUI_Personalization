@@ -6,28 +6,46 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Getting Started Extension's Popup</title>
   <style type="text/css">
-
     #container {
       align-items: center;
       display: flex;
       justify-content: space-between;
+      margin: 5px;
     }
-
-    .btn{
+  
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       height: 50px;
       width: 200px;
-      margin: 5px; 
+      margin: 5px;
     }
-    .btn img { 
-    height: 30px;
-    width:50px; 
-    display: inline-block;
-    vertical-align: middle;
-    /* margin-left:10px; */
-    background: #f00;
-    padding: 5px;
-    border-radius: 5px;
-}
+  
+    .btn img {
+      height: 30px;
+      width: 50px;
+      display: inline-block;
+      vertical-align: middle;
+      /* margin-left:10px; */
+      background: #f00;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  
+    #bt_personalize_page{
+      /* background-image: url("https://rawgit.com/orish88/AUI_Personalization/master/images/enter1_noun.png"); */
+      /* background-size: 50px 30px; */
+      height: 40px;
+      width: 58px;
+      border-color: rgb(10, 0, 0);
+      border-width: 4px;
+      border-radius: 5px;
+    }
+    #input_enter_profile_url{
+      height: 30px;
+      width: 140px;
+    }
   </style>
 
   <!--
@@ -57,8 +75,8 @@
   </div>
   <div id="container">
     <input  id="input_enter_profile_url" placeholder="Enter profile json url here">
-    <button id="bt_personalize_page" onclick="myFunction()" style = "background:url(https://rawgit.com/orish88/AUI_Personalization/master/images/help1_noun.png)">
-    </button>
+    <button id="bt_personalize_page" onclick="myFunction()" >
+    Enter</button>
   </div>
   <script>
     alert("test1");
