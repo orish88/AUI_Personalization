@@ -482,10 +482,11 @@ function altAddToolTip(element, newImg,settings) {
 	var divStr = '<div id="' + divId + '" </div>';
 	// element.insertBefore(span,null);
 	// $(span).insertBefore(element);
+
 	$(element).wrap(divStr);
 	var div = document.getElementById(divId);
 
-	// $(div).addClass("tooltip_parent");
+	$(div).addClass("tooltip_parent");
 
 	var span = document.createElement("span");
 	// div.appendChild(span);
@@ -498,17 +499,26 @@ function altAddToolTip(element, newImg,settings) {
 
 	$(newImg).appendTo(span);
 	// span.appendChild(newImg);
-	
 	$(span).attr("role", "tooltip");
-	
-
 	// $(span).append('<p>p text</p>');
-
 	$(span).addClass("tooltip");
-	positionSpan(span,element);
 
-	var oldElem = element;
-	element = div;
+
+	$(element).mouseover(function () {
+		console.log("mouseover span called");
+		showImg(span);
+		// $(newImg).show();
+	});
+	$(span).mouseleave(function () {
+		console.log("mouseleave span called");
+		if (!($(element).is(":focus"))) {
+			hideImg(span);
+		}
+	});
+
+	positionSpan(span,element);
+	// var oldElem = element;
+	// element = div;
 	$(element).attr("tabindex","0");	
 	/*add text to the span */
 	if(isDefined(settings.tooltip)){
@@ -689,34 +699,67 @@ function checkModifier(modifierStr,event){
 	return false;
 }
 
+
+
 function positionSpan(span,element){
+	
+		// var addToTop = -1.5*element.height;
+		// var addToLeft = -500;
+		var bodyRect = document.body.getBoundingClientRect();
+		var elemRect = element.getBoundingClientRect();
+		var top_offset = elemRect.top - bodyRect.top;
+		var left_offset = elemRect.left - bodyRect.left;
+		var offset = $(element).offset();
+	
+		// top_offset = element.offsetTop;
+		// left_offset = element.offsetLeft;
+		// span.style.top = "" +element.getBoundingClientRect().top + "px";
+		// span.style.left = ""+element.getBoundingClientRect().left +"px";
+		console.log("*****************************************************************",span.style.top,);
+		console.log('Element is ' + top_offset + ' vertical pixels from <body>');
+		console.log('Element is ' + left_offset + ' horizontal pixels from <body>');
+		console.log("bodyRect: top: "+bodyRect.top+" left: "+bodyRect.left);
+		console.log("elemRect: top: "+elemRect.top+" left: "+elemRect.left);
+	
+		span.style.top = elemRect.top;
+		span.style.left = elemRect.left;
+		// var p = $(span).position();
+		console.log("span left: "+offset.left+" top: "+offset.top);
+		console.log("span: ",span," element:",element);
+	
+	}
+// function positionSpan(span,element){
 
-	// var addToTop = -1.5*element.height;
-	// var addToLeft = -500;
-	var bodyRect = document.body.getBoundingClientRect();
-    var elemRect = element.getBoundingClientRect();
-	var top_offset = elemRect.top - bodyRect.top;
-	var left_offset = elemRect.left - bodyRect.left;
-	console.log('Element is ' + top_offset + ' vertical pixels from <body>');
-	console.log('Element is ' + left_offset + ' horizontal pixels from <body>');
-	console.log("bodyRect: top: "+bodyRect.top+" left: "+bodyRect.left);
-	console.log("elemRect: top: "+elemRect.top+" left: "+elemRect.left);
+// 	// var addToTop = -1.5*element.height;
+// 	// var addToLeft = -500;
+// 	var bodyRect = document.body.getBoundingClientRect();
+//     var elemRect = element.getBoundingClientRect();
+// 	var top_offset = elemRect.top - bodyRect.top;
+// 	var left_offset = elemRect.left - bodyRect.left;
+// 	var offset = $(element).offset();
 
-	span.style.top = elemRect.top;
-	span.style.left = elemRect.left;
-	var p = $(span).position();
-	console.log("span left: "+p.left+" top: "+p.top);
+// 	top_offset = element.offsetTop;
+// 	left_offset = element.offsetLeft;
+// 	span.style.top = "" +element.getBoundingClientRect().top + "px";
+// 	span.style.left = ""+element.getBoundingClientRect().left +"px";
+// 	console.log("*****************************************************************",span.style.top,);
+// 	console.log('Element is ' + top_offset + ' vertical pixels from <body>');
+// 	console.log('Element is ' + left_offset + ' horizontal pixels from <body>');
+// 	console.log("bodyRect: top: "+bodyRect.top+" left: "+bodyRect.left);
+// 	console.log("elemRect: top: "+elemRect.top+" left: "+elemRect.left);
 
-	// span.style.top = top_offset + addToTop;
-	// span.style.left = left_offset +addToLeft;
-}
+// 	// span.style.top = elemRect.top;
+// 	// span.style.left = elemRect.left;
+// 	// var p = $(span).position();
+// 	console.log("span left: "+offset.left+" top: "+offset.top);
+// 	console.log("span: ",span," element:",element);
+
+// }
 
 function personalizeDistraction() {
 
 	/*animations, auto-starting, moving, ad, message, chat , overlay, popup
 Auto-changing (logs) third-party, offer ( includes suggestions). */
-
-
 
 	var distStr = window.profile["aui-distraction"];
 	console.log("personalize distraction called. distStr: "+distStr);
