@@ -209,7 +209,7 @@ ytd-masthead.theater:not([style-scope]):not(.style-scope) svg#yt-logo-svg:not([s
     
     <form id="search-form" action="https://www.youtube.com/results" class="style-scope ytd-searchbox">
       <div id="container" class="style-scope ytd-searchbox">
-        <div id="search-input" slot="search-input"><input id="search" autocapitalize="none" autocomplete="off" autocorrect="off" autofocus="" name="search_query" tabindex="0" type="text" spellcheck="false" placeholder="Search" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="list" dir="ltr" class="ytd-searchbox" style="outline: none;"></div>
+        <div id="search-input" slot="search-input"><input id="search" aui-field="search" autocapitalize="none" autocomplete="off" autocorrect="off" autofocus="" name="search_query" tabindex="0" type="text" spellcheck="false" placeholder="Search" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="list" dir="ltr" class="ytd-searchbox" style="outline: none;"></div>
         <div id="search-container" slot="search-container"></div>
         <button is="paper-icon-button-light" id="search-icon" class="search-icon style-scope ytd-searchbox" hidden="" aria-label="Search">
           <yt-icon class="style-scope ytd-searchbox" disable-upgrade="">
@@ -275,7 +275,7 @@ ytd-masthead.theater:not([style-scope]):not(.style-scope) svg#yt-logo-svg:not([s
     
     
   </yt-icon></button></yt-icon-button></a></div>
-  </ytd-topbar-menu-button-renderer><ytd-button-renderer button-renderer="" class="style-scope ytd-masthead style-brand" is-paper-button=""><a is="yt-endpoint" tabindex="-1" class="style-scope ytd-button-renderer" href="https://accounts.google.com/ServiceLogin?service=youtube&amp;uilel=3&amp;continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26next%3D%252F%26hl%3Den%26app%3Ddesktop&amp;passive=true" rel="nofollow"><paper-button role="button" tabindex="0" animated="" aria-disabled="false" elevation="0" id="button" class="style-scope ytd-button-renderer style-brand"><yt-formatted-string id="text" class="style-scope ytd-button-renderer style-brand">Sign in</yt-formatted-string></paper-button></a></ytd-button-renderer></div>
+  </ytd-topbar-menu-button-renderer><ytd-button-renderer button-renderer="" class="style-scope ytd-masthead style-brand" is-paper-button=""><a is="yt-endpoint" tabindex="-1" class="style-scope ytd-button-renderer" href="https://accounts.google.com/ServiceLogin?service=youtube&amp;uilel=3&amp;continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26next%3D%252F%26hl%3Den%26app%3Ddesktop&amp;passive=true" rel="nofollow"><paper-button role="button" tabindex="0" animated="" aria-disabled="false" elevation="0" id="button" class="style-scope ytd-button-renderer style-brand"><yt-formatted-string id="text" class="style-scope ytd-button-renderer style-brand" aui-destination="signin" >Sign in</yt-formatted-string></paper-button></a></ytd-button-renderer></div>
       </div>
     </div>
   </ytd-masthead>
@@ -3408,7 +3408,7 @@ ytd-masthead.theater:not([style-scope]):not(.style-scope) svg#yt-logo-svg:not([s
   </yt-icon>
       <yt-img-shadow height="24" width="24" class="style-scope ytd-guide-entry-renderer" disable-upgrade="" hidden="">
       </yt-img-shadow>
-      <span class="title style-scope ytd-guide-entry-renderer">Home</span>
+      <span class="title style-scope ytd-guide-entry-renderer" aui-destination="home" >Home</span>
       <span class="guide-entry-count style-scope ytd-guide-entry-renderer" hidden="">
         
       </span>
@@ -3595,7 +3595,7 @@ ytd-masthead.theater:not([style-scope]):not(.style-scope) svg#yt-logo-svg:not([s
   </ytd-guide-section-renderer><ytd-guide-signin-promo-renderer class="style-scope ytd-guide-renderer">
     
     <yt-formatted-string class="style-scope ytd-guide-signin-promo-renderer">Sign in now to see your channels and recommendations!</yt-formatted-string>
-    <ytd-button-renderer align-by-text="" class="style-scope ytd-guide-signin-promo-renderer style-brand" button-renderer="" is-paper-button=""><a is="yt-endpoint" tabindex="-1" class="style-scope ytd-button-renderer"><paper-button role="button" tabindex="0" animated="" aria-disabled="false" elevation="0" id="button" class="style-scope ytd-button-renderer style-brand"><yt-formatted-string id="text" class="style-scope ytd-button-renderer style-brand">Sign in</yt-formatted-string></paper-button></a></ytd-button-renderer>
+    <ytd-button-renderer align-by-text="" class="style-scope ytd-guide-signin-promo-renderer style-brand" button-renderer="" is-paper-button=""><a is="yt-endpoint" tabindex="-1" class="style-scope ytd-button-renderer"><paper-button role="button" tabindex="0" animated="" aria-disabled="false" elevation="0" id="button" class="style-scope ytd-button-renderer style-brand"><yt-formatted-string id="text" class="style-scope ytd-button-renderer style-brand" aui-destination="signin">Sign in</yt-formatted-string></paper-button></a></ytd-button-renderer>
   </ytd-guide-signin-promo-renderer><ytd-guide-section-renderer class="style-scope ytd-guide-renderer">
     
     <yt-service api="ytd-guide-service" class="style-scope ytd-guide-section-renderer">
@@ -3617,7 +3617,7 @@ ytd-masthead.theater:not([style-scope]):not(.style-scope) svg#yt-logo-svg:not([s
   </yt-icon>
       <yt-img-shadow height="24" width="24" class="style-scope ytd-guide-entry-renderer" disable-upgrade="" hidden="">
       </yt-img-shadow>
-      <span class="title style-scope ytd-guide-entry-renderer">Settings</span>
+      <span class="title style-scope ytd-guide-entry-renderer" aui-action="settings">Settings</span>
       <span class="guide-entry-count style-scope ytd-guide-entry-renderer" hidden="">
         
       </span>
@@ -3637,7 +3637,7 @@ ytd-masthead.theater:not([style-scope]):not(.style-scope) svg#yt-logo-svg:not([s
   </yt-icon>
       <yt-img-shadow height="24" width="24" class="style-scope ytd-guide-entry-renderer" disable-upgrade="" hidden="">
       </yt-img-shadow>
-      <span class="title style-scope ytd-guide-entry-renderer">Help</span>
+      <span class="title style-scope ytd-guide-entry-renderer" aui-action"help">Help</span>
       <span class="guide-entry-count style-scope ytd-guide-entry-renderer" hidden="">
         
       </span>
@@ -3658,7 +3658,7 @@ ytd-masthead.theater:not([style-scope]):not(.style-scope) svg#yt-logo-svg:not([s
   </yt-icon>
       <yt-img-shadow height="24" width="24" class="style-scope ytd-guide-entry-renderer" disable-upgrade="" hidden="">
       </yt-img-shadow>
-      <span class="title style-scope ytd-guide-entry-renderer">Send feedback</span>
+      <span class="title style-scope ytd-guide-entry-renderer" aui-destination="contact">Send feedback</span>
       <span class="guide-entry-count style-scope ytd-guide-entry-renderer" hidden="">
         
       </span>

@@ -162,6 +162,36 @@
                         "value": ""
                     }
                 ]
+            },
+            "settings": {
+                "name": "settings",
+                "type": [
+                ],
+                "inherits": "",
+                "shortcut": "Shift + S",
+                "longdesc": "change website Settings",
+                "tooltip": "Settigns",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/settings1_noun.png",
+                    "replacetext":"replace",
+                    "css_class":"",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
             }
         },
         "aui-field": {
@@ -206,7 +236,6 @@
             "home": {
                 "name": "home",
                 "type": [
-                    "a","not div"
                 ],
                 "inherits": "",
                 "shortcut": "SHIFT+H",
@@ -237,7 +266,7 @@
             "signin": {
                 "name": "signin",
                 "type": [
-                    "a","not div"
+
                 ],
                 "inherits": "",
                 "shortcut": "SHIFT+H",
@@ -328,7 +357,6 @@
             "about": {
                 "name": "about",
                 "type": [
-                    "a"
                 ],
                 "inherits": "",
                 "shortcut": "SHIFT+H",
