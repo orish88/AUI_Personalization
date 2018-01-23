@@ -165,7 +165,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/help2_noun.png",
                     "replacetext":"tooltip",
-                    "css_class":"",
+                    "css_class":"aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -195,7 +195,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/settings1_noun.png",
                     "replacetext":"tooltip",
-                    "css_class":"",
+                    "css_class":"aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -230,6 +230,7 @@
                 "text": "Type here to Search",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/search1_noun.png",
+                    "css_class":"aui_header_images",
                     "replacetext":"tooltip",
                     "creator": {
                         "name": "",
@@ -295,7 +296,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signin1_noun.png",
-                    "css_class":"",
+                    "css_class":"aui_header_images",
                     "replacetext": "tooltip",
                     "creator": {
                         "name": "",
@@ -357,6 +358,8 @@
                 "text": "Offered Services",
                 "Symbol": {
                     "url": "",
+                    "css_class":"aui_header_images",
+                    "replacetext":"tooltip",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -417,7 +420,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/contact_us2_noun.png",
                     "replacetext":"tooltip",
-                    "css_class":"",
+                    "css_class":"aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -447,7 +450,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap1_noun.png",
-                    "css_class":"",
+                    "css_class":"aui_header_images",
                     "replacetext": "tooltip",
                     "creator": {
                         "name": "",
@@ -475,6 +478,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang1_noun.png",
+                    "css_class":"aui_header_images",
                     "replacetext": "tooltip",
                     "creator": {
                         "name": "",

@@ -117,6 +117,7 @@
                 "text": "delete",
                 "Symbol": {
                     "url": "http://cdn4.iconfinder.com/data/icons/miu/23/editor_trash_delete_recycle_bin-64.png",
+                    "css_class":"",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -175,7 +176,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/settings1_noun.png",
                     "replacetext":"replace",
-                    "css_class":"",
+                    "css_class":"aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -210,6 +211,7 @@
                 "text": "Type here to Search",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/search1_noun.png",
+                    "css_class":"aui_header_images",
                     "replacetext":"before",
                     "creator": {
                         "name": "",
