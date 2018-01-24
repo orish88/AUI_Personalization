@@ -86,7 +86,7 @@
                 "shortcut": "SHIFT + C",
                 "longdesc": "this button writes or creates your new work.",
                 "tooltip": "Compose",
-                "text": "compose now",
+                "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/compose1_noun_a1.png",
                     "replacetext":"before",
