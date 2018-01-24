@@ -691,8 +691,8 @@ function checkModifier(modifierStr,event){
 
 function positionSpan(span,element){
 
-	// var addToTop = -1.5*element.height;
-	// var addToLeft = -500;
+	var addToTop = -1.5*element.height;
+	var addToLeft = -500;
 	var bodyRect = document.body.getBoundingClientRect();
     var elemRect = element.getBoundingClientRect();
 	var top_offset = elemRect.top - bodyRect.top;

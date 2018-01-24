@@ -160,7 +160,7 @@
                 "inherits": "",
                 "shortcut": "Shift + D",
                 "longdesc": "press to get website help",
-                "tooltip": "Help",
+                "tooltip": "",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/help2_noun.png",
