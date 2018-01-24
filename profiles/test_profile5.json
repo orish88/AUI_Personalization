@@ -177,7 +177,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/settings1_noun.png",
-                    "replacetext":"replace",
                     "css_class":"aui_header_images",
                     "creator": {
                         "name": "",
@@ -208,7 +207,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/next1_noun_a1.png",
-                    "replacetext":"before",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -238,7 +236,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/previous1_noun_a1.png",
-                    "replacetext":"before",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -326,7 +323,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/confirm1_noun_a1.png",
-                    "replacetext":"before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -356,7 +353,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/undo1_noun_a1.png",
-                    "replacetext":"before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -386,7 +383,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/cancel1_noun_a1.png",
-                    "replacetext":"before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -416,7 +413,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/cancel1_noun_a1.png",
-                    "replacetext":"before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -446,7 +443,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/reset1_noun_a1.png",
-                    "replacetext":"before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -476,7 +473,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/label1_noun_a1.png",
-                    "replacetext":"before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -506,7 +503,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/buy1_noun_a1.png",
-                    "replacetext":"before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -536,7 +533,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/checkout1_noun_a1.png",
-                    "replacetext":"before",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -566,7 +562,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/add1_noun_a1.png",
-                    "replacetext":"before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -596,7 +592,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/move1_noun_a1.png",
-                    "replacetext":"before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -626,7 +622,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/save1_noun_a1.png",
-                    "replacetext":"before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -656,7 +652,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/send1_noun_a1.png",
-                    "replacetext":"before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -693,7 +689,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/search1_noun.png",
                     "css_class":"aui_header_images",
-                    "replacetext":"before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -728,7 +724,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",
                     "css_class":"aui_header_images",
-                    "replacetext": "replace",
+
                     "creator": {
                         "name": "Jardson Almeida, The Noun Project",
                         "url": ""
@@ -759,7 +755,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signin1_noun.png",
                     "css_class":"aui_header_images",
-                    "replacetext": "before",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -788,7 +784,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signout1_noun.png",
-                    "replacetext": "replace",
+
                     "creator": {
                         "name": "",
                         "url": ""
@@ -819,7 +815,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email1_noun.png",
                     "css_class":"aui_email_images",
-                    "replacetext": "replace",
+
                     "creator": {
                         "name": "",
                         "url": ""
