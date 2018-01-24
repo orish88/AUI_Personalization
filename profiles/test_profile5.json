@@ -706,6 +706,35 @@
                         "value": ""
                     }
                 ]
+            },
+            "name": {
+                "name": "name",
+                "type": [
+                    
+                ],
+                "inherits": "",
+                "shortcut": "SHIFT + S",
+                "longdesc": "Search input",
+                "tooltip": "Search",
+                "text": "Type here to Search",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/name1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
             }
         },
         "AUI-destination": {
