@@ -374,50 +374,50 @@ function applySettingsOnElement(element, attrVal) {
 }
 
 
-function scaleImage(element, img, name, scaleType, inner) {
-	console.log("scale image called on: " + img);
+// function scaleImage(element, img, name, scaleType, inner) {
+// 	console.log("scale image called on: " + img);
 
-	//TODO: check inner and finish this for ALL SCENARIOS
-	//inner can be:
-	// "" if no text
-	// elelment.innerHtml 
-	// settings.text
+// 	//TODO: check inner and finish this for ALL SCENARIOS
+// 	//inner can be:
+// 	// "" if no text
+// 	// elelment.innerHtml 
+// 	// settings.text
 	
-	if (scaleType === "none") {
-		console.log("inside scaletype none: "+name);
+// 	if (scaleType === "none") {
+// 		console.log("inside scaletype none: "+name);
 
-		var sizeCoefficient = 1;		
-		switch(inner){
-			case "":
-			element.innerHTML = "";				
-			break;
-			case element.innerHTML:
-				sizeCoefficient = 2;
-				break;
-			default:
-				console.log("problem: default reached on scaleType none");
-				return;
-		}
+// 		var sizeCoefficient = 1;		
+// 		switch(inner){
+// 			case "":
+// 			element.innerHTML = "";				
+// 			break;
+// 			case element.innerHTML:
+// 				sizeCoefficient = 2;
+// 				break;
+// 			default:
+// 				console.log("problem: default reached on scaleType none");
+// 				return;
+// 		}
 		
-		// $(img).on('load', function () {
-			var css;
+// 		// $(img).on('load', function () {
+// 			var css;
 
-			console.log("name: " + name + "\nh: " + $(img).height() + "\nw: " + $(img).width() + "\neh: " + $(element).height() + "\new: " + $(element).width());
-			var mHeight = $(element).height();
-			var mWidth = sizeCoefficient*$(element).width();
-			css = { width: mWidth, height: mHeight };
-			$(img).css(css);
-			if( sizeCoefficient > 1 ){
-				$(element).width( sizeCoefficient * $(element).width() );
-			}		
-		// });
-	}
-	// else if(scaleType === "cssClass") {
-	// 	$(img).appendTo(element);
-	// }else{ //fixed dims
-	// 	$(img).appendTo(element);
-	// }
-}
+// 			console.log("name: " + name + "\nh: " + $(img).height() + "\nw: " + $(img).width() + "\neh: " + $(element).height() + "\new: " + $(element).width());
+// 			var mHeight = $(element).height();
+// 			var mWidth = sizeCoefficient*$(element).width();
+// 			css = { width: mWidth, height: mHeight };
+// 			$(img).css(css);
+// 			if( sizeCoefficient > 1 ){
+// 				$(element).width( sizeCoefficient * $(element).width() );
+// 			}		
+// 		// });
+// 	}
+// 	// else if(scaleType === "cssClass") {
+// 	// 	$(img).appendTo(element);
+// 	// }else{ //fixed dims
+// 	// 	$(img).appendTo(element);
+// 	// }
+// }
 
 function insertImage(element, settings) {
 	if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
@@ -691,8 +691,8 @@ function checkModifier(modifierStr,event){
 
 function positionSpan(span,element){
 
-	var addToTop = -1.5*element.height;
-	var addToLeft = -500;
+	// var addToTop = -1.5*element.height;
+	// var addToLeft = -500;
 	var bodyRect = document.body.getBoundingClientRect();
     var elemRect = element.getBoundingClientRect();
 	var top_offset = elemRect.top - bodyRect.top;
