@@ -484,28 +484,19 @@ function altAddToolTip(element, newImg,settings) {
 	// $(span).insertBefore(element);
 	$(element).wrap(divStr);
 	var div = document.getElementById(divId);
-
-	// $(div).addClass("tooltip_parent");
-
+	$(div).addClass("aui_tooltip_parent");
 	var span = document.createElement("span");
 	// div.appendChild(span);
 	$(span).appendTo(div);
 	// span.setAttribute("id", spanId);
 	$(span).attr("id",spanId);
-
 	$(element).attr("aria-describedby",spanId);
-
-
 	$(newImg).appendTo(span);
 	// span.appendChild(newImg);
-	
 	$(span).attr("role", "tooltip");
-	
-
 	// $(span).append('<p>p text</p>');
-
-	$(span).addClass("tooltip");
-	positionSpan(span,element);
+	$(span).addClass("aui_tooltip");
+	// positionSpan(span,element);
 
 	var oldElem = element;
 	element = div;
@@ -600,7 +591,7 @@ function setCSS(element, settings) {
 
 function addTooltipCssClasses(){
 	// createCssClass(".tooltip,.arrow:after",'  background:yellow; ');
-	createCssClass('.tooltip',
+	createCssClass('.aui_tooltip',
 	'background:black; '+
 	'font-size:14px;'+
 	'font-weight:regular;'+
@@ -622,7 +613,7 @@ function addTooltipCssClasses(){
 	'text-decoration:none;'+
 	'box-shadow:0 0 3px #000;'+
 	'z-index:99999999;');
-	createCssClass('.tooltip_parent',
+	createCssClass('.aui_tooltip_parent',
 	"position:relative;");
 	createCssClass('[aria-hidden="true"]', 'display: none');
 	createCssClass('[aria-hidden="false"]', 'display: block');

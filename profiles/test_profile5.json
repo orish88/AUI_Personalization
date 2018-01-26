@@ -11,7 +11,7 @@
             }
         ]
     },
-    "aui-distraction":"animations, auto-starting, moving, ad, message, chat , overlay, popup",
+    "aui-distraction": "animations, auto-starting, moving, ad, message, chat , overlay, popup",
     "simplification": "critical",
     "tagNames": {
         "a": {
@@ -42,7 +42,6 @@
                     "propertyName": "font-size",
                     "value": "150%"
                 },
-                
                 {
                     "propertyName": "font-family",
                     "value": "Gotham, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
@@ -68,7 +67,6 @@
                     "propertyName": "font-family",
                     "value": "Gotham, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
                 }
-
             ]
         }
     },
@@ -79,9 +77,7 @@
             },
             "compose": {
                 "name": "compose",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "this button writes or creates your new work.",
@@ -89,7 +85,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/compose1_noun_a1.png",
-                    "replacetext":"before",
+                    "replacetext": "before",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -109,8 +105,7 @@
             },
             "delete": {
                 "name": "delete",
-                "type": [
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + D",
                 "longdesc": "this button delete your work.",
@@ -118,7 +113,7 @@
                 "text": "delete",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/delete1_noun_a1.png",
-                    "css_class":"",
+                    "css_class": "",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -138,8 +133,7 @@
             },
             "help": {
                 "name": "help",
-                "type": [
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + D",
                 "longdesc": "press to get website help",
@@ -147,8 +141,8 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/help2_noun.png",
-                    "css_class":"aui_header_images",
-                    "replacetext":"replace",
+                    "css_class": "aui_header_images",
+                    "replacetext": "replace",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -168,8 +162,7 @@
             },
             "settings": {
                 "name": "settings",
-                "type": [
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "Shift + S",
                 "longdesc": "change website Settings",
@@ -177,7 +170,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/settings1_noun.png",
-                    "css_class":"aui_header_images",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -197,9 +190,7 @@
             },
             "next": {
                 "name": "next",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "this button writes or creates your new work.",
@@ -226,9 +217,7 @@
             },
             "previous": {
                 "name": "previous",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "go to previous",
@@ -255,9 +244,7 @@
             },
             "toc": {
                 "name": "toc",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "this button writes or creates your new work.",
@@ -284,9 +271,7 @@
             },
             "submit": {
                 "name": "submit",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "this button writes or creates your new work.",
@@ -313,9 +298,7 @@
             },
             "confirm": {
                 "name": "confirm",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "this button writes or creates your new work.",
@@ -323,7 +306,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/confirm1_noun_a1.png",
-
                     "creator": {
                         "name": "",
                         "url": ""
@@ -343,9 +325,7 @@
             },
             "undo": {
                 "name": "undo",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "this button writes or creates your new work.",
@@ -353,7 +333,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/undo1_noun_a1.png",
-
                     "creator": {
                         "name": "",
                         "url": ""
@@ -373,9 +352,7 @@
             },
             "cancel": {
                 "name": "cancel",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "this button writes or creates your new work.",
@@ -383,7 +360,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/cancel1_noun_a1.png",
-
                     "creator": {
                         "name": "",
                         "url": ""
@@ -403,9 +379,7 @@
             },
             "cancel": {
                 "name": "cancel",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
@@ -413,7 +387,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/cancel1_noun_a1.png",
-
                     "creator": {
                         "name": "",
                         "url": ""
@@ -433,9 +406,7 @@
             },
             "reset": {
                 "name": "reset",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
@@ -443,7 +414,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/reset1_noun_a1.png",
-
                     "creator": {
                         "name": "",
                         "url": ""
@@ -463,9 +433,7 @@
             },
             "label": {
                 "name": "label",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
@@ -473,7 +441,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/label1_noun_a1.png",
-
                     "creator": {
                         "name": "",
                         "url": ""
@@ -493,9 +460,7 @@
             },
             "buy": {
                 "name": "buy",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
@@ -503,7 +468,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/buy1_noun_a1.png",
-
                     "creator": {
                         "name": "",
                         "url": ""
@@ -523,9 +487,7 @@
             },
             "checkout": {
                 "name": "checkout",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
@@ -552,9 +514,7 @@
             },
             "add": {
                 "name": "add",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
@@ -562,7 +522,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/add1_noun_a1.png",
-
                     "creator": {
                         "name": "",
                         "url": ""
@@ -582,9 +541,7 @@
             },
             "move": {
                 "name": "move",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
@@ -592,7 +549,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/move1_noun_a1.png",
-
                     "creator": {
                         "name": "",
                         "url": ""
@@ -612,9 +568,7 @@
             },
             "save": {
                 "name": "save",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
@@ -622,7 +576,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/save1_noun_a1.png",
-
                     "creator": {
                         "name": "",
                         "url": ""
@@ -642,9 +595,7 @@
             },
             "send": {
                 "name": "send",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
@@ -652,7 +603,1005 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/send1_noun_a1.png",
-
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "send": {
+                "name": "send",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "Send",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/send1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "close": {
+                "name": "close",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "Close",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/close1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "more": {
+                "name": "more",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "More",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/more1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "print": {
+                "name": "print",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "Print",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/print1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "received": {
+                "name": "received",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "Received",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/received1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "sent": {
+                "name": "sent",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "Sent",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/close1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "edit": {
+                "name": "edit",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "Edit",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/edit1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "forward": {
+                "name": "forward",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "Forward",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/forward1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "reply": {
+                "name": "reply",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "reply",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/reply1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "upload": {
+                "name": "upload",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "upload",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/upload1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "download": {
+                "name": "download",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "download",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/download1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "connect": {
+                "name": "connect",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "connect",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/connect1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "open": {
+                "name": "open",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "open",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/open1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "new": {
+                "name": "new",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "new",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/new1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "mode": {
+                "name": "mode",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "mode",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/mode1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "increase": {
+                "name": "increase",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "increase",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/increase1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "decrease": {
+                "name": "decrease",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "decrease",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/decrease1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "play": {
+                "name": "play",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "play",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/play1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "pause": {
+                "name": "pause",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "pause",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/pause1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "captions": {
+                "name": "captions",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "captions",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/captions1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "mute": {
+                "name": "mute",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "mute",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/mute1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "volume": {
+                "name": "volume",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "volume",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/volume1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "channel": {
+                "name": "channel",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "channel",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/channel1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "temp": {
+                "name": "temp",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "temp",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/temp1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "brightness": {
+                "name": "brightness",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "brightness",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/brightness1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "profile": {
+                "name": "profile",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "profile",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/profile1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "expand": {
+                "name": "expand",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "expand",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/expand1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "refresh": {
+                "name": "refresh",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "refresh",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/refresh1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "propty": {
+                "name": "properties",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "properties",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/properties1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "cut": {
+                "name": "cut",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "cut",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/cut1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "copy": {
+                "name": "copy",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "copy",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/copy1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "paste": {
+                "name": "paste",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "paste",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/paste1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "colour": {
+                "name": "colour",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "colour",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/colour1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "date": {
+                "name": "date",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "date",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/date1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "remove": {
+                "name": "remove",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "remove",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/remove1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "right": {
+                "name": "right",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "right",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/right1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "left": {
+                "name": "left",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "left",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/left1_noun_a1.png",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -670,7 +1619,6 @@
                     }
                 ]
             }
-          
         },
         "aui-field": {
             "global_settings": {
@@ -678,9 +1626,7 @@
             },
             "search": {
                 "name": "search",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + S",
                 "longdesc": "Search input",
@@ -688,8 +1634,7 @@
                 "text": "Type here to Search",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/search1_noun.png",
-                    "css_class":"aui_header_images",
-
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -709,9 +1654,7 @@
             },
             "name": {
                 "name": "name",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + S",
                 "longdesc": "Search input",
@@ -743,8 +1686,7 @@
             },
             "home": {
                 "name": "home",
-                "type": [
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "this links to the home page.",
@@ -752,8 +1694,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",
-                    "css_class":"aui_header_images",
-
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "Jardson Almeida, The Noun Project",
                         "url": ""
@@ -773,9 +1714,7 @@
             },
             "signin": {
                 "name": "signin",
-                "type": [
-
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "link to sign in to the website",
@@ -783,8 +1722,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signin1_noun.png",
-                    "css_class":"aui_header_images",
-
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -804,8 +1742,7 @@
             },
             "signout": {
                 "name": "signout",
-                "type": [
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "Ctrl+L",
                 "longdesc": "link to sign out of the website",
@@ -813,7 +1750,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signout1_noun.png",
-
                     "creator": {
                         "name": "",
                         "url": ""
@@ -833,9 +1769,7 @@
             },
             "email": {
                 "name": "email",
-                "type": [
-
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "",
                 "longdesc": "this links to the our email page.",
@@ -843,8 +1777,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email1_noun.png",
-                    "css_class":"aui_email_images",
-
+                    "css_class": "aui_email_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -864,9 +1797,7 @@
             },
             "services": {
                 "name": "services",
-                "type": [
-                    
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "this links to the home page.",
@@ -893,8 +1824,7 @@
             },
             "about": {
                 "name": "about",
-                "type": [
-                ],
+                "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT+H",
                 "longdesc": "this links to info about the creator etc.",
@@ -902,7 +1832,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/about2_noun.png",
-                    "css_class":"aui_header_images",
+                    "css_class": "aui_header_images",
                     "replacetext": "replace",
                     "creator": {
                         "name": "",
@@ -933,8 +1863,8 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/contact_us2_noun.png",
-                    "css_class":"aui_header_images",
-                    "replacetext":"replace",
+                    "css_class": "aui_header_images",
+                    "replacetext": "replace",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -964,7 +1894,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap1_noun.png",
-                    "css_class":"aui_header_images",
+                    "css_class": "aui_header_images",
                     "replacetext": "replace",
                     "creator": {
                         "name": "",
@@ -992,13 +1922,12 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang1_noun.png",
-                    "css_class":"aui_header_images",
+                    "css_class": "aui_header_images",
                     "replacetext": "before",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    
                     "width": "60",
                     "height": "60",
                     "margin": "",
@@ -1026,7 +1955,6 @@
                         "name": "",
                         "url": ""
                     },
-                    
                     "width": "100px",
                     "height": "100px",
                     "margin": "",

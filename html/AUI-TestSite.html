@@ -112,12 +112,14 @@
 
 
 
+
 			<button onclick="myFunction()">Try it</button>
-
-			});
-
+			<p id="profiles"></p>
 			<script>
+
 				function myFunction() {
+					writeProfiles();
+
 
 					$(document).ready(function () {
 						$("#content").html('<a id="riverroad" href="#" title="" >image of 2 Maple St.</a>');
@@ -199,6 +201,50 @@
 						placement: 'bottom',
 						html: true
 					});
+				}
+				function writeProfiles(){
+					console.log("write proflies called");
+					var str = "";
+					var nameArray=["pause","captions","mute","volume","channel","temp","brightness",
+					"profile","expand","refresh","propty","cut","copy","paste","colour","date","remove",
+					"right","left"];
+					nameArray.forEach((name)=>{
+						str+=writeSingleProfile(name)+"\n";	
+					});
+					document.getElementById("profiles").innerHTML=str;
+
+
+				}
+				function writeSingleProfile(name){
+					return '"'+name+'": {"name": "'+name+'",'+
+                '"type": ['+
+                    
+                '],'+
+                '"inherits": "",'+
+                '"shortcut": "SHIFT + C",'+
+                '"longdesc": "",'+
+                '"tooltip": "'+name+'",'+
+                '"text": "",'+
+                '"Symbol": {'+
+                    '"url": "https://rawgit.com/orish88/AUI_Personalization/master/images/'+name+'1_noun_a1.png",'+
+                    '"creator": {'+
+                        '"name": "",'+
+                        '"url": ""'+
+                    '},'+
+                    '"width": "",'+
+					'"height": "",'+
+                    '"margin": "",'+
+                    '"padding": ""'+
+                '},'+
+                '"@aria-hidden": "false",'+
+                '"css": ['+
+                    '{'+
+                        '"propertyName": "",'+
+                        '"value": ""'+
+                    '}'+
+                ']'+
+            '},'
+
 				}
 			</script>
 
