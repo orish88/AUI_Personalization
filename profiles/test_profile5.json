@@ -1678,6 +1678,34 @@
                         "value": ""
                     }
                 ]
+            },
+            
+            "honorificPrefix": {
+                "name": "honorificPrefix",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + S",
+                "longdesc": "honorificPrefix",
+                "tooltip": "honorificPrefix",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/honorificPrefix1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "50",
+                    "height": "50",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
             }
         },
         "AUI-destination": {
