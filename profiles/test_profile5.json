@@ -1693,7 +1693,6 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/honorificPrefix1_noun_a1.png",
                     "replacetext":"before",
-                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
