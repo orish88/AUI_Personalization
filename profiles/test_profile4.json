@@ -260,7 +260,7 @@
                 "tooltip": "type your name",
                 "text": "Type your name here",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/search1_noun_a1.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/name1_noun_a1.png",
                     "replacetext":"tooltip",
                     "creator": {
                         "name": "",
@@ -286,7 +286,7 @@
                 "inherits": "",
                 "shortcut": "SHIFT + Q",
                 "longdesc": "honorificPrefix",
-                "tooltip": "honorificPrefix",
+                "tooltip": "honorific Prefix",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/honorificPrefix1_noun_a1.png",

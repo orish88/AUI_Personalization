@@ -435,24 +435,30 @@ function insertImage(element, settings) {
 		// 	newImg.title = settings.tooltip;
 		// }
 		if (isDefined(settings.Symbol.css_class)) {
+			console.log("inside css_class: "+settings.name);
 			newImg.setAttribute("class", settings.Symbol.css_class);
-		} else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.height)) {
+		} else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.width)) {
+			console.log("inside h/w: "+settings.name);
 			$(newImg).css({ height: settings.Symbol.height, width: settings.Symbol.width });
 		} else {
+			console.log("inside atuo size: "+settings.name);
 			$(newImg).css({ height: $(element).height(), width: 'auto' });
 			// $(newImg).css( { height:'200%' , width:'200%' });			
 		}
 		if (!isDefined(settings.Symbol.replacetext)) {
+			console.log("inside undefined replacetext: "+settings.name);
 			//TODO: what should be the default?
 			$(newImg).appendTo(element);
 		} else {
 			if ( settings.Symbol.replacetext === "replace") {
+				console.log("inside replacetext === replace: "+settings.name);
 				$(element).html('');
 				$(newImg).appendTo(element);
 			} else if (  settings.Symbol.replacetext === "tooltip" ){
 				console.log("image tooltip called for: "+settings.name);
 				altAddToolTip(element,newImg,settings);
 			}else if(  settings.Symbol.replacetext === "before" ){
+				console.log("inside replacetext === before: "+settings.name);
 				if (isDefined(settings.text)) {
 					$(element).html(settings.text);
 				}
