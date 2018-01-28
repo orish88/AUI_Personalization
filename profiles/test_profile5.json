@@ -170,7 +170,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/settings1_noun.png",
-                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1822,16 +1821,16 @@
                     }
                 ]
             },
-            "honnorificSuffix": {
-                "name": "honnorificSuffix",
+            "honorificSuffix": {
+                "name": "honorificSuffix",
                 "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "honnorificSuffix",
+                "tooltip": "honorificSuffix",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/honnorificSuffix1_noun_a1.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/honorificSuffix1_noun_a1.png",
                     "replacetext": "before",
                     "creator": {
                         "name": "",
@@ -2298,16 +2297,16 @@
                     }
                 ]
             },
-            "anaswer": {
-                "name": "anaswer",
+            "answer": {
+                "name": "answer",
                 "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "anaswer",
+                "tooltip": "answer",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/anaswer1_noun_a1.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/answer1_noun_a1.png",
                     "replacetext": "before",
                     "creator": {
                         "name": "",

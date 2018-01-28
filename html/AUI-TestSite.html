@@ -206,7 +206,7 @@
 					var str = "";
 					var nameArray=["givenName","additionalName","additionalNameInitial","familyName","honnorificSuffix",
 					"nickname","streetAddress","city","postalcode","country","fax","email","tel","ccName","language",
-					"bday","transactionCurrency","transactionAmount","topic","comment","subject","anaswer","org",
+					"bday","transactionCurrency","transactionAmount","topic","comment","subject","answer","org",
 					"position","sex","gender","url","photo"];
 					nameArray.forEach((name)=>{
 						str+=writeSingleProfile(name)+"\n";	
@@ -227,7 +227,8 @@
                 '"text": "",'+
                 '"Symbol": {'+
 					'"url": "https://rawgit.com/orish88/AUI_Personalization/master/images/'+name+'1_noun_a1.png",'+
-					'"replacetext":"before",'+
+                    '"replacetext":"tooltip",'+
+                    '"css_class": "aui_header_images",'+
                     '"creator": {'+
                         '"name": "",'+
                         '"url": ""'+
