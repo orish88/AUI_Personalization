@@ -109,8 +109,7 @@
 	/>
 	<div id="tp1" class="tooltip" role="tooltip" aria-hidden="true">Your first name is a optional</div>
 </div>
-
-
+<input id="firstname" type="text" aui-field="name" accesskey="SHIFT + S">
 
 
 			<button onclick="myFunction()">Try it</button>
@@ -205,8 +204,10 @@
 				function writeProfiles(){
 					console.log("write proflies called");
 					var str = "";
-					var nameArray=["help","chat","terms","services","products","comment",
-					"language","register","social","post"];
+					var nameArray=["givenName","additionalName","additionalNameInitial","familyName","honnorificSuffix",
+					"nickname","streetAddress","city","postalcode","country","fax","email","tel","ccName","language",
+					"bday","transactionCurrency","transactionAmount","topic","comment","subject","anaswer","org",
+					"position","sex","gender","url","photo"];
 					nameArray.forEach((name)=>{
 						str+=writeSingleProfile(name)+"\n";	
 					});
@@ -225,7 +226,8 @@
                 '"tooltip": "'+name+'",'+
                 '"text": "",'+
                 '"Symbol": {'+
-                    '"url": "https://rawgit.com/orish88/AUI_Personalization/master/images/'+name+'1_noun_a1.png",'+
+					'"url": "https://rawgit.com/orish88/AUI_Personalization/master/images/'+name+'1_noun_a1.png",'+
+					'"replacetext":"before",'+
                     '"creator": {'+
                         '"name": "",'+
                         '"url": ""'+
