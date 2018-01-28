@@ -248,6 +248,63 @@
                         "value": ""
                     }
                 ]
+            },
+            "name": {
+                "name": "name",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + S",
+                "longdesc": "Search input",
+                "tooltip": "Search",
+                "text": "Type here to Search",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/name1_noun_a1.png",
+                    "css_class": "aui_header_images",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            
+            "honorificPrefix": {
+                "name": "honorificPrefix",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + S",
+                "longdesc": "honorificPrefix",
+                "tooltip": "honorificPrefix",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/honorificPrefix1_noun_a1.png",
+                    "css_class": "aui_header_images",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
             }
         },
         "AUI-destination": {

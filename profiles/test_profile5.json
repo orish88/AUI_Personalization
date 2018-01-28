@@ -1662,12 +1662,13 @@
                 "text": "Type here to Search",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/name1_noun_a1.png",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "20",
-                    "height": "20",
+                    "width": "",
+                    "height": "",
                     "margin": "",
                     "padding": ""
                 },
@@ -1690,12 +1691,13 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/honorificPrefix1_noun_a1.png",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "50",
-                    "height": "50",
+                    "width": "",
+                    "height": "",
                     "margin": "",
                     "padding": ""
                 },
