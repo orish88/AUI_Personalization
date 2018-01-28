@@ -105,8 +105,9 @@
                 "shortcut": "Shift + C",
                 "longdesc": "this button writes or creates your new work.",
                 "tooltip": "compose",
-                "text": "compose now",
+                "text": "",
                 "Symbol": {
+                    "replacetext":"tooltip",
                     "url": "http://cdn4.iconfinder.com/data/icons/miu/22/common_new_edit_compose_-128.png",
                     "creator": {
                         "name": "",
@@ -133,8 +134,9 @@
                 "shortcut": "Shift + D",
                 "longdesc": "this button delete your work.",
                 "tooltip": "Delete",
-                "text": "delete",
+                "text": "",
                 "Symbol": {
+                    "replacetext":"tooltip",
                     "url": "http://cdn4.iconfinder.com/data/icons/miu/23/editor_trash_delete_recycle_bin-64.png",
                     "creator": {
                         "name": "",
@@ -253,10 +255,10 @@
                 "name": "name",
                 "type": [],
                 "inherits": "",
-                "shortcut": "SHIFT + S",
-                "longdesc": "Search input",
-                "tooltip": "Search",
-                "text": "Type here to Search",
+                "shortcut": "SHIFT + N",
+                "longdesc": "name input",
+                "tooltip": "type your name",
+                "text": "Type your name here",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/name1_noun_a1.png",
                     "replacetext":"tooltip",
@@ -265,8 +267,8 @@
                         "name": "",
                         "url": ""
                     },
-                    "width": "",
-                    "height": "",
+                    "width": "50",
+                    "height": "50",
                     "margin": "",
                     "padding": ""
                 },
@@ -283,7 +285,7 @@
                 "name": "honorificPrefix",
                 "type": [],
                 "inherits": "",
-                "shortcut": "SHIFT + S",
+                "shortcut": "SHIFT + Q",
                 "longdesc": "honorificPrefix",
                 "tooltip": "honorificPrefix",
                 "text": "",
@@ -295,8 +297,8 @@
                         "name": "",
                         "url": ""
                     },
-                    "width": "",
-                    "height": "",
+                    "width": "50",
+                    "height": "50",
                     "margin": "",
                     "padding": ""
                 },
