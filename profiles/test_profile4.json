@@ -259,6 +259,7 @@
                 "text": "Type here to Search",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/name1_noun_a1.png",
+                    "replacetext":"tooltip",
                     "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
@@ -288,6 +289,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/honorificPrefix1_noun_a1.png",
+                    "replacetext":"tooltip",
                     "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
