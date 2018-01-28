@@ -204,10 +204,18 @@
 				function writeProfiles(){
 					console.log("write proflies called");
 					var str = "";
-					var nameArray=["givenName","additionalName","additionalNameInitial","familyName","honnorificSuffix",
-					"nickname","streetAddress","city","postalcode","country","fax","email","tel","ccName","language",
-					"bday","transactionCurrency","transactionAmount","topic","comment","subject","answer","org",
-					"position","sex","gender","url","photo"];
+					// var nameArray=["givenName","additionalName","additionalNameInitial","familyName","honorificSuffix",
+					// "nickname","streetAddress","city","postalcode","country","fax","email","tel","ccName","language",
+					// "bday","transactionCurrency","transactionAmount","topic","comment","subject","answer","org",
+					// "position","sex","gender","url","photo"];
+					// var nameArray=["next","previous","toc","submit","confirm","undo","cancel",
+					// "reset","label","buy","checkout","add","move","save","send","close","more",
+					// "print","received","sent","edit","forward","reply","upload","download","connect",
+					// "open","new","mode","increase","decrease","play","pause","captions","mute","volume",
+					// "channel","temp","brightness","profile","expand","refresh","properties","help",
+					// "cut","copy","paste","color","date","remove","right","left"];
+					var nameArray=["phone","accessibilityStatement","help","chat","terms","services",
+					"products","comment","language","register","social","post"];
 					nameArray.forEach((name)=>{
 						str+=writeSingleProfile(name)+"\n";	
 					});
