@@ -443,27 +443,46 @@ function insertImage(element, settings) {
 			$(newImg).css({ height: settings.Symbol.height, width: settings.Symbol.width });
 		} else {
 			console.log("inside auto size: "+settings.name+"-element height: "+ $(element).height());
-			$(newImg).css({ height: $(element).height(), width: 'auto' });
+			$(newImg).css({ height: $(element).height()*2, width: 'auto' });
 			// $(newImg).css( { height:'200%' , width:'200%' });			
 		}
 		if (!isDefined(settings.Symbol.replacetext)) {
-			console.log("inside undefined replacetext: "+settings.name);
+			console.log("inside undefined replacetext: "+settings.name+" id:"+$(element).attr("id"));
 			//TODO: what should be the default?
-			$(newImg).appendTo(element);
+			var label = $('[for="'+$(element).attr("id")+'"]');	
+
+			if(isDefined(label[0])){
+				console.log("with label: "+settings.name);
+				// $("  ").prependTo(label[0])
+				$(newImg).prependTo(label[0])
+			}else{
+				// $("  ").prependTo(element);
+				$(newImg).prependTo(element);
+			}
 		} else {
-			if ( settings.Symbol.replacetext === "replace") {
-				console.log("inside replacetext === replace: "+settings.name);
+			if (settings.Symbol.replacetext === "replace") {
+				console.log("inside replacetext === replace: " + settings.name);
 				$(element).html('');
 				$(newImg).appendTo(element);
-			} else if (  settings.Symbol.replacetext === "tooltip" ){
-				console.log("image tooltip called for: "+settings.name);
-				altAddToolTip(element,newImg,settings);
-			}else if(  settings.Symbol.replacetext === "before" ){
-				console.log("inside replacetext === before: "+settings.name);
-				if(isDefined(settings.text)) {
+			} else if (settings.Symbol.replacetext === "tooltip") {
+				console.log("image tooltip called for: " + settings.name);
+				altAddToolTip(element, newImg, settings);
+			} else if (settings.Symbol.replacetext === "before") {
+				console.log("inside replacetext === before: " + settings.name);
+				if (isDefined(settings.text)) {
 					$(element).html(settings.text);
 				}
-				$(newImg).insertBefore(element);
+				var label = $('[for="' + $(element).attr("id") + '"]');
+				if (isDefined(label[0])) {
+					console.log("with label: " + settings.name);
+					// $("  ").prependTo(label[0])
+					$(newImg).prependTo(label[0])
+				} else {
+					// $("  ").prependTo(element);
+					$(newImg).insertBefore(element);
+				}
+				
+
 			}
 		}
 		console.log(settings.name + " settings:\ninner: " + element.innerHTML + "\nimage sizes are: h:" + $(newImg).height() + " w:" + $(newImg).width());
@@ -503,6 +522,7 @@ function altAddToolTip(element, newImg,settings) {
 	$(span).attr("id",spanId);
 	$(element).attr("aria-describedby",spanId);
 	$(newImg).appendTo(span);
+
 	// span.appendChild(newImg);
 	$(span).attr("role", "tooltip");
 	// $(span).append('<p>p text</p>');
@@ -516,6 +536,7 @@ function altAddToolTip(element, newImg,settings) {
 	if(isDefined(settings.tooltip)){
 		var p = document.createElement("p");
 		$(p).html(settings.tooltip);
+		$("<p>\n</p>").appendTo(span);
 		$(p).appendTo(span);
 	}
 
