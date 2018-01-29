@@ -431,6 +431,7 @@ function insertImage(element, settings) {
 		console.log("inside insert image");
 		var newImg = document.createElement('img');
 		newImg.setAttribute("src", settings.Symbol.url);
+		addBorderToImg(newImg);
 		// if (isDefined(settings.tooltip)) {
 		// 	newImg.title = settings.tooltip;
 		// }
@@ -441,7 +442,7 @@ function insertImage(element, settings) {
 			console.log("inside h/w: "+settings.name);
 			$(newImg).css({ height: settings.Symbol.height, width: settings.Symbol.width });
 		} else {
-			console.log("inside atuo size: "+settings.name);
+			console.log("inside auto size: "+settings.name+"-element height: "+ $(element).height());
 			$(newImg).css({ height: $(element).height(), width: 'auto' });
 			// $(newImg).css( { height:'200%' , width:'200%' });			
 		}
@@ -459,7 +460,7 @@ function insertImage(element, settings) {
 				altAddToolTip(element,newImg,settings);
 			}else if(  settings.Symbol.replacetext === "before" ){
 				console.log("inside replacetext === before: "+settings.name);
-				if (isDefined(settings.text)) {
+				if(isDefined(settings.text)) {
 					$(element).html(settings.text);
 				}
 				$(newImg).insertBefore(element);
@@ -468,6 +469,10 @@ function insertImage(element, settings) {
 		console.log(settings.name + " settings:\ninner: " + element.innerHTML + "\nimage sizes are: h:" + $(newImg).height() + " w:" + $(newImg).width());
 	}
 }
+function addBorderToImg(img){
+	$(img).css({"background-color":"white","border":"#000000 3px outset"/*,"padding":"10%"*/});
+}
+
 // function addToolTip(element, imgOuterHtml) {
 // 	element.setAttribute('title', imgOuterHtml);
 // 	$(element).tooltip({
