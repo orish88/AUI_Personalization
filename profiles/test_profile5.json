@@ -169,6 +169,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/settings1_noun.png",
+                    "replacetext":"replace",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2741,8 +2742,8 @@
                         "name": "",
                         "url": ""
                     },
-                    "width": "100px",
-                    "height": "100px",
+                    "width": "",
+                    "height": "",
                     "margin": "",
                     "padding": ""
                 },
