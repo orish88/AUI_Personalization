@@ -456,6 +456,7 @@ function insertImage(element, settings) {
 				// $("  ").prependTo(label[0])
 				$(newImg).prependTo(label[0])
 			}else{
+				$(element).prepend("&nbsp;");
 				// $("  ").prependTo(element);
 				$(newImg).prependTo(element);
 			}

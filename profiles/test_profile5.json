@@ -1007,7 +1007,6 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/mode1_noun_a1.png",
-                    "replacetext":"before",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1241,16 +1240,16 @@
                     }
                 ]
             },
-            "temp": {
-                "name": "temp",
+            "temperature": {
+                "name": "temperature",
                 "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "temp",
+                "tooltip": "temperature",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/temp1_noun_a1.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/temperature1_noun_a1.png",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1376,7 +1375,7 @@
                     }
                 ]
             },
-            "propty": {
+            "properties": {
                 "name": "properties",
                 "type": [],
                 "inherits": "",
@@ -1484,16 +1483,16 @@
                     }
                 ]
             },
-            "colour": {
-                "name": "colour",
+            "color": {
+                "name": "color",
                 "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "colour",
+                "tooltip": "color",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/colour1_noun_a1.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/color1_noun_a1.png",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1934,6 +1933,34 @@
                     }
                 ]
             },
+            "area": {
+                "name": "area",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + A",
+                "longdesc": "",
+                "tooltip": "area",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/area1_noun_a1.png",
+                    "replacetext": "before",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
             "postalcode": {
                 "name": "postalcode",
                 "type": [],
@@ -1943,7 +1970,7 @@
                 "tooltip": "postalcode",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/postalcode1_noun_a1.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/postalCode1_noun_a1.png",
                     "replacetext": "before",
                     "creator": {
                         "name": "",
@@ -2527,6 +2554,7 @@
                     }
                 ]
             },
+            
             "signin": {
                 "name": "signin",
                 "type": [],
@@ -2659,6 +2687,33 @@
                     },
                     "width": "100",
                     "height": "180",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "phone": {
+                "name": "phone",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + P",
+                "longdesc": "",
+                "tooltip": "phone",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/phone1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
                     "margin": "",
                     "padding": ""
                 },
