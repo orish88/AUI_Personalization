@@ -30,7 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	document.getElementById("bt_personalize_page_test_profile1").addEventListener('click', () => {
 		// alert("personalize page clicked 2");
-
+		//for popup:
+		
+		getPersonalization("https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile5.json");
+		
 		chrome.tabs.executeScript(null, { file: "jquery.js" }, function () {
 			// chrome.tabs.executeScript(null, { file:  "bootstrap.min.js"}, function () {
 				chrome.tabs.executeScript(null, {
@@ -47,6 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		// alert("personalize page clicked 2");
 		// chrome.tabs.executeScript(null, { file: "popper.js" }, function () {
 			// chrome.tabs.executeScript(null, { file: "bootstrap.min.js" }, function () {
+
+				//for popup:
+			
+				getPersonalization("https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile4.json");
+			
 				chrome.tabs.executeScript(null, { file: "jquery.min.js" }, function () {
 					// chrome.tabs.executeScript(null, { file: "bootstrap.min.js" }, function () {
 						chrome.tabs.executeScript(null, {

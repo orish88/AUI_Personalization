@@ -4,21 +4,20 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <p id="title">Athena ICT Personalization Extension's Popup</p>
+  <title>Getting Started Extension's Popup</title>
   <style type="text/css">
     body {
       width: 250px;
     }
-    #title{
-      font-size: 20px;
-    }
+
     #span_tooltip {
       margin: auto;
     }
+
     #span_page {
-      /* margin: auto; */
-      margin-right: 44px;
-      margin-left: 34px;
+      margin: auto;
+      /* margin-right: 44px;
+      margin-left: 34px; */
     }
 
     #container {
@@ -85,16 +84,16 @@
 </head>
 
 <body>
-  <!-- <h1> Athena ICT Personalization</h1> -->
+  <h1> Athena ICT Personalization</h1>
   <div>
-    <button athena-icon="tooltip" class="btn" id="bt_personalize_page_test_profile2"  title="change tooltip">
-      <!-- <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/tooltip1_noun.png"></img> -->
+    <button class="btn" id="bt_personalize_page_test_profile2"  title="change tooltip">
+      <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/tooltip1_noun.png"></img>
       <span id="span_tooltip">Change Tooltip</span>
     </button>
   </div>
   <div>
-    <button athena-icon="page" class="btn" id="bt_personalize_page_test_profile1" >
-      <!-- <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/image1_noun.png"></img> -->
+    <button aui-destination="home" class="btn" id="bt_personalize_page_test_profile1" >
+      <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/image1_noun.png"></img>
       <span id="span_page">Change Page </span>
     </button>
   </div>

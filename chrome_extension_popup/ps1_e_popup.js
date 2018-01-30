@@ -101,15 +101,18 @@ function personalizePage(profile) {
 		personalizeDistraction();
 	}
 }
-function editPopup(profile){
 
+function editPopup(profile){
+	console.log("athena icon: edit popup called"  ) ;
 	var athenaIcon = profile["athena-icon"];
 	if(!isDefined(athenaIcon)){
 		return;
 	}
+	console.log("athena icon is defined: "+athenaIcon) ;
 	$("[athena-icon]").each(function(index){
-		console.log("athena icon = "+$(this).attr("athena-icon") ) ;
+		$( "#"+$(this).attr("id")+" img").remove();
 		var iconSettings = athenaIcon[$(this).attr("athena-icon")];
+		console.log("athena icon = "+$(this).attr("athena-icon") +" url in profile is:: "+iconSettings.Symbol.url ) ;
 		applySettingsOnElement($(this),iconSettings);		
 	});
 }
