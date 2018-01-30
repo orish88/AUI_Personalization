@@ -30,6 +30,65 @@
             }
         ]
     },
+    "athena-icon":{
+        
+                "page": {
+                    "name": "page",
+                    "type": [],
+                    "inherits": "",
+                    "shortcut": "SHIFT+H",
+                    "longdesc": "press here to perosnalize actual page.",
+                    "tooltip": "Personalize Page",
+                    "text": "",
+                    "Symbol": {
+                        "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/image2_noun.png",
+                        
+                        "creator": {
+                            "name": "Jardson Almeida, The Noun Project",
+                            "url": ""
+                        },
+                        "width": "50px",
+                        "height": "30px",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
+                },
+                "tooltip": {
+                    "name": "tooltip",
+                    "type": [],
+                    "inherits": "",
+                    "shortcut": "SHIFT+H",
+                    "longdesc": "press here to personalize page with tooltips",
+                    "tooltip": "Personalize Tooltip",
+                    "text": "",
+                    "Symbol": {
+                        "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/tooltip1_noun.png",
+                        
+                        "creator": {
+                            "name": "Jardson Almeida, The Noun Project",
+                            "url": ""
+                        },
+                        "width": "50px",
+                        "height": "30px",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
+                }
+            },
     "aui-distraction":"all",
     "simplification": "critical",
     "tagNames": {
@@ -258,6 +317,34 @@
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/previous1_noun_a1.png",
                     "replacetext": "tooltip",
                     "css_class": "aui_header_images",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "temperature": {
+                "name": "temperature",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "temperature",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/temperature1_noun_a1.png",
+                    "replacetext": "tooltip",
                     "creator": {
                         "name": "",
                         "url": ""

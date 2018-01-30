@@ -6,50 +6,56 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Getting Started Extension's Popup</title>
   <style type="text/css">
-    body{
-      width:250px;
+    body {
+      width: 250px;
     }
-    #span_tooltip{
-      margin:auto;
-    }
-    #span_page{
 
-      margin-right: 44px;
-      margin-left: 34px;
+    #span_tooltip {
+      margin: auto;
     }
+
+    #span_page {
+      margin: auto;
+      /* margin-right: 44px;
+      margin-left: 34px; */
+    }
+
     #container {
       align-items: center;
       display: flex;
       justify-content: space-between;
       margin: 5px;
     }
-  
+
     .btn {
       display: flex;
       align-items: center;
       text-align: center;
       justify-content: space-between;
-      height: 50px;
+      height: 60px;
       width: 240px;
       margin: 5px;
     }
-  
+
     .btn img {
       height: 30px;
       width: 50px;
       display: inline-block;
       vertical-align: middle;
       /* margin-left:10px; */
-      background: #f00;
-      padding: 5px;
+      background: white;
+      /* padding: 12px; */
       border-radius: 5px;
+      border: 1px solid black;
+      /* border-width: 4px; */
+      /* border-color: black; */
     }
-  
-    #bt_personalize_page{
+
+    #bt_personalize_page {
       /* background-image: url("https://rawgit.com/orish88/AUI_Personalization/master/images/enter2_noun.png"); */
       /* background-size: 50px 30px; */
       background-color: black;
-      color:white;
+      color: white;
       font-size: 20px;
       height: 40px;
       width: 80px;
@@ -57,7 +63,8 @@
       /* border-width: 4px; */
       border-radius: 5px;
     }
-    #input_enter_profile_url{
+
+    #input_enter_profile_url {
       height: 30px;
       width: 200px;
     }
@@ -70,30 +77,32 @@
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
     -->
   <link href="./bootstrap.css"></link>
-  <script src="./run_popup.js"></script>
+  <script src="./jquery.js" type="text/javascript"></script>
+  <script src="./ps1_e_popup.js"  type="text/javascript"></script>
+  <script src="./run_popup.js"  type="text/javascript"></script>
   <style></style>
 </head>
 
 <body>
   <h1> Athena ICT Personalization</h1>
   <div>
-    <button class="btn" id="bt_personalize_page_test_profile2"  onclick="myFunction()" title="change tooltip">
+    <button class="btn" id="bt_personalize_page_test_profile2"  title="change tooltip">
       <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/tooltip1_noun.png"></img>
       <span id="span_tooltip">Change Tooltip</span>
     </button>
   </div>
   <div>
-    <button class= "btn" id="bt_personalize_page_test_profile1"  onclick="myFunction()">
-        <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/image1_noun.png"></img>
-        <span id="span_page">Change Page  </span>  
-      </button>
-  </div>
-  <div id="container">
-    <input  id="input_enter_profile_url" placeholder="Enter profile json url here"></input>
-    <button id="bt_personalize_page" onclick="myFunction()" >GO
+    <button aui-destination="home" class="btn" id="bt_personalize_page_test_profile1" >
+      <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/image1_noun.png"></img>
+      <span id="span_page">Change Page </span>
     </button>
   </div>
-  <script>
+  <div id="container">
+    <input id="input_enter_profile_url" placeholder="Enter profile json url here"></input>
+    <button id="bt_personalize_page">GO
+    </button>
+  </div>
+  <!-- <script>
     alert("test1");
     document.getElementById("bt_personalize_page").title = "tooltip test2";
     $(document.getElementById("bt_personalize_page")).tooltip("tooltip test1");
@@ -101,7 +110,11 @@
       alert("alrt");
       document.getElementById("bt_personalize_page").style.color = "red";
     }
-  </script>
+    var profileJson1 = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile5.json";
+    getPersonalization(profileJson1);
+  </script> -->
+
+
 
 </body>
 

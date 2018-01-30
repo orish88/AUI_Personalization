@@ -1,15 +1,16 @@
 
 // getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
 
-console.log("ps1_e called 2");
+console.log("ps1_e_popup called 3");
 
 var gCtr  =0;
-getPersonalization(profileJson);
-
+// if(isDefined(profileJson)){
+// 	getPersonalization(profileJson);
+// }
 //test changes(1)
 // download JSON skin in url, and personalise page based on the settings in it  
 function getPersonalization(url) {
-	console.log("ps1_e called 3");
+	console.log("ps1_e popup getPersonalization called 4");
 	// alert("get personalization called");
 	// var script = 'document.body.style.backgroundColor="Yellow";';
 	// chrome.tabs.executeScript({
@@ -70,6 +71,8 @@ function personalizePage(profile) {
 
 	// alert("personalizee page called");
 
+	editPopup(profile);
+
 	console.log("personalize page called for profile: " + profile.name);
 	addTooltipCssClasses();
 	if ( isDefined(profile.css)) {
@@ -98,7 +101,18 @@ function personalizePage(profile) {
 		personalizeDistraction();
 	}
 }
+function editPopup(profile){
 
+	var athenaIcon = profile["athena-icon"];
+	if(!isDefined(athenaIcon)){
+		return;
+	}
+	$("[athena-icon]").each(function(index){
+		console.log("athena icon = "+$(this).attr("athena-icon") ) ;
+		var iconSettings = athenaIcon[$(this).attr("athena-icon")];
+		applySettingsOnElement($(this),iconSettings);		
+	});
+}
 function personalizeSimplification(simplificationLevel) {
 	console.log("simplification level: "+simplificationLevel);
 	var simplificationValue = simplicficationFromStringToInt(simplificationLevel);
@@ -374,50 +388,50 @@ function applySettingsOnElement(element, attrVal) {
 }
 
 
-function scaleImage(element, img, name, scaleType, inner) {
-	console.log("scale image called on: " + img);
+// function scaleImage(element, img, name, scaleType, inner) {
+// 	console.log("scale image called on: " + img);
 
-	//TODO: check inner and finish this for ALL SCENARIOS
-	//inner can be:
-	// "" if no text
-	// elelment.innerHtml 
-	// settings.text
+// 	//TODO: check inner and finish this for ALL SCENARIOS
+// 	//inner can be:
+// 	// "" if no text
+// 	// elelment.innerHtml 
+// 	// settings.text
 	
-	if (scaleType === "none") {
-		console.log("inside scaletype none: "+name);
+// 	if (scaleType === "none") {
+// 		console.log("inside scaletype none: "+name);
 
-		var sizeCoefficient = 1;		
-		switch(inner){
-			case "":
-			element.innerHTML = "";				
-			break;
-			case element.innerHTML:
-				sizeCoefficient = 2;
-				break;
-			default:
-				console.log("problem: default reached on scaleType none");
-				return;
-		}
+// 		var sizeCoefficient = 1;		
+// 		switch(inner){
+// 			case "":
+// 			element.innerHTML = "";				
+// 			break;
+// 			case element.innerHTML:
+// 				sizeCoefficient = 2;
+// 				break;
+// 			default:
+// 				console.log("problem: default reached on scaleType none");
+// 				return;
+// 		}
 		
-		// $(img).on('load', function () {
-			var css;
+// 		// $(img).on('load', function () {
+// 			var css;
 
-			console.log("name: " + name + "\nh: " + $(img).height() + "\nw: " + $(img).width() + "\neh: " + $(element).height() + "\new: " + $(element).width());
-			var mHeight = $(element).height();
-			var mWidth = sizeCoefficient*$(element).width();
-			css = { width: mWidth, height: mHeight };
-			$(img).css(css);
-			if( sizeCoefficient > 1 ){
-				$(element).width( sizeCoefficient * $(element).width() );
-			}		
-		// });
-	}
-	// else if(scaleType === "cssClass") {
-	// 	$(img).appendTo(element);
-	// }else{ //fixed dims
-	// 	$(img).appendTo(element);
-	// }
-}
+// 			console.log("name: " + name + "\nh: " + $(img).height() + "\nw: " + $(img).width() + "\neh: " + $(element).height() + "\new: " + $(element).width());
+// 			var mHeight = $(element).height();
+// 			var mWidth = sizeCoefficient*$(element).width();
+// 			css = { width: mWidth, height: mHeight };
+// 			$(img).css(css);
+// 			if( sizeCoefficient > 1 ){
+// 				$(element).width( sizeCoefficient * $(element).width() );
+// 			}		
+// 		// });
+// 	}
+// 	// else if(scaleType === "cssClass") {
+// 	// 	$(img).appendTo(element);
+// 	// }else{ //fixed dims
+// 	// 	$(img).appendTo(element);
+// 	// }
+// }
 
 function insertImage(element, settings) {
 	if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
@@ -431,37 +445,68 @@ function insertImage(element, settings) {
 		console.log("inside insert image");
 		var newImg = document.createElement('img');
 		newImg.setAttribute("src", settings.Symbol.url);
+		addBorderToImg(newImg);
 		// if (isDefined(settings.tooltip)) {
 		// 	newImg.title = settings.tooltip;
 		// }
 		if (isDefined(settings.Symbol.css_class)) {
+			console.log("inside css_class: "+settings.name);
 			newImg.setAttribute("class", settings.Symbol.css_class);
-		} else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.height)) {
+		} else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.width)) {
+			console.log("inside h/w: "+settings.name);
 			$(newImg).css({ height: settings.Symbol.height, width: settings.Symbol.width });
 		} else {
-			$(newImg).css({ height: $(element).height(), width: 'auto' });
+			console.log("inside auto size: "+settings.name+"-element height: "+ $(element).height());
+			$(newImg).css({ height: $(element).height()*2, width: 'auto' });
 			// $(newImg).css( { height:'200%' , width:'200%' });			
 		}
 		if (!isDefined(settings.Symbol.replacetext)) {
+			console.log("inside undefined replacetext: "+settings.name+" id:"+$(element).attr("id"));
 			//TODO: what should be the default?
-			$(newImg).appendTo(element);
+			var label = $('[for="'+$(element).attr("id")+'"]');	
+
+			if(isDefined(label[0])){
+				console.log("with label: "+settings.name);
+				// $("  ").prependTo(label[0])
+				$(newImg).prependTo(label[0])
+			}else{
+				$(element).prepend("&nbsp;");
+				// $("  ").prependTo(element);
+				$(newImg).prependTo(element);
+			}
 		} else {
-			if ( settings.Symbol.replacetext === "replace") {
+			if (settings.Symbol.replacetext === "replace") {
+				console.log("inside replacetext === replace: " + settings.name);
 				$(element).html('');
 				$(newImg).appendTo(element);
-			} else if (  settings.Symbol.replacetext === "tooltip" ){
-				console.log("image tooltip called for: "+settings.name);
-				altAddToolTip(element,newImg,settings);
-			}else if(  settings.Symbol.replacetext === "before" ){
+			} else if (settings.Symbol.replacetext === "tooltip") {
+				console.log("image tooltip called for: " + settings.name);
+				altAddToolTip(element, newImg, settings);
+			} else if (settings.Symbol.replacetext === "before") {
+				console.log("inside replacetext === before: " + settings.name);
 				if (isDefined(settings.text)) {
 					$(element).html(settings.text);
 				}
-				$(newImg).insertBefore(element);
+				var label = $('[for="' + $(element).attr("id") + '"]');
+				if (isDefined(label[0])) {
+					console.log("with label: " + settings.name);
+					// $("  ").prependTo(label[0])
+					$(newImg).prependTo(label[0])
+				} else {
+					// $("  ").prependTo(element);
+					$(newImg).insertBefore(element);
+				}
+				
+
 			}
 		}
 		console.log(settings.name + " settings:\ninner: " + element.innerHTML + "\nimage sizes are: h:" + $(newImg).height() + " w:" + $(newImg).width());
 	}
 }
+function addBorderToImg(img){
+	$(img).css({"background-color":"white","border":"#000000 3px outset"/*,"padding":"10%"*/});
+}
+
 // function addToolTip(element, imgOuterHtml) {
 // 	element.setAttribute('title', imgOuterHtml);
 // 	$(element).tooltip({
@@ -482,48 +527,31 @@ function altAddToolTip(element, newImg,settings) {
 	var divStr = '<div id="' + divId + '" </div>';
 	// element.insertBefore(span,null);
 	// $(span).insertBefore(element);
-
 	$(element).wrap(divStr);
 	var div = document.getElementById(divId);
-
-	$(div).addClass("tooltip_parent");
-
+	$(div).addClass("aui_tooltip_parent");
 	var span = document.createElement("span");
 	// div.appendChild(span);
 	$(span).appendTo(div);
 	// span.setAttribute("id", spanId);
 	$(span).attr("id",spanId);
-
 	$(element).attr("aria-describedby",spanId);
-
-
 	$(newImg).appendTo(span);
+
 	// span.appendChild(newImg);
 	$(span).attr("role", "tooltip");
 	// $(span).append('<p>p text</p>');
-	$(span).addClass("tooltip");
+	$(span).addClass("aui_tooltip");
+	// positionSpan(span,element);
 
-
-	$(element).mouseover(function () {
-		console.log("mouseover span called");
-		showImg(span);
-		// $(newImg).show();
-	});
-	$(span).mouseleave(function () {
-		console.log("mouseleave span called");
-		if (!($(element).is(":focus"))) {
-			hideImg(span);
-		}
-	});
-
-	positionSpan(span,element);
-	// var oldElem = element;
-	// element = div;
+	var oldElem = element;
+	element = div;
 	$(element).attr("tabindex","0");	
 	/*add text to the span */
 	if(isDefined(settings.tooltip)){
 		var p = document.createElement("p");
 		$(p).html(settings.tooltip);
+		$("<p>\n</p>").appendTo(span);
 		$(p).appendTo(span);
 	}
 
@@ -610,7 +638,7 @@ function setCSS(element, settings) {
 
 function addTooltipCssClasses(){
 	// createCssClass(".tooltip,.arrow:after",'  background:yellow; ');
-	createCssClass('.tooltip',
+	createCssClass('.aui_tooltip',
 	'background:black; '+
 	'font-size:14px;'+
 	'font-weight:regular;'+
@@ -632,7 +660,7 @@ function addTooltipCssClasses(){
 	'text-decoration:none;'+
 	'box-shadow:0 0 3px #000;'+
 	'z-index:99999999;');
-	createCssClass('.tooltip_parent',
+	createCssClass('.aui_tooltip_parent',
 	"position:relative;");
 	createCssClass('[aria-hidden="true"]', 'display: none');
 	createCssClass('[aria-hidden="false"]', 'display: block');
@@ -699,67 +727,34 @@ function checkModifier(modifierStr,event){
 	return false;
 }
 
-
-
 function positionSpan(span,element){
-	
-		// var addToTop = -1.5*element.height;
-		// var addToLeft = -500;
-		var bodyRect = document.body.getBoundingClientRect();
-		var elemRect = element.getBoundingClientRect();
-		var top_offset = elemRect.top - bodyRect.top;
-		var left_offset = elemRect.left - bodyRect.left;
-		var offset = $(element).offset();
-	
-		// top_offset = element.offsetTop;
-		// left_offset = element.offsetLeft;
-		// span.style.top = "" +element.getBoundingClientRect().top + "px";
-		// span.style.left = ""+element.getBoundingClientRect().left +"px";
-		console.log("*****************************************************************",span.style.top,);
-		console.log('Element is ' + top_offset + ' vertical pixels from <body>');
-		console.log('Element is ' + left_offset + ' horizontal pixels from <body>');
-		console.log("bodyRect: top: "+bodyRect.top+" left: "+bodyRect.left);
-		console.log("elemRect: top: "+elemRect.top+" left: "+elemRect.left);
-	
-		span.style.top = elemRect.top;
-		span.style.left = elemRect.left;
-		// var p = $(span).position();
-		console.log("span left: "+offset.left+" top: "+offset.top);
-		console.log("span: ",span," element:",element);
-	
-	}
-// function positionSpan(span,element){
 
-// 	// var addToTop = -1.5*element.height;
-// 	// var addToLeft = -500;
-// 	var bodyRect = document.body.getBoundingClientRect();
-//     var elemRect = element.getBoundingClientRect();
-// 	var top_offset = elemRect.top - bodyRect.top;
-// 	var left_offset = elemRect.left - bodyRect.left;
-// 	var offset = $(element).offset();
+	// var addToTop = -1.5*element.height;
+	// var addToLeft = -500;
+	var bodyRect = document.body.getBoundingClientRect();
+    var elemRect = element.getBoundingClientRect();
+	var top_offset = elemRect.top - bodyRect.top;
+	var left_offset = elemRect.left - bodyRect.left;
+	console.log('Element is ' + top_offset + ' vertical pixels from <body>');
+	console.log('Element is ' + left_offset + ' horizontal pixels from <body>');
+	console.log("bodyRect: top: "+bodyRect.top+" left: "+bodyRect.left);
+	console.log("elemRect: top: "+elemRect.top+" left: "+elemRect.left);
 
-// 	top_offset = element.offsetTop;
-// 	left_offset = element.offsetLeft;
-// 	span.style.top = "" +element.getBoundingClientRect().top + "px";
-// 	span.style.left = ""+element.getBoundingClientRect().left +"px";
-// 	console.log("*****************************************************************",span.style.top,);
-// 	console.log('Element is ' + top_offset + ' vertical pixels from <body>');
-// 	console.log('Element is ' + left_offset + ' horizontal pixels from <body>');
-// 	console.log("bodyRect: top: "+bodyRect.top+" left: "+bodyRect.left);
-// 	console.log("elemRect: top: "+elemRect.top+" left: "+elemRect.left);
+	span.style.top = elemRect.top;
+	span.style.left = elemRect.left;
+	var p = $(span).position();
+	console.log("span left: "+p.left+" top: "+p.top);
 
-// 	// span.style.top = elemRect.top;
-// 	// span.style.left = elemRect.left;
-// 	// var p = $(span).position();
-// 	console.log("span left: "+offset.left+" top: "+offset.top);
-// 	console.log("span: ",span," element:",element);
-
-// }
+	// span.style.top = top_offset + addToTop;
+	// span.style.left = left_offset +addToLeft;
+}
 
 function personalizeDistraction() {
 
 	/*animations, auto-starting, moving, ad, message, chat , overlay, popup
 Auto-changing (logs) third-party, offer ( includes suggestions). */
+
+
 
 	var distStr = window.profile["aui-distraction"];
 	console.log("personalize distraction called. distStr: "+distStr);

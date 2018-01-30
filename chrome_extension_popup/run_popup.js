@@ -1,4 +1,8 @@
 // alert("ps1_pi called");
+
+var profileJson1 = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile5.json";
+getPersonalization(profileJson1);
+
 document.addEventListener('DOMContentLoaded', () => {
 	// alert("dom loaded 3");
 	var bt = document.getElementById("bt_personalize_page");
@@ -11,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			alert("please enter a url of json profile, and press again.");
 		}
 
-		chrome.tabs.executeScript(null, { file: "bootstrap.min.js" }, function () {
+		// chrome.tabs.executeScript(null, { file: "bootstrap.min.js" }, function () {
 			chrome.tabs.executeScript(null, { file: "jquery.js" }, function () {
 				chrome.tabs.executeScript(null, {
 					code: 'var profileJson ="' + urlInput + '";'
@@ -20,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					// chrome.tabs.executeScript(tab.id, {file: 'content.js'});
 				});
 			});
-		});
+		// });
 	});
 
 
@@ -28,14 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		// alert("personalize page clicked 2");
 
 		chrome.tabs.executeScript(null, { file: "jquery.js" }, function () {
-			chrome.tabs.executeScript(null, { file:  "bootstrap.min.js"}, function () {
+			// chrome.tabs.executeScript(null, { file:  "bootstrap.min.js"}, function () {
 				chrome.tabs.executeScript(null, {
 					code: 'var profileJson ="https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile5.json";'
 				}, function () {
 					chrome.tabs.executeScript(null, { file: "ps1_e.js" });
 					// chrome.tabs.executeScript(tab.id, {file: 'content.js'});
 				});
-			});
+			// });
 		});
 	});
 
@@ -44,14 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		// chrome.tabs.executeScript(null, { file: "popper.js" }, function () {
 			// chrome.tabs.executeScript(null, { file: "bootstrap.min.js" }, function () {
 				chrome.tabs.executeScript(null, { file: "jquery.min.js" }, function () {
-					chrome.tabs.executeScript(null, { file: "bootstrap.min.js" }, function () {
+					// chrome.tabs.executeScript(null, { file: "bootstrap.min.js" }, function () {
 						chrome.tabs.executeScript(null, {
 							code: 'var profileJson ="https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile4.json";'
 						}, function () {
 							chrome.tabs.executeScript(null, { file: "ps1_e.js" });
 							// chrome.tabs.executeScript(tab.id, {file: 'content.js'});
 						});
-					});
+					// });
 				});
 			// });
 		// });

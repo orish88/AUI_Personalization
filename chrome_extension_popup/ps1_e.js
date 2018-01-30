@@ -1,11 +1,12 @@
 
 // getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
 
-console.log("ps1_e called 2");
+console.log("ps1_e called 3");
 
 var gCtr  =0;
-getPersonalization(profileJson);
-
+if(isDefined(profileJson)){
+	getPersonalization(profileJson);
+}
 //test changes(1)
 // download JSON skin in url, and personalise page based on the settings in it  
 function getPersonalization(url) {
@@ -70,6 +71,8 @@ function personalizePage(profile) {
 
 	// alert("personalizee page called");
 
+	editPopup(profile);
+
 	console.log("personalize page called for profile: " + profile.name);
 	addTooltipCssClasses();
 	if ( isDefined(profile.css)) {
@@ -98,7 +101,18 @@ function personalizePage(profile) {
 		personalizeDistraction();
 	}
 }
+function editPopup(profile){
 
+	var athenaIcon = profile["athena-icon"];
+	if(!isDefined(athenaIcon)){
+		return;
+	}
+	$("[athena-icon]").each(function(index){
+		console.log("athena icon = "+$(this).attr("athena-icon") ) ;
+		var iconSettings = athenaIcon[$(this).attr("athena-icon")];
+		applySettingsOnElement($(this),iconSettings);		
+	});
+}
 function personalizeSimplification(simplificationLevel) {
 	console.log("simplification level: "+simplificationLevel);
 	var simplificationValue = simplicficationFromStringToInt(simplificationLevel);
