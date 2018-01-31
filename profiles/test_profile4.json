@@ -2119,7 +2119,7 @@
                 "tooltip": "postal or ZIP code",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/postalcode1_noun_a1.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/postalCode1_noun_a1.png",
                     "replacetext": "tooltip",
                     "css_class": "aui_header_images",
                     "creator": {

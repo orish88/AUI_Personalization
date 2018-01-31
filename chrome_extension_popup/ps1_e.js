@@ -2,21 +2,26 @@
 // getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
 
 console.log("ps1_e called 3");
-
+// window.location.reload(null,false,getPersonalization(profileJson));
 var gCtr  =0;
+
 if(isDefined(profileJson)){
 	getPersonalization(profileJson);
 }
 //test changes(1)
 // download JSON skin in url, and personalise page based on the settings in it  
 function getPersonalization(url) {
-	console.log("ps1_e called 3");
+	if(!isDefined(url)){
+		return;
+	}
+	console.log("ps1_e called: ");
 	// alert("get personalization called");
 	// var script = 'document.body.style.backgroundColor="Yellow";';
 	// chrome.tabs.executeScript({
 	// 	code: script
 	//   });
 	//load json skin (profile) and run it
+
 	makeCorsRequest(url);
 }
 // Make the actual CORS request.
@@ -371,6 +376,9 @@ function applySettingsOnElement(element, attrVal) {
 		var settings = attrVal;
 		console.log("apply settings: " + settings + " on: " + element);
 		//apply css changes:
+		if( isDefined(settings["@aria-hidden"]) ){
+			$(element).attr("aria-hidden",settings["@aria-hidden"]);
+		}
 
 		if (isDefined(settings.css)) {
 			var styleSettings = settings.css;
@@ -537,8 +545,10 @@ function altAddToolTip(element, newImg,settings) {
 	$(span).appendTo(div);
 	// span.setAttribute("id", spanId);
 	$(span).attr("id",spanId);
+	// $(span).addClass('aui_tooltip_span');
 	$(element).attr("aria-describedby",spanId);
 	$(newImg).appendTo(span);
+	// $(newImg).addClass('aui_tooltip_child');
 
 	// span.appendChild(newImg);
 	$(span).attr("role", "tooltip");
@@ -553,8 +563,9 @@ function altAddToolTip(element, newImg,settings) {
 	if(isDefined(settings.tooltip)){
 		var p = document.createElement("p");
 		$(p).html(settings.tooltip);
-		$("<p>\n</p>").appendTo(span);
+		// $("<p>\n</p>").appendTo(span);
 		$(p).appendTo(span);
+		// $(p).addClass('aui_tooltip_child');
 	}
 
 	$(document).ready(function () {
@@ -641,6 +652,8 @@ function setCSS(element, settings) {
 function addTooltipCssClasses(){
 	// createCssClass(".tooltip,.arrow:after",'  background:yellow; ');
 	createCssClass('.aui_tooltip',
+	// 'margin:auto;'+
+	// 'text-align:center;'+
 	'background:black; '+
 	'font-size:14px;'+
 	'font-weight:regular;'+
@@ -649,7 +662,7 @@ function addTooltipCssClasses(){
 	// 'right:20%;'+
 	// 'left:100%;'+
 	'overflow:visible;'+
-	'padding:10px 20px;'+
+	'padding:17px 17px 0px;'+
 	'color:#fff;'+
 	'-webkit-border-radius:7px;'+
 	'-moz-border-radius:7px;'+
@@ -657,16 +670,29 @@ function addTooltipCssClasses(){
 	'-webkit-background-clip:padding-box;'+
 	'-moz-background-clip:padding;'+
 	'background-clip:padding-box;'+
-	// 'margin-bottom: 20%;'+
+	'margin-bottom: 20%;'+
 	'text-align:center;'+
 	'text-decoration:none;'+
 	'box-shadow:0 0 3px #000;'+
-	'z-index:99999999;');
+	'z-index:99999999;'+
+	// 'vertical-align:middle;'+
+	// 'justify-content:center;'+
+	// 'flex-direction: column;'+
+	// 'margin-top:auto;margin-bottom:auto;'
+	'align-items:center;'
+	);
 	createCssClass('.aui_tooltip_parent',
 	"position:relative;");
-	createCssClass('[aria-hidden="true"]', 'display: none');
-	createCssClass('[aria-hidden="false"]', 'display: block');
+	createCssClass('[aria-hidden="true"]', 'display: none;');
+	createCssClass('[aria-hidden="false"]', 'display: block;');
 	createCssClass('a:focus, a:active', 'text-decoration: underline;');
+	// createCssClass('aui_tooltip_child',);
+	// createCssClass('aui_tooltip_span',
+	// 'vertical-align:center;'
+	// 'display: flex;'+
+	// 'align-items: center;'+
+	// 'justify-content:center;'
+	// );
 	
 }
 function createCssClass(className,propertiesStr){

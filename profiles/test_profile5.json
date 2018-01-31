@@ -131,6 +131,39 @@
         }
     },
     "attributes": {
+
+        "role":{
+            "global_settings": {
+                "name": "role"
+            },
+            "complementary": {
+                "name": "complementary",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=complemetary",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            }
+        },
         "AUI-action": {
             "global_settings": {
                 "name": "AUI-action"
