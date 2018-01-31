@@ -2849,6 +2849,34 @@
                     }
                 ]
             },
+            "accessibilityStatement": {
+                "name": "accessibilityStatement",
+                "inherits": "",
+                "shortcut": "SHIFT+H",
+                "longdesc": "Information about Accessibility",
+                "tooltip": "Information about Accessibility",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/accessibilityStatement1_noun_a1.png",
+                    "css_class": "aui_header_images",
+                    "replacetext": "before",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "60",
+                    "height": "60",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
             "lang": {
                 "name": "lang",
                 "inherits": "",
