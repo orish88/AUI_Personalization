@@ -9,9 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	bt.addEventListener('click', () => {
 		// alert("personalize page clicked 2");
 		
-		reloadPage();
-
-		// var urlInput = document.getElementById("input_enter_profile_url").value;
+		var urlInput = document.getElementById("input_enter_profile_url").value;
+		reloadPage(urlInput);
 
 		// if (urlInput == null || urlInput === "") {
 		// 	alert("please enter a url of json profile, and press again.");
@@ -90,25 +89,25 @@ document.addEventListener('DOMContentLoaded', () => {
 	// });
 
 	function reloadPage(profleJsonUrl){
-		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-			chrome.tabs.update(tabs[0].id, {url: tabs[0].url},function(){
-				personalize(profleJsonUrl);
-			});
-		});
+
+
+		personalize(profleJsonUrl);
+		// chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+		// 	chrome.tabs.update(tabs[0].id, {url: tabs[0].url},function(){
+		// 		personalize(profleJsonUrl);
+		// 	});
+		// });
 	}
 
 	function personalize(profileJsonUrl){
 		// getPersonalization(profileJsonUrl);
 		chrome.tabs.executeScript(null, { file: "jquery.js" }, function () {
-			// chrome.tabs.executeScript(null, { file:  "bootstrap.min.js"}, function () {
 				chrome.tabs.executeScript(null, {
 					code: 'console.log("bt pressed"); var profileJson ="'+profileJsonUrl+'";'
 				}, function () {
-
 					chrome.tabs.executeScript(null, { file: "ps1_e.js" });
-					// chrome.tabs.executeScript(tab.id, {file: 'content.js'});
 				});
-			// });
+
 		});
 	}
 });

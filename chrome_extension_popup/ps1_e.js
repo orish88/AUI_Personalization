@@ -369,7 +369,7 @@ function applySettingsOnElement(element, attrVal) {
 		consoleLog("apply settings: " + settings + " on: " + element);
 		
 		//apply field changes:
-		applyChangeFields(element,settings);
+		applyFieldChanges(element,settings);
 
 		// if( isDefined(settings["@aria-hidden"]) ){
 		// 	$(element).attr("aria-hidden",settings["@aria-hidden"]);
@@ -810,6 +810,7 @@ function consoleLog(text){
 
 function applyFieldChanges(element,settings){
 	if(isDefined(settings["field_changes"])){
+		console.log("apply field changes called on: "+settings.name);
 		var fieldChanges = settings["field_changes"];
 		var fieldChangesKeyList = Object.keys(fieldChanges);
 		fieldChangesKeyList.forEach(field=>{
