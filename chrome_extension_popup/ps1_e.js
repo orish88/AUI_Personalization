@@ -5,9 +5,14 @@ console.log("ps1_e called 4");
 var gCtr  =0;
 /**
  * profile json is define in script execution on run_popup.js*/
-if(isDefined(profileJson)){
+
+
+
+if ( isDefined(profileJson) ) {
 	getPersonalization(profileJson);
 }
+
+
 //test changes(1)
 // download JSON skin in url, and personalise page based on the settings in it  
 function getPersonalization(url) {
@@ -240,7 +245,7 @@ function personalizeItempropElement(element, typeVal) {
 	}
 }
 /**
- * iterate over this attribute in the profile, and check for elemts that has it and also
+ * iterate over this attribute in the profile, and check for elements that has it and also
  * @param {*} tagnames 
  */
 function personalizeTagnames(tagnames) {
@@ -356,6 +361,10 @@ function applySettingsOnElement(element, attrVal) {
 		var elementType = element.tagName.toUpperCase();
 
 
+/**
+ * document the json
+ */
+
 		//check if relevant type:
 		for(var i=0; i < attrVal.type.length; i++){
 			var type = attrVal.type[i];
@@ -394,8 +403,9 @@ function applySettingsOnElement(element, attrVal) {
 		var settings = attrVal;
 		consoleLog("apply settings: " + settings + " on: " + element);
 		
-		//apply field changes:
-		applyFieldChanges(element,settings);
+		//apply field changes: 
+		//todo: changee name to : attribute values
+		applyAttributeValuesChanges(element,settings);
 
 		//apply css changes:
 		if (isDefined(settings.css)) {
@@ -413,7 +423,8 @@ function applySettingsOnElement(element, attrVal) {
 }
 
 /**
- * get img from the settings if exists and insert it to the element, insertion way determined by profile(replacetext)
+ * get img from the settings if exists and insert it to the element, 
+ * insertion way determined by profile(symbol_insertion_type)
  * @param {*} element 
  * @param {*} settings 
  */
@@ -421,8 +432,8 @@ function applySettingsOnElement(element, attrVal) {
 function insertImage(element, settings) {
 	if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
 
-		var mHeight = $(element).height();
-		var mWidth = $(element).width();
+		// var mHeight = $(element).height();
+		// var mWidth = $(element).width();
 
 		consoleLog("inside insert image");
 		var newImg = document.createElement('img');
@@ -438,28 +449,30 @@ function insertImage(element, settings) {
 			consoleLog("inside auto size: "+settings.name+"-element height: "+ $(element).height());
 			$(newImg).css({ height: $(element).height()*2, width: 'auto' });
 		}
-		if (!isDefined(settings.Symbol.replacetext)) {
-			consoleLog("inside undefined replacetext: "+settings.name+" id:"+$(element).attr("id"));
+		if (!isDefined(settings.Symbol.symbol_insertion_type)) {
+			consoleLog("inside undefined symbol_insertion_type: "+settings.name+" id:"+$(element).attr("id"));
 			//TODO: what should be the default?
 			var label = $('[for="'+$(element).attr("id")+'"]');	
+			/**
+			 * check the "for" attr for the id of the element to add in image to.
+			 */
 
 			if(isDefined(label[0])){
-				consoleL
 				$(newImg).prependTo(label[0])
 			}else{
 				$(element).prepend("&nbsp;");
 				$(newImg).prependTo(element);
 			}
 		} else {
-			if (settings.Symbol.replacetext === "replace") {
-				consoleLog("inside replacetext === replace: " + settings.name);
+			if (settings.Symbol.symbol_insertion_type === "replace") {
+				consoleLog("inside symbol_insertion_type === replace: " + settings.name);
 				$(element).html('');
 				$(newImg).appendTo(element);
-			} else if (settings.Symbol.replacetext === "tooltip") {
+			} else if (settings.Symbol.symbol_insertion_type === "tooltip") {
 				consoleLog("image tooltip called for: " + settings.name);
 				altAddToolTip(element, newImg, settings);
-			} else if (settings.Symbol.replacetext === "before") {
-				consoleLog("inside replacetext === before: " + settings.name);
+			} else if (settings.Symbol.symbol_insertion_type === "before") {
+				consoleLog("inside symbol_insertion_type === before: " + settings.name);
 				if (isDefined(settings.text)) {
 					$(element).html(settings.text);
 				}
@@ -472,8 +485,6 @@ function insertImage(element, settings) {
 					// $("  ").prependTo(element);
 					$(newImg).insertBefore(element);
 				}
-				
-
 			}
 		}
 		consoleLog(settings.name + " settings:\ninner: " + element.innerHTML + "\nimage sizes are: h:" + $(newImg).height() + " w:" + $(newImg).width());
@@ -593,6 +604,8 @@ function setCSS(element, settings) {
 
 /**
  * add classes 
+ * 
+ * todo: make it generic and extendable, read fro mthe profile/different file
  */
 function addTooltipCssClasses(){
 	createCssClass('.aui_tooltip',
@@ -741,7 +754,7 @@ Auto-changing (logs) third-party, offer ( includes suggestions). */
 
 
 function consoleLog(text){
-	// console.log(text);
+	console.log(text);
 }
 
 /**
@@ -749,13 +762,13 @@ function consoleLog(text){
  * @param {*} element 
  * @param {*} settings 
  */
-function applyFieldChanges(element,settings){
-	if(isDefined(settings["field_changes"])){
-		console.log("apply field changes called on: "+settings.name);
-		var fieldChanges = settings["field_changes"];
-		var fieldChangesKeyList = Object.keys(fieldChanges);
-		fieldChangesKeyList.forEach(field=>{
-			$(element).attr(field,fieldChanges[field]);
+function applyAttributeValuesChanges(element,settings){
+	if(isDefined(settings["attribute_values_changes"])){
+		console.log("apply attribute value changes called on: "+settings.name);
+		var attributeValuesChanges = settings["attribute_values_changes"];
+		var attributeValuesChangesKeyList = Object.keys(attributeValuesChanges);
+		attributeValuesChangesKeyList.forEach(attrName=>{
+			$(element).attr(attrName,attributeValuesChanges[attrName]);
 		});
 	}
 }
