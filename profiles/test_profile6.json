@@ -2641,7 +2641,11 @@
                     "width": "100",
                     "height": "250",
                     "margin": "",
-                    "padding": ""
+                    "padding": "",
+                    "symbol_attribute_values_changes":{
+                        "aria-label": "Go to Homepage",
+                        "anyfield":"somevalue"
+                    }
                 },
                 "@aria-hidden": "false",
                 "css": [

@@ -439,6 +439,7 @@ function insertImage(element, settings) {
 		var newImg = document.createElement('img');
 		newImg.setAttribute("src", settings.Symbol.url);
 		addBorderToImg(newImg);
+		applySymbolAttributeValuesChanges(newImg,settings.Symbol);
 		if (isDefined(settings.Symbol.css_class)) {
 			consoleLog("inside css_class: "+settings.name);
 			newImg.setAttribute("class", settings.Symbol.css_class);
@@ -766,6 +767,21 @@ function applyAttributeValuesChanges(element,settings){
 	if(isDefined(settings["attribute_values_changes"])){
 		console.log("apply attribute value changes called on: "+settings.name);
 		var attributeValuesChanges = settings["attribute_values_changes"];
+		var attributeValuesChangesKeyList = Object.keys(attributeValuesChanges);
+		attributeValuesChangesKeyList.forEach(attrName=>{
+			$(element).attr(attrName,attributeValuesChanges[attrName]);
+		});
+	}
+}
+/**
+ * add attr&value pairs (from the profile) to the element
+ * @param {*} element 
+ * @param {*} symbolSettings 
+ */
+function applySymbolAttributeValuesChanges(element,symbolSettings){
+	if(isDefined(symbolSettings["symbol_attribute_values_changes"])){
+		console.log("apply attribute value changes called on: "+symbolSettings.name);
+		var attributeValuesChanges = symbolSettings["symbol_attribute_values_changes"];
 		var attributeValuesChangesKeyList = Object.keys(attributeValuesChanges);
 		attributeValuesChangesKeyList.forEach(attrName=>{
 			$(element).attr(attrName,attributeValuesChanges[attrName]);
