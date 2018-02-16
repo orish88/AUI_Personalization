@@ -4,7 +4,7 @@
 /*Personalize the popup*/
 var curDom;
 var curUrl;
-var curProfileJson = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile5.json";
+var curProfileJson = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile7.json";
 getPersonalization(curProfileJson);
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	document.getElementById("bt_personalize_page_test_profile1").addEventListener('click', () => {
 		/* make the profiles constants*/
-		curProfileJson = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile5.json";
+		curProfileJson = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile6.json";
 		reloadPage(curProfileJson);
 	});
 
 	document.getElementById("bt_personalize_page_test_profile2").addEventListener('click', () => {
-		curProfileJson = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile4.json";
+		curProfileJson = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile8.json";
 		reloadPage(curProfileJson);
 	});
 

@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <!-- saved from url=(0080)https://developer.chrome.com/extensions/examples/tutorials/getstarted/popup.html -->
 <html>
-  <!--  -->
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- title of popup -->
-  <p id="title">Athena ICT Personalization Extension's Popup</p>
+  <title>Getting Started Extension's Popup</title>
   <style type="text/css">
     body {
       width: 250px;
     }
-    #title{
-      font-size: 20px;
-    }
+
     #span_tooltip {
       margin: auto;
     }
+
     #span_page {
-      /* margin: auto; */
-      margin-right: 44px;
-      margin-left: 34px;
+      margin: auto;
+      /* margin-right: 44px;
+      margin-left: 34px; */
     }
 
-    /* css class for the url+go button div*/
     #container {
       align-items: center;
       display: flex;
@@ -31,7 +27,6 @@
       margin: 5px;
     }
 
-    /*css class for the buttons(on page, on tooltip)*/
     .btn {
       display: flex;
       align-items: center;
@@ -41,7 +36,7 @@
       width: 240px;
       margin: 5px;
     }
-    /*css class for the images (dynimcally added) inside the button( inside on page, on tooltip)*/
+
     .btn img {
       height: 30px;
       width: 50px;
@@ -55,7 +50,7 @@
       /* border-width: 4px; */
       /* border-color: black; */
     }
-    /*css class for Go button*/
+
     #bt_personalize_page {
       /* background-image: url("https://rawgit.com/orish88/AUI_Personalization/master/images/enter2_noun.png"); */
       /* background-size: 50px 30px; */
@@ -68,7 +63,7 @@
       /* border-width: 4px; */
       border-radius: 5px;
     }
-    /*css class for the json url input*/
+
     #input_enter_profile_url {
       height: 30px;
       width: 200px;
@@ -81,35 +76,46 @@
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
     -->
-
+  <link href="./bootstrap.css"></link>
   <script src="./jquery.js" type="text/javascript"></script>
-  
-  <!-- ps1_e_popup.js : script for personalzing the popup itself -->
   <script src="./ps1_e_popup.js"  type="text/javascript"></script>
-    <!-- run_popup.js : script for initializing the popup buttons and personalziation functions -->
   <script src="./run_popup.js"  type="text/javascript"></script>
   <style></style>
 </head>
 
 <body>
-  <!-- html of popup: images dymaically added to buttons from the profile(inside "athena-icon") -->
+  <h1> Athena ICT Personalization</h1>
   <div>
-    <button athena-icon="tooltip" class="btn" id="bt_personalize_page_test_profile2"  title="change tooltip">
-      <!-- <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/image1_noun.png" alt=""></img>  -->
-      <span id="span_tooltip" aria-label="Change Tooltip">Change Tooltip</span>
+    <button class="btn" id="bt_personalize_page_test_profile2"  title="change tooltip">
+      <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/tooltip1_noun.png"></img>
+      <span id="span_tooltip">Change Tooltip</span>
     </button>
   </div>
   <div>
-    <button athena-icon="page" class="btn" id="bt_personalize_page_test_profile1" >
-      <!-- <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/image1_noun.png" alt=""></img> -->
+    <button aui-destination="home" class="btn" id="bt_personalize_page_test_profile1" >
+      <img src="https://rawgit.com/orish88/AUI_Personalization/master/images/image1_noun.png"></img>
       <span id="span_page">Change Page </span>
     </button>
   </div>
   <div id="container">
-    <input id="input_enter_profile_url" placeholder="Enter profile json url here" aria-label=="Enter profile json url here"></input>
-    <button id="bt_personalize_page" aria-label=="Go using your json profile">GO
+    <input id="input_enter_profile_url" placeholder="Enter profile json url here"></input>
+    <button id="bt_personalize_page">GO
     </button>
   </div>
+  <!-- <script>
+    alert("test1");
+    document.getElementById("bt_personalize_page").title = "tooltip test2";
+    $(document.getElementById("bt_personalize_page")).tooltip("tooltip test1");
+    function myFunction() {
+      alert("alrt");
+      document.getElementById("bt_personalize_page").style.color = "red";
+    }
+    var profileJson1 = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile5.json";
+    getPersonalization(profileJson1);
+  </script> -->
+
+
+
 </body>
 
 </html>

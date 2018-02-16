@@ -1,20 +1,26 @@
 
-
+/**
+ * Main personalziaton script. 
+ * How to use:
+ * 		The profileJson varaible is initialzied on script execution at a press of a popup button(on run_poup.js).
+ * 		profileJson is a url to a json file. is it then turned to a JSON format object, profile,
+ * 		and used to personalize the DOM.  
+ */
 console.log("ps1_e called 4");
 
+/*global counter variable for generating ids for newly created elements*/
 var gCtr  =0;
+
 /**
- * profile json is define in script execution on run_popup.js*/
-
-
-
+ * profileJson is defined in script execution on run_popup.js
+ * */
 if ( isDefined(profileJson) ) {
 	getPersonalization(profileJson);
 }
 
-
-//test changes(1)
-// download JSON skin in url, and personalise page based on the settings in it  
+/** 
+* download JSON skin in url, and personalise page based on the settings in it 
+**/ 
 function getPersonalization(url) {
 	if(!isDefined(url)){
 		return;
@@ -23,7 +29,12 @@ function getPersonalization(url) {
 	//load json skin (profile) and run it
 	makeCorsRequest(url);
 }
-// Make the actual CORS request.
+
+/**
+ * This is where the actual json file download and parsing happens.
+ * It then calls personalizePage on the profile json object(called jsonSkin).
+ * @param {*} url 
+ */
 function makeCorsRequest(url) {
 
 	var xhr = createCORSRequest('GET', url);
@@ -47,7 +58,13 @@ function makeCorsRequest(url) {
 	xhr.send();
 }
 
-// Create the XHR object.
+/**
+ * Helper function for dowloading the json profile. 
+ * Creates the CORS request to br used for the download.
+ * This function is called inside makeCorsRequest(url).
+ * @param {*} method 
+ * @param {*} url 
+ */
 function createCORSRequest(method, url) {
 	var xhr = new XMLHttpRequest();
 	if ("withCredentials" in xhr) {
@@ -65,64 +82,73 @@ function createCORSRequest(method, url) {
 }
 
 /**
- * personalise page based on the settings in the JSON object recieved
+ * personalise page based on the settings in the JSON object recieved.
+ * This function calls a set of sub-functions, each iterating on 
+ * different parts of the profile object, and makes changes in the DOM.
  */
 function personalizePage(profile) {
-
-	//read the popup changes from the profile and apply them
+	/*editPopup() = read the popup changes from the profile and apply them*/
 	editPopup(profile);
 	consoleLog("personalize page called for profile: " + profile.name);
-
-	//add classes that are relevant to tooltip changes
+	/*AddTooltipClasses() = add classes that are relevant to tooltip changes
+	(todo: make dynamic and from profile)*/
 	addTooltipCssClasses();
 	if ( isDefined(profile.css)) {
 
-	//read the global css changes from the profile and apply them
+	/*personalizeCss() = read the global css changes from the profile and apply them */
 		personalizeCSS(profile.css);
 	}
 	if ( isDefined(profile.tagNames)) {
-	//read the tagname(like 'a' or 'p' or 'img') changes from the profile and apply them to relevant elements
+	/*personalizeTagnames() = read the tagnames(like 'a' or 'p' or 'img') changes from the profile and apply them to relevant elements*/
 		personalizeTagnames(profile.tagNames);
 	}
 	if ( isDefined(profile.attributes)) {
-		//read the attributes (like aui-destination = "home" ) from the profile and apply them to relevant elements
+		/*personalizeAttributes() = read the attributes (like aui-destination = "home" ) from the profile
+		 and apply them to relevant elements*/
 		personalizeAttributes(profile.attributes);
 	}
 	if ( isDefined(profile.scopes) && isDefined(profile.scopes.itemtypes) ) {
-		//read the scope changes from the profile and apply them to relevant elements (itemtype/prop).
-		//Scopes mean nested changes, relevant attribute inside some other attribute's scope
-		//todo: make generic
+		/*personalizeItemScopes() = read the scope changes from the profile and apply them to relevant elements (itemtype/prop).
+		Scopes mean nested changes, relevant attribute inside some other attribute's scope
+		todo: make generic*/
 		personalizeItemScopes(profile.scopes.itemtypes);
 	}
 	if ( isDefined(profile.scopes) && isDefined(profile.scopes.autocomplete) ) {
-		//read the scope changes from the profile and apply them to relevant elements (like autocomplete).
-		//Scopes mean nested changes, relevant attribute inside some other attribute's scope
+		/*personalizeAutocomplete() = read the scope changes from the profile and apply them to relevant elements (like autocomplete).
+		Scopes mean nested changes, relevant attribute inside some other attribute's scope*/
 		personalizeAutocomplete(profile.scopes.autocomplete);
 	}
 	if( isDefined(profile.simplification)){
 		consoleLog("simplification level: "+simplificationLevel);
 		var simplificationLevel = profile.simplification;
-		//read the simplification level from the profile and hide relevant elements
+		/*personalizeSimplification() = read the simplification level from the profile and hide relevant elements*/
 		personalizeSimplification(simplificationLevel); 
 	}
 	if(isDefined(profile["aui-distraction"])){
 		consoleLog("aui-distraction: "+profile["aui-distraction"]);
-		//check for elemts that are considered as distractions by the profile and treat them accordingly
+		/* personalizeDistraction() = check for elemts that are considered as distractions 
+		by the profile and treat them accordingly*/
 		personalizeDistraction();
 	}
 }
 
 /**
- * read the popup changes from the profile and apply them
+ * Read the popup changes from the profile, under "athena-icon", and apply them
  * @param {*} profile 
  */
 function editPopup(profile){
 	consoleLog("athena icon: edit popup called"  ) ;
+
+	/*get the athena-icon object, inside it are relevant value-objects */
 	var athenaIcon = profile["athena-icon"];
 	if(!isDefined(athenaIcon)){
 		return;
 	}
 	consoleLog("athena icon is defined: "+athenaIcon) ;
+
+	/*iterate over the elements in the document that have "athena-icon" attribute, 
+	look for the relevant value-object(for example, "on tooltip") in athenaIcon and apply the changes:
+	the image inside the value-object "someval" will be inserted in the button that has athena-icon ="someval" */
 	$("[athena-icon]").each(function(index){
 		$( "#"+$(this).attr("id")+" img").remove();
 		var iconSettings = athenaIcon[$(this).attr("athena-icon")];
@@ -131,16 +157,27 @@ function editPopup(profile){
 	});
 }
 /**
- * read the simplification level from the profile and hide elements with lower simplification.
+ * read the simplification level("critical"/"high"/"medium"/"low") from the profile and hide elements with lower simplification.
+ * There are four levels of simplification: 
+ * critical- show only elements with aui-simplification = "critical".
+ * high- critical- show only elements with aui-simplification = "critical" and "high.
+ * medium- critical- show only elements with aui-simplification = "critical","high and "medium".
+ * low- critical- show only elements with aui-simplification = "critical", "high, "medium" or "low".
+ * NOTE: UNMARKED ELEMENTS(i.e elements that have no aui-simplification specified) DO APPEAR!
  * @param {*} simplificationLevel 
  */
 function personalizeSimplification(simplificationLevel) {
 	consoleLog("simplification level: "+simplificationLevel);
+	/*convert the profile's simplification level to its corresponding int value*/
 	var simplificationValue = simplicficationFromStringToInt(simplificationLevel);
+	//query for all the elements in the DOM with aui-simplification attribute
 	var simplificationElements = document.querySelectorAll('[AUI-simplification]');
 	simplificationElements.forEach(element=>{
+		/*convert the element's simplification level to its corresponding int value 
+		and compare with the profile's simplification level*/
 		if(simplicficationFromStringToInt( element.getAttribute("AUI-simplification") ) > simplificationValue ){
 			consoleLog("element "+element+ " hidden: ");
+			/*hide the element:*/
 			element.hidden = true;
 			$(element).attr("aria-hidden","true");
 		}
@@ -169,23 +206,42 @@ function simplicficationFromStringToInt(simplificationString){
 	return simplificationString;
 }
 
+
 /**
- * check for elements with autcomplete and inside their scope checj for elements with relevant 'name' values and apply changes.
+ * SCOPE elements functions:
+ * scope elements are special elements we want to change in case of
+ * combination of 2 nested elements with certain attributes and atribute values. 
+ * i.e, if we have autocomplete= "on" and name="somename" inside its scope,
+ * we would like to make some changes(apply object-value changes from the profile).
+ * Same goes for 'itemtype' with 'itemprop' inside its scope.
+ * 
+ */
+
+/**
+ * check for elements with attribute 'autcomplete' and inside their scope check for elements
+ * with relevant 'name' values and apply changes.
  * todo: make generic(for scope changes)
  * @param {*} autocomplete 
  */
 function personalizeAutocomplete(autocomplete) {
 	consoleLog("personalize Autocomplete called");
+	/*query for all elements in the dom with 'autocomplete'*/
 	var elementsWithItemtype = document.querySelectorAll('[autocomplete = "on" ]');
 	var elementsWithItemtypeList = [...elementsWithItemtype]; //convert nodelist to array
+	/*iterate over the queried elemts and check their scopes for 'name' values */
 	elementsWithItemtypeList.forEach(element => {
+			/*change name values */
 			personalizeNamesInsideAutocomplete(element);
 	});
 }
+/**
+ * is used inside personalizeAutocomplete().
+ * gets elemets with autocomplete = "on" attr, and scans its scope for input elementts with relevant name values
+ * (relevant- has an object-value in the profile.)  
+ * @param {*} elementWithAutoComplete 
+ */
 function personalizeNamesInsideAutocomplete(elementWithAutoComplete) {
-
 	consoleLog("personalize autocomplete for " + elementWithAutoComplete + " called");
-
 	var elementsWithName = elementWithAutoComplete.querySelectorAll('input[name]:not([autocomplete="off"])');
 	var elementsWithNameList = [...elementsWithName];
 	consoleLog("elements with name list size: " + elementsWithNameList.length);
@@ -196,19 +252,32 @@ function personalizeNamesInsideAutocomplete(elementWithAutoComplete) {
 
 }
 
+/**
+ * is used inside personalizeNamesInsideAutocomplete()
+ * get an element with attr 'name' (inside autocomplete scope), checks if there's an object-value
+ * for this 'name' value,and if so,  applies the changes.
+ * 
+ * @param {*} elementWithName 
+ */
 function personalizeAutoCompleteNameElement(elementWithName){
 	var nameVal = elementWithName.getAttribute("name");
 	consoleLog("personalize autocomplete element. nameVal: " +nameVal +" called");
 	//todo: take the itemtype value and apply its settings to the ekement its declared on) 
-	var changeAttrVal = window.profile.scopes.autocomplete["on"].names[nameVal];
-
+	if(isDefined(window.profile.scopes) && isDefined(window.profile.scopes.autocomplete) &&  isDefined(window.profile.scopes.autocomplete["on"] ) ){
+		var changeAttrVal = window.profile.scopes.autocomplete["on"].names[nameVal];
+	}
 	if (isDefined(changeAttrVal)) {
 		consoleLog("auticomplete name- changeAttrVal.inherits: "+changeAttrVal.inherits);
 		applySettingsOnElement(elementWithName, changeAttrVal);
 	}
 }
 
-//same as autocomplete, scoped changes
+/**
+ * check for elements with attribute 'itemtype' and inside their scope check for elements
+ * with relevant 'itemprop' values and apply changes.
+ * todo: make generic(for scope changes)
+ * @param {*} itemtypes 
+ */
 function personalizeItemScopes(itemtypes) {
 	consoleLog("personalize itemScopes called");
 
@@ -218,7 +287,12 @@ function personalizeItemScopes(itemtypes) {
 		personalizeItempropsInsideType(element);
 	});
 }
-
+/**
+ * is used inside personalizeItemscopes().
+ * gets elemets with itemtype  attr, and scans its scope for input elementts with relevant name values
+ * (relevant- has an object-value in the profile under the itemtype)  
+ * @param {*} elementWithItemtype 
+ */
 function personalizeItempropsInsideType(elementWithItemtype) {
 
 	var typeVal = elementWithItemtype.getAttribute("itemtype");
@@ -233,7 +307,13 @@ function personalizeItempropsInsideType(elementWithItemtype) {
 		});
 	}
 }
-
+/**
+* is used inside personalizeNItempropsInsideType
+ * get an element with attr 'itemprop' (inside autocomplete scope), checks if there's an object-value
+ * for this 'name' value,and if so,  applies the changes.
+ * @param {} element 
+ * @param {*} typeVal 
+ */
 function personalizeItempropElement(element, typeVal) {
 	var propVal = element.getAttribute("itemprop");
 	consoleLog("personalize itemprop element. typeval: "+typeVal+",proprVal "+propVal +" called");
@@ -245,7 +325,8 @@ function personalizeItempropElement(element, typeVal) {
 	}
 }
 /**
- * iterate over this attribute in the profile, and check for elements that has it and also
+ * iterate over the tagnames in the profile, and check for elements thatare of that element, 
+ * and change them usiiing the object-value from the proifle
  * @param {*} tagnames 
  */
 function personalizeTagnames(tagnames) {
@@ -256,7 +337,11 @@ function personalizeTagnames(tagnames) {
 		personalizeTagname(tagnames[tagname]);
 	});
 }
-
+/**
+ * used inside personalizeTagnames().
+ * personalize specific tagname- a
+ * @param {*} tagname 
+ */
 function personalizeTagname(tagname) {
 	consoleLog("personalize tagname called on: " + tagname.name);
 	if (isDefined(tagname.name)) {
@@ -267,13 +352,17 @@ function personalizeTagname(tagname) {
 		});
 	}
 }
+/** <css changes> */
 /**
  * apply page css settings
+ * 1.cssFileLink: check if the profile supplies a .css file, if so add this file to the DOM.
+ * 2.cssSettings: check if the profile supplies css settings, if so add them to the DOM.
+ * 
  * @param {*} cssSettings 
  */
 function personalizeCSS(cssSettings) {
 
-	//personalize css:
+	/* 1.cssFileLink: check if the profile supplies a .css file, if so add this file to the DOM.*/
 	var cssFile = cssSettings.cssFileLink;
 	consoleLog("css settings css file: " + cssFile);
 
@@ -282,6 +371,7 @@ function personalizeCSS(cssSettings) {
 		addCSSFile(cssFile, parseInt(linkIndex));
 		consoleLog("add new css called: " +cssFile);
 	}
+	/*2.cssSettings: check if the profile supplies css settings, if so add them to the DOM.*/
 	var cssBodySettings = profile.css.cssSettings;
 	if (isDefined(cssBodySettings)) {
 		consoleLog("set body css called on " + cssBodySettings);
@@ -291,12 +381,13 @@ function personalizeCSS(cssSettings) {
 }
 
 
-//change css file
-function addCSSFile(cssFile, cssLinkIndex) {
+/**
+ * add css file to the project
+ * @param {*} cssFile 
+ */
+function addCSSFile(cssFile) {
 
 	var newlink = document.createElement("LINK");
-	// var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-	// var newlink = document.createElement("link");36
 	newlink.setAttribute("rel", "stylesheet");
 	newlink.setAttribute("type", "text/css");
 	newlink.setAttribute("href", cssFile);
@@ -304,11 +395,12 @@ function addCSSFile(cssFile, cssLinkIndex) {
 	document.getElementsByTagName("head")[0].appendChild(newlink);
 }
 
+/** </css changes> */
 
-
+/** <personzlie Attributes **/
 /**
  * iterate over the attributes in the profile and change the relevant elements in the DOM 
- * according to the value and settings.
+ * according to the object-value and settings.
  * @param {*} attributes 
  */
 function personalizeAttributes(attributes) {
@@ -330,17 +422,21 @@ function personalizeAttribute(attribute) {
 	consoleLog("new version personalizeAttribute called on: " + attribute.global_settings.name);
 
 	var attributeName = attribute.global_settings.name;
-	//iterate over all elements with field 'attribute.name' in the DOM
+	/*iterate over all elements with field 'attribute.name' in the DOM*/
 	var elementsWithAttr = document.querySelectorAll('[' + attributeName + ']');
 	elementsWithAttr.forEach(element => {
 		var attrValName = element.getAttribute(attributeName);
 		consoleLog("attr: " + attributeName + "= attrValName: " + attrValName);
 		var attrVal = attribute[attrValName];
 		personalizeAttributeValue(element, attrVal);
-
 	});
 }
-
+/**
+ * called inside personalAttribute
+ * check if element is defined, apply changes in it
+ * @param {*} element 
+ * @param {*} attrVal 
+ */
 function personalizeAttributeValue(element, attrVal) {
 	if (!isDefined(attrVal)) {
 		consoleLog("illegal attribute value " + attrVal + " in " + element);
@@ -348,22 +444,22 @@ function personalizeAttributeValue(element, attrVal) {
 	}
 	applySettingsOnElement(element, attrVal);
 }
+/** </personzlie Attributes **/
+
 /**
  * apply settings(inside attrVal) on elements- includes inheritance!
+ * This i the function where the actual changes take place(some in functions inside this one)
  * @param {*} element 
- * @param {*} attrVal 
+ * @param {*the object-value from the profile json} attrVal 
  */
 function applySettingsOnElement(element, attrVal) {
 
-	/*check if element is of relevant type (from profile)  */
+	/*check if element is of relevant type (from profile). 
+	Every object-value can specify tagnames for types of elements it will apply to.
+	*/
 	if(isDefined(attrVal.type)){
 		var isType = false;
 		var elementType = element.tagName.toUpperCase();
-
-
-/**
- * document the json
- */
 
 		//check if relevant type:
 		for(var i=0; i < attrVal.type.length; i++){
@@ -389,7 +485,9 @@ function applySettingsOnElement(element, attrVal) {
 		}
 
 	}
-	/*check if attribute value inherits from a different value in the profile  */
+	/*check if attribute value inherits from a different value in the profile 
+	it is possible to sspecify in the inherits field a different object-value (in the profile) to refer to for the changes.
+	*/
 	if (isDefined(attrVal.inherits)) {
 		consoleLog("inherits called on element: "+element+" with attr val: "+attrVal.name);
 		var attributeName = attrVal.inherits.attributeName;
@@ -403,16 +501,19 @@ function applySettingsOnElement(element, attrVal) {
 		var settings = attrVal;
 		consoleLog("apply settings: " + settings + " on: " + element);
 		
-		//apply field changes: 
-		//todo: changee name to : attribute values
+		/*apply attribute values:
+		if specified in the object value, add atributes and their values to the element.
+		*/
 		applyAttributeValuesChanges(element,settings);
-
-		//apply css changes:
+		/*apply css changes from object-value:*/
 		if (isDefined(settings.css)) {
 			var styleSettings = settings.css;
 			setCSS(element, styleSettings);
 		}
-		//change text and symbol:
+		
+		/*change text and symbol:
+		if specified in the object-value, insert text and/or symbol to the dom.
+		*/
 		insertImage(element,settings);
 
 		// add/change shortcut (accesskey)
@@ -438,26 +539,43 @@ function insertImage(element, settings) {
 		consoleLog("inside insert image");
 		var newImg = document.createElement('img');
 		newImg.setAttribute("src", settings.Symbol.url);
+		/* add a border to the image */
 		addBorderToImg(newImg);
+		/* if specified in the object value's Symbol section, add atributes and their values to the element. */
 		applySymbolAttributeValuesChanges(newImg,settings.Symbol);
+		
+		
+		/** <image size:>**/
+
+		/* apply css changes form profile, if specified
+		this class is mainly used to share image sizes between different added symbols in the profile */
 		if (isDefined(settings.Symbol.css_class)) {
 			consoleLog("inside css_class: "+settings.name);
 			newImg.setAttribute("class", settings.Symbol.css_class);
-		} else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.width)) {
+		} 
+		/*
+		if a class isn't defined, it's possible to read fixed height and width from the object-value in the profile.
+		*/
+		else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.width)) {
 			consoleLog("inside h/w: "+settings.name);
 			$(newImg).css({ height: settings.Symbol.height, width: settings.Symbol.width });
-		} else {
+		} 
+		/* if no sizes are decalared in the process, size the image in accordance to the original content size: */
+		else {
 			consoleLog("inside auto size: "+settings.name+"-element height: "+ $(element).height());
 			$(newImg).css({ height: $(element).height()*2, width: 'auto' });
 		}
+		/** </image sizes> **/
+
+		/**Symbol insertion type: determine how to insert the image change- tooltip, replace the text, append before the text, append after the text(default) **/
 		if (!isDefined(settings.Symbol.symbol_insertion_type)) {
 			consoleLog("inside undefined symbol_insertion_type: "+settings.name+" id:"+$(element).attr("id"));
 			//TODO: what should be the default?
-			var label = $('[for="'+$(element).attr("id")+'"]');	
+
 			/**
 			 * check the "for" attr for the id of the element to add in image to.
 			 */
-
+			var label = $('[for="'+$(element).attr("id")+'"]');	
 			if(isDefined(label[0])){
 				$(newImg).prependTo(label[0])
 			}else{
@@ -465,25 +583,35 @@ function insertImage(element, settings) {
 				$(newImg).prependTo(element);
 			}
 		} else {
+			/* replace the image, no text */
 			if (settings.Symbol.symbol_insertion_type === "replace") {
 				consoleLog("inside symbol_insertion_type === replace: " + settings.name);
 				$(element).html('');
 				$(newImg).appendTo(element);
-			} else if (settings.Symbol.symbol_insertion_type === "tooltip") {
+
+
+			} 
+			/* tooltip- add the image as tooltip */
+			else if (settings.Symbol.symbol_insertion_type === "tooltip") {
 				consoleLog("image tooltip called for: " + settings.name);
+				/*add tooltip with newImg to element  */
 				altAddToolTip(element, newImg, settings);
-			} else if (settings.Symbol.symbol_insertion_type === "before") {
+			} 
+			/* before- insert the newimg before the current element*/
+			else if (settings.Symbol.symbol_insertion_type === "before") {
 				consoleLog("inside symbol_insertion_type === before: " + settings.name);
 				if (isDefined(settings.text)) {
 					$(element).html(settings.text);
 				}
+
+			/**
+			 * check the "for" attr for the id of the element to add in image to.
+			 */
 				var label = $('[for="' + $(element).attr("id") + '"]');
 				if (isDefined(label[0])) {
 					consoleLog("with label: " + settings.name);
-					// $("  ").prependTo(label[0])
-					$(newImg).prependTo(label[0])
+					$(newImg).prependTo(label[0]); //todo: insert before?
 				} else {
-					// $("  ").prependTo(element);
 					$(newImg).insertBefore(element);
 				}
 			}
@@ -491,6 +619,10 @@ function insertImage(element, settings) {
 		consoleLog(settings.name + " settings:\ninner: " + element.innerHTML + "\nimage sizes are: h:" + $(newImg).height() + " w:" + $(newImg).width());
 	}
 }
+/**
+ * addBorderToImg()
+ * @param {*} img 
+ */
 function addBorderToImg(img){
 	$(img).css({"background-color":"white","border":"#000000 3px outset"/*,"padding":"10%"*/});
 }
@@ -527,6 +659,9 @@ function altAddToolTip(element, newImg,settings) {
 		$(p).appendTo(span);
 	}
 
+	/**
+	 * define mouse and keybored show/hide functionality for the tooltip
+	 */
 	$(document).ready(function () {
 		consoleLog("on ready hide image called: " + spanId);
 		hideImg(span);
@@ -565,11 +700,7 @@ function altAddToolTip(element, newImg,settings) {
 			return false;
 		}
 	});
-
 	//todo: decide how to add with tooltip_settings
-
-	// element.appendChild(span);
-
 }
 
 function hideImg(img){
@@ -604,7 +735,8 @@ function setCSS(element, settings) {
 }
 
 /**
- * add classes 
+ * add classes.
+ * this css classes are for defining how the tooltip looks like.
  * 
  * todo: make it generic and extendable, read fro mthe profile/different file
  */
@@ -660,9 +792,12 @@ function createCssClass(className,propertiesStr){
 	document.getElementsByTagName('head')[0].appendChild(style);
 	// document.getElementById('someElementId').className = ;
 }
-
-
-
+/**
+ * check if the click event(the keyboared keys clicked) match the profile deifned keys.
+ * if it does return true, otherwie false.
+ * @param {*} event 
+ * @param {*} keys 
+ */
 function isKeys(event,keys){
 	consoleLog("is keys called: "+event.which+" : "+keys);
 	if(!isDefined(keys)){
@@ -681,14 +816,21 @@ function isKeys(event,keys){
 		return event.which == keys.charCodeAt(0);
 	}
 }
-
+/**
+ * return true if variable is not: null,undefined or empty.
+ * @param {*} variable 
+ */
 function isDefined(variable) {
 	if (variable != null && variable != undefined && variable != "")
 		return true;
 	return false;
 
 }
-
+/**
+ * return true if modifier button was part of the keybored click event
+ * @param {*keyboard modifier string(Alt,Ctrl,Shift)} modifierStr 
+ * @param {*click event} event 
+ */
 function checkModifier(modifierStr,event){
 
 	if(modifierStr === "Shift" && event.shiftKey){
@@ -703,6 +845,12 @@ function checkModifier(modifierStr,event){
 	return false;
 }
 
+/**
+ * NOT USED YET
+ * determine location of tooltip span to avoid zIndex bug
+ * @param {*} span 
+ * @param {*} element 
+ */
 function positionSpan(span,element){
 
 	// var addToTop = -1.5*element.height;
@@ -724,7 +872,9 @@ function positionSpan(span,element){
 	// span.style.top = top_offset + addToTop;
 	// span.style.left = left_offset +addToLeft;
 }
-
+/**
+ * look for aui-distraction elements in the dom and act accordingly.
+ */
 function personalizeDistraction() {
 
 	/*animations, auto-starting, moving, ad, message, chat , overlay, popup

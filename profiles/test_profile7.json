@@ -11,7 +11,9 @@
             }
         ]
     },
-    "athena-icon": {
+
+    "athena-icon":{
+
         "page": {
             "name": "page",
             "type": [],
@@ -22,6 +24,7 @@
             "text": "",
             "Symbol": {
                 "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/image1_noun.png",
+                
                 "creator": {
                     "name": "Jardson Almeida, The Noun Project",
                     "url": ""
@@ -29,14 +32,9 @@
                 "width": "50px",
                 "height": "30px",
                 "margin": "",
-                "padding": "",
-                "symbol_attribute_values_changes": {
-                    "aria-label": "Personalize page icon"
-                }
+                "padding": ""
             },
-            "attribute_values_changes": {
-                "aria-hidden": "false"
-            },
+            "@aria-hidden": "false",
             "css": [
                 {
                     "propertyName": "",
@@ -54,6 +52,7 @@
             "text": "",
             "Symbol": {
                 "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/tooltip1_noun.png",
+                
                 "creator": {
                     "name": "Jardson Almeida, The Noun Project",
                     "url": ""
@@ -61,14 +60,9 @@
                 "width": "50px",
                 "height": "30px",
                 "margin": "",
-                "padding": "",
-                "symbol_attribute_values_changes": {
-                    "aria-label": "Personalize tooltip icon"
-                }
+                "padding": ""
             },
-            "attribute_values_changes": {
-                "aria-hidden": "false"
-            },
+            "@aria-hidden": "false",
             "css": [
                 {
                     "propertyName": "",
@@ -137,7 +131,8 @@
         }
     },
     "attributes": {
-        "role": {
+
+        "role":{
             "global_settings": {
                 "name": "role"
             },
@@ -146,7 +141,7 @@
                 "type": [],
                 "inherits": "",
                 "shortcut": "",
-                "longdesc": "role=complementary",
+                "longdesc": "role=complemetary",
                 "tooltip": "",
                 "text": "",
                 "Symbol": {
@@ -158,15 +153,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Complementary"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "true",
-                    "anyfield": "somevalue"
-                },
+                "@aria-hidden": "true",
                 "css": [
                     {
                         "propertyName": "",
@@ -196,14 +185,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Compose"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -229,14 +213,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Delete"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -263,14 +242,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Help"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -288,7 +262,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/settings1_noun.png",
-                    "symbol_insertion_type": "replace",
+                    "symbol_insertion_type":"replace",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -296,14 +270,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Settings"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -328,14 +297,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Next"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -360,14 +324,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Previous"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -392,14 +351,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Table of contents"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -424,14 +378,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Submit"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -456,14 +405,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Confirm"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -488,14 +432,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Undo"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -520,14 +459,36 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Cancel"
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
                     }
+                ]
+            },
+            "cancel": {
+                "name": "cancel",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "Cancel",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/cancel1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -552,14 +513,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Reset"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -584,14 +540,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Label"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -616,14 +567,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Buy"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -648,14 +594,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Checkout"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -680,14 +621,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Add"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -712,14 +648,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Move"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -744,14 +675,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Save"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -776,14 +702,36 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Send"
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
                     }
+                ]
+            },
+            "send": {
+                "name": "send",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "Send",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/send1_noun_a1.png",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -808,14 +756,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Close"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -840,14 +783,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "More"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -872,14 +810,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Print"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -904,14 +837,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Received"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -936,14 +864,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Sent"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -968,14 +891,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Edit"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1000,14 +918,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Forward"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1032,14 +945,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Reply"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1064,14 +972,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Upload"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1096,14 +999,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Download"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1128,14 +1026,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Connect"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1160,14 +1053,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Open"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1192,14 +1080,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "New"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1224,14 +1107,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Mode"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1256,14 +1134,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Increase"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1288,14 +1161,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Decrease"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1320,14 +1188,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Play"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1352,14 +1215,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Pause"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1384,14 +1242,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Captions"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1416,14 +1269,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Mute"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1448,14 +1296,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Volume"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1480,14 +1323,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Channel"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1512,14 +1350,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Temperature"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1544,14 +1377,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Brightness"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1576,14 +1404,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Profile"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1608,14 +1431,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Expand"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1640,14 +1458,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Refresh"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1672,14 +1485,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Properties"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1704,14 +1512,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Cut"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1736,14 +1539,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Copy"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1768,14 +1566,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Paste"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1800,14 +1593,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Color"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1832,14 +1620,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Date"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1864,14 +1647,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Remove"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1896,14 +1674,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Right"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1928,14 +1701,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Left"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1958,7 +1726,7 @@
                 "text": "Type here to Search",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/search1_noun.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type":"before",
                     "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
@@ -1967,14 +1735,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Search"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -1992,7 +1755,7 @@
                 "text": "Type here to Search",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/name1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type":"before",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2000,14 +1763,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Name"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2015,6 +1773,7 @@
                     }
                 ]
             },
+            
             "honorificPrefix": {
                 "name": "honorificPrefix",
                 "type": [],
@@ -2025,7 +1784,7 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/honorificPrefix1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type":"before",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2033,14 +1792,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Honorific Prefix"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2066,14 +1820,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Given Name"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2099,14 +1848,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Additional name"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2120,7 +1864,7 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "Additional Name Initial",
+                "tooltip": "additionalNameInitial",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/additionalNameInitial1_noun_a1.png",
@@ -2132,14 +1876,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Additional Name Initial"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2165,14 +1904,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Family name"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2198,14 +1932,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Honnorific Suffix"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2231,14 +1960,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Nickname"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2264,14 +1988,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Street address"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2297,14 +2016,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "City"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2330,14 +2044,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Area"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2363,13 +2072,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Postal Code"
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2395,14 +2100,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Country"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2428,14 +2128,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Fax"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2461,14 +2156,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Email"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2494,14 +2184,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Tel"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2527,14 +2212,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "ccName"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2560,14 +2240,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Language"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2593,14 +2268,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Birthday"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2626,14 +2296,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Currency"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2659,14 +2324,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Cost"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2692,14 +2352,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Topic"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2725,14 +2380,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Comment"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2758,14 +2408,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Subject"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2791,14 +2436,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Answer"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2824,14 +2464,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Organization"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2857,14 +2492,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Position"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2890,14 +2520,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Sex"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2923,14 +2548,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Gender"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2956,14 +2576,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Url"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -2989,14 +2604,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Photo"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3020,7 +2630,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",
                     "css_class": "aui_header_images",
-                    "symbol_insertion_type": "replace",
+                    "symbol_insertion_type":"replace",
                     "creator": {
                         "name": "Jardson Almeida, The Noun Project",
                         "url": ""
@@ -3028,14 +2638,9 @@
                     "width": "100",
                     "height": "250",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Go to Homepage"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3043,6 +2648,7 @@
                     }
                 ]
             },
+            
             "signin": {
                 "name": "signin",
                 "type": [],
@@ -3061,14 +2667,9 @@
                     "width": "100",
                     "height": "250",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Sign in"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3093,14 +2694,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Sign out"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3126,14 +2722,9 @@
                     "width": "100",
                     "height": "300",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Email us"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3160,14 +2751,9 @@
                     "width": "100",
                     "height": "180",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "About us"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3196,14 +2782,9 @@
                     "width": "100",
                     "height": "180",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "contact us"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3228,14 +2809,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Phone us"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3264,14 +2840,9 @@
                     "width": "100",
                     "height": "180",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Map of site"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3297,14 +2868,9 @@
                     "width": "60",
                     "height": "60",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Information about Accessibility"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3330,14 +2896,9 @@
                     "width": "60",
                     "height": "60",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Pick language"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3362,14 +2923,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Tools"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3394,14 +2950,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Help"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3426,14 +2977,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Chat"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3458,14 +3004,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Terms"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3484,7 +3025,7 @@
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/services1_noun_a1.png",
                     "css_class": "aui_header_images",
-                    "symbol_insertion_type": "replace",
+                    "symbol_insertion_type":"replace",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -3492,14 +3033,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Services"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3524,14 +3060,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Products"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3556,14 +3087,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Comment"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3588,14 +3114,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Language"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3620,14 +3141,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Register"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3652,14 +3168,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Social"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3684,14 +3195,9 @@
                     "width": "",
                     "height": "",
                     "margin": "",
-                    "padding": "",
-                    "symbol_attribute_values_changes": {
-                        "aria-label": "Post"
-                    }
+                    "padding": ""
                 },
-                "attribute_values_changes": {
-                    "aria-hidden": "false"
-                },
+                "@aria-hidden": "false",
                 "css": [
                     {
                         "propertyName": "",
@@ -3722,14 +3228,9 @@
                             "width": "",
                             "height": "",
                             "margin": "",
-                            "padding": "",
-                            "symbol_attribute_values_changes": {
-                                "aria-label": "Name"
-                            }
+                            "padding": ""
                         },
-                        "attribute_values_changes": {
-                            "aria-hidden": "false"
-                        },
+                        "@aria-hidden": "false",
                         "css": [
                             {
                                 "propertyName": "",
@@ -3763,14 +3264,9 @@
                         "width": "",
                         "height": "",
                         "margin": "",
-                        "padding": "",
-                        "symbol_attribute_values_changes": {
-                            "aria-label": "Value"
-                        }
+                        "padding": ""
                     },
-                    "attribute_values_changes": {
-                        "aria-hidden": "false"
-                    },
+                    "@aria-hidden": "false",
                     "css": [
                         {
                             "propertyName": "",
@@ -3800,14 +3296,9 @@
                             "width": "",
                             "height": "",
                             "margin": "",
-                            "padding": "",
-                            "symbol_attribute_values_changes": {
-                                "aria-label": "First name"
-                            }
+                            "padding": ""
                         },
-                        "attribute_values_changes": {
-                            "aria-hidden": "false"
-                        },
+                        "@aria-hidden": "false",
                         "css": [
                             {
                                 "propertyName": "color",
@@ -3838,14 +3329,9 @@
                         "width": "",
                         "height": "",
                         "margin": "",
-                        "padding": "",
-                        "symbol_attribute_values_changes": {
-                            "aria-label": "on"
-                        }
+                        "padding": ""
                     },
-                    "attribute_values_changes": {
-                        "aria-hidden": "false"
-                    },
+                    "@aria-hidden": "false",
                     "css": [
                         {
                             "propertyName": "",
