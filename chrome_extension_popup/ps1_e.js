@@ -89,7 +89,7 @@ function createCORSRequest(method, url) {
 function personalizePage(profile) {
 	/*editPopup() = read the popup changes from the profile and apply them*/
 	editPopup(profile);
-	consoleLog("personalize page called for profile: " + profile.name);
+	consoleLog("personalize page called for profile: " + profile.global_settings.name);
 	/*AddTooltipClasses() = add classes that are relevant to tooltip changes
 	(todo: make dynamic and from profile)*/
 	addTooltipCssClasses();
@@ -740,37 +740,45 @@ function setCSS(element, settings) {
  * 
  * todo: make it generic and extendable, read fro mthe profile/different file
  */
-function addTooltipCssClasses(){
-	createCssClass('.aui_tooltip',
-	// 'margin:auto;'+
-	// 'text-align:center;'+
-	'background:black; '+
-	'font-size:14px;'+
-	'font-weight:regular;'+
-	'position:absolute;'+
-	// 'top:40px;'+
-	// 'right:20%;'+
-	// 'left:100%;'+
-	'overflow:visible;'+
-	'padding:17px 17px 0px;'+
-	'color:#fff;'+
-	'-webkit-border-radius:7px;'+
-	'-moz-border-radius:7px;'+
-	'border-radius:7px;'+
-	'-webkit-background-clip:padding-box;'+
-	'-moz-background-clip:padding;'+
-	'background-clip:padding-box;'+
-	'margin-bottom: 20%;'+
-	'text-align:center;'+
-	'text-decoration:none;'+
-	'box-shadow:0 0 3px #000;'+
-	'z-index:99999999;'+
-	// 'vertical-align:middle;'+
-	// 'justify-content:center;'+
-	// 'flex-direction: column;'+
-	// 'margin-top:auto;margin-bottom:auto;'
-	'align-items:center;'
-	);
+function addTooltipCssClasses() {
+
+	var globalTooltipSettingsMode = window.profile.global_settings.global_tooltip_settings_mode;
+	var globalTooltipSettings = window.profile.global_settings.global_tooltip_settings;
+	if ( isDefined(globalTooltipSettings) && 
+	( (!isDefined(globalTooltipSettingsMode)) || globalTooltipSettingsMode === "true") ) {
+		createCssClassFromJson(globalTooltipSettings);
+	} else {
+		createCssClass('.aui_tooltip',
+			// 'margin:auto;'+
+			// 'text-align:center;'+
+			'background:black; ' +
+			'font-size:14px;' +
+			'font-weight:regular;' +
+			'position:absolute;' +
+			// 'top:40px;'+
+			// 'right:20%;'+
+			// 'left:100%;'+
+			'overflow:visible;' +
+			'padding:17px 17px 0px;' +
+			'color:#fff;' +
+			'-webkit-border-radius:7px;' +
+			'-moz-border-radius:7px;' +
+			'border-radius:7px;' +
+			'-webkit-background-clip:padding-box;' +
+			'-moz-background-clip:padding;' +
+			'background-clip:padding-box;' +
+			'margin-bottom: 20%;' +
+			'text-align:center;' +
+			'text-decoration:none;' +
+			'box-shadow:0 0 3px #000;' +
+			'z-index:99999999;' +
+			// 'vertical-align:middle;'+
+			// 'justify-content:center;'+
+			// 'flex-direction: column;'+
+			// 'margin-top:auto;margin-bottom:auto;'
+			'align-items:center;'
+		);
+	}
 	createCssClass('.aui_tooltip_parent',
 	"position:relative;");
 	createCssClass('[aria-hidden="true"]', 'display: none;');
@@ -791,6 +799,14 @@ function createCssClass(className,propertiesStr){
 	style.innerHTML = className+' { '+propertiesStr+' }';
 	document.getElementsByTagName('head')[0].appendChild(style);
 	// document.getElementById('someElementId').className = ;
+}
+function createCssClassFromJson(className,propertiesJson){
+	consoleLog("create css class from json called")
+	propertiesJsonKeys = Object.keys(propertiesJson);
+	var propertiesStr = "";
+	propertiesJsonKeys.forEach(cssClassPropertyKey=>{
+		propertiesStr+= cssClassPropertyKey+":"+propertiesJson[cssClassPropertyKey]+";"
+	});
 }
 /**
  * check if the click event(the keyboared keys clicked) match the profile deifned keys.

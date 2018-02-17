@@ -109,6 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	}
 });
+/**
+ ); * true if variable is defined, if null/empty/undefined-false
+ ); * @param {*variable to determine whether defined or not} variable 
+ ); */
 function isDefined(variable) {
 	if (variable != null && variable != undefined && variable != "")
 		return true;
