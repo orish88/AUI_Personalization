@@ -8,7 +8,7 @@
         "global_added_image_height":"",
         "global_added_image_width":"",
         "global_tooltip_settings_mode":"true",
-        "tooltip_settings": {
+        "global_tooltip_settings": {
                 "background": "black",
                 "font-size": "14px",
                 "font-weight": "regular",

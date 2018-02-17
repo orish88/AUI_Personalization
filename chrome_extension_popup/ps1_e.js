@@ -744,6 +744,8 @@ function addTooltipCssClasses() {
 
 	var globalTooltipSettingsMode = window.profile.global_settings.global_tooltip_settings_mode;
 	var globalTooltipSettings = window.profile.global_settings.global_tooltip_settings;
+	consoleLog("global tooltip settings: "+globalTooltipSettings);
+	consoleLog("global tooltip settings mode: "+globalTooltipSettingsMode)
 	if ( isDefined(globalTooltipSettings) && 
 	( (!isDefined(globalTooltipSettingsMode)) || globalTooltipSettingsMode === "true") ) {
 		createCssClassFromJson(globalTooltipSettings);
