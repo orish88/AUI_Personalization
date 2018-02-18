@@ -60,7 +60,7 @@ function makeCorsRequest(url) {
 
 /**
  * Helper function for dowloading the json profile. 
- * Creates the CORS request to br used for the download.
+ * Creates the CORS request to be used for the download.
  * This function is called inside makeCorsRequest(url).
  * @param {*} method 
  * @param {*} url 
@@ -464,11 +464,13 @@ function applySettingsOnElement(element, attrVal) {
 		//check if relevant type:
 		for(var i=0; i < attrVal.type.length; i++){
 			var type = attrVal.type[i];
+
+			/*Tagnames can also be of syntax: 'not <some tagname>': */
 			if(type.startsWith("not")){
 				if(type.length < 5 ){
 					continue;
 				}
-				type = type.substring(4);
+				type = type.substring(4); //remove the "not ",to check the tagname in the 'not <tagname>' declaration
 				if(type.toUpperCase() === elementType){
 					consoleLog("in for: change revoked due to type missmatch:\neleType: "+elementType+"\ntype: "+type+"\nval: "+attrVal.name);
 					return;
@@ -526,8 +528,8 @@ function applySettingsOnElement(element, attrVal) {
 /**
  * get img from the settings if exists and insert it to the element, 
  * insertion way determined by profile(symbol_insertion_type)
- * @param {*} element 
- * @param {*} settings 
+ * @param {*element to insert an image to} element 
+ * @param {*object-value settings to determine how to create and add the image} settings 
  */
 
 function insertImage(element, settings) {
@@ -544,9 +546,7 @@ function insertImage(element, settings) {
 		/* if specified in the object value's Symbol section, add atributes and their values to the element. */
 		applySymbolAttributeValuesChanges(newImg,settings.Symbol);
 		
-		
 		/** <image size:>**/
-
 		/* apply css changes form profile, if specified
 		this class is mainly used to share image sizes between different added symbols in the profile */
 		if (isDefined(settings.Symbol.css_class)) {
@@ -629,26 +629,31 @@ function addBorderToImg(img){
 
 /**
  * create tooltip with newImg and add to element
- * @param {*} element 
- * @param {*} newImg 
- * @param {*} settings 
+ * @param {*the element t oadd the tooltip to} element 
+ * @param {*the img to add as tooltip} newImg 
+ * @param {*the object-value settings from the profile(for the text in settings.tooltip,if the tooltip has text)} settings 
  */
 function altAddToolTip(element, newImg,settings) {
-
+	/* create the tooltip: wrap the element in a div, add a span with the tooltip to that div */
+	/*Create the warrper div and the inside span and give each and id with the same number*/
 	var ctrStr = "" + gCtr++;
-	var divId = 'div' + ctrStr;
-	var spanId = 'span' + ctrStr;
+	var divId = 'div' + ctrStr; //e.g div15
+	var spanId = 'span' + ctrStr;//e.g span15 (same number as the div)
 	var divStr = '<div id="' + divId + '" </div>';
 	$(element).wrap(divStr);
 	var div = document.getElementById(divId);
+
+	/*add this css class to make the div's position:relative, to be the absolute tooltip's anchor */
 	$(div).addClass("aui_tooltip_parent");
+	/*Create the span and add it to the div */
 	var span = document.createElement("span");
 	$(span).appendTo(div);
 	$(span).attr("id",spanId);
 	$(element).attr("aria-describedby",spanId);  //accessibility
+	/* add the image to the span */
 	$(newImg).appendTo(span);
 	$(span).attr("role", "tooltip"); //accessibility
-	$(span).addClass("aui_tooltip");
+	$(span).addClass("aui_tooltip"); //a css class that defines how the tooltip looks and works
 	var oldElem = element;
 	element = div;
 	$(element).attr("tabindex","0");	
@@ -662,30 +667,36 @@ function altAddToolTip(element, newImg,settings) {
 	/**
 	 * define mouse and keybored show/hide functionality for the tooltip
 	 */
+
+	 /*hide the tooltip images when document is ready0 */
 	$(document).ready(function () {
 		consoleLog("on ready hide image called: " + spanId);
 		hideImg(span);
 	});
+	/* show tooltip when mouse is over element*/
 	$(element).mouseover(function () {
 		consoleLog("mouseover called");
 		showImg(span);
 	});
+		/* hide tooltip when mouse leaves element*/
 	$(element).mouseleave(function () {
 		consoleLog("mouseleave called");
+		/* check if element isnt focused by keyboared before hiding */
 		if (!($(element).is(":focus"))) {
 			hideImg(span);
 		}
 	});
-
+	/* show tooltip when keyboared focus is received*/
 	$(element).focus(function () {
 		consoleLog("focus called");
 		showImg(span);
 	});
+	/* hide tooltip when keyboared focus is removed*/
 	$(element).blur(function () {
 		consoleLog("focusout called");
 			hideImg(span);
 	});
-
+	/* show tooltip when (the profile defined) shortcut is pressed, hide when on ESC pressed*/
 	$(document.body).keydown(function (ev) {
 
 		if (isKeys(ev,settings.shortcut)) {
@@ -700,12 +711,11 @@ function altAddToolTip(element, newImg,settings) {
 			return false;
 		}
 	});
-	//todo: decide how to add with tooltip_settings
 }
 
 function hideImg(img){
 	$(img).attr("aria-hidden", "true");
-	$(img).addClass("hidden"); //accessibility old browser
+	$(img).addClass("hidden"); //accessibility for old browsers
 }
 function showImg(img){
 	$(img).attr("aria-hidden", "false");
@@ -737,18 +747,21 @@ function setCSS(element, settings) {
 /**
  * add classes.
  * this css classes are for defining how the tooltip looks like.
- * 
+ * If defined on profile (at  window.profile.global_settings.global_tooltip_settings and  
+ * window.profile.global_settings.global_tooltip_settings_mode  is "true") ), reads the changes form profile
  * todo: make it generic and extendable, read fro mthe profile/different file
  */
 function addTooltipCssClasses() {
 
+	/*Read the global tooltip ettings form the profile, if they exists use them to create the aui_tooltip class
+	this class determines how the tooltip is shown */
 	var globalTooltipSettingsMode = window.profile.global_settings.global_tooltip_settings_mode;
 	var globalTooltipSettings = window.profile.global_settings.global_tooltip_settings;
 	consoleLog("global tooltip settings: "+globalTooltipSettings);
 	consoleLog("global tooltip settings mode: "+globalTooltipSettingsMode)
 	if ( isDefined(globalTooltipSettings) && 
 	( (!isDefined(globalTooltipSettingsMode)) || globalTooltipSettingsMode === "true") ) {
-		createCssClassFromJson(globalTooltipSettings);
+		createCssClassFromJson('.aui_tooltip',globalTooltipSettings);
 	} else {
 		createCssClass('.aui_tooltip',
 			// 'margin:auto;'+
@@ -795,6 +808,11 @@ function addTooltipCssClasses() {
 	// );
 	
 }
+/**
+ * create and add a css calss to the dom
+ * @param {*class name of css class to add, syntax: ".classname"} className 
+ * @param {*string of css class properties code (e.g " color:black; height=100px;...  ")} propertiesStr 
+ */
 function createCssClass(className,propertiesStr){
 	var style = document.createElement('style');
 	style.type = 'text/css';
@@ -802,6 +820,11 @@ function createCssClass(className,propertiesStr){
 	document.getElementsByTagName('head')[0].appendChild(style);
 	// document.getElementById('someElementId').className = ;
 }
+/**
+ * 
+ * @param {*class name of css class to add, syntax: ".classname"} className 
+ * @param {*a json object with the css class properties in key:value pairs} propertiesJson 
+ */
 function createCssClassFromJson(className,propertiesJson){
 	consoleLog("create css class from json called")
 	propertiesJsonKeys = Object.keys(propertiesJson);
@@ -809,6 +832,7 @@ function createCssClassFromJson(className,propertiesJson){
 	propertiesJsonKeys.forEach(cssClassPropertyKey=>{
 		propertiesStr+= cssClassPropertyKey+":"+propertiesJson[cssClassPropertyKey]+";"
 	});
+	createCssClass(className,propertiesStr);
 }
 /**
  * check if the click event(the keyboared keys clicked) match the profile deifned keys.
@@ -821,6 +845,7 @@ function isKeys(event,keys){
 	if(!isDefined(keys)){
 		return false;
 	}
+	/* check if the profile defined keys are a combination of a modifier key + key, i.e Shift+A */
 	if(keys.indexOf("+") > -1){
 		var arr = keys.split("+").map(function(item) {
 			return item.trim();
@@ -891,7 +916,8 @@ function positionSpan(span,element){
 	// span.style.left = left_offset +addToLeft;
 }
 /**
- * look for aui-distraction elements in the dom and act accordingly.
+ * look for aui-distraction elements in the dom and act accordingly
+ * (hide them if they are from the distractions typesread form the profile).
  */
 function personalizeDistraction() {
 
@@ -921,7 +947,10 @@ Auto-changing (logs) third-party, offer ( includes suggestions). */
 	});
 }
 
-
+/**
+ * console.log for the text (encapsulated to be able to turn log off easily)
+ * @param {*} text 
+ */
 function consoleLog(text){
 	console.log(text);
 }

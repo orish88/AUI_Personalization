@@ -6,3 +6,41 @@ In the documentation i mentioned object-value:
 object-value:
     a set of settings inside the json which sspecifies how to change a element who's marked
     or contains something that makes him change.
+    aui-action:{...,
+
+            //here is the example object-value
+            "delete": { //the value of the attribute. this object value will change elements of tagname <a> that 
+            //have attribute aui-action = "delete" in them.
+                "name": "delete",
+                "type": [a],
+                "inherits": "",
+                "shortcut": "SHIFT + D",
+                "longdesc": "this button delete your work.",
+                "tooltip": "Delete",
+                "text": "delete",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/delete1_noun_a1.png",
+                    "css_class": "", //a class (uually added in the css file that's added with the profile) to determine sizes of images(and share them with other images)                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "", //optinal fixed width og image
+                    "height": "", //optional fixed height if img
+                    "margin": "",
+                    "padding": "",
+                    "symbol_attribute_values_changes": {
+                        "aria-label": "Delete"
+                    }
+                },
+                "attribute_values_changes": {
+                    "aria-hidden": "false"
+                },
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+
+    }
