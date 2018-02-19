@@ -19,7 +19,7 @@ if ( isDefined(profileJson) ) {
 }
 
 /** 
-* download JSON skin in url, and personalise page based on the settings in it 
+*calls functions for  download JSON skin in url, and personalise page based on the settings in it 
 **/ 
 function getPersonalization(url) {
 	if(!isDefined(url)){
@@ -27,11 +27,12 @@ function getPersonalization(url) {
 	}
 	consoleLog("ps1_e called: ");
 	//load json skin (profile) and run it
+	readLocalJson();
 	makeCorsRequest(url);
 }
 
 /**
- * This is where the actual json file download and parsing happens.
+ * This is where the actual json file download happens and parsing of the json.
  * It then calls personalizePage on the profile json object(called jsonSkin).
  * @param {*} url 
  */
@@ -63,7 +64,7 @@ function makeCorsRequest(url) {
  * Creates the CORS request to be used for the download.
  * This function is called inside makeCorsRequest(url).
  * @param {*} method 
- * @param {*} url 
+ * @param {*json url} url 
  */
 function createCORSRequest(method, url) {
 	var xhr = new XMLHttpRequest();
@@ -79,6 +80,13 @@ function createCORSRequest(method, url) {
 		xhr = null;
 	}
 	return xhr;
+}
+
+function readLocalJson(){
+	console.log("readlocaljson profile6- ");
+	$.getJSON("test_profile6.json", function(json) {
+		console.log("profile6:\n"+json); // this will show the info it in firebug console
+	});
 }
 
 /**
@@ -107,17 +115,21 @@ function personalizePage(profile) {
 		 and apply them to relevant elements*/
 		personalizeAttributes(profile.attributes);
 	}
-	if ( isDefined(profile.scopes) && isDefined(profile.scopes.itemtypes) ) {
-		/*personalizeItemScopes() = read the scope changes from the profile and apply them to relevant elements (itemtype/prop).
-		Scopes mean nested changes, relevant attribute inside some other attribute's scope
-		todo: make generic*/
-		personalizeItemScopes(profile.scopes.itemtypes);
+
+	if(isDefined(profile.scopes)){
+		personalizeAllScopedElements(profile.scopes);
 	}
-	if ( isDefined(profile.scopes) && isDefined(profile.scopes.autocomplete) ) {
-		/*personalizeAutocomplete() = read the scope changes from the profile and apply them to relevant elements (like autocomplete).
-		Scopes mean nested changes, relevant attribute inside some other attribute's scope*/
-		personalizeAutocomplete(profile.scopes.autocomplete);
-	}
+	// if ( isDefined(profile.scopes) && isDefined(profile.scopes.itemtypes) ) {
+	// 	/*personalizeItemScopes() = read the scoped changes only itemtypes from the profile and apply them to relevant elements (itemtype/prop).
+	// 	Scopes mean nested changes, relevant attribute inside some other attribute's scope
+	// 	todo: make generic*/
+	// 	personalizeItemScopes(profile.scopes.itemtypes);
+	// }
+	// if ( isDefined(profile.scopes) && isDefined(profile.scopes.autocomplete) ) {
+	// 	/*personalizeAutocomplete() = read the scope changes from the profile for auto complete and apply them to relevant elements (like autocomplete).
+	// 	Scopes mean nested changes, relevant attribute inside some other attribute's scope*/
+	// 	personalizeAutocomplete(profile.scopes.autocomplete);
+	// }
 	if( isDefined(profile.simplification)){
 		consoleLog("simplification level: "+simplificationLevel);
 		var simplificationLevel = profile.simplification;
@@ -217,6 +229,38 @@ function simplicficationFromStringToInt(simplificationString){
  * 
  */
 
+
+ function personalizeAllScopedElements(scopes){
+	/*Iterate over the scopes in the profile(the attribute 'parents') and look for elements with them */
+	scopeKeys = Object.keys(scopes);
+	scopeKeys.forEach(scopeItem=>{
+		personalizeSingleScopedElement(scopeItem,scopes[scopeItem]);
+	});
+
+ }
+
+ function personalizeSingleScopedElement(parentAttr,singleScopeItem){
+
+	var queryStr = "";
+	(Object.keys(singleScopeItem)).forEach(parentValue=>{
+		(Object.keys(singleScopeItemp[parentValue])).forEach(childAttr=>{
+			(Object.keys(singleScopeItemp[parentValue][childAttr])).forEach(childValue=>{
+				$('['+parentAttr+'='+parentValue+']').find('['+childAttr+'='+childValue+']').each(function() {
+					applySettingsOnElement($( this ), singleScopeItem[parentValue][childAttr][childValue]);
+				  });
+			});
+		});
+	});
+	
+ }
+
+
+
+function createAttrQueryStringForListOfVals(attr,vals){
+    var filter = '[' + attr + '="' + vals.split(',').join('"],[' + attr + '="') + '"]';
+    return filter;
+}
+
 /**
  * check for elements with attribute 'autcomplete' and inside their scope check for elements
  * with relevant 'name' values and apply changes.
@@ -307,6 +351,7 @@ function personalizeItempropsInsideType(elementWithItemtype) {
 		});
 	}
 }
+
 /**
 * is used inside personalizeNItempropsInsideType
  * get an element with attr 'itemprop' (inside autocomplete scope), checks if there's an object-value
@@ -448,20 +493,24 @@ function personalizeAttributeValue(element, attrVal) {
 
 /**
  * apply settings(inside attrVal) on elements- includes inheritance!
- * This i the function where the actual changes take place(some in functions inside this one)
+ * This is the function where the actual changes take place(some in functions inside this one)
  * @param {*} element 
- * @param {*the object-value from the profile json} attrVal 
+ * @param {*the object-value from the profile json as discribed in the devloper notes} attrVal 
  */
 function applySettingsOnElement(element, attrVal) {
 
-	/*check if element is of relevant type (from profile). 
-	Every object-value can specify tagnames for types of elements it will apply to.
+	/*check if element is of relevant tagname type (from profile). 
+	Every object-value(see DeveloperNotes) can specify tagnames for types of elements it will apply to.
+	if the type of the element and the type from the skin match continue. If not return
 	*/
 	if(isDefined(attrVal.type)){
 		var isType = false;
+
+		/*convert the tagname to upper case to avoid case thus simplifying string comparing(tagnames from profile will be uppercased as well) */
 		var elementType = element.tagName.toUpperCase();
 
-		//check if relevant type:
+		/*check if relevant type :
+		Loop over the tagname list in the profile*/
 		for(var i=0; i < attrVal.type.length; i++){
 			var type = attrVal.type[i];
 
@@ -952,7 +1001,7 @@ Auto-changing (logs) third-party, offer ( includes suggestions). */
  * @param {*} text 
  */
 function consoleLog(text){
-	console.log(text);
+	// console.log(text);
 }
 
 /**

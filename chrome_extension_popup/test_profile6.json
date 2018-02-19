@@ -3729,9 +3729,9 @@
             }
         },
         "scopes": {
-            "itemtype": {
+            "itemtypes": {
                 "http://schema.org/ItemList": {
-                    "itemprop": {
+                    "itemprops": {
                         "name": {
                             "name": "name",
                             "type": [],
@@ -3772,12 +3772,44 @@
                                 "attributeValue": "home"
                             }
                         }
+                    },
+                    "value": {
+                        "name": "http://schema.org/ItemList",
+                        "type": [],
+                        "inherits": "",
+                        "shortcut": "",
+                        "longdesc": "itemtype of type itemlist",
+                        "tooltip": "itemtype itemlist",
+                        "text": "itemtype itemlist",
+                        "Symbol": {
+                            "url": "",
+                            "creator": {
+                                "name": "",
+                                "url": ""
+                            },
+                            "width": "",
+                            "height": "",
+                            "margin": "",
+                            "padding": "",
+                            "symbol_attribute_values_changes": {
+                                "aria-label": "Value"
+                            }
+                        },
+                        "attribute_values_changes": {
+                            "aria-hidden": "false"
+                        },
+                        "css": [
+                            {
+                                "propertyName": "",
+                                "value": ""
+                            }
+                        ]
                     }
                 }
             },
             "autocomplete": {
                 "on": {
-                    "name": {
+                    "names": {
                         "fname": {
                             "name": "fname",
                             "type": [],
@@ -3815,6 +3847,38 @@
                             "type": [],
                             "tooltip": "last name tooltip"
                         }
+                    },
+                    "value": {
+                        "name": "on",
+                        "type": [],
+                        "inherits": "",
+                        "shortcut": "",
+                        "longdesc": "itemtype of type itemlist",
+                        "tooltip": "autocomplete (scope start,no name) tooltip",
+                        "text": "itemtype itemlist",
+                        "Symbol": {
+                            "url": "",
+                            "creator": {
+                                "name": "",
+                                "url": ""
+                            },
+                            "width": "",
+                            "height": "",
+                            "margin": "",
+                            "padding": "",
+                            "symbol_attribute_values_changes": {
+                                "aria-label": "on"
+                            }
+                        },
+                        "attribute_values_changes": {
+                            "aria-hidden": "false"
+                        },
+                        "css": [
+                            {
+                                "propertyName": "",
+                                "value": ""
+                            }
+                        ]
                     }
                 }
             }

@@ -3235,9 +3235,9 @@
         }
     },
     "scopes": {
-        "itemtypes": {
+        "itemtype": {
             "http://schema.org/ItemList": {
-                "itemprops": {
+                "itemprop": {
                     "name": {
                         "name": "name",
                         "type": [],
@@ -3273,39 +3273,12 @@
                             "attributeValue": "home"
                         }
                     }
-                },
-                "value": {
-                    "name": "http://schema.org/ItemList",
-                    "type": [],
-                    "inherits": "",
-                    "shortcut": "",
-                    "longdesc": "itemtype of type itemlist",
-                    "tooltip": "itemtype itemlist",
-                    "text": "itemtype itemlist",
-                    "Symbol": {
-                        "url": "",
-                        "creator": {
-                            "name": "",
-                            "url": ""
-                        },
-                        "width": "",
-                        "height": "",
-                        "margin": "",
-                        "padding": ""
-                    },
-                    "@aria-hidden": "false",
-                    "css": [
-                        {
-                            "propertyName": "",
-                            "value": ""
-                        }
-                    ]
                 }
             }
         },
         "autocomplete": {
             "on": {
-                "names": {
+                "name": {
                     "fname": {
                         "name": "fname",
                         "type": [],
@@ -3338,33 +3311,6 @@
                         "type": [],
                         "tooltip": "last name tooltip"
                     }
-                },
-                "value": {
-                    "name": "on",
-                    "type": [],
-                    "inherits": "",
-                    "shortcut": "",
-                    "longdesc": "itemtype of type itemlist",
-                    "tooltip": "autocomplete (scope start,no name) tooltip",
-                    "text": "itemtype itemlist",
-                    "Symbol": {
-                        "url": "",
-                        "creator": {
-                            "name": "",
-                            "url": ""
-                        },
-                        "width": "",
-                        "height": "",
-                        "margin": "",
-                        "padding": ""
-                    },
-                    "@aria-hidden": "false",
-                    "css": [
-                        {
-                            "propertyName": "",
-                            "value": ""
-                        }
-                    ]
                 }
             }
         }
