@@ -27,7 +27,7 @@ function getPersonalization(url) {
 	}
 	consoleLog("ps1_e called: ");
 	//load json skin (profile) and run it
-	readLocalJson();
+	// readLocalJson();
 	makeCorsRequest(url);
 }
 
@@ -82,12 +82,12 @@ function createCORSRequest(method, url) {
 	return xhr;
 }
 
-function readLocalJson(){
-	console.log("readlocaljson profile6- ");
-	$.getJSON("test_profile6.json", function(json) {
-		console.log("profile6:\n"+json); // this will show the info it in firebug console
-	});
-}
+// function readLocalJson(){
+// 	console.log("readlocaljson profile6- ");
+// 	$.getJSON("test_profile6.json", function(json) {
+// 		console.log("profile6:\n"+json); // this will show the info it in firebug console
+// 	});
+// }
 
 /**
  * personalise page based on the settings in the JSON object recieved.
@@ -232,6 +232,7 @@ function simplicficationFromStringToInt(simplificationString){
 
  function personalizeAllScopedElements(scopes){
 	/*Iterate over the scopes in the profile(the attribute 'parents') and look for elements with them */
+	console.log("Personalize all scopes called");
 	scopeKeys = Object.keys(scopes);
 	scopeKeys.forEach(scopeItem=>{
 		personalizeSingleScopedElement(scopeItem,scopes[scopeItem]);
@@ -240,13 +241,20 @@ function simplicficationFromStringToInt(simplificationString){
  }
 
  function personalizeSingleScopedElement(parentAttr,singleScopeItem){
-
+	console.log("Personalize signle scopes called: "+parentAttr);
 	var queryStr = "";
 	(Object.keys(singleScopeItem)).forEach(parentValue=>{
-		(Object.keys(singleScopeItemp[parentValue])).forEach(childAttr=>{
-			(Object.keys(singleScopeItemp[parentValue][childAttr])).forEach(childValue=>{
-				$('['+parentAttr+'='+parentValue+']').find('['+childAttr+'='+childValue+']').each(function() {
-					applySettingsOnElement($( this ), singleScopeItem[parentValue][childAttr][childValue]);
+		(Object.keys(singleScopeItem[parentValue])).forEach(childAttr=>{
+			(Object.keys(singleScopeItem[parentValue][childAttr])).forEach(childValue=>{
+
+				$('['+parentAttr+'="'+parentValue+'"]').find('['+childAttr+'="'+childValue+'"]').each(function() {
+					console.log("apply called for: "+'['+parentAttr+'="'+parentValue+'"]'+'.find(['+childAttr+'="'+childValue+'"])\n'+
+				'with objectValue: '+singleScopeItem[parentValue][childAttr][childValue].name+
+				'\nWith element: '+this );
+					// $(this).text("inside scope change");
+
+					$(this).attr("marked","yes");
+					applySettingsOnElement($(this), singleScopeItem[parentValue][childAttr][childValue]);
 				  });
 			});
 		});
@@ -498,6 +506,9 @@ function personalizeAttributeValue(element, attrVal) {
  * @param {*the object-value from the profile json as discribed in the devloper notes} attrVal 
  */
 function applySettingsOnElement(element, attrVal) {
+
+
+	$(element).attr("applied","yes");
 
 	/*check if element is of relevant tagname type (from profile). 
 	Every object-value(see DeveloperNotes) can specify tagnames for types of elements it will apply to.

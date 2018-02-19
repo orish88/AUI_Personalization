@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	document.getElementById("bt_personalize_page_test_profile1").addEventListener('click', () => {
 		/* make the profiles constants*/
-		curProfileJson = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile6.json";
+		curProfileJson = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile7.json";
 		reloadPage(curProfileJson);
 	});
 

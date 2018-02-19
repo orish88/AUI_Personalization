@@ -3406,6 +3406,7 @@
                         "text": "Training",
                         "Symbol": {
                             "url": "",
+                            "symbol_insertion_type": "tooltip",
                             "creator": {
                                 "name": "",
                                 "url": ""
@@ -3444,9 +3445,38 @@
                         "shortcut": "",
                         "longdesc": "itemtype itemlist with itemprop name",
                         "tooltip": "First name tooltip",
-                        "text": "Training itemprop",
+                        "text": "",
                         "Symbol": {
-                            "url": "",
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/givenName1_noun_a1.png",                        
+                            "symbol_insertion_type": "tooltip",
+                            "creator": {
+                                "name": "",
+                                "url": ""
+                            },
+                            "width": "100",
+                            "height": "100",
+                            "margin": "",
+                            "padding": ""
+                        },
+                        "@aria-hidden": "false",
+                        "css": [
+                            {
+                                "propertyName": "color",
+                                "value": "red"
+                            }
+                        ]
+                    },
+                    "lname": {
+                        "name": "lname",
+                        "type": [],
+                        "inherits": "",
+                        "shortcut": "",
+                        "longdesc": "itemtype itemlist with itemprop name",
+                        "tooltip": "Last name tooltip",
+                        "text": "",
+                        "Symbol": {
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/familyName1_noun_a1.png",                        
+                            "symbol_insertion_type": "tooltip",
                             "creator": {
                                 "name": "",
                                 "url": ""
@@ -3463,11 +3493,6 @@
                                 "value": "red"
                             }
                         ]
-                    },
-                    "lname": {
-                        "name": "lname",
-                        "type": [],
-                        "tooltip": "Last name tooltip"
                     }
                 }
             }
