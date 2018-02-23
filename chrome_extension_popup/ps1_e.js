@@ -116,6 +116,9 @@ function personalizePage(profile) {
 		personalizeAttributes(profile.attributes);
 	}
 
+	
+  	/* personalizeAllScopedElements() = iterate over the scopes section of the profile and run funcitons 
+  	* to personalize the scoped elements.*/
 	if(isDefined(profile.scopes)){
 		personalizeAllScopedElements(profile.scopes);
 	}
@@ -230,30 +233,38 @@ function simplicficationFromStringToInt(simplificationString){
  */
 
 
+ /**
+  * this function iterates over the scopes section of the profile and runs funcitons 
+  to personalize the scoped elements.
+  */
  function personalizeAllScopedElements(scopes){
 	/*Iterate over the scopes in the profile(the attribute 'parents') and look for elements with them */
-	console.log("Personalize all scopes called");
+	consoleLog("Personalize all scopes called");
 	scopeKeys = Object.keys(scopes);
 	scopeKeys.forEach(scopeItem=>{
 		personalizeSingleScopedElement(scopeItem,scopes[scopeItem]);
 	});
-
  }
 
+
+ /**
+  * 
+  * @param {*the parent attribute is the attribute that in its scope we should search the 'child attribute'} parentAttr 
+  * @param {*the settings of the this scope attribute} singleScopeItem 
+  */
  function personalizeSingleScopedElement(parentAttr,singleScopeItem){
-	console.log("Personalize signle scopes called: "+parentAttr);
+	consoleLog("Personalize signle scopes called: "+parentAttr);
 	var queryStr = "";
 	(Object.keys(singleScopeItem)).forEach(parentValue=>{
 		(Object.keys(singleScopeItem[parentValue])).forEach(childAttr=>{
 			(Object.keys(singleScopeItem[parentValue][childAttr])).forEach(childValue=>{
 
 				$('['+parentAttr+'="'+parentValue+'"]').find('['+childAttr+'="'+childValue+'"]').each(function() {
-					console.log("apply called for: "+'['+parentAttr+'="'+parentValue+'"]'+'.find(['+childAttr+'="'+childValue+'"])\n'+
+					consoleLog("apply called for: "+'['+parentAttr+'="'+parentValue+'"]'+'.find(['+childAttr+'="'+childValue+'"])\n'+
 				'with objectValue: '+singleScopeItem[parentValue][childAttr][childValue].name+
 				'\nWith element: '+this );
 					// $(this).text("inside scope change");
 
-					$(this).attr("marked","yes");
 					applySettingsOnElement($(this), singleScopeItem[parentValue][childAttr][childValue]);
 				  });
 			});
@@ -261,13 +272,6 @@ function simplicficationFromStringToInt(simplificationString){
 	});
 	
  }
-
-
-
-function createAttrQueryStringForListOfVals(attr,vals){
-    var filter = '[' + attr + '="' + vals.split(',').join('"],[' + attr + '="') + '"]';
-    return filter;
-}
 
 /**
  * check for elements with attribute 'autcomplete' and inside their scope check for elements
@@ -507,9 +511,6 @@ function personalizeAttributeValue(element, attrVal) {
  */
 function applySettingsOnElement(element, attrVal) {
 
-
-	$(element).attr("applied","yes");
-
 	/*check if element is of relevant tagname type (from profile). 
 	Every object-value(see DeveloperNotes) can specify tagnames for types of elements it will apply to.
 	if the type of the element and the type from the skin match continue. If not return
@@ -655,7 +656,7 @@ function insertImage(element, settings) {
 			else if (settings.Symbol.symbol_insertion_type === "tooltip") {
 				consoleLog("image tooltip called for: " + settings.name);
 				/*add tooltip with newImg to element  */
-				altAddToolTip(element, newImg, settings);
+				addToolTip(element, newImg, settings);
 			} 
 			/* before- insert the newimg before the current element*/
 			else if (settings.Symbol.symbol_insertion_type === "before") {
@@ -693,7 +694,7 @@ function addBorderToImg(img){
  * @param {*the img to add as tooltip} newImg 
  * @param {*the object-value settings from the profile(for the text in settings.tooltip,if the tooltip has text)} settings 
  */
-function altAddToolTip(element, newImg,settings) {
+function addToolTip(element, newImg,settings) {
 	/* create the tooltip: wrap the element in a div, add a span with the tooltip to that div */
 	/*Create the warrper div and the inside span and give each and id with the same number*/
 	var ctrStr = "" + gCtr++;
@@ -772,17 +773,23 @@ function altAddToolTip(element, newImg,settings) {
 		}
 	});
 }
-
+/**
+ * hide the image, make it of class hidden
+ * @param {*} img 
+ */
 function hideImg(img){
 	$(img).attr("aria-hidden", "true");
 	$(img).addClass("hidden"); //accessibility for old browsers
 }
+/**
+ * show hidden image, remove class hidden
+ * @param {*} img 
+ */
 function showImg(img){
 	$(img).attr("aria-hidden", "false");
 	$(img).removeClass("hidden");
 }
 /**
- * 
  set elements' CSS according to the settings in the JSON object recieved
  */
 function setCSS(element, settings) {

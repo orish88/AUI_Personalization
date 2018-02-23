@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0072)https://rawgit.com/ayelet-seeman/coga.personalisation/demo/conactUs.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Personalised Website demo- Ori</title>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
+	<script src="jquery.min.js"></script>
+
+	<script src="bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="./AUI-TestSite/stylesheet.css">
+	<!--	<link rel="stylesheet" href="./AUI-TestSite/bootstrap.css"> -->
+	<!-- <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<style></style>
+</head>
+
+<body>
+	<!-- AUI-action div -->
+
+	<span id="span84" role="tooltip" class="aui_tooltip" aria-hidden="false">
+		<img src="https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png" class="aui_header_images" style="background-color: white; border: 3px outset rgb(0, 0, 0);">
+		<p>Go to homepage</p>
+	</span>
+	<div lang="en">
+		<div id="nav" role="navigation">
+			<h3 aria-hidden="true">AUI-action elements: </h3>
+			<ul class="nav">
+				<li class="nav">
+					<a aria-function="home" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Main</a>
+				</li>
+				<li id="liCompose" class="nav">
+					<a data-toggle="tooltip" AUI-action="compose" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html"
+					 class="navBar">Compose</a>
+				</li>
+				<li class="nav">
+					<a aria-importance="low" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Delete</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- AUI-destination div -->
+
+		<div id="nav" role="navigation">
+			<h3>AUI-destination elements: </h3>
+			<ul class="nav">
+				<li class="nav">
+					<a id="home" AUI-destination="home" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar"
+					 title="https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png">Home</a>
+				</li>
+				<li class="nav">
+					<a id="compose" title="<img src='https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png' />" AUI-action="compose"
+					 href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Compose</a>
+				</li>
+				<li class="nav">
+					<a aria-importance="low" href="https://rawgit.com/orish88/AUI_Personalization/master/html/AUI-TestSite.html" class="navBar">Delete</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+	<div id="inputDiv">
+		<form action="/action_page.php" autocomplete="on">
+			First name:
+			<input type="text" name="fname">
+			<br> Last name:
+			<input type="text" name="lname" autocomplete="on">
+			<br> E-mail:
+			<input type="email" name="email">
+			<br>
+			<input type="submit">
+		</form>
+		<p>Fill in and submit the form, then reload the page to see how autocomplete works.</p>
+		<p>Notice that autocomplete is "on" for the form, but "off" for the e-mail field.</p>
+	</div>
+	<a id="aid">aAid</a>
+	<a data-toggle="tooltip" title="<img src='https://getbootstrap.com/apple-touch-icon.png' />">
+		Hola Mundo!
+	</a>
+	<a id="riverroad" href="#" title="">image of 1 Maple St.</a>
+
+	<div class="container">
+		<br/>
+		<div class="row" id="panelPrecios">
+			<div class="items">
+				<ul>
+					<li>
+						<a data-toggle="tooltip" title="<img src='https://getbootstrap.com/apple-touch-icon.png' />">
+							Hola Mundo!
+						</a>
+					</li>
+					<li>
+						<a data-toggle="tooltip" title="<img src='http://utbcn.com/img/logosCursas/logo_UTBCN_180x180.png' />">
+							Hola Mundo!
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<p role="complementary">test role fields</p>
+
+	<a data-toggle="tooltip" title="<img src='https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png' />">
+		PLEASE WORK TOOLTIP!
+	</a>
+
+	<a id="content">
+	</a>
+	<div class="text">
+		<label id="tp1-label" for="first">First Name:</label>
+		<input type="text" id="first" name="first" size="20" aria-labelledby="tp1-label" aria-describedby="tp1" aria-required="false"
+		/>
+		<div id="tp1" class="tooltip" role="tooltip" aria-hidden="true">Your first name is a optional</div>
+	</div>
+	<input id="firstname" type="text" aui-field="name" accesskey="SHIFT + S">
+
+
+	<button onclick="myFunction()">Try it</button>
+	<p id="profiles"></p>
+	<!-- <script>
+		// addTooltipCssClasses();
+		function myFunction() {
+			writeProfiles();
+			$(document).ready(function () {
+				$("#content").html('<a id="riverroad" href="#" title="" >image of 2 Maple St.</a>');
+				$("#content #riverroad").tooltip({ content: '<img src="http://icdn.pro/images/fr/a/v/avatar-barbe-brun-homme-utilisateur-icone-9665-128.png" />' });
+			});
+			var element = document.getElementById("home");
+			var imgToAdd = document.createElement("img");
+			var btn = document.createElement("BUTTON");        // Create a <button> element
+			var t = document.createTextNode("CLICK ME");
+			$('#compose').tooltip({
+				content: "<img src='http://utbcn.com/img/logosCursas/logo_UTBCN_180x180.png' />",
+				animated: 'fade',
+				placement: 'bottom',
+				html: true
+			});
+			// Create a text node
+			// btn.appendChild(t);                                // Append the text to <button>
+			// document.body.appendChild(btn);                    // Append <button> to <body>
+			console.log("Element dims: " + element + "\nelement height= " + $(element).height() + "\nelement width= " + $(element).width());
+			imgToAdd.setAttribute("src", "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png");
+			console.log("img dims: " + imgToAdd + "\nimg height= " + $(imgToAdd).height() + "\nimg width= " + $(imgToAdd).width());
+			// $( imgToAdd ).clone(true).appendTo( element );
+			console.log("element height: " + $(element).height());
+			console.log("1");
+			scaleImage(element, imgToAdd)
+			addToolTip(element, "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png", imgToAdd);
+			// $(element).html('');
+			console.log("7");
+			$(imgToAdd).appendTo(element);
+			console.log("8");
+			// element.appendChild(btn);
+			// $(element).html('');
+			// $(imgToAdd).appendTo(element);
+			// $(imgToAdd).appendTo("#aid");
+			// $(btn).insertBefore(element);
+			// $(element).append(btn);
+			// $(".navBar").tooltip("tooltip#1");
+			$("#riverroad").tooltip({ content: '<img src="https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png" />' });
+			// $( "#compose" ).setAttribute("data-toggle","tooltip");
+			$('#compose[data-toggle="tooltip"]').tooltip({ content: "<img src='http://utbcn.com/img/logosCursas/logo_UTBCN_180x180.png' />" });
+			console.log("10");
+		}
+		function scaleImage(element, img) {
+			console.log("scale image called on: " + img);
+			console.log("2");
+			var sizeCoefficient = 2;
+			$(element).html('');
+			console.log("3");
+			// $(img).on('load', function () {
+			console.log("4");
+			var css;
+			console.log("h: " + $(img).height() + "\nw: " + $(img).width() + "\neh: " + $(element).height() + "\new: " + $(element).width());
+			// var mHeight = Math.min($(element).height(), $(this).height());
+			// var mWidth = Math.min($(element).width(), $(this).width());
+			// css = { width: mWidth, height: mHeight };
+			var mHeight = $(element).height();
+			var mWidth = $(element).width();
+			css = { width: mWidth, height: mHeight };
+			$(img).css(css);
+			console.log("5");
+			$(element).width(sizeCoefficient * $(element).width());
+			console.log("6");
+			// $(img).appendTo(element);			
+			// });
+		}
+		function addToolTip(element, url, imgToAdd) {
+			element.setAttribute('title', imgToAdd.outerHTML);
+			$(element).tooltip({
+				animated: 'fade',
+				placement: 'bottom',
+				html: true
+			});
+		}
+		function writeProfiles() {
+			console.log("write proflies called");
+			var str = "";
+			// var nameArray=["givenName","additionalName","additionalNameInitial","familyName","honorificSuffix",
+			// "nickname","streetAddress","city","postalcode","country","fax","email","tel","ccName","language",
+			// "bday","transactionCurrency","transactionAmount","topic","comment","subject","answer","org",
+			// "position","sex","gender","url","photo"];
+			// var nameArray=["next","previous","toc","submit","confirm","undo","cancel",
+			// "reset","label","buy","checkout","add","move","save","send","close","more",
+			// "print","received","sent","edit","forward","reply","upload","download","connect",
+			// "open","new","mode","increase","decrease","play","pause","captions","mute","volume",
+			// "channel","temp","brightness","profile","expand","refresh","properties","help",
+			// "cut","copy","paste","color","date","remove","right","left"];
+			var nameArray = ["phone", "accessibilityStatement", "help", "chat", "terms", "services",
+				"products", "comment", "language", "register", "social", "post"];
+			nameArray.forEach((name) => {
+				str += writeSingleProfile(name) + "\n";
+			});
+			document.getElementById("profiles").innerHTML = str;
+		}
+		function writeSingleProfile(name) {
+			return '"' + name + '": {"name": "' + name + '",' +
+				'"type": [' +
+				'],' +
+				'"inherits": "",' +
+				'"shortcut": "SHIFT + C",' +
+				'"longdesc": "",' +
+				'"tooltip": "' + name + '",' +
+				'"text": "",' +
+				'"Symbol": {' +
+				'"url": "https://rawgit.com/orish88/AUI_Personalization/master/images/' + name + '1_noun_a1.png",' +
+				'"replacetext":"tooltip",' +
+				'"css_class": "aui_header_images",' +
+				'"creator": {' +
+				'"name": "",' +
+				'"url": ""' +
+				'},' +
+				'"width": "",' +
+				'"height": "",' +
+				'"margin": "",' +
+				'"padding": ""' +
+				'},' +
+				'"@aria-hidden": "false",' +
+				'"css": [' +
+				'{' +
+				'"propertyName": "",' +
+				'"value": ""' +
+				'}' +
+				']' +
+				'},'
+		}
+function addTooltipCssClasses(){
+	// createCssClass(".tooltip,.arrow:after",'  background:yellow; ');
+	createCssClass('.aui_tooltip',
+	// 'margin:auto;'+
+	// 'text-align:center;'+
+	// 'height:40px;'+
+	// 'width:40px;'+
+	'background:black; '+
+	'font-size:14px;'+
+	'font-weight:regular;'+
+	'position:absolute;'+
+	// 'top:40px;'+
+	// 'right:20%;'+
+	// 'left:100%;'+
+	'overflow:visible;'+
+	'padding:10px 10px;'+
+	'color:#fff;'+
+	'-webkit-border-radius:7px;'+
+	'-moz-border-radius:7px;'+
+	'border-radius:7px;'+
+	'-webkit-background-clip:padding-box;'+
+	'-moz-background-clip:padding;'+
+	'background-clip:padding-box;'+
+	'margin-bottom: 20%;'+
+	'text-align:center;'+
+	'text-decoration:none;'+
+	'box-shadow:0 0 3px #000;'+
+	'z-index:99999999;'+
+	'vertical-align:middle;'+
+	'display:flex'
+	// 'margin-top:auto;margin-bottom:auto;'
+	// 'align-items:center;'
+	);
+	createCssClass('.aui_tooltip_parent',
+	"position:relative;");
+	// createCssClass('[aria-hidden="true"]', 'display: none;');
+	// createCssClass('[aria-hidden="false"]', 'display: block;');
+	createCssClass('a:focus, a:active', 'text-decoration: underline;');
+	// createCssClass('aui_tooltip_child',);
+	// createCssClass('aui_tooltip_span',
+	// 'vertical-align:center;'
+	// 'display: flex;'+
+	// 'align-items: center;'+
+	// 'justify-content:center;'
+	// );
+	
+}
+function createCssClass(className,propertiesStr){
+	var style = document.createElement('style');
+	style.type = 'text/css';
+	style.innerHTML = className+' { '+propertiesStr+' }';
+	document.getElementsByTagName('head')[0].appendChild(style);
+	// document.getElementById('someElementId').className = ;
+}
+	</script> -->
+
+	<!-- <script>
+		$('[data-toggle="tooltip"]').tooltip({
+			content: '<img src= "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png"/>',
+			animated: 'fade',
+			placement: 'bottom',
+			html: true
+		});
+				// # sourceURL = pen.js
+	</script> -->
+</body>
+
+</html>
