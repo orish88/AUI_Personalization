@@ -3465,6 +3465,7 @@
                         "text": "Training itemprop",
                         "Symbol": {
                             "url": "",
+                            "symbol_insertion_type":"tooltip",
                             "creator": {
                                 "name": "",
                                 "url": ""

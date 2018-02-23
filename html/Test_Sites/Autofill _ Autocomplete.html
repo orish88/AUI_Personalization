@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://john.foliot.ca/demos/autofill.html -->
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+	<title style="border-color: orange; border-style: solid; font-size: 120%; font-family: Gotham, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;">Autofill / Autocomplete</title>
+	<meta name="description" content="Test File: Autofill / Autocomplete">
+	<meta name="author" content="John Foliot - Deque Systems Inc.">
+	<style>
+		body {
+			margin-left: 5%;
+			margin-right: 5%;
+			font-family: arial, helvetica, sans-serif;
+		}
+
+		h1 {
+			background-image: url(https://www.deque.com/i/Deque13_hdr_logo.png);
+			background-repeat: no-repeat;
+			background-position: right;
+			background-color: #082545;
+			color: #fff;
+			height: 55px;
+			border: 10px solid #082545;
+		}
+
+		h2 {
+			background-color: #eee;
+			border: 1px solid black;
+			padding: .3em;
+			margin-bottom: 0;
+		}
+
+		label:before {
+			content: '\A';
+			white-space: pre;
+		}
+
+		input {
+			margin-top: 1em;
+			margin-left: 1em;
+		}
+
+		div.column {
+			width: 32%;
+			float: left;
+			padding-right: 10px;
+			padding-bottom: 10em;
+		}
+
+		input[type=submit] {
+			float: right;
+			margin-right: 5em;
+			margin-top: 5em;
+			font-size: 18px;
+			color: #ffffff;
+			padding: 10px 20px;
+
+			background: -moz-linear-gradient( top,
+			#ebe8e8 0%,
+			#4a4646);
+			background: -webkit-gradient( linear, left top, left bottom,
+			from(#ebe8e8),
+			to(#4a4646));
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+			border: 1px solid #b3adad;
+			-moz-box-shadow: 0px 1px 3px rgba(252, 249, 252, 0.5),
+			inset 0px 0px 1px rgba(255, 255, 255, 0.5);
+			-webkit-box-shadow: 0px 1px 3px rgba(252, 249, 252, 0.5),
+			inset 0px 0px 1px rgba(255, 255, 255, 0.5);
+			box-shadow: 0px 1px 3px rgba(252, 249, 252, 0.5),
+			inset 0px 0px 1px rgba(255, 255, 255, 0.5);
+			text-shadow: 0px -1px 0px rgba(000, 000, 000, 0.7),
+			0px 1px 0px rgba(255, 255, 255, 0.3);
+		}
+	</style>
+	<style></style>
+	<style type="text/css">
+		.aui_tooltip {
+			background: black;
+			font-size: 14px;
+			font-weight: regular;
+			position: absolute;
+			overflow: visible;
+			padding: 17px 17px 0px;
+			color: #fff;
+			-webkit-border-radius: 7px;
+			-moz-border-radius: 7px;
+			border-radius: 7px;
+			-webkit-background-clip: padding-box;
+			-moz-background-clip: padding;
+			background-clip: padding-box;
+			margin-bottom: 20%;
+			text-align: center;
+			text-decoration: none;
+			box-shadow: 0 0 3px #000;
+			z-index: 99999999;
+			align-items: center;
+		}
+	</style>
+	<style type="text/css">
+		.aui_tooltip_parent {
+			position: relative;
+		}
+	</style>
+	<style type="text/css">
+		[aria-hidden="true"] {
+			display: none;
+		}
+	</style>
+	<style type="text/css">
+		[aria-hidden="false"] {
+			display: block;
+		}
+	</style>
+	<style type="text/css">
+		a:focus,
+		a:active {
+			text-decoration: underline;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="./Autofill _ Autocomplete_files/test_css4.css">
+	<style type="text/css">
+		.aui_tooltip {
+			background: black;
+			font-size: 14px;
+			font-weight: regular;
+			position: absolute;
+			overflow: visible;
+			padding: 17px 17px 0px;
+			color: #fff;
+			-webkit-border-radius: 7px;
+			-moz-border-radius: 7px;
+			border-radius: 7px;
+			-webkit-background-clip: padding-box;
+			-moz-background-clip: padding;
+			background-clip: padding-box;
+			margin-bottom: 20%;
+			text-align: center;
+			text-decoration: none;
+			box-shadow: 0 0 3px #000;
+			z-index: 99999999;
+			align-items: center;
+		}
+	</style>
+	<style type="text/css">
+		.aui_tooltip_parent {
+			position: relative;
+		}
+	</style>
+	<style type="text/css">
+		[aria-hidden="true"] {
+			display: none;
+		}
+	</style>
+	<style type="text/css">
+		[aria-hidden="false"] {
+			display: block;
+		}
+	</style>
+	<style type="text/css">
+		a:focus,
+		a:active {
+			text-decoration: underline;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="./Autofill _ Autocomplete_files/test_css4.css">
+	<style type="text/css">
+		.aui_tooltip {
+			background: black;
+			font-size: 14px;
+			font-weight: regular;
+			position: absolute;
+			overflow: visible;
+			padding: 17px 17px 0px;
+			color: #fff;
+			-webkit-border-radius: 7px;
+			-moz-border-radius: 7px;
+			border-radius: 7px;
+			-webkit-background-clip: padding-box;
+			-moz-background-clip: padding;
+			background-clip: padding-box;
+			margin-bottom: 20%;
+			text-align: center;
+			text-decoration: none;
+			box-shadow: 0 0 3px #000;
+			z-index: 99999999;
+			align-items: center;
+		}
+	</style>
+	<style type="text/css">
+		.aui_tooltip_parent {
+			position: relative;
+		}
+	</style>
+	<style type="text/css">
+		[aria-hidden="true"] {
+			display: none;
+		}
+	</style>
+	<style type="text/css">
+		[aria-hidden="false"] {
+			display: block;
+		}
+	</style>
+	<style type="text/css">
+		a:focus,
+		a:active {
+			text-decoration: underline;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="./Autofill _ Autocomplete_files/test_css4.css">
+</head>
+
+<body style="font-size: 100%;">
+	<h1>Testing Support for Autocomplete Attribute Tokens</h1>
+	<form action="mailto:jf@deque.com" method="post" enctype="text/plain" autocomplete="on">
+		<div class="column">
+			<h2>Personal Information</h2>
+			<label for="1">Name</label>
+			<input type="text" id="1" autocomplete="name">
+			<label for="2">Honorific / Previx</label>
+			<input type="text" id="2" autocomplete="honorific-prefix">
+			<label for="3">Given Name</label>
+			<input type="text" id="3" name="fname" aria-hidden="false" style="color: red;">
+			<label for="4">Additional Name</label>
+			<input type="text" id="4" autocomplete="additional-name">
+			<label for="5">Family name</label>
+			<input type="text" id="5" autocomplete="family-name">
+			<label for="6">Honorific Suffix</label>
+			<input type="text" id="6" autocomplete="honorific-suffix">
+
+			<label for="11">Organizational Title</label>
+			<input type="text" id="11" autocomplete="organization-title">
+			<label for="12">Organization</label>
+			<input type="text" id="12" autocomplete="organization">
+			<label for="13">Street Address</label>
+			<input type="text" id="13" autocomplete="street-address">
+			<label for="14">Address: Line 1</label>
+			<input type="text" id="14" autocomplete="address-line1">
+			<label for="15">Address: Line 2</label>
+			<input type="text" id="15" autocomplete="address-line2">
+			<label for="16">Address: Line 3</label>
+			<input type="text" id="16" autocomplete="address-line3">
+			<label for="17">Address: Line 4</label>
+			<input type="text" id="17" autocomplete="address-level4">
+			<label for="18">Address: Level 1</label>
+			<input type="text" id="18" autocomplete="address-level1">
+			<label for="19">Address: Level 2</label>
+			<input type="text" id="19" autocomplete="address-level2">
+			<label for="20">Address: Level 3</label>
+			<input type="text" id="20" autocomplete="address-level3">
+			<label for="21">Country</label>
+			<input type="text" id="21" autocomplete="country">
+			<label for="22">Country name</label>
+			<input type="text" id="22" autocomplete="country-name">
+			<label for="23">Postal Code</label>
+			<input type="text" id="23" autocomplete="postal-code">
+			<label for="7">Nickname</label>
+			<input type="text" id="7" autocomplete="nickname">
+			<label for="8">Username</label>
+			<input type="text" id="8" autocomplete="username">
+			<label for="9">New Password</label>
+			<input type="text" id="9" autocomplete="new-password">
+			<label for="10">Current Password</label>
+			<input type="text" id="10" autocomplete="current-password">
+		</div>
+		<div class="column">
+			<h2>Credit Card Information (Must be tested in secure environment)</h2>
+			<div style="border: 3px solid red; background-color: #ffc;">
+				<label for="24">Credit Card Name (shown on card)</label>
+				<input type="text" id="24" autocomplete="cc-name">
+				<label for="25">Credit Card Given Name (shown on card)</label>
+				<input type="text" id="25" autocomplete="cc-given-name">
+				<label for="26">Credit Card Additional Name</label>
+				<input type="text" id="26" autocomplete="cc-additional-name">
+				<label for="27">Credit Card Family Name (shown on card)</label>
+				<input type="text" id="27" autocomplete="cc-family-name">
+				<label for="28">Credit Card Number</label>
+				<input type="text" id="28" autocomplete="cc-number">
+				<label for="29">Credit Card Expiry</label>
+				<input type="text" id="29" autocomplete="cc-exp">
+				<label for="30">Credit Card Expiry Month</label>
+				<input type="text" id="30" autocomplete="cc-exp-month">
+				<label for="31">Credit Card Expiry Year</label>
+				<input type="text" id="31" autocomplete="cc-exp-year">
+				<label for="32">Credit Card Security Code</label>
+				<input type="text" id="32" autocomplete="cc-csc">
+				<label for="33">Credit Card Type</label>
+				<input type="text" id="33" autocomplete="cc-type">
+				<label for="34">Transaction Currency</label>
+				<input type="text" id="34" autocomplete="transaction-currency">
+				<label for="35">Transaction Amount</label>
+				<input type="text" id="35" autocomplete="transaction-amount">
+			</div>
+			<h2>Misc. Data</h2>
+			<label for="36">Language</label>
+			<input type="text" id="36" autocomplete="language">
+			<label for="37">Birthday</label>
+			<input type="text" id="37" autocomplete="bday">
+			<label for="38">Birthday: Day</label>
+			<input type="text" id="38" autocomplete="bday-day">
+			<label for="39">Birthday: Month</label>
+			<input type="text" id="39" autocomplete="bday-month">
+			<label for="40">Birthday: Year</label>
+			<input type="text" id="40" autocomplete="bday-year">
+			<label for="41">Sex</label>
+			<input type="text" id="41" autocomplete="sex">
+			<label for="42">URL</label>
+			<input type="text" id="42" autocomplete="url">
+			<label for="43">Photo</label>
+			<input type="text" id="43" autocomplete="photo">
+		</div>
+		<div class="column">
+			<h2 style="clear:left;">Telephone/Contact data</h2>
+
+			<label for="44">Telephone</label>
+			<input type="text" id="44" autocomplete="tel">
+			<label for="45">Telephone: Country Code</label>
+			<input type="text" id="45" autocomplete="tel-country-code">
+			<label for="46">Telephone: National</label>
+			<input type="text" id="46" autocomplete="tel-national">
+			<label for="47">Telephone: Area Code</label>
+			<input type="text" id="47" autocomplete="tel-area-code">
+			<label for="48">Telephone: Local</label>
+			<input type="text" id="48" autocomplete="tel-local">
+			<label for="49">Telephone: Local Prefix</label>
+			<input type="text" id="49" autocomplete="tel-local-prefix">
+			<label for="50">Telephone: Local Suffix</label>
+			<input type="text" id="50" autocomplete="tel-local-suffix">
+			<label for="51">Telephone: Extension</label>
+			<input type="text" id="51" autocomplete="tel-extension">
+			<label for="52">Email</label>
+			<input type="text" id="52" autocomplete="email">
+			<label for="53">IMPP </label>
+			<input type="text" id="53" autocomplete="impp">
+			<br>(URL representing an instant messaging protocol endpoint)
+			<br>
+			<input type="submit">
+		</div>
+	</form>
+
+</body>
+
+</html>
