@@ -1,10 +1,61 @@
 
+
+
+IMPORTANT!! : See DeveloperNotes for the definition of object-value
+
 Profile.json structure:
 {
     ***Global profile info:***
+    "global_settings": {
 
-    "name": "insert name of profile here",
-    "AUI:desc": "insert profile description",
+        //profile Name:
+        "name": "prof7",
+        
+        //profile description:
+        "AUI:desc": "Orish-in-page simple demo file",
+        
+        /*global symbol insertion type- oprions:
+             "tooltip" - symbols are inserted as a tooltip 
+             "before" - symbols are inserted before element
+             "after" -  symbols are inserted after element
+             "replace" -  symbols replace current element content */   
+        "symbol_insertion_type": "before",
+
+        
+        /*Global class to be added for all symbols(to determine size. class should be declared on the added css file!) */
+        "global_added_image_css_class": "aui_header_images",
+        
+        //global height and width for symbols
+        "global_added_image_height":"100px",
+        "global_added_image_width":"100px",
+
+        /*boolean to determine if you wish to use you own global settings for the tooltip
+        true- use the settings specified on  "global_tooltip_settings" */
+        false- use the default settings (determined in the code)
+        "global_tooltip_settings_mode":"true",
+
+        /* global css class attribute-value pairs to determine how the tooltip looks like */
+        "global_tooltip_settings": {
+                "background": "black",
+                "font-size": "14px",
+                "font-weight": "regular",
+                "position": "absolute",
+                "overflow": "visible",
+                "padding": "17px 17px 0px",
+                "color": "#fff",
+                "-webkit-border-radius": "7px",
+                "-moz-border-radius": "7px",
+                "border-radius": "7px",
+                "-webkit-background-clip": "padding-box",
+                "-moz-background-clip": "padding",
+                "background-clip": "padding-box",
+                "margin-bottom": "20%",
+                "text-align": "center",
+                "text-decoration": "none",
+                "box-shadow": "0 0 3px #000",
+                "z-index": "99999999"
+        }
+    },
 
 
     ***CSS:***
@@ -38,15 +89,15 @@ Profile.json structure:
     //      4. "low" - everything will show
 
     ***TagNames:***
-    //If you wish to make the same changes t o all elements of a certain tagname
+    //If you wish to make the same changes to all elements of a certain tagname
     // in a page, use:
 
     "tagNames":{
 
-        //tagname change information object is of the following format (you may have multiple objects)
-        "your_tagname":{ //new change object:
+        //tagname object value is of the following format (you may have multiple objects)
+        "your_tagname":{ //new object value:
             "name": "your_tagname" //it's essential this value and the key will be the same.
-            //rest see ***change object example***
+            //rest see ***object value example***
         }
 
     }
@@ -55,8 +106,8 @@ Profile.json structure:
     
     // DOM elements may have certain attributes which you'd wish to change them according to
     // the attribute and it's value. i.e if a DOM elements has "aui-destination" = "home",
-    // you might want your profile to have a change object ready to apply changes on that element.
-    //You can decalre this change objects under the "attributes" global key, in the following format:
+    // you might want your profile to have a object value ready to apply changes on that element.
+    //You can decalre this object values under the "attributes" global key, in the following format:
 
     "attributes":{
         "attribute-name1"{
@@ -67,20 +118,20 @@ Profile.json structure:
                 ...
             }
 
-            //change objects for possible values:
+            //object values for possible values:
  
             "value1":    //(example- "home")
             {
                 "name":"value1",
-                //rest see ***change object example***
+                //rest see ***object value example***
             },
 
             "value2":
             {
                 "name":"value2",
-                //rest see ***change object example***
+                //rest see ***object value example***
             }
-            ...more change objects with values as keys
+            ...more object values with values as keys
 
         },
         "attribute-name2":{...}
@@ -88,21 +139,21 @@ Profile.json structure:
 
     ***Scopes***
     //There are some special cases of multiple attribute dependency. 
-    // You may wish to have a change object for certain attribute attr1 = "val1" while 
+    // You may wish to have a object value for certain attribute attr1 = "val1" while 
     // any val received in "attr2" = "val2" IN ANY ELEMENT UNDER THE attr1 scope,
-    //will have its own change object.
+    //will have its own object value.
 
     //So far the script supports the cases of "itemprop" under "itemtype" and "name" 
     // under "autocomplete" 
-    //the change objects will be decalred under global kry "scopes", in the folllowing format:
+    //the object values will be decalred under global kry "scopes", in the folllowing format:
 
     "scopes":{
         "itemtypes": {
             "itemtype_value1": //usually of the format "http://schema.org/something"
             "itemprops":{
 
-                "item_prop_value1":{ change object },
-                "item_prop_value2":{ change object },
+                "item_prop_value1":{ object value },
+                "item_prop_value2":{ object value },
                 ...
             },
             more itemtype values here...
@@ -110,7 +161,7 @@ Profile.json structure:
         "autocomplete":{
             "on" {
                 "names":{
-                    "name value1":{ change object},
+                    "name value1":{ object value},
                     ...
                 }
 
@@ -123,16 +174,16 @@ Profile.json structure:
 }
 
 
-*** change object example ***
+*** object value example ***
 {
    "name": change_object_name("compose", in this example),
     "type": [
         //an array of tagnames that an element changed by this object will have
         // to fit in order for the changes to take place.
         //example1:
-        "a","p" //this change object will only apply in elemts of tagname a or p.
+        "a","p" //this object value will only apply in elemts of tagname a or p.
         //example2
-        "not a" //this change object will aplly in all elements except elements of tagname a.
+        "not a" //this object value will aplly in all elements except elements of tagname a.
                     
     ],
     "inherits": {
