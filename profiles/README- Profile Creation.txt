@@ -175,6 +175,7 @@ Profile.json structure:
 
 
 *** object value example ***
+(object value is described in more detail on the DeveloperNote!s)
 {
    "name": change_object_name("compose", in this example),
     "type": [

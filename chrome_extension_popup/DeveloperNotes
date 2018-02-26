@@ -3,20 +3,22 @@ This document is for developers who wish to understand this code.
 
 
 In the documentation i mentioned object-value:
-object-value:
-    a set of settings inside the json which sspecifies how to change a element who's marked
+
+***Object-Value***:
+    a set of settings inside the json which specifies how to change a element who's marked
     or contains something that makes him change.
 
     For example we have on our DOM:
     <a ... aui-action="delete"> some content <a>    
-    The object-value located in the profile inside aui-action attribute with value "delete'
+    The object-value located in the profile inside aui-action attribute with value "delete"
     will be used to change this <a> element when the personalization runs on te DOM.
 
 
 
-    aui-action:{...,
+"Attributes":{...}
+    "aui-action":{...,
 
-            //here is the example object-value
+            /*** here is the example object-value ***/
             "delete": { //the value of the attribute. this object value will change elements of tagname <a> that 
             //have attribute aui-action = "delete" in them.
                 "name": "delete",
@@ -31,7 +33,7 @@ object-value:
               */      
                 "type": ["a"],
             /*Inhertis: may refer to another object value in the profile
-             we want to use when this object value is requested by an elemen
+             we want to use when this object value is requested by an element
              Usage Examples:
 
                         "inherits": ""//no inheritance
@@ -43,12 +45,12 @@ object-value:
             */    
                 "inherits": "",
 
-                /*keyboard Shortcut t ofocus on this element
-                upper case only, can be just a key like F or modifier+key: SHIFT+A*/
+                /*shortcut: keyboard Shortcut to focus on this element
+                upper case only, can be just a key like: F , or modifier+key: SHIFT+A*/
                 "shortcut": "SHIFT + D",
 
-                /*Description of the object-value(no usage for it at the moment)
-                a breif explanation of what the result of using this object value turns an element into*/
+                /*longdesc: Description of the object-value(no usage for it at the moment)
+                a brief explanation of what the result of using this object value turns an element into*/
                 "longdesc": "this button deletes your work.",
                 /*
                     Text to be added to the tooltip (delete? change?)
@@ -57,6 +59,7 @@ object-value:
 
                 /*text to add to 'in-page'(when "symbol_insertion_type": "before","after") symbol insertion, instead of existing content in the element*/
                 "text": "delete",
+
                 /*
                 symbol: In this object all settings that directl describe the image of this object value are decalred 
                 */
@@ -71,23 +74,23 @@ object-value:
                         "url": ""
                     },
                     "width": "", //optional fixed width of image
-                    "height": "", //optional fixed height if image
+                    "height": "", //optional fixed height of image
                     "margin": "",
                     "padding": "",
-                    /*attribute = "value" pairs to be added to the image */
+                    /*symbol_attribute_values_changes: attribute = "value" pairs to be added to the image */
                     "symbol_attribute_values_changes": {
                         "aria-label": "Delete"
                     }
                 },
-                /*attribute = "value" pairs to be added to the element */
+                /*attribute_values_changes: attribute = "value" pairs to be added to the element */
                 "attribute_values_changes": {
                     "aria-hidden": "false"
                 },
                 /*css settings to add to this element*/
                 "css": [
                     {
-                        "propertyName": "",
-                        "value": ""
+                        "propertyName": "background-color",
+                        "value": "white"
                     }
                 ]
             },
