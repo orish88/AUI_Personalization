@@ -1,0 +1,26 @@
+This is file explains each file's  in the documentation folder:
+
+1. DeveloperNotes: 
+ A text file. Explains the term object-value as used in the profile json(often mentioned in the documentation).
+
+2. aui_chrome_extension_diagram: 
+ A diagram that elaborates the coding structure and design of this chrome extension.
+ this file comes in 3 different types: 
+ xml- to be opened (and edited) on www.draw.io
+ html- to be opened on any browser.
+ png- to be opened in any image viewer.
+
+3. profileJson: 
+ A diagram which elaborates the structure of the profile json file.
+ this file comes in 3 different types: 
+ xml- to be opened (and edited) on www.draw.io
+ html- to be opened on any browser.
+ png- to be opened in any image viewer.
+
+4. README- Profile Creation.txt: 
+ A text file. describes the structure of the user profile json,
+ with descriptions of how it is used in the code and examples.
+    
+
+5. test_profile7.json:
+ A json file. An actual example of a json profile.
