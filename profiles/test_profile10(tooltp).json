@@ -1,8 +1,8 @@
 {
 
     "global_settings": {
-        "name": "prof7",
-        "AUI:desc": "Orish-in-page simple demo file",
+        "name": "prof8",
+        "AUI:desc": "Orish- tooltip simple demo file",
         "symbol_insertion_type": "before",
         "global_added_image_css_class": "aui_header_images",
         "global_added_image_height":"",
@@ -30,75 +30,75 @@
         }
     },
     "css": {
-        "cssFileLink": "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_css5.css",
+        "cssFileLink": "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_css4.css",
         "linkIndex": "0",
         "cssSettings": [
             {
                 "propertyName": "font-size",
-                "value": "120%"
+                "value": "100%"
             }
         ]
     },
     "athena-icon":{
-
-        "page": {
-            "name": "page",
-            "type": [],
-            "inherits": "",
-            "shortcut": "SHIFT+H",
-            "longdesc": "press here to perosnalize actual page.",
-            "tooltip": "Personalize Page",
-            "text": "",
-            "Symbol": {
-                "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/image1_noun.png",
-                
-                "creator": {
-                    "name": "Jardson Almeida, The Noun Project",
-                    "url": ""
+        
+                "page": {
+                    "name": "page",
+                    "type": [],
+                    "inherits": "",
+                    "shortcut": "SHIFT+H",
+                    "longdesc": "press here to perosnalize actual page.",
+                    "tooltip": "Personalize Page",
+                    "text": "",
+                    "Symbol": {
+                        "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/image2_noun.png",
+                        
+                        "creator": {
+                            "name": "Jardson Almeida, The Noun Project",
+                            "url": ""
+                        },
+                        "width": "50px",
+                        "height": "30px",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
                 },
-                "width": "50px",
-                "height": "30px",
-                "margin": "",
-                "padding": ""
-            },
-            "@aria-hidden": "false",
-            "css": [
-                {
-                    "propertyName": "",
-                    "value": ""
+                "tooltip": {
+                    "name": "tooltip",
+                    "type": [],
+                    "inherits": "",
+                    "shortcut": "SHIFT+H",
+                    "longdesc": "press here to personalize page with tooltips",
+                    "tooltip": "Personalize Tooltip",
+                    "text": "",
+                    "Symbol": {
+                        "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/tooltip2_noun.png",
+                        
+                        "creator": {
+                            "name": "Jardson Almeida, The Noun Project",
+                            "url": ""
+                        },
+                        "width": "50px",
+                        "height": "30px",
+                        "margin": "",
+                        "padding": ""
+                    },
+                    "@aria-hidden": "false",
+                    "css": [
+                        {
+                            "propertyName": "",
+                            "value": ""
+                        }
+                    ]
                 }
-            ]
-        },
-        "tooltip": {
-            "name": "tooltip",
-            "type": [],
-            "inherits": "",
-            "shortcut": "SHIFT+H",
-            "longdesc": "press here to personalize page with tooltips",
-            "tooltip": "Personalize Tooltip",
-            "text": "",
-            "Symbol": {
-                "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/tooltip1_noun.png",
-                
-                "creator": {
-                    "name": "Jardson Almeida, The Noun Project",
-                    "url": ""
-                },
-                "width": "50px",
-                "height": "30px",
-                "margin": "",
-                "padding": ""
             },
-            "@aria-hidden": "false",
-            "css": [
-                {
-                    "propertyName": "",
-                    "value": ""
-                }
-            ]
-        }
-    },
-    "aui-distraction": "animations, auto-starting, moving, ad, message, chat , overlay, popup",
+    "aui-distraction":"all",
     "simplification": "critical",
     "tagNames": {
         "a": {
@@ -106,7 +106,7 @@
             "css": [
                 {
                     "propertyName": "font-size",
-                    "value": "150%"
+                    "value": "100%"
                 },
                 {
                     "propertyName": "font-family",
@@ -129,6 +129,7 @@
                     "propertyName": "font-size",
                     "value": "150%"
                 },
+                
                 {
                     "propertyName": "font-family",
                     "value": "Gotham, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
@@ -154,11 +155,11 @@
                     "propertyName": "font-family",
                     "value": "Gotham, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
                 }
+
             ]
         }
     },
     "attributes": {
-
         "role":{
             "global_settings": {
                 "name": "role"
@@ -189,7 +190,117 @@
                         "value": ""
                     }
                 ]
+            },
+            "button": {
+                "name": "button",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=button",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "background-color",
+                        "value": "#7eeaf6"
+                    }
+                ]
+            },
+            "main": {
+                "name": "main",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=button",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "background-color",
+                        "value": "#f2f597"
+                    }
+                ]
+            },
+            "banner": {
+                "name": "banner",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=button",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "background-color",
+                        "value": "#00ff00"
+                    }
+                ]
+            },
+            "contentinfo": {
+                "name": "contentinfo",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=button",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "background-color",
+                        "value": "#ffb0f2"
+                    }
+                ]
             }
+
+
         },
         "AUI-action": {
             "global_settings": {
@@ -197,13 +308,17 @@
             },
             "compose": {
                 "name": "compose",
-                "type": [],
+                "type": [
+                    
+                ],
                 "inherits": "",
-                "shortcut": "SHIFT + C",
+                "shortcut": "Shift + C",
                 "longdesc": "this button writes or creates your new work.",
-                "tooltip": "Compose",
+                "tooltip": "Compose new item",
                 "text": "",
                 "Symbol": {
+                    "symbol_insertion_type":"tooltip",
+                    "css_class":"aui_header_images",
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/compose1_noun_a1.png",
                     "creator": {
                         "name": "",
@@ -224,15 +339,17 @@
             },
             "delete": {
                 "name": "delete",
-                "type": [],
+                "type": [
+                ],
                 "inherits": "",
-                "shortcut": "SHIFT + D",
+                "shortcut": "Shift + D",
                 "longdesc": "this button delete your work.",
-                "tooltip": "Delete",
-                "text": "delete",
+                "tooltip": "Delete item",
+                "text": "",
                 "Symbol": {
+                    "symbol_insertion_type":"tooltip",
+                    "css_class":"aui_header_images",
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/delete1_noun_a1.png",
-                    "css_class": "",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -252,16 +369,17 @@
             },
             "help": {
                 "name": "help",
-                "type": [],
+                "type": [
+                ],
                 "inherits": "",
-                "shortcut": "SHIFT + D",
+                "shortcut": "Shift + D",
                 "longdesc": "press to get website help",
-                "tooltip": "Help",
+                "tooltip": "",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/help2_noun.png",
-                    "css_class": "aui_header_images",
-                    "symbol_insertion_type": "replace",
+                    "symbol_insertion_type":"tooltip",
+                    "css_class":"aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -278,10 +396,11 @@
                         "value": ""
                     }
                 ]
-            },
+            },            
             "settings": {
                 "name": "settings",
-                "type": [],
+                "type": [
+                ],
                 "inherits": "",
                 "shortcut": "Shift + S",
                 "longdesc": "change website Settings",
@@ -289,7 +408,8 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/settings1_noun.png",
-                    "symbol_insertion_type":"replace",
+                    "symbol_insertion_type":"tooltip",
+                    "css_class":"aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -312,11 +432,13 @@
                 "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
-                "longdesc": "this button writes or creates your new work.",
-                "tooltip": "Go To Next",
+                "longdesc": "",
+                "tooltip": "Next",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/next1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -339,11 +461,41 @@
                 "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
-                "longdesc": "go to previous",
+                "longdesc": "",
                 "tooltip": "Previous",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/previous1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "temperature": {
+                "name": "temperature",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "Temperature",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/temperature1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -366,11 +518,13 @@
                 "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
-                "longdesc": "this button writes or creates your new work.",
+                "longdesc": "",
                 "tooltip": "Table of Contents",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/toc1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -393,11 +547,13 @@
                 "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
-                "longdesc": "this button writes or creates your new work.",
-                "tooltip": "Sumbit",
+                "longdesc": "",
+                "tooltip": "Submit to server",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/submit1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -420,11 +576,13 @@
                 "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
-                "longdesc": "this button writes or creates your new work.",
+                "longdesc": "",
                 "tooltip": "Confirm",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/confirm1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -447,38 +605,13 @@
                 "type": [],
                 "inherits": "",
                 "shortcut": "SHIFT + C",
-                "longdesc": "this button writes or creates your new work.",
+                "longdesc": "",
                 "tooltip": "Undo",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/undo1_noun_a1.png",
-                    "creator": {
-                        "name": "",
-                        "url": ""
-                    },
-                    "width": "",
-                    "height": "",
-                    "margin": "",
-                    "padding": ""
-                },
-                "@aria-hidden": "false",
-                "css": [
-                    {
-                        "propertyName": "",
-                        "value": ""
-                    }
-                ]
-            },
-            "cancel": {
-                "name": "cancel",
-                "type": [],
-                "inherits": "",
-                "shortcut": "SHIFT + C",
-                "longdesc": "this button writes or creates your new work.",
-                "tooltip": "Cancel",
-                "text": "",
-                "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/cancel1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -502,10 +635,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "Cancel",
+                "tooltip": "Close dialog and discard changes",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/cancel1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -529,10 +664,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "Reset",
+                "tooltip": "Reset controls",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/reset1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -556,10 +693,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "Label",
+                "tooltip": "Add label to item",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/label1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -583,10 +722,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "Buy",
+                "tooltip": "Buy item",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/buy1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -610,10 +751,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "Checkout",
+                "tooltip": "Checkout/Buy item",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/checkout1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -641,6 +784,8 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/add1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -664,10 +809,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "Move",
+                "tooltip": "Move selected item",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/move1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -691,10 +838,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "Save",
+                "tooltip": "Save current content",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/save1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -722,33 +871,8 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/send1_noun_a1.png",
-                    "creator": {
-                        "name": "",
-                        "url": ""
-                    },
-                    "width": "",
-                    "height": "",
-                    "margin": "",
-                    "padding": ""
-                },
-                "@aria-hidden": "false",
-                "css": [
-                    {
-                        "propertyName": "",
-                        "value": ""
-                    }
-                ]
-            },
-            "send": {
-                "name": "send",
-                "type": [],
-                "inherits": "",
-                "shortcut": "SHIFT + C",
-                "longdesc": "",
-                "tooltip": "Send",
-                "text": "",
-                "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/send1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -776,6 +900,8 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/close1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -799,10 +925,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "More",
+                "tooltip": "Show more information",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/more1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -830,6 +958,8 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/print1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -853,10 +983,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "Received",
+                "tooltip": "Open received folder",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/received1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -880,10 +1012,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "Sent",
+                "tooltip": "Open sent folder",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sent1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -911,6 +1045,8 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/edit1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -938,6 +1074,8 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/forward1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -961,10 +1099,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "reply",
+                "tooltip": "Reply",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/reply1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -988,10 +1128,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "upload",
+                "tooltip": "Upload file",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/upload1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1015,10 +1157,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "download",
+                "tooltip": "Download file",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/download1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1042,10 +1186,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "connect",
+                "tooltip": "Connect",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/connect1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1069,10 +1215,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "open",
+                "tooltip": "Open",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/open1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1096,10 +1244,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "new",
+                "tooltip": "New",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/new1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1123,10 +1273,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "mode",
+                "tooltip": "Change mode",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/mode1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1150,10 +1302,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "increase",
+                "tooltip": "Increase",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/increase1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1177,10 +1331,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "decrease",
+                "tooltip": "Decrease",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/decrease1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1204,10 +1360,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "play",
+                "tooltip": "Play",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/play1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1231,10 +1389,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "pause",
+                "tooltip": "Pause",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/pause1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1258,10 +1418,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "captions",
+                "tooltip": "Captions settings",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/captions1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1285,10 +1447,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "mute",
+                "tooltip": "Mute or toggle mute",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/mute1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1312,10 +1476,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "volume",
+                "tooltip": "Volume settings",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/volume1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1339,37 +1505,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "channel",
+                "tooltip": "Channel settings",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/channel1_noun_a1.png",
-                    "creator": {
-                        "name": "",
-                        "url": ""
-                    },
-                    "width": "",
-                    "height": "",
-                    "margin": "",
-                    "padding": ""
-                },
-                "@aria-hidden": "false",
-                "css": [
-                    {
-                        "propertyName": "",
-                        "value": ""
-                    }
-                ]
-            },
-            "temperature": {
-                "name": "temperature",
-                "type": [],
-                "inherits": "",
-                "shortcut": "SHIFT + C",
-                "longdesc": "",
-                "tooltip": "temperature",
-                "text": "",
-                "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/temperature1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1393,10 +1534,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "brightness",
+                "tooltip": "Brightness settings",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/brightness1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1420,10 +1563,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "profile",
+                "tooltip": "Profile page",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/profile1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1447,10 +1592,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "expand",
+                "tooltip": "Expand or unexpand item",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/expand1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1474,10 +1621,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "refresh",
+                "tooltip": "Refresh",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/refresh1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1501,10 +1650,41 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "properties",
+                "tooltip": "Show item properties",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/properties1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "help": {
+                "name": "help",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "Open help function",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/help1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1528,10 +1708,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "cut",
+                "tooltip": "Cut",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/cut1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1555,10 +1737,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "copy",
+                "tooltip": "Copy",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/copy1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1582,10 +1766,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "paste",
+                "tooltip": "Paste",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/paste1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1609,10 +1795,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "color",
+                "tooltip": "Open colour picker",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/color1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1636,10 +1824,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "date",
+                "tooltip": "Open date control",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/date1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1663,10 +1853,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "remove",
+                "tooltip": "Remove item",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/remove1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1690,10 +1882,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "right",
+                "tooltip": "Move item right",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/right1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1717,10 +1911,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "left",
+                "tooltip": "Move item left",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/left1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1745,16 +1941,18 @@
             },
             "search": {
                 "name": "search",
-                "type": [],
+                "type": [
+                    
+                ],
                 "inherits": "",
                 "shortcut": "SHIFT + S",
                 "longdesc": "Search input",
-                "tooltip": "Search",
+                "tooltip": "type to search",
                 "text": "Type here to Search",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/search1_noun.png",
-                    "symbol_insertion_type":"before",
-                    "css_class": "aui_header_images",
+
+                    "symbol_insertion_type":"tooltip",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1776,13 +1974,14 @@
                 "name": "name",
                 "type": [],
                 "inherits": "",
-                "shortcut": "SHIFT + S",
-                "longdesc": "Search input",
-                "tooltip": "Search",
-                "text": "Type here to Search",
+                "shortcut": "SHIFT + N",
+                "longdesc": "name input",
+                "tooltip": "Full name",
+                "text": "Type your name here",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/name1_noun_a1.png",
-                    "symbol_insertion_type":"before",
+                    "symbol_insertion_type":"tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1805,19 +2004,20 @@
                 "name": "honorificPrefix",
                 "type": [],
                 "inherits": "",
-                "shortcut": "SHIFT + S",
+                "shortcut": "SHIFT + Q",
                 "longdesc": "honorificPrefix",
-                "tooltip": "honorificPrefix",
+                "tooltip": "Prefix or title (Mr., Mrs. Dr., etc.)",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/honorificPrefix1_noun_a1.png",
-                    "symbol_insertion_type":"before",
+                    "symbol_insertion_type":"tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "",
-                    "height": "",
+                    "width": "50",
+                    "height": "50",
                     "margin": "",
                     "padding": ""
                 },
@@ -1835,11 +2035,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "givenName",
+                "tooltip": "Given or first name",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/givenName1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1863,11 +2064,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "additionalName",
+                "tooltip": "Additional or middle name",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/additionalName1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1891,11 +2093,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "additionalNameInitial",
+                "tooltip": "Additional or middle name initial",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/additionalNameInitial1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1919,11 +2122,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "familyName",
+                "tooltip": "Family name/Surname/Last name",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/familyName1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1947,11 +2151,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "honorificSuffix",
+                "tooltip": "Suffix (Jr., II, etc.)",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/honorificSuffix1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -1975,11 +2180,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "nickname",
+                "tooltip": "Nickname",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/nickname1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2003,11 +2209,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "streetAddress",
+                "tooltip": "Full street address",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/streetAddress1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2031,11 +2238,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "city",
+                "tooltip": "Locality or city",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/city1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2057,13 +2265,14 @@
                 "name": "area",
                 "type": [],
                 "inherits": "",
-                "shortcut": "SHIFT + A",
+                "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "area",
+                "tooltip": "Administrative area, state, province, or region",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/area1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2087,11 +2296,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "postalcode",
+                "tooltip": "postal or ZIP code",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/postalCode1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2115,11 +2325,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "country",
+                "tooltip": "Country name",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/country1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2143,11 +2354,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "fax",
+                "tooltip": "Full fax number",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/fax1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2171,11 +2383,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "email",
+                "tooltip": "Email address",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2199,11 +2412,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "tel",
+                "tooltip": "Full phone number",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/tel1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2227,11 +2441,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "ccName",
+                "tooltip": "Full name on credit card",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/ccName1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2255,11 +2470,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "language",
+                "tooltip": "Preferred language",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/language1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2283,11 +2499,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "bday",
+                "tooltip": "Date of birth",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/bday1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2311,11 +2528,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "transactionCurrency",
+                "tooltip": "Type of currency",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/transactionCurrency1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2339,11 +2557,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "transactionAmount",
+                "tooltip": "Cost",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/transactionAmount1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2367,11 +2586,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "topic",
+                "tooltip": "Topic",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/topic1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2395,11 +2615,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "comment",
+                "tooltip": "Comment section",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/comment1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2423,11 +2644,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "subject",
+                "tooltip": "Form subject",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/subject1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2451,11 +2673,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "answer",
+                "tooltip": "Answer to a section question",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/answer1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2479,11 +2702,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "org",
+                "tooltip": "Company or organization",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/org1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2507,11 +2731,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "position",
+                "tooltip": "Position within company/organization",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/position1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2535,11 +2760,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "sex",
+                "tooltip": "Sex/gender",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sex1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2563,11 +2789,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "gender",
+                "tooltip": "Gender",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/gender1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2591,11 +2818,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "url",
+                "tooltip": "Website url",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/url1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2619,11 +2847,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "photo",
+                "tooltip": "Photo or avatar",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/photo1_noun_a1.png",
-                    "symbol_insertion_type": "before",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2648,22 +2877,24 @@
             },
             "home": {
                 "name": "home",
-                "type": [],
+                "type": [
+
+                ],
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "Shift+H",
                 "longdesc": "this links to the home page.",
-                "tooltip": "Home",
-                "text": "",
+                "tooltip": "Go to homepage",
+                "text": "home text",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",
-                    "css_class": "aui_header_images",
-                    "symbol_insertion_type":"replace",
+                    "css_class":"aui_header_images",
+                    "symbol_insertion_type": "tooltip",
                     "creator": {
                         "name": "Jardson Almeida, The Noun Project",
                         "url": ""
                     },
-                    "width": "100",
-                    "height": "250",
+                    "width": "",
+                    "height": "",
                     "margin": "",
                     "padding": ""
                 },
@@ -2675,24 +2906,25 @@
                     }
                 ]
             },
-            
             "signin": {
                 "name": "signin",
-                "type": [],
+                "type": [
+                ],
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "Shift+L",
                 "longdesc": "link to sign in to the website",
                 "tooltip": "Sign in",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signin1_noun.png",
-                    "css_class": "aui_header_images",
+                    "css_class":"aui_header_images",
+                    "symbol_insertion_type": "tooltip",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "100",
-                    "height": "250",
+                    "width": "",
+                    "height": "",
                     "margin": "",
                     "padding": ""
                 },
@@ -2706,7 +2938,8 @@
             },
             "signout": {
                 "name": "signout",
-                "type": [],
+                "type": [
+                ],
                 "inherits": "",
                 "shortcut": "Ctrl+L",
                 "longdesc": "link to sign out of the website",
@@ -2714,6 +2947,8 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/signout1_noun.png",
+                    "css_class":"aui_header_images",
+                    "symbol_insertion_type": "tooltip",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2733,21 +2968,24 @@
             },
             "email": {
                 "name": "email",
-                "type": [],
+                "type": [
+
+                ],
                 "inherits": "",
-                "shortcut": "",
+                "shortcut": "E",
                 "longdesc": "this links to the our email page.",
-                "tooltip": "email us",
+                "tooltip": "Email us",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/email1_noun.png",
-                    "css_class": "aui_email_images",
+                    "css_class":"aui_header_images",
+                    "symbol_insertion_type": "tooltip",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "100",
-                    "height": "300",
+                    "width": "",
+                    "height": "",
                     "margin": "",
                     "padding": ""
                 },
@@ -2761,22 +2999,23 @@
             },
             "about": {
                 "name": "about",
-                "type": [],
+                "type": [
+                ],
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "I",
                 "longdesc": "this links to info about the creator etc.",
-                "tooltip": "information about the creator",
+                "tooltip": "Website Information",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/about2_noun.png",
-                    "css_class": "aui_header_images",
-                    "symbol_insertion_type": "replace",
+                    "css_class":"aui_header_images",
+                    "symbol_insertion_type": "tooltip",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "100",
-                    "height": "180",
+                    "width": "",
+                    "height": "",
                     "margin": "",
                     "padding": ""
                 },
@@ -2794,41 +3033,14 @@
                     ""
                 ],
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "Shift+Q",
                 "longdesc": "contach the creators",
                 "tooltip": "Contact the creators",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/contact_us2_noun.png",
-                    "css_class": "aui_header_images",
-                    "symbol_insertion_type": "replace",
-                    "creator": {
-                        "name": "",
-                        "url": ""
-                    },
-                    "width": "100",
-                    "height": "180",
-                    "margin": "",
-                    "padding": ""
-                },
-                "@aria-hidden": "false",
-                "css": [
-                    {
-                        "propertyName": "",
-                        "value": ""
-                    }
-                ]
-            },
-            "phone": {
-                "name": "phone",
-                "type": [],
-                "inherits": "",
-                "shortcut": "SHIFT + P",
-                "longdesc": "",
-                "tooltip": "phone",
-                "text": "",
-                "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/phone1_noun_a1.png",
+                    "symbol_insertion_type":"tooltip",
+                    "css_class":"aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2852,48 +3064,20 @@
                     ""
                 ],
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "Shift+M",
                 "longdesc": "map of the website",
-                "tooltip": "map of this website",
+                "tooltip": "Map of this website",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/sitemap1_noun.png",
-                    "css_class": "aui_header_images",
-                    "symbol_insertion_type": "replace",
+                    "css_class":"aui_header_images",
+                    "symbol_insertion_type": "tooltip",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "100",
-                    "height": "180",
-                    "margin": "",
-                    "padding": ""
-                },
-                "@aria-hidden": "false",
-                "css": [
-                    {
-                        "propertyName": "",
-                        "value": ""
-                    }
-                ]
-            },
-            "accessibilityStatement": {
-                "name": "accessibilityStatement",
-                "inherits": "",
-                "shortcut": "SHIFT+H",
-                "longdesc": "Information about Accessibility",
-                "tooltip": "Information about Accessibility",
-                "text": "",
-                "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/accessibilityStatement1_noun_a1.png",
-                    "css_class": "aui_header_images",
-                    "symbol_insertion_type": "before",
-                    "creator": {
-                        "name": "",
-                        "url": ""
-                    },
-                    "width": "60",
-                    "height": "60",
+                    "width": "100px",
+                    "height": "100px",
                     "margin": "",
                     "padding": ""
                 },
@@ -2908,20 +3092,21 @@
             "lang": {
                 "name": "lang",
                 "inherits": "",
-                "shortcut": "SHIFT+H",
+                "shortcut": "L",
                 "longdesc": "pick language",
-                "tooltip": "pick language",
+                "tooltip": "",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/lang1_noun.png",
-                    "css_class": "aui_header_images",
-                    "symbol_insertion_type": "before",
+                    "css_class":"aui_header_images",
+                    "symbol_insertion_type": "tooltip",
                     "creator": {
                         "name": "",
                         "url": ""
                     },
-                    "width": "60",
-                    "height": "60",
+                    
+                    "width": "100px",
+                    "height": "100px",
                     "margin": "",
                     "padding": ""
                 },
@@ -2942,7 +3127,67 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/tools1_noun.png",
-                    "symbol_insertion_type": "replace",
+                    "css_class":"aui_header_images",
+                    "symbol_insertion_type": "tooltip",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    
+                    "width": "100px",
+                    "height": "100px",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "phone": {
+                "name": "phone",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "phone",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/phone1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "accessibilityStatement": {
+                "name": "accessibilityStatement",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "",
+                "tooltip": "Information about Accessibility",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/accessibilityStatement1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2969,7 +3214,9 @@
                 "tooltip": "help",
                 "text": "",
                 "Symbol": {
-                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/help2_noun.png",
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/help1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -2997,6 +3244,8 @@
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/chat1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -3020,10 +3269,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "terms",
+                "tooltip": "Terms and conditions",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/terms1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -3047,12 +3298,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "services",
+                "tooltip": "Services",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/services1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
                     "css_class": "aui_header_images",
-                    "symbol_insertion_type":"replace",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -3076,10 +3327,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "products",
+                "tooltip": "Products",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/products1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -3103,10 +3356,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "comment",
+                "tooltip": "Submit a comment",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/comment1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -3130,10 +3385,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "language",
+                "tooltip": "Language options",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/language1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -3157,10 +3414,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "register",
+                "tooltip": "Register for this website/app",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/register1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -3184,10 +3443,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "social",
+                "tooltip": "Content provider on social media",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/social1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -3211,10 +3472,12 @@
                 "inherits": "",
                 "shortcut": "SHIFT + C",
                 "longdesc": "",
-                "tooltip": "post",
+                "tooltip": "Post",
                 "text": "",
                 "Symbol": {
                     "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/post1_noun_a1.png",
+                    "symbol_insertion_type": "tooltip",
+                    "css_class": "aui_header_images",
                     "creator": {
                         "name": "",
                         "url": ""
@@ -3232,7 +3495,44 @@
                     }
                 ]
             }
+        },
+        "AUI-symbol": {
+            "global_settings": {
+                "name": "AUI-symbol"
+            },
+            "https://en.wikipedia.org/wiki/Copyright": {
+                "name": "https://en.wikipedia.org/wiki/Copyright",
+                "type": [
+                    
+                ],
+                "inherits": "",
+                "shortcut": "Shift + C",
+                "longdesc": "Copyrights information",
+                "tooltip": "Copyrights Information",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/copyright1_noun.png",
+                    "css_class":"aui_header_images",
+                    "symbol_insertion_type": "tooltip",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "100px",
+                    "height": "100px",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "false",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            }
         }
+
     },
     "scopes": {
         "itemtype": {
@@ -3248,7 +3548,7 @@
                         "text": "Training",
                         "Symbol": {
                             "url": "",
-                            
+                            "symbol_insertion_type": "tooltip",
                             "creator": {
                                 "name": "",
                                 "url": ""
@@ -3286,10 +3586,39 @@
                         "inherits": "",
                         "shortcut": "",
                         "longdesc": "itemtype itemlist with itemprop name",
-                        "tooltip": "first name tooltip",
-                        "text": "Training itemprop",
+                        "tooltip": "First name tooltip",
+                        "text": "",
                         "Symbol": {
-                            "url": "",
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/givenName1_noun_a1.png",                        
+                            "symbol_insertion_type": "tooltip",
+                            "creator": {
+                                "name": "",
+                                "url": ""
+                            },
+                            "width": "100",
+                            "height": "100",
+                            "margin": "",
+                            "padding": ""
+                        },
+                        "@aria-hidden": "false",
+                        "css": [
+                            {
+                                "propertyName": "color",
+                                "value": "red"
+                            }
+                        ]
+                    },
+                    "lname": {
+                        "name": "lname",
+                        "type": [],
+                        "inherits": "",
+                        "shortcut": "",
+                        "longdesc": "itemtype itemlist with itemprop name",
+                        "tooltip": "Last name tooltip",
+                        "text": "",
+                        "Symbol": {
+                            "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/familyName1_noun_a1.png",                        
+                            "symbol_insertion_type": "tooltip",
                             "creator": {
                                 "name": "",
                                 "url": ""
@@ -3306,11 +3635,6 @@
                                 "value": "red"
                             }
                         ]
-                    },
-                    "lname": {
-                        "name": "lname",
-                        "type": [],
-                        "tooltip": "last name tooltip"
                     }
                 }
             }

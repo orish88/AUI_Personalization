@@ -1019,7 +1019,7 @@ Auto-changing (logs) third-party, offer ( includes suggestions). */
  * @param {*} text 
  */
 function consoleLog(text){
-	// console.log(text);
+	console.log(text);
 }
 
 /**
