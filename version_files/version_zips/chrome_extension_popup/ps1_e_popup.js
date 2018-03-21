@@ -1,21 +1,25 @@
 
-// getPersonalization('https://rawgit.com/orish88/AUI_Personalization/master/profiles/profile1.json');
 
-console.log("ps1_e_popup called 3");
+
+/**
+ * This a a copy of the ps1_e script, to be used for personalzing the popup itself.
+ * For documentation refer to the original ps1_e.js file.
+ */
+
+console.log("ps1_e popup called 4");
 
 var gCtr  =0;
-// if(isDefined(profileJson)){
-// 	getPersonalization(profileJson);
-// }
+/**
+ * profile json is define in script execution on run_popup.js*/
+
+
 //test changes(1)
 // download JSON skin in url, and personalise page based on the settings in it  
 function getPersonalization(url) {
-	console.log("ps1_e popup getPersonalization called 4");
-	// alert("get personalization called");
-	// var script = 'document.body.style.backgroundColor="Yellow";';
-	// chrome.tabs.executeScript({
-	// 	code: script
-	//   });
+	if(!isDefined(url)){
+		return;
+	}
+	consoleLog("ps1_e called: ");
 	//load json skin (profile) and run it
 	makeCorsRequest(url);
 }
@@ -27,25 +31,19 @@ function makeCorsRequest(url) {
 		alert('CORS not supported');
 		return;
 	}
-
 	// Response handlers.
 	xhr.onload = function () {
 		var text = xhr.responseText;
 		//parse JSON
 		var jsonSkin = JSON.parse(text);
 		//make global variable
-
 		window.profile = jsonSkin;
-
 		//run settings
 		personalizePage(jsonSkin);
-
 	};
-
 	xhr.onerror = function () {
-		console.log("looks like the browser doesn't support CORS. Alternatives include using a proxy or JSONP.");
+		consoleLog("looks like the browser doesn't support CORS. Alternatives include using a proxy or JSONP.");
 	};
-
 	xhr.send();
 }
 
@@ -66,68 +64,92 @@ function createCORSRequest(method, url) {
 	return xhr;
 }
 
-//personalise page based on the settings in the JSON object recieved
+/**
+ * personalise page based on the settings in the JSON object recieved
+ */
 function personalizePage(profile) {
 
-	// alert("personalizee page called");
-
+	//read the popup changes from the profile and apply them
 	editPopup(profile);
+	consoleLog("personalize page called for profile: " + profile.name);
 
-	console.log("personalize page called for profile: " + profile.name);
+	//add classes that are relevant to tooltip changes
 	addTooltipCssClasses();
 	if ( isDefined(profile.css)) {
+
+	//read the global css changes from the profile and apply them
 		personalizeCSS(profile.css);
 	}
 	if ( isDefined(profile.tagNames)) {
+	//read the tagname(like 'a' or 'p' or 'img') changes from the profile and apply them to relevant elements
 		personalizeTagnames(profile.tagNames);
 	}
 	if ( isDefined(profile.attributes)) {
+		//read the attributes (like aui-destination = "home" ) from the profile and apply them to relevant elements
 		personalizeAttributes(profile.attributes);
 	}
-
 	if ( isDefined(profile.scopes) && isDefined(profile.scopes.itemtypes) ) {
+		//read the scope changes from the profile and apply them to relevant elements (itemtype/prop).
+		//Scopes mean nested changes, relevant attribute inside some other attribute's scope
+		//todo: make generic
 		personalizeItemScopes(profile.scopes.itemtypes);
 	}
 	if ( isDefined(profile.scopes) && isDefined(profile.scopes.autocomplete) ) {
+		//read the scope changes from the profile and apply them to relevant elements (like autocomplete).
+		//Scopes mean nested changes, relevant attribute inside some other attribute's scope
 		personalizeAutocomplete(profile.scopes.autocomplete);
 	}
 	if( isDefined(profile.simplification)){
-		console.log("simplification level: "+simplificationLevel);
+		consoleLog("simplification level: "+simplificationLevel);
 		var simplificationLevel = profile.simplification;
+		//read the simplification level from the profile and hide relevant elements
 		personalizeSimplification(simplificationLevel); 
 	}
 	if(isDefined(profile["aui-distraction"])){
-		console.log("aui-distraction: "+profile["aui-distraction"]);
+		consoleLog("aui-distraction: "+profile["aui-distraction"]);
+		//check for elemts that are considered as distractions by the profile and treat them accordingly
 		personalizeDistraction();
 	}
 }
 
+/**
+ * read the popup changes from the profile and apply them
+ * @param {*} profile 
+ */
 function editPopup(profile){
-	console.log("athena icon: edit popup called"  ) ;
+	consoleLog("athena icon: edit popup called"  ) ;
 	var athenaIcon = profile["athena-icon"];
 	if(!isDefined(athenaIcon)){
 		return;
 	}
-	console.log("athena icon is defined: "+athenaIcon) ;
+	consoleLog("athena icon is defined: "+athenaIcon) ;
 	$("[athena-icon]").each(function(index){
 		$( "#"+$(this).attr("id")+" img").remove();
 		var iconSettings = athenaIcon[$(this).attr("athena-icon")];
-		console.log("athena icon = "+$(this).attr("athena-icon") +" url in profile is:: "+iconSettings.Symbol.url ) ;
+		consoleLog("athena icon = "+$(this).attr("athena-icon") +" url in profile is:: "+iconSettings.Symbol.url ) ;
 		applySettingsOnElement($(this),iconSettings);		
 	});
 }
+/**
+ * read the simplification level from the profile and hide elements with lower simplification.
+ * @param {*} simplificationLevel 
+ */
 function personalizeSimplification(simplificationLevel) {
-	console.log("simplification level: "+simplificationLevel);
+	consoleLog("simplification level: "+simplificationLevel);
 	var simplificationValue = simplicficationFromStringToInt(simplificationLevel);
 	var simplificationElements = document.querySelectorAll('[AUI-simplification]');
 	simplificationElements.forEach(element=>{
 		if(simplicficationFromStringToInt( element.getAttribute("AUI-simplification") ) > simplificationValue ){
-			console.log("element "+element+ " hidden: ");
+			consoleLog("element "+element+ " hidden: ");
 			element.hidden = true;
 			$(element).attr("aria-hidden","true");
 		}
 	});
 }
+/**
+ * convert simplification level from string to int
+ * @param {*} simplificationString 
+ */
 function simplicficationFromStringToInt(simplificationString){
 	var simplificationValue = 1;
 	switch (simplificationString) {
@@ -147,8 +169,13 @@ function simplicficationFromStringToInt(simplificationString){
 	return simplificationString;
 }
 
+/**
+ * check for elements with autcomplete and inside their scope checj for elements with relevant 'name' values and apply changes.
+ * todo: make generic(for scope changes)
+ * @param {*} autocomplete 
+ */
 function personalizeAutocomplete(autocomplete) {
-	console.log("personalize Autocomplete called");
+	consoleLog("personalize Autocomplete called");
 	var elementsWithItemtype = document.querySelectorAll('[autocomplete = "on" ]');
 	var elementsWithItemtypeList = [...elementsWithItemtype]; //convert nodelist to array
 	elementsWithItemtypeList.forEach(element => {
@@ -157,13 +184,13 @@ function personalizeAutocomplete(autocomplete) {
 }
 function personalizeNamesInsideAutocomplete(elementWithAutoComplete) {
 
-	console.log("personalize autocomplete for " + elementWithAutoComplete + " called");
+	consoleLog("personalize autocomplete for " + elementWithAutoComplete + " called");
 
 	var elementsWithName = elementWithAutoComplete.querySelectorAll('input[name]:not([autocomplete="off"])');
 	var elementsWithNameList = [...elementsWithName];
-	console.log("elements with name list size: " + elementsWithNameList.length);
+	consoleLog("elements with name list size: " + elementsWithNameList.length);
 	elementsWithNameList.forEach(element => {
-		console.log("personalize autocomplete name element - in loop before call: element: " + element + " ");
+		consoleLog("personalize autocomplete name element - in loop before call: element: " + element + " ");
 		personalizeAutoCompleteNameElement(element);
 	});
 
@@ -171,19 +198,19 @@ function personalizeNamesInsideAutocomplete(elementWithAutoComplete) {
 
 function personalizeAutoCompleteNameElement(elementWithName){
 	var nameVal = elementWithName.getAttribute("name");
-	console.log("personalize autocomplete element. nameVal: " +nameVal +" called");
+	consoleLog("personalize autocomplete element. nameVal: " +nameVal +" called");
 	//todo: take the itemtype value and apply its settings to the ekement its declared on) 
 	var changeAttrVal = window.profile.scopes.autocomplete["on"].names[nameVal];
 
 	if (isDefined(changeAttrVal)) {
-		console.log("auticomplete name- changeAttrVal.inherits: "+changeAttrVal.inherits);
+		consoleLog("auticomplete name- changeAttrVal.inherits: "+changeAttrVal.inherits);
 		applySettingsOnElement(elementWithName, changeAttrVal);
 	}
 }
 
-//itemtypes
+//same as autocomplete, scoped changes
 function personalizeItemScopes(itemtypes) {
-	console.log("personalize itemScopes called");
+	consoleLog("personalize itemScopes called");
 
 	var elementsWithItemtype = document.querySelectorAll('[itemtype]');
 	var elementsWithItemtypeList = [...elementsWithItemtype]; //convert nodelist to array
@@ -195,13 +222,13 @@ function personalizeItemScopes(itemtypes) {
 function personalizeItempropsInsideType(elementWithItemtype) {
 
 	var typeVal = elementWithItemtype.getAttribute("itemtype");
-	console.log("personalize itemprop inside type( "+typeVal+") " +elementWithItemtype+" called");
+	consoleLog("personalize itemprop inside type( "+typeVal+") " +elementWithItemtype+" called");
 	if (isDefined(typeVal)) {
 		var elementsWithItemprop = elementWithItemtype.querySelectorAll('[itemprop]');
 		var elementsWithItempropList = [...elementsWithItemprop];
-		console.log("elements with item propr list size: "+elementsWithItempropList.length);
+		consoleLog("elements with item propr list size: "+elementsWithItempropList.length);
 		elementsWithItempropList.forEach(element => {
-			console.log("personalize itemprop element - in loop before call:  val: ("+typeVal+") element: " +element+" ");
+			consoleLog("personalize itemprop element - in loop before call:  val: ("+typeVal+") element: " +element+" ");
 			personalizeItempropElement(element, typeVal);
 		});
 	}
@@ -209,26 +236,29 @@ function personalizeItempropsInsideType(elementWithItemtype) {
 
 function personalizeItempropElement(element, typeVal) {
 	var propVal = element.getAttribute("itemprop");
-	console.log("personalize itemprop element. typeval: "+typeVal+",proprVal "+propVal +" called");
+	consoleLog("personalize itemprop element. typeval: "+typeVal+",proprVal "+propVal +" called");
 	//todo: take the itemtype value and apply its settings to the ekement its declared on) 
 	var changeAttrVal = window.profile.scopes.itemtypes[typeVal].itemprops[propVal];
 	if (isDefined(changeAttrVal)) {
-		console.log("itemprop- changeAttrVal.inherits: "+changeAttrVal.inherits);
+		consoleLog("itemprop- changeAttrVal.inherits: "+changeAttrVal.inherits);
 		applySettingsOnElement(element, changeAttrVal);
 	}
 }
-
+/**
+ * iterate over this attribute in the profile, and check for elements that has it and also
+ * @param {*} tagnames 
+ */
 function personalizeTagnames(tagnames) {
-	console.log("personalize tagnames called: " + tagnames);
+	consoleLog("personalize tagnames called: " + tagnames);
 	var tagnameList = Object.keys(tagnames);
 	tagnameList.forEach(tagname => {
-		console.log("tagname key: " + tagname);
+		consoleLog("tagname key: " + tagname);
 		personalizeTagname(tagnames[tagname]);
 	});
 }
 
 function personalizeTagname(tagname) {
-	console.log("personalize tagname called on: " + tagname.name);
+	consoleLog("personalize tagname called on: " + tagname.name);
 	if (isDefined(tagname.name)) {
 		var elementsWithTagname = document.getElementsByTagName(tagname.name);
 		var elementsWithTagnameList = Array.prototype.slice.call(elementsWithTagname);
@@ -245,24 +275,18 @@ function personalizeCSS(cssSettings) {
 
 	//personalize css:
 	var cssFile = cssSettings.cssFileLink;
-	console.log("css settings css file: " + cssFile);
+	consoleLog("css settings css file: " + cssFile);
 
 	if (isDefined(cssFile)) {
 		var linkIndex = cssSettings.linkIndex;
 		addCSSFile(cssFile, parseInt(linkIndex));
-		console.log("add new css called: " +cssFile);
+		consoleLog("add new css called: " +cssFile);
 	}
 	var cssBodySettings = profile.css.cssSettings;
 	if (isDefined(cssBodySettings)) {
-		console.log("set body css called on " + cssBodySettings);
+		consoleLog("set body css called on " + cssBodySettings);
 		setCSS(document.body, cssBodySettings);
 	}
-	// setCSS("hidden",[
-	// 	{
-	// 		"propertyName": "display",
-	// 		"value": "none"
-	// 	}
-	// ]);
 
 }
 
@@ -303,14 +327,14 @@ function personalizeAttribute(attribute) {
 	if ( !isDefined(attribute.global_settings)|| !isDefined(attribute.global_settings.name) ) {
 		return;
 	}
-	console.log("new version personalizeAttribute called on: " + attribute.global_settings.name);
+	consoleLog("new version personalizeAttribute called on: " + attribute.global_settings.name);
 
 	var attributeName = attribute.global_settings.name;
 	//iterate over all elements with field 'attribute.name' in the DOM
 	var elementsWithAttr = document.querySelectorAll('[' + attributeName + ']');
 	elementsWithAttr.forEach(element => {
 		var attrValName = element.getAttribute(attributeName);
-		console.log("attr: " + attributeName + "= attrValName: " + attrValName);
+		consoleLog("attr: " + attributeName + "= attrValName: " + attrValName);
 		var attrVal = attribute[attrValName];
 		personalizeAttributeValue(element, attrVal);
 
@@ -319,7 +343,7 @@ function personalizeAttribute(attribute) {
 
 function personalizeAttributeValue(element, attrVal) {
 	if (!isDefined(attrVal)) {
-		console.log("illegal attribute value " + attrVal + " in " + element);
+		consoleLog("illegal attribute value " + attrVal + " in " + element);
 		return;
 	}
 	applySettingsOnElement(element, attrVal);
@@ -330,10 +354,16 @@ function personalizeAttributeValue(element, attrVal) {
  * @param {*} attrVal 
  */
 function applySettingsOnElement(element, attrVal) {
+
+	/*check if element is of relevant type (from profile)  */
 	if(isDefined(attrVal.type)){
 		var isType = false;
 		var elementType = element.tagName.toUpperCase();
 
+
+/**
+ * document the json
+ */
 
 		//check if relevant type:
 		for(var i=0; i < attrVal.type.length; i++){
@@ -344,7 +374,7 @@ function applySettingsOnElement(element, attrVal) {
 				}
 				type = type.substring(4);
 				if(type.toUpperCase() === elementType){
-					console.log("in for: change revoked due to type missmatch:\neleType: "+elementType+"\ntype: "+type+"\nval: "+attrVal.name);
+					consoleLog("in for: change revoked due to type missmatch:\neleType: "+elementType+"\ntype: "+type+"\nval: "+attrVal.name);
 					return;
 				}
 			}else
@@ -354,25 +384,30 @@ function applySettingsOnElement(element, attrVal) {
 			}	
 		}
 		if(!isType){
-			console.log("change revoked due to type missmatch:\neleType: "+elementType+"\ntype: "+type+"\nval: "+attrVal.name);
+			consoleLog("change revoked due to type missmatch:\neleType: "+elementType+"\ntype: "+type+"\nval: "+attrVal.name);
 			return;
 		}
 
 	}
+	/*check if attribute value inherits from a different value in the profile  */
 	if (isDefined(attrVal.inherits)) {
-		console.log("inherits called on element: "+element+" with attr val: "+attrVal.name);
+		consoleLog("inherits called on element: "+element+" with attr val: "+attrVal.name);
 		var attributeName = attrVal.inherits.attributeName;
 		var attributeValue = attrVal.inherits.attributeValue;
-		console.log("inherits: attrname: "+attributeName+" attrVal: "+attributeValue );
+		consoleLog("inherits: attrname: "+attributeName+" attrVal: "+attributeValue );
 		var inheritedAttrVal = window.profile.attributes[attributeName][attributeValue];
 		applySettingsOnElement(element, inheritedAttrVal);
 
 	} else {
 
 		var settings = attrVal;
-		console.log("apply settings: " + settings + " on: " + element);
-		//apply css changes:
+		consoleLog("apply settings: " + settings + " on: " + element);
+		
+		//apply field changes: 
+		//todo: changee name to : attribute values
+		applyAttributeValuesChanges(element,settings);
 
+		//apply css changes:
 		if (isDefined(settings.css)) {
 			var styleSettings = settings.css;
 			setCSS(element, styleSettings);
@@ -380,9 +415,6 @@ function applySettingsOnElement(element, attrVal) {
 		//change text and symbol:
 		insertImage(element,settings);
 
-		// if (isDefined(settings.tooltip)) {
-		// 	element.title = settings.tooltip;
-		// }
 		// add/change shortcut (accesskey)
 		if (isDefined(settings.shortcut)) {
 			element.accessKey = settings.shortcut;
@@ -390,163 +422,102 @@ function applySettingsOnElement(element, attrVal) {
 	}
 }
 
-
-// function scaleImage(element, img, name, scaleType, inner) {
-// 	console.log("scale image called on: " + img);
-
-// 	//TODO: check inner and finish this for ALL SCENARIOS
-// 	//inner can be:
-// 	// "" if no text
-// 	// elelment.innerHtml 
-// 	// settings.text
-	
-// 	if (scaleType === "none") {
-// 		console.log("inside scaletype none: "+name);
-
-// 		var sizeCoefficient = 1;		
-// 		switch(inner){
-// 			case "":
-// 			element.innerHTML = "";				
-// 			break;
-// 			case element.innerHTML:
-// 				sizeCoefficient = 2;
-// 				break;
-// 			default:
-// 				console.log("problem: default reached on scaleType none");
-// 				return;
-// 		}
-		
-// 		// $(img).on('load', function () {
-// 			var css;
-
-// 			console.log("name: " + name + "\nh: " + $(img).height() + "\nw: " + $(img).width() + "\neh: " + $(element).height() + "\new: " + $(element).width());
-// 			var mHeight = $(element).height();
-// 			var mWidth = sizeCoefficient*$(element).width();
-// 			css = { width: mWidth, height: mHeight };
-// 			$(img).css(css);
-// 			if( sizeCoefficient > 1 ){
-// 				$(element).width( sizeCoefficient * $(element).width() );
-// 			}		
-// 		// });
-// 	}
-// 	// else if(scaleType === "cssClass") {
-// 	// 	$(img).appendTo(element);
-// 	// }else{ //fixed dims
-// 	// 	$(img).appendTo(element);
-// 	// }
-// }
+/**
+ * get img from the settings if exists and insert it to the element, 
+ * insertion way determined by profile(symbol_insertion_type)
+ * @param {*} element 
+ * @param {*} settings 
+ */
 
 function insertImage(element, settings) {
 	if (isDefined(settings.Symbol) && isDefined(settings.Symbol.url)) {
 
-		// if (isDefined(settings.text)) {
-		// 	$(element).html(settings.text);
-		// }
-		var mHeight = $(element).height();
-		var mWidth = $(element).width();
+		// var mHeight = $(element).height();
+		// var mWidth = $(element).width();
 
-		console.log("inside insert image");
+		consoleLog("inside insert image");
 		var newImg = document.createElement('img');
 		newImg.setAttribute("src", settings.Symbol.url);
+
+
 		addBorderToImg(newImg);
-		// if (isDefined(settings.tooltip)) {
-		// 	newImg.title = settings.tooltip;
-		// }
 		if (isDefined(settings.Symbol.css_class)) {
-			console.log("inside css_class: "+settings.name);
+			consoleLog("inside css_class: "+settings.name);
 			newImg.setAttribute("class", settings.Symbol.css_class);
 		} else if (isDefined(settings.Symbol.height) && isDefined(settings.Symbol.width)) {
-			console.log("inside h/w: "+settings.name);
+			consoleLog("inside h/w: "+settings.name);
 			$(newImg).css({ height: settings.Symbol.height, width: settings.Symbol.width });
 		} else {
-			console.log("inside auto size: "+settings.name+"-element height: "+ $(element).height());
+			consoleLog("inside auto size: "+settings.name+"-element height: "+ $(element).height());
 			$(newImg).css({ height: $(element).height()*2, width: 'auto' });
-			// $(newImg).css( { height:'200%' , width:'200%' });			
 		}
-		if (!isDefined(settings.Symbol.replacetext)) {
-			console.log("inside undefined replacetext: "+settings.name+" id:"+$(element).attr("id"));
+		if (!isDefined(settings.Symbol.symbol_insertion_type)) {
+			consoleLog("inside undefined symbol_insertion_type: "+settings.name+" id:"+$(element).attr("id"));
 			//TODO: what should be the default?
 			var label = $('[for="'+$(element).attr("id")+'"]');	
+			/**
+			 * check the "for" attr for the id of the element to add in image to.
+			 */
 
 			if(isDefined(label[0])){
-				console.log("with label: "+settings.name);
-				// $("  ").prependTo(label[0])
 				$(newImg).prependTo(label[0])
 			}else{
 				$(element).prepend("&nbsp;");
-				// $("  ").prependTo(element);
 				$(newImg).prependTo(element);
 			}
 		} else {
-			if (settings.Symbol.replacetext === "replace") {
-				console.log("inside replacetext === replace: " + settings.name);
+			if (settings.Symbol.symbol_insertion_type === "replace") {
+				consoleLog("inside symbol_insertion_type === replace: " + settings.name);
 				$(element).html('');
 				$(newImg).appendTo(element);
-			} else if (settings.Symbol.replacetext === "tooltip") {
-				console.log("image tooltip called for: " + settings.name);
+			} else if (settings.Symbol.symbol_insertion_type === "tooltip") {
+				consoleLog("image tooltip called for: " + settings.name);
 				altAddToolTip(element, newImg, settings);
-			} else if (settings.Symbol.replacetext === "before") {
-				console.log("inside replacetext === before: " + settings.name);
+			} else if (settings.Symbol.symbol_insertion_type === "before") {
+				consoleLog("inside symbol_insertion_type === before: " + settings.name);
 				if (isDefined(settings.text)) {
 					$(element).html(settings.text);
 				}
 				var label = $('[for="' + $(element).attr("id") + '"]');
 				if (isDefined(label[0])) {
-					console.log("with label: " + settings.name);
+					consoleLog("with label: " + settings.name);
 					// $("  ").prependTo(label[0])
 					$(newImg).prependTo(label[0])
 				} else {
 					// $("  ").prependTo(element);
 					$(newImg).insertBefore(element);
 				}
-				
-
 			}
 		}
-		console.log(settings.name + " settings:\ninner: " + element.innerHTML + "\nimage sizes are: h:" + $(newImg).height() + " w:" + $(newImg).width());
+		consoleLog(settings.name + " settings:\ninner: " + element.innerHTML + "\nimage sizes are: h:" + $(newImg).height() + " w:" + $(newImg).width());
 	}
 }
 function addBorderToImg(img){
 	$(img).css({"background-color":"white","border":"#000000 3px outset"/*,"padding":"10%"*/});
 }
 
-// function addToolTip(element, imgOuterHtml) {
-// 	element.setAttribute('title', imgOuterHtml);
-// 	$(element).tooltip({
-// 		"animated": "fade",
-// 		"placement": "top",
-// 		"html": true
-// 	});
-
-// 	// if(isDefined(window.profile.global_settings.tooltip_settings))
-// 	// $(element).tooltip(window.profile.global_settings.tooltip_settings);
-// }
-
+/**
+ * create tooltip with newImg and add to element
+ * @param {*} element 
+ * @param {*} newImg 
+ * @param {*} settings 
+ */
 function altAddToolTip(element, newImg,settings) {
 
 	var ctrStr = "" + gCtr++;
 	var divId = 'div' + ctrStr;
 	var spanId = 'span' + ctrStr;
 	var divStr = '<div id="' + divId + '" </div>';
-	// element.insertBefore(span,null);
-	// $(span).insertBefore(element);
 	$(element).wrap(divStr);
 	var div = document.getElementById(divId);
 	$(div).addClass("aui_tooltip_parent");
 	var span = document.createElement("span");
-	// div.appendChild(span);
 	$(span).appendTo(div);
-	// span.setAttribute("id", spanId);
 	$(span).attr("id",spanId);
-	$(element).attr("aria-describedby",spanId);
+	$(element).attr("aria-describedby",spanId);  //accessibility
 	$(newImg).appendTo(span);
-
-	// span.appendChild(newImg);
-	$(span).attr("role", "tooltip");
-	// $(span).append('<p>p text</p>');
+	$(span).attr("role", "tooltip"); //accessibility
 	$(span).addClass("aui_tooltip");
-	// positionSpan(span,element);
-
 	var oldElem = element;
 	element = div;
 	$(element).attr("tabindex","0");	
@@ -554,41 +525,36 @@ function altAddToolTip(element, newImg,settings) {
 	if(isDefined(settings.tooltip)){
 		var p = document.createElement("p");
 		$(p).html(settings.tooltip);
-		$("<p>\n</p>").appendTo(span);
 		$(p).appendTo(span);
 	}
 
 	$(document).ready(function () {
-		console.log("on ready hide image called: " + spanId);
+		consoleLog("on ready hide image called: " + spanId);
 		hideImg(span);
 	});
 	$(element).mouseover(function () {
-		console.log("mouseover called");
+		consoleLog("mouseover called");
 		showImg(span);
-		// $(newImg).show();
 	});
 	$(element).mouseleave(function () {
-		console.log("mouseleave called");
+		consoleLog("mouseleave called");
 		if (!($(element).is(":focus"))) {
 			hideImg(span);
 		}
 	});
 
 	$(element).focus(function () {
-		console.log("focus called");
+		consoleLog("focus called");
 		showImg(span);
 	});
 	$(element).blur(function () {
-		console.log("focusout called");
-		// if ($(element + ':hover').length != 0) {
+		consoleLog("focusout called");
 			hideImg(span);
-		// }
 	});
 
 	$(document.body).keydown(function (ev) {
 
 		if (isKeys(ev,settings.shortcut)) {
-			// showImg(span);
 			$(element).focus();
 			ev.preventDefault();
 			return false;
@@ -609,7 +575,7 @@ function altAddToolTip(element, newImg,settings) {
 
 function hideImg(img){
 	$(img).attr("aria-hidden", "true");
-	$(img).addClass("hidden");
+	$(img).addClass("hidden"); //accessibility old browser
 }
 function showImg(img){
 	$(img).attr("aria-hidden", "false");
@@ -638,10 +604,15 @@ function setCSS(element, settings) {
 	});
 }
 
-
+/**
+ * add classes 
+ * 
+ * todo: make it generic and extendable, read fro mthe profile/different file
+ */
 function addTooltipCssClasses(){
-	// createCssClass(".tooltip,.arrow:after",'  background:yellow; ');
 	createCssClass('.aui_tooltip',
+	// 'margin:auto;'+
+	// 'text-align:center;'+
 	'background:black; '+
 	'font-size:14px;'+
 	'font-weight:regular;'+
@@ -650,7 +621,7 @@ function addTooltipCssClasses(){
 	// 'right:20%;'+
 	// 'left:100%;'+
 	'overflow:visible;'+
-	'padding:10px 20px;'+
+	'padding:17px 17px 0px;'+
 	'color:#fff;'+
 	'-webkit-border-radius:7px;'+
 	'-moz-border-radius:7px;'+
@@ -658,16 +629,29 @@ function addTooltipCssClasses(){
 	'-webkit-background-clip:padding-box;'+
 	'-moz-background-clip:padding;'+
 	'background-clip:padding-box;'+
-	// 'margin-bottom: 20%;'+
+	'margin-bottom: 20%;'+
 	'text-align:center;'+
 	'text-decoration:none;'+
 	'box-shadow:0 0 3px #000;'+
-	'z-index:99999999;');
+	'z-index:99999999;'+
+	// 'vertical-align:middle;'+
+	// 'justify-content:center;'+
+	// 'flex-direction: column;'+
+	// 'margin-top:auto;margin-bottom:auto;'
+	'align-items:center;'
+	);
 	createCssClass('.aui_tooltip_parent',
 	"position:relative;");
-	createCssClass('[aria-hidden="true"]', 'display: none');
-	createCssClass('[aria-hidden="false"]', 'display: block');
+	createCssClass('[aria-hidden="true"]', 'display: none;');
+	createCssClass('[aria-hidden="false"]', 'display: block;');
 	createCssClass('a:focus, a:active', 'text-decoration: underline;');
+	// createCssClass('aui_tooltip_child',);
+	// createCssClass('aui_tooltip_span',
+	// 'vertical-align:center;'
+	// 'display: flex;'+
+	// 'align-items: center;'+
+	// 'justify-content:center;'
+	// );
 	
 }
 function createCssClass(className,propertiesStr){
@@ -679,19 +663,9 @@ function createCssClass(className,propertiesStr){
 }
 
 
-// function defineKeyboardShortcut(elm, span, keys){
-// 	console.log("define shortcut: "+span.id+": "+keys);
-// 	$(elm).keydown(function (ev) {
-// 		if (isKeys(ev,keys)) {
-// 			showImg(span);
-// 			ev.preventDefault();
-// 			return false;
-// 		}
-// 	});
 
-// }
 function isKeys(event,keys){
-	console.log("is keys called: "+event.which+" : "+keys);
+	consoleLog("is keys called: "+event.which+" : "+keys);
 	if(!isDefined(keys)){
 		return false;
 	}
@@ -738,15 +712,15 @@ function positionSpan(span,element){
     var elemRect = element.getBoundingClientRect();
 	var top_offset = elemRect.top - bodyRect.top;
 	var left_offset = elemRect.left - bodyRect.left;
-	console.log('Element is ' + top_offset + ' vertical pixels from <body>');
-	console.log('Element is ' + left_offset + ' horizontal pixels from <body>');
-	console.log("bodyRect: top: "+bodyRect.top+" left: "+bodyRect.left);
-	console.log("elemRect: top: "+elemRect.top+" left: "+elemRect.left);
+	consoleLog('Element is ' + top_offset + ' vertical pixels from <body>');
+	consoleLog('Element is ' + left_offset + ' horizontal pixels from <body>');
+	consoleLog("bodyRect: top: "+bodyRect.top+" left: "+bodyRect.left);
+	consoleLog("elemRect: top: "+elemRect.top+" left: "+elemRect.left);
 
 	span.style.top = elemRect.top;
 	span.style.left = elemRect.left;
 	var p = $(span).position();
-	console.log("span left: "+p.left+" top: "+p.top);
+	consoleLog("span left: "+p.left+" top: "+p.top);
 
 	// span.style.top = top_offset + addToTop;
 	// span.style.left = left_offset +addToLeft;
@@ -757,16 +731,14 @@ function personalizeDistraction() {
 	/*animations, auto-starting, moving, ad, message, chat , overlay, popup
 Auto-changing (logs) third-party, offer ( includes suggestions). */
 
-
-
 	var distStr = window.profile["aui-distraction"];
-	console.log("personalize distraction called. distStr: "+distStr);
+	consoleLog("personalize distraction called. distStr: "+distStr);
 	if (!isDefined(distStr)) {
 		return;
 	}
 	if (distStr === "all") {
 		$("[aui-distraction]").each(function (index) {
-			console.log("distraction element: "+$(this).html());
+			consoleLog("distraction element: "+$(this).html());
 			$(this).attr("aria-hidden", "true");
 		});
 		return;
@@ -782,3 +754,39 @@ Auto-changing (logs) third-party, offer ( includes suggestions). */
 	});
 }
 
+
+function consoleLog(text){
+	console.log(text);
+}
+
+/**
+ * add attr&value pairs (from the profile) to the element
+ * @param {*} element 
+ * @param {*} settings 
+ */
+function applyAttributeValuesChanges(element,settings){
+	if(isDefined(settings["attribute_values_changes"])){
+		console.log("apply attribute value changes called on: "+settings.name);
+		var attributeValuesChanges = settings["attribute_values_changes"];
+		var attributeValuesChangesKeyList = Object.keys(attributeValuesChanges);
+		attributeValuesChangesKeyList.forEach(attrName=>{
+			$(element).attr(attrName,attributeValuesChanges[attrName]);
+		});
+	}
+}
+
+/**
+ * add attr&value pairs (from the profile) to the element
+ * @param {*} element 
+ * @param {*} symbolSettings 
+ */
+function applySymbolAttributeValuesChanges(element,symbolSettings){
+	if(isDefined(symbolSettings["symbol_attribute_values_changes"])){
+		console.log("apply attribute value changes called on: "+symbolSettings.name);
+		var attributeValuesChanges = symbolSettings["symbol_attribute_values_changes"];
+		var attributeValuesChangesKeyList = Object.keys(attributeValuesChanges);
+		attributeValuesChangesKeyList.forEach(attrName=>{
+			$(element).attr(attrName,attributeValuesChanges[attrName]);
+		});
+	}
+}

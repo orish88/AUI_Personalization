@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		reloadPage(curProfileJson);
 	});
 
-	// document.getElementById("bt_personalize_page_test_profile1").addEventListener('click', () => {
-	// 	/* make the profiles constants*/
-	// 	curProfileJson = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile7.json";
-	// 	reloadPage(curProfileJson);
-	// });
+	document.getElementById("bt_personalize_page_test_profile1").addEventListener('click', () => {
+		/* make the profiles constants*/
+		curProfileJson = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile7.json";
+		reloadPage(curProfileJson);
+	});
 
 	document.getElementById("bt_personalize_page_test_profile2").addEventListener('click', () => {
 		curProfileJson = "https://rawgit.com/orish88/AUI_Personalization/master/profiles/test_profile8.json";
@@ -28,18 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 	/*reload the page, then run personalization(currently just run personalization)*/
-	function reloadPage(profleJsonUrl) {
+	function reloadPage(profileJsonUrl) {
 
-		console.log("prof url: " + profleJsonUrl);
-		oldPersonalize(profleJsonUrl);
-		// chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-		// 	chrome.tabs.update(tabs[0].id, { url: tabs[0].url }, function () {
-		// 		if(isDefined(curDom)){
+		console.log("prof url: " + profileJsonUrl);
+		// oldPersonalize(profileJsonUrl);
+		chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+			chrome.tabs.update(tabs[0].id, { url: tabs[0].url }, function () {
+				// if(isDefined(curDom)){
 
-		// 		}
-		// 		personalize(profleJsonUrl);
-		// 	});
-		// });
+				// }
+				console.log("update callback called");
+				personalize(profileJsonUrl);
+			});
+		});
 	}
 	/**
 	 * personalize the page
@@ -82,9 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		curDom = domContent;
 		chrome.tabs.executeScript(null, {
-			code: 'console.log("bt was pressed") ; console.log("curDom:\n",' + curDom + ') ; var profileJson ="' + curProfileJson + '";document.replaceChild(' + curDom + ', document.documentElement);'
+			code: 'console.log("bt was pressed1") ; console.log("curDom:\n",' + curDom + ') ;'  + '"document.replaceChild(' + curDom + ', document.documentElement);'
 		}, function () {
-			chrome.tabs.executeScript(null, { file: "ps1_e.js" });
+			chrome.tabs.executeScript(null, { file: "jquery.js" }, function(){
+				chrome.tabs.executeScript(null, {
+					code: 'console.log("bt was pressed2-"); var profileJson ="' + curProfileJson + '";'
+				}, function () {
+					chrome.tabs.executeScript(null, { file: "ps1_e.js" });
+				});
+			} );
 		});
 		console.log('curDOM:\n' + curDom);
 	}

@@ -160,6 +160,148 @@
         }
     },
     "attributes": {
+        "role":{
+            "global_settings": {
+                "name": "role"
+            },
+            "complementary": {
+                "name": "complementary",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=complemetary",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "button": {
+                "name": "button",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=button",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "background-color",
+                        "value": "#7eeaf6"
+                    }
+                ]
+            },
+            "main": {
+                "name": "main",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=button",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "background-color",
+                        "value": "#f2f597"
+                    }
+                ]
+            },
+            "banner": {
+                "name": "banner",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=button",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "background-color",
+                        "value": "#00ff00"
+                    }
+                ]
+            },
+            "contentinfo": {
+                "name": "contentinfo",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=button",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "background-color",
+                        "value": "#ffb0f2"
+                    }
+                ]
+            }
+
+
+        },
         "AUI-action": {
             "global_settings": {
                 "name": "AUI-action"

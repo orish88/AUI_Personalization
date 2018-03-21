@@ -1,7 +1,109 @@
 
 
+This document describes the structure of the user profile json,
+with descriptions of how it is used in the code and examples.
 
 IMPORTANT!! : See DeveloperNotes for the definition of object-value
+
+
+
+##########################
+What is this json profile?
+##########################
+
+The profile is a json object which contains the settings of how to present personalization changes in the DOM.
+The contents may vary and change according to each user and his/her needs.
+
+The profile json object is divided into these sub json-objects:
+
+#global_settings
+#css
+#athena-icon
+#aui-distraction
+#simplification
+#tagnames
+#attributes
+#scopes
+
+
+############################
+How is the profle json used?
+############################
+
+The page developer will mark certain elements with certian attribute and values. For example,
+an <a> element that has the attribute aui-destinaton with the value "home":
+
+<a aui-destination="home">Homepage</a>
+
+Once the personalization process occures, we wish this a element to change, usually to make its
+use clear to the user. Lets say we want to replace the text "Homepage" with a picture of a house. 
+The profile json would contain these change settings, inside what we call "object-value", 
+a sub-json object inside the profile which contains the settings for the actual element changes.
+
+The "object-value" look like this:
+"Attrbutes":{
+    "AUI-destination": {
+            "global_settings": {
+                "name": "AUI-destination"
+            },
+            //the "object-value" for aui-detination = "home"
+            "home": {
+                "name": "home",
+                ...
+                "Symbol": {
+                    //the link to the house image:
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/home2_noun.png",
+                    ...
+                    "width": "100",
+                    "height": "250",
+                    ...
+                    },
+                }
+    }
+ }
+An elaborate explaination about "object-value" and the rest of its settings is inside "developeNotes".
+
+Such an "object-value" can also specify changes for any element of a certain tagname.
+
+for example, lets say the profle json contains under "tagnames" an object-value for the tagname 'title':
+    "tagnames":
+    {
+        ...
+        "title": {
+            "name": "title",
+            "css": [
+                {
+                    "propertyName": "border-color",
+                    "value": "red"
+                },
+                {
+                    "propertyName": "border-style",
+                    "value": "solid"
+                },
+                {
+                    "propertyName": "font-size",
+                    "value": "150%"
+                },
+                {
+                    "propertyName": "font-family",
+                    "value": "Gotham, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+                }
+            ]
+        },
+        ...
+    }
+
+    Note that this object value contains only a "name" and some css properties to change. 
+    Not all settings in an object-value have to be defined.
+    if our dom has this kind of elements:
+     <title> title text </title>
+     their css would change. For instance, the font size would be 120% of the original.
+     It is of course possible to add a symbol and the rest of the object value settings here as well.
+
+
+############################################################################
+an overview of an entire profile json, with explainations for every setting:
+############################################################################
 
 Profile.json structure:
 {
