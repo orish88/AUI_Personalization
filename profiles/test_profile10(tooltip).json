@@ -1,7 +1,7 @@
 {
 
     "global_settings": {
-        "name": "prof8",
+        "name": "prof10-tooltip",
         "AUI:desc": "Orish- tooltip simple demo file",
         "symbol_insertion_type": "before",
         "global_added_image_css_class": "aui_header_images",
