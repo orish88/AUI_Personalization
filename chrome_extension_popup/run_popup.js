@@ -31,16 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	function reloadPage(profileJsonUrl) {
 
 		console.log("prof url: " + profileJsonUrl);
-		// oldPersonalize(profileJsonUrl);
-		chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-			chrome.tabs.update(tabs[0].id, { url: tabs[0].url }, function () {
-				// if(isDefined(curDom)){
+		oldPersonalize(profileJsonUrl);
+		// chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+		// 	chrome.tabs.update(tabs[0].id, { url: tabs[0].url }, function () {
+		// 		// if(isDefined(curDom)){
 
-				// }
-				console.log("update callback called");
-				personalize(profileJsonUrl);
-			});
-		});
+		// 		// }
+		// 		console.log("update callback called");
+		// 		personalize(profileJsonUrl);
+		// 	});
+		// });
 	}
 	/**
 	 * personalize the page
@@ -79,11 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// A function to use as callback
 	function doStuffWithDom(domContent) {
-		console.log("do stuuf with dom called");
+		console.log("do stuuf with dom called: "+domContent);
 
-		curDom = domContent;
+		// curDom = domContent;
 		chrome.tabs.executeScript(null, {
-			code: 'console.log("bt was pressed1") ; console.log("curDom:\n",' + curDom + ') ;'  + '"document.replaceChild(' + curDom + ', document.documentElement);'
+			// code: 'console.log("bt was pressed1") ; console.log("curDom:\n",' + curDom + ') ;'  + '"document.replaceChild(' + curDom + ', document.documentElement);'
+			code: 'console.log("bt was pressed1") ; console.log("curDom:\n",' + curDom + ') ;'
 		}, function () {
 			chrome.tabs.executeScript(null, { file: "jquery.js" }, function(){
 				chrome.tabs.executeScript(null, {
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				});
 			} );
 		});
-		console.log('curDOM:\n' + curDom);
+		// console.log('curDOM:\n' + curDom);
 	}
 	function requestDOM() {
 		// When the browser-action button is clicked...
@@ -126,3 +127,117 @@ function isDefined(variable) {
 	return false;
 
 }
+
+
+
+/* 
+,
+            "button": {
+                "name": "button",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=button",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "background-color",
+                        "value": "#7eeaf6"
+                    }
+                ]
+            },
+            "main": {
+                "name": "main",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=button",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "background-color",
+                        "value": "#f2f597"
+                    }
+                ]
+            },
+            "banner": {
+                "name": "banner",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=button",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "background-color",
+                        "value": "#00ff00"
+                    }
+                ]
+            },
+            "contentinfo": {
+                "name": "contentinfo",
+                "type": [],
+                "inherits": "",
+                "shortcut": "",
+                "longdesc": "role=button",
+                "tooltip": "",
+                "text": "",
+                "Symbol": {
+                    "url": "",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "@aria-hidden": "true",
+                "css": [
+                    {
+                        "propertyName": "background-color",
+                        "value": "#ffb0f2"
+                    }
+                ]
+            }
+*/
