@@ -3234,7 +3234,42 @@
                     }
                 ]
             }
+        },
+        "aui-symbol":{
+            "global_settings": {
+                "name": "aui-symbol"
+            },
+            "copyright": {
+                "name": "copyright",
+                "type": [],
+                "inherits": "",
+                "shortcut": "SHIFT + C",
+                "longdesc": "copyright information",
+                "tooltip": "Copyright",
+                "text": "",
+                "Symbol": {
+                    "url": "https://rawgit.com/orish88/AUI_Personalization/master/images/copyright1_noun.png",
+                    "symbol_insertion_type":"before",
+                    "css_class": "aui_header_images",
+                    "creator": {
+                        "name": "",
+                        "url": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "margin": "",
+                    "padding": ""
+                },
+                "css": [
+                    {
+                        "propertyName": "",
+                        "value": ""
+                    }
+                ]
+            },
+
         }
+        
     },
     "scopes": {
         "itemtype": {
