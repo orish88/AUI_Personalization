@@ -15,8 +15,19 @@ var gCtr  =0;
  * profileJson is defined in script execution on run_popup.js
  * */
 if ( isDefined(profileJson) ) {
+	// readScriptFromServer();
 	getPersonalization(profileJson);
+
 }
+
+
+// function readScriptFromServer() {
+// 	console.log("read script from server called");
+// 	$.getScript("https://localhost:8080/remote-script/remote-engine.js", function (data, textStatus, jqxhr) {
+// 		console.log("script callback called");
+// 	});
+// }
+
 
 /** 
 *calls functions for  download JSON skin in url, and personalise page based on the settings in it 

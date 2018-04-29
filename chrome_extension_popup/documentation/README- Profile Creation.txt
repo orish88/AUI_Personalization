@@ -30,7 +30,7 @@ The profile json object is divided into these sub json-objects:
 How is the profle json used?
 ############################
 
-The page developer will mark certain elements with certian attribute and values. For example,
+The page developer will mark certain elements with certain attribute and values. For example,
 an <a> element that has the attribute aui-destinaton with the value "home":
 
 <a aui-destination="home">Homepage</a>

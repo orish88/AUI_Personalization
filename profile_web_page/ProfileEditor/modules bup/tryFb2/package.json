@@ -1,0 +1,26 @@
+{
+  "name": "profile-editor",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-editable-json-tree": "^2.2.0",
+    "react-firebase": "^2.2.8",
+    "react-json-edit": "^0.3.1",
+    "react-scripts": "1.1.1",
+    "update-notifier": "^2.4.0",
+    "firebase": "^4.12.1"
+  },
+  "scripts": {
+    "start": "set PORT=3006 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
